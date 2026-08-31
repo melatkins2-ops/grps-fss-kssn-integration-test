@@ -360,9 +360,305 @@ nav, .top-nav{flex-wrap:wrap}
 .pilot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.pilot-grid>div{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}.pilot-grid b{display:block;color:var(--blue);font-size:11px;margin-bottom:7px}.pilot-grid label{display:flex;gap:6px;align-items:flex-start;color:var(--muted);font-size:9.8px;line-height:1.35;margin:6px 0}.pilot-grid input{margin-top:2px}.pilot-prompts{margin-top:14px;border-left:4px solid var(--orange);background:#fff8f1;border-radius:10px;padding:13px}.pilot-prompts h3{color:var(--blue);font-size:13px;margin:0 0 7px}.pilot-prompts span{display:block;color:var(--muted);font-size:10px;margin:4px 0}
 @media(max-width:900px){.role-start-grid,.pilot-grid,.guardrail-grid{grid-template-columns:1fr 1fr}.scenario-picker{grid-template-columns:1fr 1fr !important}}
 @media(max-width:600px){.role-start-grid,.pilot-grid,.guardrail-grid,.verified-grid{grid-template-columns:1fr}.scenario-picker{grid-template-columns:1fr !important}}
+
+/* V22 readability + role-specific resource depth */
+body{font-size:16px}
+.sub{font-size:16px!important;line-height:1.55!important}
+p{line-height:1.55}
+.micro-note{font-size:13px!important;line-height:1.5!important}
+.support-eyebrow,.eyebrow{font-size:12px!important}
+.directory-grid b,.verified-grid b,.role-start-grid b,.support-tool b,.quick-links a{font-size:14px!important}
+.directory-grid span,.verified-grid span,.role-start-grid span,.support-tool span,.support-tool small{font-size:13px!important;line-height:1.45!important}
+.audience-deep{margin-top:16px;border:1px solid var(--line);border-radius:15px;background:#fff;padding:18px}
+.audience-deep h3{color:var(--blue);font-size:20px;margin:3px 0 5px}
+.audience-deep>.intro{color:var(--muted);font-size:15px;margin:0 0 14px}
+.deep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.deep-card{border:1px solid var(--line);border-radius:12px;background:#f7f9fb;padding:13px}
+.deep-card h4{color:var(--blue);font-size:15px;margin:0 0 7px}
+.deep-card p{font-size:13px;color:var(--muted);margin:0 0 8px}
+.deep-card a{display:block;color:var(--blue);font-weight:800;text-decoration:none;font-size:13px;margin:5px 0}
+.deep-card .tool-tag{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 7px;font-size:12px;color:var(--muted);margin:3px 3px 0 0}
+.role-difference{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.role-difference>div{border-radius:13px;padding:15px;border:1px solid var(--line);background:#f7f9fb}
+.role-difference h4{color:var(--blue);font-size:16px;margin:0 0 6px}
+.role-difference p{font-size:13.5px;color:var(--muted);margin:0}
+@media(max-width:900px){.deep-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.deep-grid,.role-difference{grid-template-columns:1fr}}
+
+/* V23 specialized workspaces */
+.workspace{margin-top:18px;border-top:3px solid var(--blue);border-radius:0 0 15px 15px;background:#fff;padding:20px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.workspace-head{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+.workspace-head h3{color:var(--blue);font-size:24px;margin:3px 0 7px}
+.workspace-head p{font-size:15px;color:var(--muted);margin:0;line-height:1.55}
+.workspace-purpose{border-left:4px solid var(--orange);background:#fff8f1;border-radius:9px;padding:12px 14px}
+.workspace-purpose b{display:block;color:var(--blue);font-size:14px;margin-bottom:4px}
+.workspace-purpose span{font-size:13px;color:var(--muted);line-height:1.45}
+.workspace-section{margin-top:20px}
+.workspace-section h4{font-size:18px;color:var(--blue);margin:0 0 4px}
+.workspace-section>.lead{font-size:14px;color:var(--muted);margin:0 0 12px}
+.use-now-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.use-tool{border:1px solid var(--line);border-radius:12px;background:#f7f9fb;overflow:hidden}
+.use-tool summary{cursor:pointer;list-style:none;padding:14px;font-size:14px;font-weight:850;color:var(--blue);background:#fff}
+.use-tool summary::-webkit-details-marker{display:none}
+.use-tool summary:after{content:"+";float:right;font-size:18px;color:var(--orange)}
+.use-tool[open] summary:after{content:"–"}
+.tool-body{padding:0 14px 14px}
+.tool-body p{font-size:13px;color:var(--muted);margin:0 0 8px}
+.tool-body ol,.tool-body ul{margin:6px 0 8px;padding-left:20px}
+.tool-body li{font-size:13px;line-height:1.45;color:var(--muted);margin:5px 0}
+.tool-output{margin-top:9px;border-top:1px solid var(--line);padding-top:9px;font-size:12.5px;color:var(--blue);font-weight:750}
+.resource-buckets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.resource-bucket{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}
+.resource-bucket h5{font-size:14px;color:var(--blue);margin:0 0 7px}
+.resource-bucket a{display:block;text-decoration:none;color:var(--blue);font-weight:750;font-size:13px;line-height:1.35;margin:6px 0}
+.resource-bucket p{font-size:12.5px;color:var(--muted);margin:5px 0}
+.role-check{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.role-check div{border:1px solid var(--line);border-radius:10px;padding:10px;background:#f7f9fb}
+.role-check b{display:block;color:var(--blue);font-size:13px;margin-bottom:3px}
+.role-check span{font-size:12.5px;color:var(--muted);line-height:1.4}
+.boundary-box{margin-top:15px;border-radius:12px;padding:14px;background:#f7f9fb;border:1px solid var(--line)}
+.boundary-box h4{font-size:15px;color:var(--blue);margin:0 0 8px}
+.boundary-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.boundary-grid div{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px}
+.boundary-grid b{display:block;color:var(--blue);font-size:13px;margin-bottom:4px}
+.boundary-grid span{font-size:12.5px;color:var(--muted);line-height:1.4}
+.workspace-nav{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.workspace-nav a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:#fff;color:var(--blue);font-size:12.5px;font-weight:800}
+@media(max-width:980px){.workspace-head{grid-template-columns:1fr}.use-now-grid,.resource-buckets{grid-template-columns:1fr 1fr}.role-check{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.use-now-grid,.resource-buckets,.role-check,.boundary-grid{grid-template-columns:1fr}}
+
+/* V24 district-display readability pass */
+body{font-size:18px}
+.sub{font-size:18px!important;line-height:1.6!important}
+p{font-size:17px;line-height:1.58}
+li{font-size:16px;line-height:1.55}
+.micro-note{font-size:15px!important;line-height:1.55!important}
+.eyebrow,.support-eyebrow{font-size:13px!important;letter-spacing:.08em}
+button,.pill,.chip{font-size:15px!important}
+.card p,.card li,.moment-card p,.moment-card li{font-size:16px!important;line-height:1.55!important}
+.card h3,.moment-card h3{font-size:22px!important}
+.directory-grid b,.verified-grid b,.role-start-grid b,.support-tool b,.quick-links a{font-size:16px!important}
+.directory-grid span,.verified-grid span,.role-start-grid span,.support-tool span,.support-tool small{font-size:15px!important;line-height:1.5!important}
+.resource-panel p,.resource-panel span,.resource-panel a,.resource-panel li{font-size:16px!important;line-height:1.5!important}
+.deep-card h4{font-size:17px!important}
+.deep-card p,.deep-card a{font-size:15px!important;line-height:1.5!important}
+.deep-card .tool-tag{font-size:14px!important}
+.role-difference h4{font-size:18px!important}
+.role-difference p{font-size:15.5px!important}
+.workspace-head p{font-size:17px!important}
+.workspace-purpose b{font-size:16px!important}
+.workspace-purpose span{font-size:15px!important}
+.workspace-section>.lead{font-size:16px!important}
+.use-tool summary{font-size:16px!important;padding:16px!important}
+.tool-body p,.tool-body li{font-size:15.5px!important;line-height:1.55!important}
+.tool-output{font-size:14.5px!important}
+.resource-bucket h5{font-size:16px!important}
+.resource-bucket a{font-size:15px!important;line-height:1.45!important}
+.resource-bucket p{font-size:14.5px!important}
+.role-check b,.boundary-grid b{font-size:15px!important}
+.role-check span,.boundary-grid span{font-size:14.5px!important;line-height:1.5!important}
+.workspace-nav a{font-size:14px!important}
+
+/* Catch common small-text patterns throughout legacy V21 sections */
+[style*="font-size:12px"],[style*="font-size: 12px"]{font-size:15px!important}
+[style*="font-size:13px"],[style*="font-size: 13px"]{font-size:15px!important}
+[style*="font-size:14px"],[style*="font-size: 14px"]{font-size:16px!important}
+small{font-size:15px!important;line-height:1.5!important}
+
+/* Moment / process cards shown in user screenshot */
+.step-card,.process-step,.example-card,.role-card,.side-card,.decision-card,.cadence-card{font-size:16px!important}
+.step-card p,.process-step p,.example-card p,.role-card p,.side-card p,.decision-card p,.cadence-card p{font-size:16px!important;line-height:1.55!important}
+.step-card b,.process-step b,.example-card b,.role-card b,.side-card b,.decision-card b,.cadence-card b{font-size:16px!important}
+.step-card .eyebrow,.process-step .eyebrow{font-size:13px!important}
+a{line-height:1.45}
+
+/* V25 Barrier Explorer best-practice depth */
+.barrier-depth{margin-top:18px}
+.barrier-depth h3{font-size:23px;color:var(--blue);margin:4px 0 7px}
+.barrier-depth>.lead{font-size:17px;color:var(--muted);line-height:1.55;margin:0 0 14px}
+.root-cause-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.root-cause-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px}
+.root-cause-card h4{font-size:17px;color:var(--blue);margin:0 0 6px}
+.root-cause-card p{font-size:15.5px!important;color:var(--muted);margin:0 0 7px}
+.root-cause-card ul{padding-left:18px;margin:5px 0}
+.root-cause-card li{font-size:15px!important;line-height:1.45;margin:4px 0;color:var(--muted)}
+.evidence-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.evidence-strip>div{background:#f7f9fb;border:1px solid var(--line);border-radius:11px;padding:13px}
+.evidence-strip b{display:block;color:var(--blue);font-size:16px;margin-bottom:5px}
+.evidence-strip span{font-size:15px;color:var(--muted);line-height:1.45}
+.match-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:10px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.match-table th{background:#f7f9fb;color:var(--blue);font-size:15px;text-align:left;padding:11px;border-bottom:1px solid var(--line)}
+.match-table td{font-size:15px;line-height:1.45;padding:11px;vertical-align:top;border-bottom:1px solid var(--line)}
+.match-table tr:last-child td{border-bottom:none}
+.hypothesis-builder{border-left:5px solid var(--orange);background:#fff8f1;border-radius:10px;padding:15px;margin:15px 0}
+.hypothesis-builder h4{font-size:18px;color:var(--blue);margin:0 0 7px}
+.hypothesis-builder p{font-size:16px!important;margin:5px 0}
+.stop-check{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.stop-check>div{border:1px solid var(--line);border-radius:11px;padding:13px;background:#fff}
+.stop-check b{display:block;color:var(--blue);font-size:16px;margin-bottom:5px}
+.stop-check span{font-size:15px;line-height:1.45;color:var(--muted)}
+.best-practice-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.best-practice-links a{font-size:15px;font-weight:800;text-decoration:none;color:var(--blue);background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px}
+@media(max-width:980px){.root-cause-grid{grid-template-columns:1fr 1fr}.evidence-strip{grid-template-columns:1fr}}
+@media(max-width:650px){.root-cause-grid,.stop-check{grid-template-columns:1fr}.match-table{display:block;overflow-x:auto}}
+
+/* V26 action-first layer */
+.action-layer{margin:18px 0;border:1px solid var(--line);border-radius:14px;background:#f7f9fb;padding:16px}
+.action-layer h3{font-size:20px;color:var(--blue);margin:0 0 5px}
+.action-layer>p{font-size:16px!important;color:var(--muted);margin:0 0 12px}
+.action-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.action-choice{border:1px solid var(--line);background:#fff;border-radius:11px;padding:12px;cursor:pointer;text-align:left;color:var(--blue);font-size:15px!important;font-weight:850}
+.action-choice:hover{border-color:var(--blue)}
+.action-result{display:none;margin-top:12px;border-left:5px solid var(--orange);background:#fff;border-radius:10px;padding:14px}
+.action-result.show{display:block}
+.action-result h4{font-size:17px;color:var(--blue);margin:0 0 7px}
+.action-result ol{margin:5px 0 8px;padding-left:20px}
+.action-result li{font-size:15px!important;line-height:1.5;margin:5px 0}
+.action-result .output{font-size:15px!important;font-weight:800;color:var(--blue);border-top:1px solid var(--line);padding-top:8px;margin-top:8px}
+.page-finish{margin-top:20px;background:#fff8f1;border:1px solid #f4d8bd;border-radius:12px;padding:14px}
+.page-finish b{display:block;font-size:16px;color:var(--blue);margin-bottom:5px}
+.page-finish span{font-size:15px;line-height:1.5;color:var(--muted)}
+@media(max-width:800px){.action-choices{grid-template-columns:1fr}}
+
+/* V27 large-text usability standard */
+body{font-size:20px}
+p{font-size:18px!important;line-height:1.6!important}
+li{font-size:18px!important;line-height:1.55!important}
+.sub{font-size:19px!important}
+small,.micro-note{font-size:16px!important}
+button,.pill,.chip{font-size:17px!important}
+.card p,.moment-card p,.step-card p,.process-step p,.example-card p,.role-card p,.side-card p,.decision-card p,.cadence-card p{font-size:18px!important;line-height:1.6!important}
+.card li,.moment-card li,.step-card li,.process-step li{font-size:18px!important}
+.card b,.moment-card b,.step-card b,.process-step b,.example-card b,.role-card b,.side-card b,.decision-card b,.cadence-card b{font-size:18px!important}
+.directory-grid b,.verified-grid b,.role-start-grid b,.support-tool b{font-size:18px!important}
+.directory-grid span,.verified-grid span,.role-start-grid span,.support-tool span,.support-tool small{font-size:17px!important;line-height:1.55!important}
+.resource-panel p,.resource-panel span,.resource-panel a,.resource-panel li{font-size:17px!important}
+.deep-card h4{font-size:19px!important}
+.deep-card p,.deep-card a{font-size:17px!important}
+.deep-card .tool-tag{font-size:16px!important}
+.role-difference p{font-size:17px!important}
+.workspace-head p{font-size:18px!important}
+.workspace-purpose span{font-size:17px!important}
+.workspace-section>.lead{font-size:18px!important}
+.use-tool summary{font-size:18px!important}
+.tool-body p,.tool-body li{font-size:17px!important}
+.tool-output{font-size:16px!important}
+.resource-bucket a{font-size:17px!important}
+.resource-bucket p{font-size:16px!important}
+.role-check span,.boundary-grid span{font-size:16.5px!important}
+.action-layer>p{font-size:18px!important}
+.action-choice{font-size:17px!important}
+.action-result li,.action-result .output{font-size:17px!important}
+.root-cause-card p{font-size:17px!important}
+.root-cause-card li{font-size:16.5px!important}
+.evidence-strip span{font-size:17px!important}
+.hypothesis-builder p{font-size:18px!important}
+.match-table th{font-size:17px!important}
+.match-table td{font-size:17px!important;line-height:1.55!important}
+.stop-check span{font-size:17px!important}
+.best-practice-links a{font-size:16px!important}
+
+/* Screenshot-specific process/example blocks */
+[style*="font-size:15px"],[style*="font-size: 15px"]{font-size:17px!important}
+[style*="font-size:16px"],[style*="font-size: 16px"]{font-size:17px!important}
+[style*="font-size:17px"],[style*="font-size: 17px"]{font-size:18px!important}
+
+/* V28 Find More Support decision hub */
+.support-hub{margin-top:12px;border-top:1px solid var(--line);padding-top:14px}
+.support-hub h4{font-size:20px;color:var(--blue);margin:0 0 5px}
+.support-hub>.lead{font-size:17px!important;color:var(--muted);margin:0 0 12px}
+.support-cats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.support-cat{border:1px solid var(--line);border-radius:11px;background:#fff;padding:12px}
+.support-cat h5{font-size:17px;color:var(--blue);margin:0 0 5px}
+.support-cat p{font-size:16px!important;color:var(--muted);margin:0 0 7px}
+.support-cat a{display:block;font-size:16px!important;color:var(--blue);font-weight:800;text-decoration:none;margin:5px 0}
+.support-flow{margin-top:12px;background:#f7f9fb;border:1px solid var(--line);border-radius:11px;padding:13px}
+.support-flow b{display:block;color:var(--blue);font-size:17px;margin-bottom:7px}
+.support-flow ol{padding-left:21px;margin:0}
+.support-flow li{font-size:16px!important;line-height:1.5;margin:5px 0}
+.support-alert{margin-top:10px;border-left:4px solid var(--orange);background:#fff8f1;border-radius:9px;padding:11px}
+.support-alert b{font-size:16px;color:var(--blue)}
+.support-alert span{font-size:16px;line-height:1.45;color:var(--muted)}
+@media(max-width:650px){.support-cats{grid-template-columns:1fr}}
+
+/* V29 accessibility/readability correction: card text must read at presentation distance */
+main p, main li, main td, main span:not(.eyebrow):not(.support-eyebrow),
+main .card p, main .role-card p, main .example-card p,
+main .step-card p, main .process-step p, main .moment-card p,
+main .side-card p, main .decision-card p, main .cadence-card p,
+main .support-cat p, main .root-cause-card p,
+main .directory-grid span, main .verified-grid span,
+main .role-start-grid span, main .support-tool span {
+  font-size:20px!important;
+  line-height:1.55!important;
+}
+main .card b, main .role-card b, main .example-card b,
+main .step-card b, main .process-step b, main .moment-card b,
+main .side-card b, main .decision-card b, main .cadence-card b,
+main .support-cat h5 {
+  font-size:20px!important;
+}
+main a{font-size:18px!important}
+main small, main .micro-note{font-size:17px!important;line-height:1.5!important}
+main button, main .pill, main .chip{font-size:18px!important}
+main .tool-output, main .resource-bucket p, main .role-check span,
+main .boundary-grid span{font-size:18px!important}
+main .eyebrow, main .support-eyebrow{font-size:15px!important}
+
+/* V30 KSSN Community School strategy strengthening */
+.kssn-strategy{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:#f7f9fb;padding:16px}
+.kssn-strategy h3{font-size:24px;color:var(--blue);margin:0 0 6px}
+.kssn-strategy>.lead{font-size:20px!important;color:var(--muted);margin:0 0 14px}
+.kssn-four{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.kssn-function{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+.kssn-function h4{font-size:20px;color:var(--blue);margin:0 0 6px}
+.kssn-function p,.kssn-function li{font-size:18px!important;line-height:1.5!important}
+.kssn-function ul{padding-left:20px;margin:6px 0}
+.kssn-decision{margin-top:12px;border-left:5px solid var(--orange);background:#fff8f1;border-radius:10px;padding:14px}
+.kssn-decision h4{font-size:20px;color:var(--blue);margin:0 0 7px}
+.kssn-decision p{font-size:18px!important;margin:5px 0}
+.kssn-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}
+.kssn-action{background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px}
+.kssn-action b{display:block;font-size:18px;color:var(--blue);margin-bottom:5px}
+.kssn-action span{font-size:18px!important;line-height:1.45}
+.kssn-source-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.kssn-source-links a{font-size:17px!important;font-weight:800;color:var(--blue);text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px}
+@media(max-width:800px){.kssn-four,.kssn-actions{grid-template-columns:1fr}}
+
+/* V31 intervention design + response-to-intervention layer */
+.intervention-quality{margin:16px 0;border:1px solid var(--line);border-radius:14px;background:#f7f9fb;padding:16px}
+.intervention-quality h3{font-size:24px;color:var(--blue);margin:0 0 6px}
+.intervention-quality>.lead{font-size:20px!important;color:var(--muted);margin:0 0 13px}
+.quality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.quality-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px}
+.quality-card b{display:block;font-size:20px;color:var(--blue);margin-bottom:5px}
+.quality-card span{font-size:18px!important;line-height:1.5!important}
+.checkpoint-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}
+.checkpoint{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px}
+.checkpoint h4{font-size:20px;color:var(--blue);margin:0 0 6px}
+.checkpoint p{font-size:18px!important;margin:5px 0}
+.decision-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.decision-row>div{background:#fff8f1;border:1px solid #f4d8bd;border-radius:10px;padding:11px}
+.decision-row b{display:block;font-size:18px;color:var(--blue);margin-bottom:4px}
+.decision-row span{font-size:18px!important;line-height:1.45}
+.record-strip{margin-top:12px;border-left:5px solid var(--orange);background:#fff;border-radius:10px;padding:13px}
+.record-strip b{font-size:19px;color:var(--blue)}
+.record-strip p{font-size:18px!important;margin:6px 0 0}
+@media(max-width:900px){.quality-grid{grid-template-columns:1fr 1fr}.checkpoint-grid,.decision-row{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.quality-grid,.checkpoint-grid,.decision-row{grid-template-columns:1fr}}
+</style>
+
+<style>
+.pilot-status{max-width:1180px;margin:12px auto 0;padding:0 24px}
+.pilot-status-inner{border:1px solid #d9e2ea;background:#f7f9fb;border-radius:10px;padding:10px 14px;font-size:17px;line-height:1.45}
+.pilot-status-inner b{color:#123b67}
 </style>
 </head>
-<body id="top"><a class="floating-home" href="#home" data-page="home" aria-label="Return to home">⌂ Home</a>
+<body id="top">
+<div class="pilot-status">
+  <div class="pilot-status-inner"><b>Pilot build:</b> Use with de-identified or sample scholar scenarios. Capture where users hesitate, cannot determine ownership, cannot identify a matched intervention, or cannot find the needed tool/resource.</div>
+</div>
+<a class="floating-home" href="#home" data-page="home" aria-label="Return to home">⌂ Home</a>
 <header>
   <div class="nav">
     <div class="brand">FSS & KSSN Integration</div><a class="home-link" href="#home" data-page="home">Home</a>
@@ -441,7 +737,7 @@ nav, .top-nav{flex-wrap:wrap}
 
 
 
-<section id="roles" class="page-panel"><div class="section-shell">
+<section id="roles" class="page-panel"><div class="action-layer"><h3>Use the role decision tool</h3><p>Choose what is happening right now. The goal is to decide who should lead, who should support, and what should not be duplicated.</p><div class="action-choices"><button class="action-choice" data-action-result="act-roles-1">Family attendance plan is needed</button><button class="action-choice" data-action-result="act-roles-2">Community partner/support is needed</button><button class="action-choice" data-action-result="act-roles-3">The barrier is school-controlled</button></div><div class="action-result" id="act-roles-1"><h4>Family attendance plan is needed</h4><ol><li>FSS leads the attendance-focused family intervention.</li><li>School addresses any school-controlled conditions.</li><li>KSSN joins only if community/integrated support capacity is needed.</li></ol><div class="output">Required output: Name the lead, supporting role(s), intervention, and review point.</div></div><div class="action-result" id="act-roles-2"><h4>Community partner/support is needed</h4><ol><li>Confirm the barrier first.</li><li>KSSN coordinates the community/integrated support when its function is needed.</li><li>FSS stays connected to the attendance goal if family intervention is active.</li></ol><div class="output">Required output: Leave with one coordinated handoff—not two people doing the same work.</div></div><div class="action-result" id="act-roles-3"><h4>The barrier is school-controlled</h4><ol><li>School team leads the response.</li><li>Define the school condition that must change.</li><li>FSS/KSSN support only where their distinct functions add value.</li></ol><div class="output">Required output: Leave with a school-owned action/intervention and accountable owner.</div></div></div><div class="section-shell">
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
   <div class="eyebrow">01 · ROLES & SHARED WORK</div>
   <h2>Different functions. Shared responsibility.</h2>
@@ -460,7 +756,7 @@ nav, .top-nav{flex-wrap:wrap}
   </div>
 </div></section>
 
-<section id="connect" class="page-panel"><div class="section-shell connection-strong">
+<section id="connect" class="page-panel"><div class="action-layer"><h3>Decide whether this needs joint FSS + KSSN work</h3><p>Use these choices instead of automatically referring from one role to the other.</p><div class="action-choices"><button class="action-choice" data-action-result="act-connect-1">Barrier is still unclear</button><button class="action-choice" data-action-result="act-connect-2">Both functions are clearly needed</button><button class="action-choice" data-action-result="act-connect-3">Current support is stalled</button></div><div class="action-result" id="act-connect-1"><h4>Barrier is still unclear</h4><ol><li>Bring attendance pattern, scholar/caregiver voice, and school evidence.</li><li>Build a shared working hypothesis.</li><li>Do not add a partner until the need is clear.</li></ol><div class="output">Required output: Leave with a barrier hypothesis and next evidence/action needed.</div></div><div class="action-result" id="act-connect-2"><h4>Both functions are clearly needed</h4><ol><li>Name the FSS contribution.</li><li>Name the KSSN contribution.</li><li>Coordinate family contact and define who closes the loop.</li></ol><div class="output">Required output: Leave with distinct ownership and one family experience.</div></div><div class="action-result" id="act-connect-3"><h4>Current support is stalled</h4><ol><li>Check implementation first.</li><li>Ask whether the family could access/use the support.</li><li>Adjust the intervention, ownership, or hypothesis based on evidence.</li></ol><div class="output">Required output: Leave with a decision: continue, adjust, intensify, or change.</div></div></div><div class="section-shell connection-strong">
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
 <div class="eyebrow">02 · CONNECTION MOMENTS</div>
 <h2>FSS + KSSN connect at five moments.</h2>
@@ -501,12 +797,78 @@ nav, .top-nav{flex-wrap:wrap}
     <div class="side-card">
       <h4>Partner / resource options</h4>
       <div class="partner-list" id="partnerList"></div>
-      <p class="micro-note">Use only when matched to the identified barrier. A referral by itself is not an intervention.</p><div class="mini-support-finder">
+      <p class="micro-note">Use only when matched to the identified barrier. A referral by itself is not an intervention.</p>
+<div class="support-hub">
   <h4>Find more support</h4>
-  <a href="https://www.findhelp.org/" target="_blank" aria-label="Opens resource in a new tab" rel="noopener">Findhelp ↗</a>
-  <a href="https://www.google.com/maps/d/viewer?ll=42.93030804459956,-85.63144876859484&mid=1_QxiKRVJOvXj9kWZwxhQnMkDpKtVS5M&z=12" target="_blank" aria-label="Opens resource in a new tab" rel="noopener">GR Area Resource Map ↗</a>
-  <p>Use after the barrier is clear. Make a warm connection and confirm the family can access the support.</p>
+  <p class="lead">Start with the identified barrier. Choose the narrowest resource path that fits, confirm eligibility/current availability, make a warm connection, and verify that the family actually accessed the support.</p>
+
+  <div class="support-cats">
+    <div class="support-cat">
+      <h5>Food, utilities + basic needs</h5>
+      <p>Use when basic-needs pressure is disrupting routines, stability, or the family's ability to prioritize attendance.</p>
+      <a href="https://www.kentcountymi.gov/KCCA" target="_blank" rel="noopener">Kent County Community Action ↗</a>
+      <a href="https://mi211.org/get-help" target="_blank" rel="noopener">Michigan 211 — food, utilities, clothing + more ↗</a>
+      <a href="https://www.michigan.gov/mdhhs/" target="_blank" rel="noopener">Michigan DHHS assistance ↗</a>
+    </div>
+
+    <div class="support-cat">
+      <h5>Housing instability + homelessness</h5>
+      <p>Use for eviction risk, homelessness, unstable housing, utility shutoff, or housing-related attendance disruption.</p>
+      <a href="https://www.kentcountymi.gov/175/Emergency-Housing-Utility-Assistance" target="_blank" rel="noopener">Kent County emergency housing + utility assistance ↗</a>
+      <a href="https://www.grandrapidsmi.gov/departments/community-development/housing-assistance/homelessness/" target="_blank" rel="noopener">City of Grand Rapids homelessness resources ↗</a>
+      <a href="https://mi211.org/housing-assistance" target="_blank" rel="noopener">Michigan 211 housing assistance ↗</a>
+    </div>
+
+    <div class="support-cat">
+      <h5>Health + mental health</h5>
+      <p>Use when physical health, behavioral health, anxiety, treatment access, or another health condition is affecting attendance.</p>
+      <a href="https://cherryhealth.org/locations/" target="_blank" rel="noopener">Cherry Health locations ↗</a>
+      <a href="https://mi211.org/get-help" target="_blank" rel="noopener">Michigan 211 health / mental-health resources ↗</a>
+      <a href="https://grps.org/departments/sel/sel-resources/" target="_blank" rel="noopener">GRPS SEL resources ↗</a>
+    </div>
+
+    <div class="support-cat">
+      <h5>Transportation</h5>
+      <p>Use only after determining what part of transportation is failing: route, vehicle, cost, disability access, caregiver schedule, or another issue.</p>
+      <a href="https://www.kentcountymi.gov/1425/Programs" target="_blank" rel="noopener">Kent County Community Action programs ↗</a>
+      <a href="https://mi211.org/get-help" target="_blank" rel="noopener">Michigan 211 transportation search ↗</a>
+      <a href="https://www.kentcountymi.gov/1736/Public-Services-Support-Program" target="_blank" rel="noopener">Kent County public-service transportation supports ↗</a>
+    </div>
+
+    <div class="support-cat">
+      <h5>Family + community navigation</h5>
+      <p>Use when the family needs help locating several supports or the appropriate starting point is unclear.</p>
+      <a href="https://www.findhelp.org/" target="_blank" rel="noopener">Findhelp ↗</a>
+      <a href="https://mi211.org/get-help" target="_blank" rel="noopener">Michigan 211 ↗</a>
+      <a href="https://parents.grps.org/" target="_blank" rel="noopener">GRPS Parent University ↗</a>
+      <a href="https://www.google.com/maps/d/viewer?ll=42.93030804459956,-85.63144876859484&mid=1_QxiKRVJOvXj9kWZwxhQnMkDpKtVS5M&z=12" target="_blank" rel="noopener">GR Area Resource Map ↗</a>
+    </div>
+
+    <div class="support-cat">
+      <h5>Belonging, engagement + youth opportunities</h5>
+      <p>Use when the attendance barrier is connected to belonging, positive relationships, engagement, mentoring, or constructive out-of-school opportunities.</p>
+      <a href="https://grps.org/departments/sel/sel-resources/" target="_blank" rel="noopener">GRPS SEL resources ↗</a>
+      <a href="https://www.grandrapidsmi.gov/departments/parks-recreation/" target="_blank" rel="noopener">Grand Rapids Parks & Recreation ↗</a>
+      <a href="https://bgcgrandrapids.org/" target="_blank" rel="noopener">Boys & Girls Clubs of Grand Rapids ↗</a>
+    </div>
+  </div>
+
+  <div class="support-flow">
+    <b>Do not stop at the link</b>
+    <ol>
+      <li><b>Match:</b> State which identified barrier the resource is expected to reduce.</li>
+      <li><b>Verify:</b> Check current eligibility, service area, hours, waitlist, cost, language/access needs, and availability.</li>
+      <li><b>Connect:</b> Make a warm handoff when possible instead of giving the family a list.</li>
+      <li><b>Confirm:</b> Determine whether the family connected and could actually use the service.</li>
+      <li><b>Monitor:</b> Review whether reducing the barrier changed the attendance pattern.</li>
+    </ol>
+  </div>
+
+  <div class="support-alert">
+    <b>Role reminder: </b><span>Finding a resource is an action—not the intervention itself. FSS maintains the attendance-focused family plan when appropriate. KSSN adds community-school/partner coordination when its function is needed. School-controlled barriers remain school-owned.</span>
+  </div>
 </div>
+
     </div>
     <div class="side-card decision-card">
       <h4>Leave with a decision</h4>
@@ -586,7 +948,25 @@ nav, .top-nav{flex-wrap:wrap}
 <div class="meeting-rule"><b>Rule of thumb:</b> Do not use joint time to read through every case. Use joint time to resolve ambiguity, remove duplication, address stalled work, and identify patterns.</div>
 </div></section>
 
-<section id="schoolpath" class="page-panel"><div class="section-shell">
+<section id="schoolpath" class="page-panel">
+<div class="intervention-quality">
+  <div class="support-eyebrow">ACTIVE PLAN REVIEW</div>
+  <h3>Use 10 / 20 / 30-day checkpoints to make a decision.</h3>
+  <p class="lead">For active Tier 2/3 plans, checkpoints should test both implementation and impact. Do not wait until Day 30 to correct a support that was never implemented or could not be accessed.</p>
+  <div class="checkpoint-grid">
+    <div class="checkpoint"><h4>Day 0</h4><p><b>Review:</b> baseline attendance, root cause, scholar/family voice.</p><p><b>Decide:</b> What matched intervention, owner, dosage, goal, and review dates?</p></div>
+    <div class="checkpoint"><h4>Day 10</h4><p><b>Review:</b> attendance since start, intervention fidelity, family contact/access.</p><p><b>Decide:</b> Is the trajectory beginning to improve? Continue or adjust immediately.</p></div>
+    <div class="checkpoint"><h4>Day 20</h4><p><b>Review:</b> recent/cumulative attendance, barrier reduction, engagement.</p><p><b>Decide:</b> Is improvement meaningful and sustained? Continue, change, or intensify.</p></div>
+    <div class="checkpoint"><h4>Day 30</h4><p><b>Review:</b> full response-to-intervention evidence.</p><p><b>Decide:</b> Has the intervention changed the pattern? Step down, continue, or intensify.</p></div>
+  </div>
+  <div class="decision-row">
+    <div><b>Continue</b><span>Implemented as intended and showing meaningful improvement.</span></div>
+    <div><b>Adjust</b><span>Barrier match is plausible, but access, dosage, implementation, or design needs correction.</span></div>
+    <div><b>Intensify</b><span>Need/barrier requires greater frequency, coordination, individualization, or multidisciplinary support.</span></div>
+    <div><b>Step down</b><span>Improvement is sustained and the intensive barrier/support need has stabilized.</span></div>
+  </div>
+</div>
+<div class="action-layer"><h3>Run the School Team Decision Path</h3><p>Use one current attendance concern and move it through the six decisions.</p><div class="action-choices"><button class="action-choice" data-action-result="act-schoolpath-1">Define + Understand</button><button class="action-choice" data-action-result="act-schoolpath-2">Match + Implement</button><button class="action-choice" data-action-result="act-schoolpath-3">Monitor + Decide</button></div><div class="action-result" id="act-schoolpath-1"><h4>Define + Understand</h4><ol><li>Describe the attendance pattern.</li><li>Gather scholar/family voice.</li><li>Check academic, belonging, safety, behavior, scheduling, and school-process factors.</li></ol><div class="output">Required output: Leave with a barrier hypothesis.</div></div><div class="action-result" id="act-schoolpath-2"><h4>Match + Implement</h4><ol><li>Choose a response that directly addresses the barrier.</li><li>Assign the school/FSS/KSSN/partner role.</li><li>Define what implementation should look like.</li></ol><div class="output">Required output: Leave with intervention + owner + implementation expectation.</div></div><div class="action-result" id="act-schoolpath-3"><h4>Monitor + Decide</h4><ol><li>Check fidelity/access.</li><li>Review attendance impact.</li><li>Continue, adjust, intensify, or change the response.</li></ol><div class="output">Required output: Leave with the next decision and review point.</div></div></div><div class="section-shell">
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
 <div class="eyebrow">SCHOOL TEAM DECISION SUPPORT</div>
 <h2>Before asking another role to solve it</h2>
@@ -600,7 +980,7 @@ nav, .top-nav{flex-wrap:wrap}
 <div><b>6 · DECIDE</b><span>Continue, adjust, intensify, connect another partner, or address a system issue.</span></div>
 </div>
 <div class="school-check"><h3>School-controlled barrier check</h3><p>Before routing a case outward, ask whether the barrier involves academic access, belonging/relationships, safety, behavior, schedule, school processes, or another condition the school can directly change.</p></div>
-</div></section><section id="system" class="page-panel"><div class="section-shell">
+</div></section><section id="system" class="page-panel"><div class="action-layer"><h3>Move a repeated barrier from case to system</h3><p>Use this when individual problem-solving is repeatedly solving the same condition.</p><div class="action-choices"><button class="action-choice" data-action-result="act-system-1">I see a possible pattern</button><button class="action-choice" data-action-result="act-system-2">Pattern is confirmed</button><button class="action-choice" data-action-result="act-system-3">A system response is underway</button></div><div class="action-result" id="act-system-1"><h4>I see a possible pattern</h4><ol><li>Identify similar cases.</li><li>Quantify frequency/reach.</li><li>Check whether the condition is school, community, or district controlled.</li></ol><div class="output">Required output: Leave with evidence that this is—or is not—a system issue.</div></div><div class="action-result" id="act-system-2"><h4>Pattern is confirmed</h4><ol><li>Map current assets/responses.</li><li>Identify the policy, practice, capacity, or partner gap.</li><li>Develop one broader response.</li></ol><div class="output">Required output: Leave with a system recommendation + owner.</div></div><div class="action-result" id="act-system-3"><h4>A system response is underway</h4><ol><li>Define the implementation measure.</li><li>Define the scholar/family outcome measure.</li><li>Set a review date and decide how learning will be shared.</li></ol><div class="output">Required output: Leave with implementation + impact measures.</div></div></div><div class="section-shell">
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
 <div class="eyebrow">05 · CASE → SYSTEM</div>
 <h2>Stop solving the same barrier one family at a time.</h2>
@@ -851,10 +1231,25 @@ nav, .top-nav{flex-wrap:wrap}
 <div><b>Team use</b><label><input type="checkbox"> The huddle structure would help my team reach a decision.</label><label><input type="checkbox"> The case→system pathway was understandable.</label></div>
 </div>
 <div class="pilot-prompts"><h3>Ask pilot users three questions</h3><span>1. Where did you hesitate or get stuck?</span><span>2. What did you expect to find that was missing?</span><span>3. What would you remove because it adds little value?</span></div>
-</div></section><section id="tools" class="page-panel"><div class="section-shell">
+</div></section><section id="tools" class="page-panel">
+<div class="intervention-quality">
+  <div class="support-eyebrow">INTERVENTION QUALITY CHECK</div>
+  <h3>Do not approve an intervention until these six questions are answered.</h3>
+  <p class="lead">Attendance percentage identifies the level of concern. Root-cause analysis determines the intervention. The intervention should be specific enough that the team can tell whether it actually happened and whether it changed the attendance barrier.</p>
+  <div class="quality-grid">
+    <div class="quality-card"><b>1. Barrier</b><span>What specific root cause or working hypothesis is this intervention designed to reduce?</span></div>
+    <div class="quality-card"><b>2. Intervention</b><span>What support will actually change the barrier? A call, letter, referral, or resource search alone is an action.</span></div>
+    <div class="quality-card"><b>3. Owner</b><span>Who is accountable for implementation? Name one lead and clarify supporting roles.</span></div>
+    <div class="quality-card"><b>4. Dosage / frequency</b><span>How often, how long, or under what conditions will the intervention occur?</span></div>
+    <div class="quality-card"><b>5. Measurable goal</b><span>What change in the barrier and attendance pattern should the team expect to see?</span></div>
+    <div class="quality-card"><b>6. Review point</b><span>When will the team review implementation, access, scholar/family voice, barrier reduction, and attendance response?</span></div>
+  </div>
+  <div class="record-strip"><b>Document in the existing system—not a new tracker.</b><p>Baseline/tier • pattern • barrier/root cause • scholar voice • family voice • intervention • owner • FSS/KSSN involvement as applicable • dosage/frequency • start date • measurable goal • review evidence • response • next decision.</p></div>
+</div>
+<div class="action-layer"><h3>Choose a tool based on the work</h3><p>Start with the job to be done, not the resource name.</p><div class="action-choices"><button class="action-choice" data-action-result="act-tools-1">Understand a barrier</button><button class="action-choice" data-action-result="act-tools-2">Build or coordinate support</button><button class="action-choice" data-action-result="act-tools-3">Review impact</button></div><div class="action-result" id="act-tools-1"><h4>Understand a barrier</h4><ol><li>Use Barrier Conversation Guide.</li><li>Review attendance pattern.</li><li>Triangulate scholar/family + school evidence.</li></ol><div class="output">Required output: Leave with a working hypothesis.</div></div><div class="action-result" id="act-tools-2"><h4>Build or coordinate support</h4><ol><li>Use Attendance Plan Builder, Warm Handoff, Partner Fit, or Integrated Support tools.</li><li>Name ownership and avoid duplication.</li><li>Confirm family access.</li></ol><div class="output">Required output: Leave with a matched, implementable support.</div></div><div class="action-result" id="act-tools-3"><h4>Review impact</h4><ol><li>Use Follow-Up / Impact Review.</li><li>Check implementation before judging effectiveness.</li><li>Review attendance change and decide next move.</li></ol><div class="output">Required output: Leave with a continue/adjust/intensify/change decision.</div></div></div><div class="section-shell">
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
 <div class="eyebrow">06 · TOOLS & RESOURCES</div>
-<h2>Right resource. Right audience. Working link.</h2>
+<h2>Right tool. Right role. Right resource.</h2>
 <p class="sub">Use stable web links and preserve appropriate access controls. A resource does not need to be public to be accessible to the people who need it.</p>
 <div class="audience-tabs" id="audienceTabs">
 <button class="active" data-audience="everyone">For Everyone</button><button data-audience="fss">For FSS</button><button data-audience="kssn">For KSSN</button><button data-audience="school">For School Teams</button>
@@ -880,7 +1275,363 @@ nav, .top-nav{flex-wrap:wrap}
 <div><b>Family / Community Navigation</b><span>FSS</span><span>KSSN</span><span>Findhelp</span><span>GR Area Resource Map</span><span>United Way 211</span></div>
 </div>
 <p class="micro-note">Directory entries are starting points. Confirm fit, eligibility, access, and current availability before presenting a resource to a family.</p>
-</div><div class="connected-resources">
+</div>
+
+<div class="role-difference">
+<div><h4>FSS resource lens</h4><p>Prioritize tools that help the FSS understand the attendance barrier, build an attendance-focused family plan, sustain caregiver/scholar follow-up, document implementation, and monitor whether attendance changes.</p></div>
+<div><h4>KSSN resource lens</h4><p>Prioritize tools that help the Coordinator mobilize the Community School strategy: assess needs/assets, integrate partners, coordinate health/social supports, expand opportunities, engage families, and convert recurring barriers into broader school/community responses.</p></div>
+</div>
+
+
+<div class="workspace" data-audience-deep="fss">
+  <div class="workspace-head">
+    <div>
+      <div class="support-eyebrow">FSS WORKSPACE</div>
+      <h3>Attendance-focused family intervention</h3>
+      <p>Use this workspace when the primary work is understanding a family-related attendance barrier, building a concrete attendance plan with the scholar/caregiver, following through over time, and checking whether attendance changes.</p>
+    </div>
+    <div class="workspace-purpose">
+      <b>FSS test</b>
+      <span>If the work could be described only as “I contacted the family,” it is not deep enough yet. The FSS contribution should show how the barrier is being reduced and how progress will be reviewed.</span>
+    </div>
+  </div>
+
+  <div class="workspace-section">
+    <h4>Use-now tools</h4>
+    <p class="lead">Open the tool you need. These are discussion/planning supports—not a new tracker.</p>
+    <div class="use-now-grid">
+      <details class="use-tool">
+        <summary>1. Barrier Conversation Guide</summary>
+        <div class="tool-body">
+          <p>Use with a scholar/caregiver when the reason for absence is unclear or based mostly on assumptions.</p>
+          <ol>
+            <li>What has been making it harder to get to school?</li>
+            <li>When is attendance hardest? What is different on days it goes well?</li>
+            <li>What has the family already tried?</li>
+            <li>What school factors may be making attendance harder?</li>
+            <li>If one thing became easier this week, what would help most?</li>
+          </ol>
+          <div class="tool-output">Leave with: a working barrier hypothesis—not just a list of concerns.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>2. Attendance Plan Builder</summary>
+        <div class="tool-body">
+          <p>Use after the barrier is reasonably clear.</p>
+          <ol>
+            <li><b>Barrier:</b> What specifically is interfering with attendance?</li>
+            <li><b>Change:</b> What needs to be different for attendance to improve?</li>
+            <li><b>Intervention:</b> What support directly addresses that barrier?</li>
+            <li><b>Owner:</b> Who will do each part?</li>
+            <li><b>Review:</b> When will implementation and attendance be reviewed?</li>
+          </ol>
+          <div class="tool-output">Leave with: one matched intervention, clear ownership, and a review point.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>3. Morning Routine Problem-Solver</summary>
+        <div class="tool-body">
+          <p>Use when routines, work schedules, siblings, transportation, or morning stress are contributing.</p>
+          <ul>
+            <li>Work backward from school start time.</li>
+            <li>Identify the first point where the routine breaks down.</li>
+            <li>Reduce decisions/tasks that can happen the night before.</li>
+            <li>Name a backup plan for the most likely disruption.</li>
+            <li>Check whether school-controlled flexibility/support could reduce friction.</li>
+          </ul>
+          <div class="tool-output">Leave with: a realistic routine the family believes it can use.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>4. Home Visit / Caregiver Meeting Prep</summary>
+        <div class="tool-body">
+          <p>Use to keep the meeting focused on understanding and problem-solving rather than compliance alone.</p>
+          <ul>
+            <li>Bring the attendance pattern—not assumptions.</li>
+            <li>Know what prior actions/supports have already occurred.</li>
+            <li>Ask what the family wants the school to understand.</li>
+            <li>Identify barriers the school can address directly.</li>
+            <li>End with specific next steps and a follow-up date.</li>
+          </ul>
+          <div class="tool-output">Leave with: shared understanding + next actions, not simply “meeting completed.”</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>5. Follow-Up / Impact Review</summary>
+        <div class="tool-body">
+          <p>Use after an intervention has had enough time to occur.</p>
+          <ol>
+            <li>Did the intervention occur as intended?</li>
+            <li>Was the family able to use/access the support?</li>
+            <li>Is the identified barrier becoming easier?</li>
+            <li>What changed in attendance pattern?</li>
+            <li>Continue, adjust, intensify, add support, or change the hypothesis?</li>
+          </ol>
+          <div class="tool-output">Leave with: a decision—not “continue monitoring” by default.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>6. Warm Handoff Prep</summary>
+        <div class="tool-body">
+          <p>Use before connecting the family to KSSN, Behavioral Health, DHHS, health care, or another partner.</p>
+          <ul>
+            <li>Explain why the resource matches the barrier.</li>
+            <li>Clarify what the family can expect.</li>
+            <li>Connect directly to a person when possible.</li>
+            <li>Confirm access after the connection.</li>
+            <li>Keep the attendance goal visible after the partner joins.</li>
+          </ul>
+          <div class="tool-output">Leave with: a closed-loop connection, not a referral sent into the system.</div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="workspace-section">
+    <h4>FSS resource library</h4>
+    <p class="lead">Resources are grouped by the work the FSS is trying to accomplish.</p>
+    <div class="resource-buckets">
+      <div class="resource-bucket"><h5>Attendance + family engagement</h5>
+        <a href="https://parents.grps.org/resource-category/attendance/" target="_blank" rel="noopener">GRPS Parent University — Attendance ↗</a>
+        <a href="https://parents.grps.org/article/family-attendance-guides-2/" target="_blank" rel="noopener">GRPS Family Attendance Guides ↗</a>
+        <a href="https://parents.grps.org/article/attendance-matters/" target="_blank" rel="noopener">GRPS Attendance Matters ↗</a>
+        <a href="https://www.attendanceworks.org/resources/handouts-for-families/" target="_blank" rel="noopener">Attendance Works Family Handouts ↗</a>
+      </div>
+      <div class="resource-bucket"><h5>Basic needs + navigation</h5>
+        <a href="https://www.findhelp.org/" target="_blank" rel="noopener">Findhelp ↗</a>
+        <a href="https://www.211.org/" target="_blank" rel="noopener">United Way 211 ↗</a>
+        <a href="https://www.michigan.gov/mdhhs/" target="_blank" rel="noopener">Michigan DHHS ↗</a>
+        <a href="https://parents.grps.org/resource-category/attendance/" target="_blank" rel="noopener">GR Area Resource Map via Parent University ↗</a>
+      </div>
+      <div class="resource-bucket"><h5>School-related barriers</h5>
+        <a href="https://grps.org/departments/sel/sel-resources/" target="_blank" rel="noopener">GRPS SEL Resources ↗</a>
+        <a href="#schoolpath" data-page="schoolpath">School Team Decision Path →</a>
+        <a href="#fieldtools" data-page="fieldtools">Scholar/Caregiver Conversation Prompts →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="boundary-box">
+    <h4>FSS boundary check</h4>
+    <div class="boundary-grid">
+      <div><b>FSS remains connected when…</b><span>A community partner joins but the attendance-focused family plan still needs follow-through and monitoring.</span></div>
+      <div><b>School must lead when…</b><span>The barrier is primarily academic access, belonging, safety, behavior, scheduling, instructional access, or another school-controlled condition.</span></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="workspace" data-audience-deep="kssn">
+  <div class="workspace-head">
+    <div>
+      <div class="support-eyebrow">KSSN COORDINATOR WORKSPACE</div>
+      <h3>Community School strategy + integrated supports</h3>
+      <p>Use this workspace when the work requires coordination of school and community resources, partner strategy, family/community engagement, integrated supports, expanded opportunities, or a broader response to barriers appearing across multiple scholars and families.</p>
+<div class="kssn-strategy">
+  <div class="support-eyebrow">KSSN COMMUNITY SCHOOL STRATEGY</div>
+  <h3>KSSN adds more than a referral.</h3>
+  <p class="lead">The Community School Coordinator integrates, aligns, and coordinates the community school strategy with the principal, school team, families, scholars, and partners. Use KSSN when the attendance barrier requires community-school infrastructure—not simply another person making the same family contact.</p>
+
+  <div class="kssn-four">
+    <div class="kssn-function">
+      <h4>1. Integrated supports</h4>
+      <p>Coordinate school and community resources around identified needs.</p>
+      <ul><li>Connect physical, behavioral-health, social-service, youth-development, and other supports.</li><li>Coordinate referrals and reduce fragmented service delivery.</li><li>Bring relevant attendance trends into support planning.</li><li>Confirm that partner supports align with the school’s broader plan.</li></ul>
+    </div>
+    <div class="kssn-function">
+      <h4>2. Family + community engagement</h4>
+      <p>Center family and scholar voice in decisions about needs, assets, programs, and partnerships.</p>
+      <ul><li>Identify what families say would improve access and engagement.</li><li>Build opportunities for family participation and leadership.</li><li>Strengthen the school as a community hub.</li><li>Use community wisdom alongside school data.</li></ul>
+    </div>
+    <div class="kssn-function">
+      <h4>3. Collaborative leadership</h4>
+      <p>Work with the principal and school leadership structures rather than operating as a separate service.</p>
+      <ul><li>Integrate partners into attendance, MTSS, safety, instruction, and leadership structures where appropriate.</li><li>Co-lead the Community School Leadership Team.</li><li>Clarify partner roles, expectations, outcomes, and accountability.</li><li>Reduce overlapping or disconnected initiatives.</li></ul>
+    </div>
+    <div class="kssn-function">
+      <h4>4. Needs, assets + system response</h4>
+      <p>Use data and community knowledge to identify repeated needs and build sustainable responses.</p>
+      <ul><li>Conduct ongoing needs/resource assessment.</li><li>Identify gaps in existing school and community capacity.</li><li>Develop or strengthen partnerships based on demonstrated need.</li><li>Move recurring barriers from individual case work to broader school/community response.</li></ul>
+    </div>
+  </div>
+
+  <div class="kssn-decision">
+    <h4>KSSN attendance decision test</h4>
+    <p><b>Bring KSSN in when:</b> the barrier requires community assets, integrated supports, partner coordination, family/community engagement, expanded opportunities, needs/assets analysis, or a broader system response.</p>
+    <p><b>Do not add KSSN simply because:</b> a scholar is absent, a family needs another phone call, or a referral needs to be sent. Those facts alone do not define the Community School Coordinator function.</p>
+  </div>
+
+  <div class="kssn-actions">
+    <div class="kssn-action"><b>For an individual case</b><span>Name the distinct KSSN contribution and how it complements—not duplicates—the FSS and school response.</span></div>
+    <div class="kssn-action"><b>For a repeated barrier</b><span>Use attendance data plus family/community voice to identify the need, existing assets, capacity gap, and possible broader response.</span></div>
+    <div class="kssn-action"><b>For a partner</b><span>Define the need, expected contribution, access pathway, school-team connection, outcome, and how effectiveness will be reviewed.</span></div>
+  </div>
+
+  <div class="kssn-source-links">
+    <a href="https://www.kentssn.org/community-schools/our-work/" target="_blank" rel="noopener">KSSN — Our Work ↗</a>
+    <a href="https://www.kentssn.org/connect/for-principals/" target="_blank" rel="noopener">KSSN — For Principals ↗</a>
+    <a href="https://www.kentssn.org/community-schools/our-partners/" target="_blank" rel="noopener">KSSN — Partners ↗</a>
+    <a href="https://www.kentssn.org/downloads/files/community_school_standards.pdf" target="_blank" rel="noopener">Community School Standards ↗</a>
+  </div>
+</div>
+
+    </div>
+    <div class="workspace-purpose">
+      <b>KSSN test</b>
+      <span>If the work could be described only as “I referred the family to a resource,” it is too narrow. KSSN should add coordination, integration, partner capacity, family/community voice, or system-level value.</span>
+    </div>
+  </div>
+
+  <div class="workspace-section">
+    <h4>Use-now tools</h4>
+    <p class="lead">These supports reflect the Coordinator's broader Community School function.</p>
+    <div class="use-now-grid">
+      <details class="use-tool">
+        <summary>1. Needs + Assets Quick Scan</summary>
+        <div class="tool-body">
+          <p>Use when a barrier is appearing repeatedly or a school need is emerging.</p>
+          <ol>
+            <li>What need/barrier is showing up?</li>
+            <li>Who is affected and how often?</li>
+            <li>What school/community assets already exist?</li>
+            <li>Where is there a capacity, access, or coordination gap?</li>
+            <li>What data and family/scholar voice support the conclusion?</li>
+          </ol>
+          <div class="tool-output">Leave with: a defined need + existing assets + the gap that remains.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>2. Partner Fit Check</summary>
+        <div class="tool-body">
+          <p>Use before bringing in or expanding a partner.</p>
+          <ul>
+            <li>Which identified need does the partner address?</li>
+            <li>What specifically will the partner contribute?</li>
+            <li>What school/FSS/KSSN work already exists?</li>
+            <li>How will duplication be prevented?</li>
+            <li>What outcome will indicate the partnership is helping?</li>
+          </ul>
+          <div class="tool-output">Leave with: a partner role tied to a defined need and outcome.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>3. Integrated Support Plan</summary>
+        <div class="tool-body">
+          <p>Use when multiple services are involved with the same scholar/family or barrier.</p>
+          <ol>
+            <li>Define the shared barrier/outcome.</li>
+            <li>List each support already involved.</li>
+            <li>Clarify what each party uniquely owns.</li>
+            <li>Identify gaps, overlap, or conflicting family messages.</li>
+            <li>Agree on communication and follow-through.</li>
+          </ol>
+          <div class="tool-output">Leave with: one coordinated experience for the family.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>4. Community School Leadership Team Prep</summary>
+        <div class="tool-body">
+          <p>Use to prepare a data-driven partner/leadership conversation.</p>
+          <ul>
+            <li>What school data or recurring barriers need attention?</li>
+            <li>What do families/scholars say about the issue?</li>
+            <li>Which existing partners/assets can contribute?</li>
+            <li>Where is new partner capacity needed?</li>
+            <li>What decision/action should the team make today?</li>
+          </ul>
+          <div class="tool-output">Leave with: an action, owner, timeline, and measure—not partner updates only.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>5. Expanded Opportunity Match</summary>
+        <div class="tool-body">
+          <p>Use when enrichment, mentoring, after-school, youth development, or family programming may strengthen engagement.</p>
+          <ul>
+            <li>What barrier/outcome is the opportunity intended to address?</li>
+            <li>Who is the intended group?</li>
+            <li>What access barriers could prevent participation?</li>
+            <li>How does the opportunity connect to school goals?</li>
+            <li>How will participation/impact be reviewed?</li>
+          </ul>
+          <div class="tool-output">Leave with: a targeted opportunity—not programming for programming's sake.</div>
+        </div>
+      </details>
+
+      <details class="use-tool">
+        <summary>6. Case → System Escalation</summary>
+        <div class="tool-body">
+          <p>Use when the same barrier appears across multiple cases.</p>
+          <ol>
+            <li>Confirm the repeated pattern.</li>
+            <li>Estimate who/how many are affected.</li>
+            <li>Identify whether the condition is school, community, or district controlled.</li>
+            <li>Map partner/system options.</li>
+            <li>Bring a concrete recommendation to the appropriate decision group.</li>
+          </ol>
+          <div class="tool-output">Leave with: a system response with an accountable owner.</div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="workspace-section">
+    <h4>KSSN Community School resource library</h4>
+    <p class="lead">Resources are grouped around the Coordinator's major Community School responsibilities.</p>
+    <div class="resource-buckets">
+      <div class="resource-bucket"><h5>Community School strategy</h5>
+        <a href="https://www.kentssn.org/community-schools/our-work/" target="_blank" rel="noopener">KSSN — Our Work / Community School Essentials ↗</a>
+        <a href="https://www.kentssn.org/connect/for-principals/" target="_blank" rel="noopener">KSSN — Coordinator & Leadership Team Responsibilities ↗</a>
+        <a href="https://www.kentssn.org/who-we-are/" target="_blank" rel="noopener">KSSN Mission / Community School Initiative ↗</a>
+      </div>
+      <div class="resource-bucket"><h5>Integrated supports + partners</h5>
+        <a href="https://www.kentssn.org/community-schools/our-partners/" target="_blank" rel="noopener">KSSN Partners ↗</a>
+        <a href="https://cherryhealth.org/locations/" target="_blank" rel="noopener">Cherry Health ↗</a>
+        <a href="https://www.michigan.gov/mdhhs/" target="_blank" rel="noopener">Michigan DHHS ↗</a>
+        <a href="https://www.findhelp.org/" target="_blank" rel="noopener">Findhelp ↗</a>
+      </div>
+      <div class="resource-bucket"><h5>Engagement + expanded opportunities</h5>
+        <a href="https://www.grandrapidsmi.gov/departments/parks-recreation/" target="_blank" rel="noopener">Grand Rapids Parks & Recreation ↗</a>
+        <a href="https://bgcgrandrapids.org/" target="_blank" rel="noopener">Boys & Girls Clubs of Grand Rapids ↗</a>
+        <a href="https://parents.grps.org/" target="_blank" rel="noopener">GRPS Parent University ↗</a>
+        <a href="https://grps.org/departments/sel/" target="_blank" rel="noopener">GRPS SEL ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="role-check">
+    <div><b>Resource coordination</b><span>Connect school/community assets to identified needs and make delivery more coherent.</span></div>
+    <div><b>Family/community engagement</b><span>Center family and scholar voice in school improvement, programming, and partnership decisions.</span></div>
+    <div><b>Data + patterns</b><span>Use academic and non-academic data to identify priorities and recurring barriers.</span></div>
+    <div><b>Partner strategy</b><span>Build and manage partnerships that add capacity instead of duplicating existing work.</span></div>
+  </div>
+
+  <div class="boundary-box">
+    <h4>KSSN boundary check</h4>
+    <div class="boundary-grid">
+      <div><b>KSSN adds value when…</b><span>The response needs community assets, integrated services, partner coordination, family/community engagement, expanded opportunities, or system-level capacity.</span></div>
+      <div><b>KSSN should not become…</b><span>A second FSS performing the same attendance outreach/follow-up, or a generic referral desk disconnected from Community School strategy.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="audience-deep" data-audience-deep="school">
+<div class="support-eyebrow">SCHOOL TEAM SUPPORT TOOLKIT</div>
+<h3>Tools for school-owned attendance conditions and coordinated support</h3>
+<p class="intro">School teams remain responsible for school-controlled barriers and for integrating FSS/KSSN support into a coherent school response.</p>
+<div class="deep-grid">
+<div class="deep-card"><h4>Check school-controlled barriers</h4><p>Academic access, belonging, safety, behavior, scheduling, instructional access, and school processes.</p><a href="#schoolpath" data-page="schoolpath">School Team Decision Path →</a></div>
+<div class="deep-card"><h4>Belonging + SEL</h4><p>Use when attendance patterns connect to relationships, belonging, regulation, or school climate.</p><a href="https://grps.org/departments/sel/sel-resources/" target="_blank" rel="noopener">GRPS SEL Resources ↗</a></div>
+<div class="deep-card"><h4>Coordinate the team</h4><p>Bring FSS/KSSN when their distinct functions are needed; do not transfer school ownership.</p><a href="#meetingtools" data-page="meetingtools">10-minute case huddle →</a><a href="#roles" data-page="roles">Role clarity →</a></div>
+</div></div><div class="connected-resources">
 <h3>Connected GRPS Support Pathways</h3><div class="resource-search-strip">
   <div><b>Community Resource Search</b><span>When a matched support is not already available through GRPS/KSSN, use a trusted search tool.</span></div>
   <a href="https://www.findhelp.org/" target="_blank" aria-label="Opens resource in a new tab" rel="noopener">Findhelp ↗</a>
@@ -1055,7 +1806,85 @@ renderBarrier("Basic Needs");
 })();
 </script>
 
-<script>(function(){const d={everyone:["For Everyone","Resources usable without role-specific system access.",["Partnership model","Barrier guidance","Public/community resources","Shared operating guidance"]],fss:["For FSS","Attendance-focused family intervention resources plus shared guidance.",["FSS existing tracker","Attendance planning tools","Family follow-up resources","Shared FSS + KSSN guidance"]],kssn:["For KSSN","Community School resources plus shared attendance guidance.",["KSSN existing tracker","Community partner resources","Integrated supports","Shared FSS + KSSN guidance"]],school:["For School Teams","Resources for school responsibilities and coordination.",["School Team Decision Path","School-controlled barrier check","Barrier Explorer","Connection Moments","Case → System pathway"]]};const t=document.getElementById("audienceTabs"),p=document.getElementById("audiencePanel");if(!t||!p)return;function s(k){t.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.audience===k));const x=d[k];p.innerHTML="<h3>"+x[0]+"</h3><p>"+x[1]+"</p><div class='resource-chips'>"+x[2].map(i=>"<span class='resource-chip'>"+i+"</span>").join("")+"</div>"}t.querySelectorAll("button").forEach(b=>b.onclick=()=>s(b.dataset.audience));s("everyone")})();</script><script>
+<script>(function(){const d={everyone:["For Everyone","Resources usable without role-specific system access.",["Partnership model","Barrier guidance","Public/community resources","Shared operating guidance"]],fss:["For FSS","Attendance-focused intervention tools for understanding barriers, building family attendance plans, following through, and monitoring impact.",["Existing FSS documentation","Attendance plan + barrier tools","Implementation + follow-up tools","Shared FSS + KSSN guidance"]],kssn:["For KSSN","Community School resources plus shared attendance guidance.",["KSSN existing tracker","Community partner resources","Integrated supports","Shared FSS + KSSN guidance"]],school:["For School Teams","Resources for school responsibilities and coordination.",["School Team Decision Path","School-controlled barrier check","Barrier Explorer","
+<div class="barrier-depth">
+  <div class="support-eyebrow">BEST-PRACTICE BARRIER ANALYSIS</div>
+  <h3>Do not stop at the first reason for absence.</h3>
+  <p class="lead">Attendance Works recommends combining attendance patterns with scholar/family voice and school evidence, then matching the response to the actual root cause. Reasons for absence often involve more than one factor and may reflect a school policy or practice—not only a family circumstance.</p><div class="record-strip"><b>Operating principle</b><p>Attendance percentage determines the level of concern; root-cause analysis determines the intervention. Intensity may need to increase earlier when the barrier or risk warrants it.</p></div>
+
+  <div class="root-cause-grid">
+    <div class="root-cause-card">
+      <h4>Barrier to attendance</h4>
+      <p>Something makes getting to or staying in school difficult.</p>
+      <ul><li>Transportation or unsafe route</li><li>Health / mental health</li><li>Housing or basic needs</li><li>Caregiving/work demands</li><li>Disability/access needs</li></ul>
+    </div>
+    <div class="root-cause-card">
+      <h4>Aversion to school</h4>
+      <p>The scholar is avoiding an experience connected to school.</p>
+      <ul><li>Bullying or peer conflict</li><li>Academic struggle</li><li>Anxiety / school refusal</li><li>Discipline or safety concerns</li><li>Negative adult relationships</li></ul>
+    </div>
+    <div class="root-cause-card">
+      <h4>Disengagement</h4>
+      <p>The scholar has weak connection, relevance, or motivation to attend.</p>
+      <ul><li>Low belonging</li><li>Few meaningful relationships</li><li>Instruction feels irrelevant</li><li>Competing priorities</li><li>Limited enrichment / connection</li></ul>
+    </div>
+    <div class="root-cause-card">
+      <h4>Misconceptions</h4>
+      <p>The family or scholar may not recognize how quickly absences add up.</p>
+      <ul><li>Excused absences seen as harmless</li><li>Attendance viewed as optional on some days</li><li>Underestimating missed instructional time</li><li>Unclear attendance expectations</li></ul>
+    </div>
+  </div>
+
+  <div class="workspace-section">
+    <h4>Triangulate before deciding</h4>
+    <p class="lead">The attendance pattern tells you <b>what</b> is happening. Scholar/family voice and school evidence help explain <b>why</b>.</p>
+    <div class="evidence-strip">
+      <div><b>1. Attendance pattern</b><span>Look beyond the total: day of week, class/period, consecutive vs scattered days, transitions, transportation times, health patterns, discipline-related loss, recent change, and what is different on successful days.</span></div>
+      <div><b>2. Scholar + caregiver voice</b><span>Ask what makes attendance harder, what helps, what has already been tried, what the school may not know, and whether the proposed support actually fits the family's experience.</span></div>
+      <div><b>3. School + system evidence</b><span>Check academics, belonging, safety, discipline, scheduling, disability access, adult relationships, transportation, school climate, and whether multiple scholars show the same pattern.</span></div>
+    </div>
+  </div>
+
+  <div class="hypothesis-builder">
+    <h4>Build a working hypothesis</h4>
+    <p><b>Because…</b> [specific barrier/condition], the scholar is experiencing [attendance pattern].</p>
+    <p><b>We believe this because…</b> [attendance data + scholar/family voice + school evidence].</p>
+    <p><b>Therefore we will…</b> [matched intervention that directly reduces the barrier], owned by [person/role], and review [implementation + attendance impact] on [date].</p>
+  </div>
+
+  <div class="workspace-section">
+    <h4>Match the response to the barrier—not the label</h4>
+    <p class="lead">The same attendance percentage can require very different responses. A referral, phone call, letter, or resource search is an action; it becomes meaningful only when it contributes to a matched intervention.</p>
+    <table class="match-table">
+      <thead><tr><th>What you learn</th><th>Better response direction</th><th>Avoid</th></tr></thead>
+      <tbody>
+        <tr><td>Transportation is unreliable.</td><td>Resolve the actual route/access problem; develop a reliable backup; coordinate school/community transportation support as appropriate.</td><td>Generic attendance reminder.</td></tr>
+        <tr><td>Scholar avoids school because of peer conflict or safety.</td><td>School-led safety/belonging response; restorative or relational support; FSS maintains family connection; KSSN adds community support only if needed.</td><td>Treating the problem as a family motivation issue.</td></tr>
+        <tr><td>Scholar is behind academically and avoids a class/day.</td><td>School-led academic access/intervention, relationship support, tutoring or schedule/problem-solving matched to the academic barrier.</td><td>Referral to an outside resource before addressing instruction/access.</td></tr>
+        <tr><td>Family routine or competing caregiver demands disrupt mornings.</td><td>FSS-led practical family attendance plan, routine problem-solving, backup plan, and follow-up on implementation.</td><td>One-time phone call counted as the intervention.</td></tr>
+        <tr><td>Health or mental-health need is interfering with attendance.</td><td>Connect to appropriate health/behavioral-health support; address school accommodations/access; confirm the family actually connects; monitor attendance impact.</td><td>Sending a provider list and closing the case.</td></tr>
+        <tr><td>Same barrier appears across many scholars.</td><td>Move from individual case response to school/community/district system response; examine policy, practice, capacity, and partner gaps.</td><td>Solving the same systemic problem one family at a time.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="stop-check">
+    <div><b>Before selecting an intervention</b><span>Can the team name the barrier in plain language? Is the conclusion supported by more than assumption? Has the school checked its own contribution? Does the proposed intervention directly change the barrier?</span></div>
+    <div><b>Before changing the intervention</b><span>Was it actually implemented? Could the scholar/family access it? Did it run long enough to judge? What changed in the attendance pattern? Continue, adapt, intensify, or abandon based on evidence.</span></div>
+  </div>
+
+  <div class="workspace-section">
+    <h4>Use best-practice tools when the barrier is still unclear</h4>
+    <div class="best-practice-links">
+      <a href="https://www.attendanceworks.org/chronic-absence/addressing-chronic-absence/3-tiers-of-intervention/root-causes/" target="_blank" rel="noopener">Attendance Works — Root Causes ↗</a>
+      <a href="https://www.attendanceworks.org/resources/addressing-barriers/" target="_blank" rel="noopener">Attendance Works — Addressing Barriers ↗</a>
+      <a href="https://www.attendanceworks.org/resources/scan-environment-attendance/" target="_blank" rel="noopener">Scan of Environment & Attendance (SEAT) ↗</a>
+      <a href="https://www.attendanceworks.org/chronic-absence/addressing-chronic-absence/strategies-for-school-sites/" target="_blank" rel="noopener">School-Site Attendance Strategies ↗</a>
+      <a href="https://www.future-ed.org/wp-content/uploads/2023/05/Attendance-Playbook.5.23.pdf" target="_blank" rel="noopener">Attendance Playbook ↗</a>
+    </div>
+  </div>
+</div>
+Connection Moments","Case → System pathway"]]};const t=document.getElementById("audienceTabs"),p=document.getElementById("audiencePanel");if(!t||!p)return;function s(k){t.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.audience===k));const x=d[k];p.innerHTML="<h3>"+x[0]+"</h3><p>"+x[1]+"</p><div class='resource-chips'>"+x[2].map(i=>"<span class='resource-chip'>"+i+"</span>").join("")+"</div>"}t.querySelectorAll("button").forEach(b=>b.onclick=()=>s(b.dataset.audience));s("everyone")})();</script><script>
 (function(){
 const moments={
 understand:{
@@ -1184,5 +2013,68 @@ function answer(i){
 picker.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>load(b.dataset.scenario)));
 load("transport");
 })();
+</script><script>
+(function(){
+function syncAudienceDeep(){
+ const buttons=[...document.querySelectorAll('button')].filter(b=>['For Everyone','For FSS','For KSSN','For School Teams'].includes(b.textContent.trim()));
+ if(!buttons.length)return;
+ const panels=[...document.querySelectorAll('[data-audience-deep]')];
+ function show(label){
+   panels.forEach(p=>{
+     const a=p.dataset.audienceDeep;
+     p.style.display = label==='For Everyone' || (label==='For FSS'&&a==='fss') || (label==='For KSSN'&&a==='kssn') || (label==='For School Teams'&&a==='school') ? '' : 'none';
+   });
+ }
+ buttons.forEach(b=>b.addEventListener('click',()=>show(b.textContent.trim())));
+ const active=buttons.find(b=>b.classList.contains('active'));
+ show(active?active.textContent.trim():'For Everyone');
+}
+document.addEventListener('DOMContentLoaded',syncAudienceDeep);
+setTimeout(syncAudienceDeep,100);
+})();
+</script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const skip=['SCRIPT','STYLE','SVG','PATH'];
+  document.querySelectorAll('main *').forEach(el=>{
+    if(skip.includes(el.tagName)) return;
+    const cs=getComputedStyle(el);
+    const n=parseFloat(cs.fontSize);
+    if(n && n < 15 && el.textContent.trim()) el.style.fontSize='15px';
+  });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+ document.querySelectorAll('.action-choice').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+   const layer=btn.closest('.action-layer');
+   layer.querySelectorAll('.action-result').forEach(x=>x.classList.remove('show'));
+   const r=document.getElementById(btn.dataset.actionResult);
+   if(r) r.classList.add('show');
+  });
+ });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const skip=['SCRIPT','STYLE','SVG','PATH'];
+ document.querySelectorAll('main *').forEach(el=>{
+   if(skip.includes(el.tagName)) return;
+   const text=[...el.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim();
+   if(!text) return;
+   const n=parseFloat(getComputedStyle(el).fontSize);
+   if(n && n < 17) el.style.fontSize='17px';
+ });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const exempt=new Set(['SCRIPT','STYLE','SVG','PATH']);
+  document.querySelectorAll('main *').forEach(el=>{
+    if(exempt.has(el.tagName)) return;
+    const direct=[...el.childNodes].some(n=>n.nodeType===3 && n.textContent.trim());
+    if(!direct) return;
+    if(el.classList.contains('eyebrow') || el.classList.contains('support-eyebrow')) return;
+    const fs=parseFloat(getComputedStyle(el).fontSize);
+    if(fs && fs<18) el.style.setProperty('font-size','18px','important');
+  });
+});
 </script></body>
 </html>
