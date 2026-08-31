@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FSS/KSSN Integration — Test Site QA</title>
+<style>
+:root{--blue:#123d5a;--orange:#d96b2b;--line:#d9e1e7;--muted:#5d6a73;--bg:#f5f7f9}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#18242c}
+header{background:#fff;border-bottom:1px solid var(--line);padding:22px}
+.wrap{max-width:1100px;margin:0 auto}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--orange)}
+h1{margin:4px 0 6px;color:var(--blue);font-size:28px}p{color:var(--muted);line-height:1.5}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h2{margin:0 0 10px;color:var(--blue);font-size:18px}.checks{display:grid;gap:8px}
+label{display:flex;gap:8px;align-items:flex-start;padding:9px;border:1px solid var(--line);border-radius:9px;background:#fafbfc;font-size:14px;line-height:1.35}
+input{margin-top:2px}.btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+a.btn,button{appearance:none;border:none;text-decoration:none;background:var(--blue);color:#fff;padding:10px 13px;border-radius:999px;font-weight:700;cursor:pointer}
+a.secondary{background:#fff;color:var(--blue);border:1px solid var(--line)}
+.status{margin-top:14px;padding:12px;border-radius:10px;background:#f7f9fb;border:1px solid var(--line);font-size:13px}
+.status b{color:var(--blue)}.issues{display:grid;gap:8px;margin-top:10px}.issues textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:9px;padding:10px;font:inherit}
+small{color:var(--muted)}.path{font-family:monospace;background:#eef2f5;border-radius:7px;padding:2px 5px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">HANDS-ON TEST SITE</div>
+<h1>Family Support Specialist & Kent School Services Integration — QA</h1>
+<p>Use this page after the site is published through GitHub Pages. Test the live site—not the local file—and complete the checks below in one pass.</p>
+<div class="btns">
+<a class="btn" href="./index.html" target="_blank">Open Test Site ↗</a>
+<a class="btn secondary" href="./index.html#quickguide" target="_blank">What Do I Do Now? ↗</a>
+<a class="btn secondary" href="./index.html#practice" target="_blank">Practice ↗</a>
+</div>
+</div></header>
+
+<main class="wrap">
+<div class="grid">
+<section class="card">
+<h2>1. Navigation + layout</h2>
+<div class="checks">
+<label><input type="checkbox"> Homepage loads with no missing content or broken styling.</label>
+<label><input type="checkbox"> All top navigation items open the correct page/view.</label>
+<label><input type="checkbox"> Home/back navigation works from every major section.</label>
+<label><input type="checkbox"> No page jumps unexpectedly to the bottom.</label>
+<label><input type="checkbox"> Cards and text remain inside their sections.</label>
+<label><input type="checkbox"> Mobile-width view remains readable and usable.</label>
+</div>
+
+<h2 style="margin-top:20px">2. End-user pathways</h2>
+<div class="checks">
+<label><input type="checkbox"> School Team pathway makes school-owned barriers clear.</label>
+<label><input type="checkbox"> FSS pathway clearly reflects sustained attendance-focused family intervention.</label>
+<label><input type="checkbox"> KSSN pathway clearly reflects Community School strategy/integrated supports.</label>
+<label><input type="checkbox"> Shared work does not read as duplicate work.</label>
+<label><input type="checkbox"> “What Do I Do Now?” gives a useful next move for all five situations.</label>
+</div>
+
+<h2 style="margin-top:20px">3. Interactive functions</h2>
+<div class="checks">
+<label><input type="checkbox"> Barrier Explorer selections display correctly.</label>
+<label><input type="checkbox"> Connection Moments display the correct process/example/resources.</label>
+<label><input type="checkbox"> All eight Practice scenarios load and reveal feedback.</label>
+<label><input type="checkbox"> Field Tools are readable and usable during a real case discussion.</label>
+<label><input type="checkbox"> Pilot Check boxes can be selected normally.</label>
+</div>
+</section>
+
+<aside class="card">
+<h2>4. Links + resources</h2>
+<div class="checks">
+<label><input type="checkbox"> Findhelp opens successfully.</label>
+<label><input type="checkbox"> Grand Rapids Area Resource Map opens successfully.</label>
+<label><input type="checkbox"> United Way 211 opens successfully.</label>
+<label><input type="checkbox"> MDHHS opens successfully.</label>
+<label><input type="checkbox"> Cherry Health opens successfully.</label>
+<label><input type="checkbox"> GRPS Parent University / attendance links open successfully.</label>
+<label><input type="checkbox"> GRPS SEL links open successfully.</label>
+<label><input type="checkbox"> No internal/restricted resource is presented as public unless access is verified.</label>
+</div>
+
+<h2 style="margin-top:20px">5. Operating-model checks</h2>
+<div class="checks">
+<label><input type="checkbox"> Action and intervention are clearly distinguished.</label>
+<label><input type="checkbox"> Barrier-first logic is consistent across pages.</label>
+<label><input type="checkbox"> Warm handoff requires confirmation and follow-through.</label>
+<label><input type="checkbox"> No third tracker/form has been created.</label>
+<label><input type="checkbox"> Draft/under-review attendance or truancy procedures are not presented as current policy.</label>
+<label><input type="checkbox"> Repeated barriers lead users toward system-level action.</label>
+</div>
+
+<div class="status">
+<b>Pass standard:</b> Complete all checks. Any failed item should be corrected in one consolidated fix pass before pilot users receive the link.
+</div>
+
+<div class="issues">
+<h2>QA notes</h2>
+<textarea placeholder="Record anything that does not work, feels confusing, or should be removed."></textarea>
+<small>This field is intentionally local-only and does not submit or store data.</small>
+</div>
+</aside>
+</div>
+
+<section class="card" style="margin-top:16px">
+<h2>GitHub Pages setup</h2>
+<p>Upload both <span class="path">index.html</span> and <span class="path">attendance_qa.html</span> to the <b>root of the same repository</b>. Publish GitHub Pages from the <b>main</b> branch and <b>/(root)</b>. Then open <span class="path">attendance_qa.html</span> from the live GitHub Pages URL and run the full test.</p>
+<p><b>Recommended commit message:</b> <span class="path">Deploy FSS KSSN integration test site</span></p>
+</section>
+</main>
+</body>
+</html>
