@@ -739,6 +739,31 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
   }
 }
 </style>
+
+<style>
+/* V36 decision-quality pass */
+.decision-gate{margin:0 0 20px;border:1px solid var(--line);border-radius:16px;background:#f7f9fb;padding:20px}
+.decision-gate h3{font-size:25px!important;color:var(--blue);margin:0 0 7px}
+.decision-gate>p{font-size:19px!important;line-height:1.5!important;color:var(--muted);margin:0 0 14px}
+.decision-gate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.decision-gate button{border:1px solid var(--line);background:#fff;border-radius:11px;padding:14px;text-align:left;font-size:18px!important;font-weight:800;color:var(--blue);cursor:pointer}
+.decision-gate button:hover{border-color:#0f5f9f;background:#f3f8fc}
+.decision-gate-result{display:none;margin-top:12px;border-left:5px solid var(--orange);background:#fff;border-radius:10px;padding:14px}
+.decision-gate-result.show{display:block}
+.decision-gate-result b{display:block;font-size:20px;color:var(--blue);margin-bottom:5px}
+.decision-gate-result span{font-size:18px!important;line-height:1.5!important}
+.page-finish-v36{margin-top:20px;border:1px solid #f4d8bd;border-left:5px solid var(--orange);border-radius:12px;background:#fff8f1;padding:15px 17px}
+.page-finish-v36 b{display:block;font-size:20px!important;color:var(--blue);margin-bottom:5px}
+.page-finish-v36 span{font-size:18px!important;line-height:1.5!important;color:var(--text)}
+.cadence-now{margin:0 0 18px;border:1px solid var(--line);border-radius:15px;padding:18px;background:#f7f9fb}
+.cadence-now h3{font-size:24px!important;color:var(--blue);margin:0 0 10px}
+.cadence-now-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.cadence-now-grid button{border:1px solid var(--line);border-radius:10px;background:#fff;padding:13px;font-size:18px!important;font-weight:800;color:var(--blue);cursor:pointer}
+.cadence-answer{display:none;margin-top:12px;background:#fff;border-left:5px solid var(--orange);border-radius:10px;padding:13px;font-size:18px!important;line-height:1.5}
+.cadence-answer.show{display:block}
+@media(max-width:900px){.decision-gate-grid{grid-template-columns:1fr}.cadence-now-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cadence-now-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body id="top">
 <div class="pilot-status">
@@ -982,6 +1007,19 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 </div></section>
 
 <section id="examples" class="page-panel"><div class="section-shell">
+<div class="decision-gate">
+  <h3>What decision are you trying to make?</h3>
+  <p>Choose the question first. Then use the barrier examples and resources below to complete the decision.</p>
+  <div class="decision-gate-grid">
+    <button type="button" data-gate="bg1">I do not understand the barrier yet</button>
+    <button type="button" data-gate="bg2">I know the barrier and need a matched response</button>
+    <button type="button" data-gate="bg3">A support is in place but attendance is not improving</button>
+  </div>
+  <div class="decision-gate-result" id="bg1"><b>Clarify before referring.</b><span>Review the attendance pattern, gather scholar/caregiver voice, check school-controlled factors, and form a working hypothesis. Then select the closest barrier below.</span></div>
+  <div class="decision-gate-result" id="bg2"><b>Match the intervention to the barrier.</b><span>Select the barrier below. Compare FSS, KSSN, school, shared work, success indicators, and partner/resource options. Leave with an intervention, owner, dosage/frequency, and review point.</span></div>
+  <div class="decision-gate-result" id="bg3"><b>Check implementation before changing the plan.</b><span>Confirm the support actually occurred, the family could access it, and the dosage/frequency was sufficient. Then decide whether to continue, adjust, intensify, or revise the barrier hypothesis.</span></div>
+</div>
+
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
   <div class="eyebrow">03 · BARRIER EXPLORER</div>
   <h2>See the partnership in practice.</h2>
@@ -1027,9 +1065,23 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 </div></div>
     </div>
   </div>
-</div></section>
+</div><div class="page-finish-v36"><b>Do not leave Barrier Explorer without this:</b><span>A working barrier hypothesis, one matched intervention/support, one accountable owner, the expected dosage/frequency, and a date to review implementation and attendance impact.</span></div></section>
 
 <section id="rhythm" class="page-panel"><div class="section-shell">
+<div class="cadence-now">
+  <h3>What kind of work needs attention right now?</h3>
+  <div class="cadence-now-grid">
+    <button type="button" data-cadence="cd1">A task needs to happen</button>
+    <button type="button" data-cadence="cd2">A case is stalled</button>
+    <button type="button" data-cadence="cd3">The same barrier keeps appearing</button>
+    <button type="button" data-cadence="cd4">A broader system needs to change</button>
+  </div>
+  <div class="cadence-answer" id="cd1"><b>Use the daily cadence.</b> Complete the assigned intervention/support, close the loop with the scholar/family/partner, and document in the existing system.</div>
+  <div class="cadence-answer" id="cd2"><b>Use the weekly cadence.</b> Bring the case only if it is unclear, stalled, or requires both functions. Leave with a decision and owner.</div>
+  <div class="cadence-answer" id="cd3"><b>Use the monthly cadence.</b> Look across cases, identify the repeating barrier or partner gap, and assign a building/Community School response.</div>
+  <div class="cadence-answer" id="cd4"><b>Use the quarterly/system cadence.</b> Determine what policy, process, partnership, capacity, or district response must change or scale.</div>
+</div>
+
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
 <div class="eyebrow">04 · HOW WE WORK</div>
 <h2>Coordinate at the right cadence.</h2>
@@ -1043,7 +1095,7 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 </div>
 
 <div class="meeting-rule"><b>Rule of thumb:</b> Do not use joint time to read through every case. Use joint time to resolve ambiguity, remove duplication, address stalled work, and identify patterns.</div>
-</div></section>
+</div><div class="page-finish-v36"><b>Do not leave How We Work without this:</b><span>The correct cadence, the issue that belongs there, the person responsible for the next move, and the decision/output expected from that touchpoint.</span></div></section>
 
 <section id="schoolpath" class="page-panel">
 <div class="intervention-quality">
@@ -2173,7 +2225,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(fs && fs<18) el.style.setProperty('font-size','18px','important');
   });
 });
-</script><div class="page-output-cue">Every page should end in a decision or next action.</div>
+</script><div class="page-output-cue">Pilot check: Did this page produce a decision or next action?</div>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
  const modal=document.getElementById('graphicModal');
@@ -2207,6 +2259,23 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     });
   }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('[data-gate]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.decision-gate-result').forEach(x=>x.classList.remove('show'));
+      const t=document.getElementById(btn.dataset.gate); if(t)t.classList.add('show');
+    });
+  });
+  document.querySelectorAll('[data-cadence]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.cadence-answer').forEach(x=>x.classList.remove('show'));
+      const t=document.getElementById(btn.dataset.cadence); if(t)t.classList.add('show');
+    });
+  });
 });
 </script>
 </body>
