@@ -764,6 +764,23 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 @media(max-width:900px){.decision-gate-grid{grid-template-columns:1fr}.cadence-now-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.cadence-now-grid{grid-template-columns:1fr}}
 </style>
+
+<style>
+/* V37 Tools & Resources repair */
+#audiencePanel{min-height:0!important;height:auto!important;padding:0!important;border:0!important;background:transparent!important;margin:14px 0 22px!important}
+.audience-summary{border:1px solid var(--line);border-radius:15px;background:#f7f9fb;padding:18px}
+.audience-summary[hidden]{display:none!important}
+.audience-summary-head{display:grid;gap:5px;margin-bottom:13px}
+.audience-summary-head b{font-size:22px!important;color:var(--blue)}
+.audience-summary-head span{font-size:18px!important;line-height:1.5!important;color:var(--muted)}
+.audience-summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.audience-summary-grid a{display:grid;gap:5px;border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px;text-decoration:none}
+.audience-summary-grid a b{font-size:19px!important;color:var(--blue)}
+.audience-summary-grid a span{font-size:17px!important;line-height:1.45!important;color:var(--muted)}
+.audience-tabs button{cursor:pointer}
+.audience-tabs button.active{background:#0f5f9f!important;color:#fff!important;border-color:#0f5f9f!important}
+@media(max-width:760px){.audience-summary-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body id="top">
 <div class="pilot-status">
@@ -1403,7 +1420,49 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 <div class="audience-tabs" id="audienceTabs">
 <button class="active" data-audience="everyone">For Everyone</button><button data-audience="fss">For FSS</button><button data-audience="kssn">For KSSN</button><button data-audience="school">For School Teams</button>
 </div>
-<div class="audience-panel" id="audiencePanel"></div>
+
+<div class="audience-panel" id="audiencePanel">
+  <div class="audience-summary" data-summary="everyone">
+    <div class="audience-summary-head"><b>Start with the work—not the role.</b><span>Select a role above only when you need role-specific tools. For most cases, begin with the barrier and identify who owns each part of the response.</span></div>
+    <div class="audience-summary-grid">
+      <a href="#examples" data-page="examples"><b>Understand the barrier</b><span>Use Barrier Explorer to clarify the root cause and working hypothesis.</span></a>
+      <a href="#roles" data-page="roles"><b>Clarify ownership</b><span>Determine what belongs to FSS, KSSN, the school, or shared work.</span></a>
+      <a href="#fieldtools" data-page="fieldtools"><b>Build the response</b><span>Use conversation, planning, warm-handoff, and impact-review tools.</span></a>
+      <a href="#system" data-page="system"><b>Address a repeating pattern</b><span>Move recurring barriers from individual cases to a broader response.</span></a>
+    </div>
+  </div>
+
+  <div class="audience-summary" data-summary="fss" hidden>
+    <div class="audience-summary-head"><b>FSS: Attendance-focused family intervention</b><span>Use when the work requires sustained family engagement, attendance planning, follow-up, and monitoring whether the barrier is actually improving.</span></div>
+    <div class="audience-summary-grid">
+      <a href="#fieldtools" data-page="fieldtools"><b>Barrier conversation</b><span>Understand what is making attendance harder without relying on assumptions.</span></a>
+      <a href="#tools" data-jump="fss-workspace"><b>Build an attendance plan</b><span>Match the intervention to the barrier, name ownership, and establish a review point.</span></a>
+      <a href="#tools" data-jump="fss-workspace"><b>Follow up on implementation</b><span>Confirm the support happened, the family could access it, and attendance changed.</span></a>
+      <a href="#connect" data-page="connect"><b>Coordinate with KSSN</b><span>Connect when a distinct Community School function is needed—not simply another family contact.</span></a>
+    </div>
+  </div>
+
+  <div class="audience-summary" data-summary="kssn" hidden>
+    <div class="audience-summary-head"><b>KSSN: Community School strategy + integrated supports</b><span>Use when the response needs community assets, partner coordination, integrated supports, family/community engagement, or a broader system response.</span></div>
+    <div class="audience-summary-grid">
+      <a href="#tools" data-jump="kssn-workspace"><b>Coordinate integrated supports</b><span>Align school and community resources around the identified barrier.</span></a>
+      <a href="#tools" data-jump="kssn-workspace"><b>Assess needs + assets</b><span>Identify existing capacity, gaps, and partner opportunities.</span></a>
+      <a href="#tools" data-jump="kssn-workspace"><b>Strengthen partner strategy</b><span>Define partner contribution, access pathway, outcome, and accountability.</span></a>
+      <a href="#system" data-page="system"><b>Move case → system</b><span>Use repeated barriers and family/community voice to build a broader response.</span></a>
+    </div>
+  </div>
+
+  <div class="audience-summary" data-summary="school" hidden>
+    <div class="audience-summary-head"><b>School Team: Own school-controlled conditions and coordinate the plan</b><span>Use when attendance is affected by academics, belonging, safety, behavior, scheduling, instructional access, or another school-controlled factor.</span></div>
+    <div class="audience-summary-grid">
+      <a href="#schoolpath" data-page="schoolpath"><b>Run the decision path</b><span>Define → Understand → Match → Implement → Monitor → Decide.</span></a>
+      <a href="#roles" data-page="roles"><b>Clarify partner roles</b><span>Bring in FSS/KSSN without transferring school ownership.</span></a>
+      <a href="#meetingtools" data-page="meetingtools"><b>Run a 10-minute case huddle</b><span>Leave with one next move, one owner, and one review point.</span></a>
+      <a href="#examples" data-page="examples"><b>Check the barrier</b><span>Confirm whether the issue is primarily school-controlled, family/community, or mixed.</span></a>
+    </div>
+  </div>
+</div>
+
 <div class="partner-directory">
 <div class="support-eyebrow">PARTNER / RESOURCE DIRECTORY</div>
 <h3>Start with the barrier. Then choose the resource.</h3>
@@ -1432,7 +1491,7 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 </div>
 
 
-<div class="workspace" data-audience-deep="fss">
+<div class="workspace" id="fss-workspace" data-audience-deep="fss">
   <div class="workspace-head">
     <div>
       <div class="support-eyebrow">FSS WORKSPACE</div>
@@ -1575,7 +1634,7 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 </div>
 
 
-<div class="workspace" data-audience-deep="kssn">
+<div class="workspace" id="kssn-workspace" data-audience-deep="kssn">
   <div class="workspace-head">
     <div>
       <div class="support-eyebrow">KSSN COORDINATOR WORKSPACE</div>
@@ -1955,85 +2014,7 @@ renderBarrier("Basic Needs");
 })();
 </script>
 
-<script>(function(){const d={everyone:["For Everyone","Resources usable without role-specific system access.",["Partnership model","Barrier guidance","Public/community resources","Shared operating guidance"]],fss:["For FSS","Attendance-focused intervention tools for understanding barriers, building family attendance plans, following through, and monitoring impact.",["Existing FSS documentation","Attendance plan + barrier tools","Implementation + follow-up tools","Shared FSS + KSSN guidance"]],kssn:["For KSSN","Community School resources plus shared attendance guidance.",["KSSN existing tracker","Community partner resources","Integrated supports","Shared FSS + KSSN guidance"]],school:["For School Teams","Resources for school responsibilities and coordination.",["School Team Decision Path","School-controlled barrier check","Barrier Explorer","
-<div class="barrier-depth">
-  <div class="support-eyebrow">BEST-PRACTICE BARRIER ANALYSIS</div>
-  <h3>Do not stop at the first reason for absence.</h3>
-  <p class="lead">Attendance Works recommends combining attendance patterns with scholar/family voice and school evidence, then matching the response to the actual root cause. Reasons for absence often involve more than one factor and may reflect a school policy or practice—not only a family circumstance.</p><div class="record-strip"><b>Operating principle</b><p>Attendance percentage determines the level of concern; root-cause analysis determines the intervention. Intensity may need to increase earlier when the barrier or risk warrants it.</p></div>
-
-  <div class="root-cause-grid">
-    <div class="root-cause-card">
-      <h4>Barrier to attendance</h4>
-      <p>Something makes getting to or staying in school difficult.</p>
-      <ul><li>Transportation or unsafe route</li><li>Health / mental health</li><li>Housing or basic needs</li><li>Caregiving/work demands</li><li>Disability/access needs</li></ul>
-    </div>
-    <div class="root-cause-card">
-      <h4>Aversion to school</h4>
-      <p>The scholar is avoiding an experience connected to school.</p>
-      <ul><li>Bullying or peer conflict</li><li>Academic struggle</li><li>Anxiety / school refusal</li><li>Discipline or safety concerns</li><li>Negative adult relationships</li></ul>
-    </div>
-    <div class="root-cause-card">
-      <h4>Disengagement</h4>
-      <p>The scholar has weak connection, relevance, or motivation to attend.</p>
-      <ul><li>Low belonging</li><li>Few meaningful relationships</li><li>Instruction feels irrelevant</li><li>Competing priorities</li><li>Limited enrichment / connection</li></ul>
-    </div>
-    <div class="root-cause-card">
-      <h4>Misconceptions</h4>
-      <p>The family or scholar may not recognize how quickly absences add up.</p>
-      <ul><li>Excused absences seen as harmless</li><li>Attendance viewed as optional on some days</li><li>Underestimating missed instructional time</li><li>Unclear attendance expectations</li></ul>
-    </div>
-  </div>
-
-  <div class="workspace-section">
-    <h4>Triangulate before deciding</h4>
-    <p class="lead">The attendance pattern tells you <b>what</b> is happening. Scholar/family voice and school evidence help explain <b>why</b>.</p>
-    <div class="evidence-strip">
-      <div><b>1. Attendance pattern</b><span>Look beyond the total: day of week, class/period, consecutive vs scattered days, transitions, transportation times, health patterns, discipline-related loss, recent change, and what is different on successful days.</span></div>
-      <div><b>2. Scholar + caregiver voice</b><span>Ask what makes attendance harder, what helps, what has already been tried, what the school may not know, and whether the proposed support actually fits the family's experience.</span></div>
-      <div><b>3. School + system evidence</b><span>Check academics, belonging, safety, discipline, scheduling, disability access, adult relationships, transportation, school climate, and whether multiple scholars show the same pattern.</span></div>
-    </div>
-  </div>
-
-  <div class="hypothesis-builder">
-    <h4>Build a working hypothesis</h4>
-    <p><b>Because…</b> [specific barrier/condition], the scholar is experiencing [attendance pattern].</p>
-    <p><b>We believe this because…</b> [attendance data + scholar/family voice + school evidence].</p>
-    <p><b>Therefore we will…</b> [matched intervention that directly reduces the barrier], owned by [person/role], and review [implementation + attendance impact] on [date].</p>
-  </div>
-
-  <div class="workspace-section">
-    <h4>Match the response to the barrier—not the label</h4>
-    <p class="lead">The same attendance percentage can require very different responses. A referral, phone call, letter, or resource search is an action; it becomes meaningful only when it contributes to a matched intervention.</p>
-    <table class="match-table">
-      <thead><tr><th>What you learn</th><th>Better response direction</th><th>Avoid</th></tr></thead>
-      <tbody>
-        <tr><td>Transportation is unreliable.</td><td>Resolve the actual route/access problem; develop a reliable backup; coordinate school/community transportation support as appropriate.</td><td>Generic attendance reminder.</td></tr>
-        <tr><td>Scholar avoids school because of peer conflict or safety.</td><td>School-led safety/belonging response; restorative or relational support; FSS maintains family connection; KSSN adds community support only if needed.</td><td>Treating the problem as a family motivation issue.</td></tr>
-        <tr><td>Scholar is behind academically and avoids a class/day.</td><td>School-led academic access/intervention, relationship support, tutoring or schedule/problem-solving matched to the academic barrier.</td><td>Referral to an outside resource before addressing instruction/access.</td></tr>
-        <tr><td>Family routine or competing caregiver demands disrupt mornings.</td><td>FSS-led practical family attendance plan, routine problem-solving, backup plan, and follow-up on implementation.</td><td>One-time phone call counted as the intervention.</td></tr>
-        <tr><td>Health or mental-health need is interfering with attendance.</td><td>Connect to appropriate health/behavioral-health support; address school accommodations/access; confirm the family actually connects; monitor attendance impact.</td><td>Sending a provider list and closing the case.</td></tr>
-        <tr><td>Same barrier appears across many scholars.</td><td>Move from individual case response to school/community/district system response; examine policy, practice, capacity, and partner gaps.</td><td>Solving the same systemic problem one family at a time.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="stop-check">
-    <div><b>Before selecting an intervention</b><span>Can the team name the barrier in plain language? Is the conclusion supported by more than assumption? Has the school checked its own contribution? Does the proposed intervention directly change the barrier?</span></div>
-    <div><b>Before changing the intervention</b><span>Was it actually implemented? Could the scholar/family access it? Did it run long enough to judge? What changed in the attendance pattern? Continue, adapt, intensify, or abandon based on evidence.</span></div>
-  </div>
-
-  <div class="workspace-section">
-    <h4>Use best-practice tools when the barrier is still unclear</h4>
-    <div class="best-practice-links">
-      <a href="https://www.attendanceworks.org/chronic-absence/addressing-chronic-absence/3-tiers-of-intervention/root-causes/" target="_blank" rel="noopener">Attendance Works — Root Causes ↗</a>
-      <a href="https://www.attendanceworks.org/resources/addressing-barriers/" target="_blank" rel="noopener">Attendance Works — Addressing Barriers ↗</a>
-      <a href="https://www.attendanceworks.org/resources/scan-environment-attendance/" target="_blank" rel="noopener">Scan of Environment & Attendance (SEAT) ↗</a>
-      <a href="https://www.attendanceworks.org/chronic-absence/addressing-chronic-absence/strategies-for-school-sites/" target="_blank" rel="noopener">School-Site Attendance Strategies ↗</a>
-      <a href="https://www.future-ed.org/wp-content/uploads/2023/05/Attendance-Playbook.5.23.pdf" target="_blank" rel="noopener">Attendance Playbook ↗</a>
-    </div>
-  </div>
-</div>
-Connection Moments","Case → System pathway"]]};const t=document.getElementById("audienceTabs"),p=document.getElementById("audiencePanel");if(!t||!p)return;function s(k){t.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.audience===k));const x=d[k];p.innerHTML="<h3>"+x[0]+"</h3><p>"+x[1]+"</p><div class='resource-chips'>"+x[2].map(i=>"<span class='resource-chip'>"+i+"</span>").join("")+"</div>"}t.querySelectorAll("button").forEach(b=>b.onclick=()=>s(b.dataset.audience));s("everyone")})();</script><script>
+<script>
 (function(){
 const moments={
 understand:{
@@ -2163,24 +2144,35 @@ picker.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>load
 load("transport");
 })();
 </script><script>
-(function(){
-function syncAudienceDeep(){
- const buttons=[...document.querySelectorAll('button')].filter(b=>['For Everyone','For FSS','For KSSN','For School Teams'].includes(b.textContent.trim()));
- if(!buttons.length)return;
- const panels=[...document.querySelectorAll('[data-audience-deep]')];
- function show(label){
-   panels.forEach(p=>{
-     const a=p.dataset.audienceDeep;
-     p.style.display = label==='For Everyone' || (label==='For FSS'&&a==='fss') || (label==='For KSSN'&&a==='kssn') || (label==='For School Teams'&&a==='school') ? '' : 'none';
-   });
- }
- buttons.forEach(b=>b.addEventListener('click',()=>show(b.textContent.trim())));
- const active=buttons.find(b=>b.classList.contains('active'));
- show(active?active.textContent.trim():'For Everyone');
-}
-document.addEventListener('DOMContentLoaded',syncAudienceDeep);
-setTimeout(syncAudienceDeep,100);
-})();
+document.addEventListener('DOMContentLoaded',()=>{
+  const tabs=[...document.querySelectorAll('#audienceTabs [data-audience]')];
+  const summaries=[...document.querySelectorAll('#audiencePanel [data-summary]')];
+  const deep=[...document.querySelectorAll('[data-audience-deep]')];
+
+  function showAudience(key){
+    tabs.forEach(b=>b.classList.toggle('active',b.dataset.audience===key));
+    summaries.forEach(p=>p.hidden=p.dataset.summary!==key);
+
+    deep.forEach(p=>{
+      const role=p.dataset.audienceDeep;
+      p.style.display=(key==='everyone'||role===key)?'':'none';
+    });
+  }
+
+  tabs.forEach(b=>b.addEventListener('click',()=>showAudience(b.dataset.audience)));
+  showAudience('everyone');
+
+  document.querySelectorAll('[data-jump]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const role=a.dataset.jump.startsWith('fss')?'fss':'kssn';
+      showAudience(role);
+      setTimeout(()=>{
+        const target=document.getElementById(a.dataset.jump);
+        if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+      },50);
+    });
+  });
+});
 </script><script>
 document.addEventListener('DOMContentLoaded',()=>{
   const skip=['SCRIPT','STYLE','SVG','PATH'];
