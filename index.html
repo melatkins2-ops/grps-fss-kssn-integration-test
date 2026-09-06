@@ -937,6 +937,61 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 #roleVisualLarge{display:block;max-width:none!important;height:auto!important;background:#fff;box-shadow:0 10px 35px rgba(0,0,0,.35);transform-origin:top center}
 @media(max-width:700px){.role-visual-toolbar{height:auto;flex-basis:auto;align-items:flex-start;flex-direction:column}.role-visual-stage{padding:10px}}
 </style>
+
+<style>
+/* V46 — functional role workspaces */
+.role-workspace-shell{max-width:1120px;margin:auto}
+.role-switch-v46{margin:20px 0 16px}
+.role-switch-v46 button{font-size:20px!important;padding:11px 20px!important}
+.role-workspace-v46{border:1px solid var(--line);border-radius:18px;background:#fff;padding:22px;box-shadow:var(--shadow)}
+.role-workspace-head{display:grid;grid-template-columns:1.45fr .75fr;gap:18px;align-items:start}
+.role-kicker{font-size:14px!important;font-weight:900;letter-spacing:.08em;color:var(--orange);margin-bottom:6px}
+.role-workspace-head h3{font-size:29px!important;color:var(--blue);margin:0 0 8px}
+.role-workspace-head p{font-size:18px!important;line-height:1.5!important;color:var(--muted);margin:0}
+.role-output-card{border-left:5px solid var(--orange);background:#fff8f1;border-radius:10px;padding:15px 16px}
+.role-output-card b{display:block;color:var(--blue);font-size:18px!important;margin-bottom:5px}
+.role-output-card span{font-size:17px!important;line-height:1.45!important}
+.role-task-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:20px}
+.role-task-card{display:grid;grid-template-columns:38px 1fr 24px;gap:10px;align-items:start;border:1px solid var(--line);border-radius:12px;background:#fff;padding:15px;text-align:left;cursor:pointer}
+.role-task-card:hover{border-color:var(--blue);background:#f7fbfe}
+.role-task-number{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:900;font-size:16px!important}
+.role-task-card b{display:block;color:var(--blue);font-size:19px!important;margin-bottom:4px}
+.role-task-card small{display:block;color:var(--muted);font-size:16px!important;line-height:1.4!important}
+.role-task-arrow{color:var(--blue);font-size:23px!important;font-weight:900}
+.role-task-panel{margin-top:18px;border:2px solid #cfe0ed;border-radius:15px;background:#f8fbfd;padding:18px}
+.role-task-panel[hidden]{display:none!important}
+.role-task-panel-head{display:flex;justify-content:space-between;gap:16px;align-items:start}
+.role-task-panel-head h3{font-size:25px!important;color:var(--blue);margin:3px 0}
+#rwCloseTask{border:0;background:var(--blue);color:#fff;width:38px;height:38px;border-radius:50%;font-size:23px!important;font-weight:900;cursor:pointer}
+.role-task-why{font-size:18px!important;line-height:1.45!important;color:var(--muted)}
+.role-task-steps{display:grid;gap:8px;margin:14px 0}
+.role-step-check{display:grid;grid-template-columns:24px 1fr;gap:9px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px}
+.role-step-check input{width:18px;height:18px;margin-top:3px}
+.role-step-check span{font-size:17px!important;line-height:1.45!important}
+.role-task-links{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.role-task-links a{display:inline-block;border:1px solid var(--blue);color:var(--blue);border-radius:999px;padding:8px 12px;font-size:16px!important;font-weight:800;text-decoration:none;background:#fff}
+.role-task-result{border-left:5px solid var(--orange);background:#fff8f1;border-radius:9px;padding:12px 14px}
+.role-task-result b{display:block;color:var(--blue);font-size:17px!important;margin-bottom:4px}
+.role-task-result span{font-size:17px!important;line-height:1.45!important}
+.working-note-v46{margin-top:20px;border-top:1px solid var(--line);padding-top:19px}
+.working-note-head{display:flex;justify-content:space-between;gap:16px;align-items:start}
+.working-note-head h3{font-size:23px!important;color:var(--blue);margin:3px 0}
+.working-note-head p{font-size:16px!important;color:var(--muted);margin:0}
+#clearRoleNote{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font-weight:800;cursor:pointer}
+.working-note-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:13px}
+.working-note-grid label{font-size:16px!important;font-weight:800;color:var(--blue)}
+.working-note-grid textarea{display:block;width:100%;margin-top:6px;border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;font-size:16px!important;resize:vertical;background:#fff}
+.working-note-actions{display:flex;gap:10px;align-items:center;margin-top:11px}
+#copyRoleNote{border:0;border-radius:999px;background:var(--blue);color:#fff;padding:9px 14px;font-weight:800;cursor:pointer}
+#copyRoleNoteStatus{font-size:15px!important;color:var(--muted)}
+.school-boundary-note{margin-top:20px;border-left:5px solid #b65d1d;background:#fff7f1;padding:14px 16px;border-radius:10px}
+.school-boundary-note b{display:block;color:var(--blue);font-size:18px!important;margin-bottom:4px}
+.school-boundary-note span{display:block;font-size:17px!important;line-height:1.45!important;margin-bottom:8px}
+.school-boundary-note a{font-size:16px!important;font-weight:800;color:var(--blue)}
+@media(max-width:820px){
+ .role-workspace-head,.role-task-grid,.working-note-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body id="top">
 <div class="pilot-status">
@@ -1040,24 +1095,90 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 
 
 
-<section id="roles" class="page-panel"><div class="action-layer"><h3>Use the role decision tool</h3><p>Choose what is happening right now. The goal is to decide who should lead, who should support, and what should not be duplicated.</p><div class="action-choices"><button class="action-choice" data-action-result="act-roles-1">Family attendance plan is needed</button><button class="action-choice" data-action-result="act-roles-2">Community partner/support is needed</button><button class="action-choice" data-action-result="act-roles-3">The barrier is school-controlled</button></div><div class="action-result" id="act-roles-1"><h4>Family attendance plan is needed</h4><ol><li>FSS leads the attendance-focused family intervention.</li><li>School addresses any school-controlled conditions.</li><li>KSSN joins only if community/integrated support capacity is needed.</li></ol><div class="output">Required output: Name the lead, supporting role(s), intervention, and review point.</div></div><div class="action-result" id="act-roles-2"><h4>Community partner/support is needed</h4><ol><li>Confirm the barrier first.</li><li>KSSN coordinates the community/integrated support when its function is needed.</li><li>FSS stays connected to the attendance goal if family intervention is active.</li></ol><div class="output">Required output: Leave with one coordinated handoff—not two people doing the same work.</div></div><div class="action-result" id="act-roles-3"><h4>The barrier is school-controlled</h4><ol><li>School team leads the response.</li><li>Define the school condition that must change.</li><li>FSS/KSSN support only where their distinct functions add value.</li></ol><div class="output">Required output: Leave with a school-owned action/intervention and accountable owner.</div></div></div><div class="section-shell">
-<a class="back-home-button" href="#home" data-page="home">← Home</a>
-  <div class="eyebrow">01 · ROLES & SHARED WORK</div>
-  <h2>Different functions. Shared responsibility.</h2>
-  <p class="sub">Use the buttons below to view one role at a time. FSS and KSSN may both work directly with scholars and families; the distinction is the function each contributes.</p>
-  <div class="role-switch" id="roleButtons"></div>
-  <div class="role-panel">
-    <div class="role-top">
-      <div class="role-badge" id="roleBadge"></div>
-      <div class="role-copy">
-        <h3 id="roleTitle"></h3>
-        <p id="roleSummary"></p>
-        <div class="role-points" id="rolePoints"></div>
+
+<section id="roles" class="page-panel">
+  <div class="section-shell role-workspace-shell">
+    <a class="back-home-button" href="#home" data-page="home">← Home</a>
+    <div class="eyebrow">01 · ROLE WORKSPACES</div>
+    <h2>Choose your role. Start the work.</h2>
+    <p class="sub">These are working spaces—not role descriptions. Select FSS, KSSN, or Shared Work, then choose the task you need to complete right now.</p>
+
+    <div class="role-switch role-switch-v46" id="roleButtonsV46">
+      <button type="button" class="active" data-role-workspace="FSS">FSS</button>
+      <button type="button" data-role-workspace="KSSN">KSSN</button>
+      <button type="button" data-role-workspace="SHARED">Shared Work</button>
+    </div>
+
+    <div class="role-workspace-v46" id="roleWorkspaceV46">
+      <div class="role-workspace-head">
+        <div>
+          <div class="role-kicker" id="rwKicker"></div>
+          <h3 id="rwTitle"></h3>
+          <p id="rwSummary"></p>
+        </div>
+        <div class="role-output-card">
+          <b>Leave this workspace with:</b>
+          <span id="rwOutput"></span>
+        </div>
+      </div>
+
+      <div class="role-task-grid" id="rwTasks"></div>
+
+      <div class="role-task-panel" id="rwTaskPanel" hidden>
+        <div class="role-task-panel-head">
+          <div>
+            <div class="support-eyebrow">DO THIS NOW</div>
+            <h3 id="rwTaskTitle"></h3>
+          </div>
+          <button type="button" id="rwCloseTask" aria-label="Close task">×</button>
+        </div>
+        <p class="role-task-why" id="rwTaskWhy"></p>
+        <div class="role-task-steps" id="rwTaskSteps"></div>
+        <div class="role-task-links" id="rwTaskLinks"></div>
+        <div class="role-task-result">
+          <b>Required result</b>
+          <span id="rwTaskResult"></span>
+        </div>
+      </div>
+
+      <div class="working-note-v46">
+        <div class="working-note-head">
+          <div>
+            <div class="support-eyebrow">WORKING NOTE</div>
+            <h3>Capture the decision before you leave.</h3>
+            <p>This stays only in your browser session. It does not create a new tracker or save scholar information.</p>
+          </div>
+          <button type="button" id="clearRoleNote">Clear</button>
+        </div>
+        <div class="working-note-grid">
+          <label>Barrier / working hypothesis
+            <textarea id="noteBarrier" rows="3" placeholder="What is keeping the scholar from attending?"></textarea>
+          </label>
+          <label>Matched intervention / support
+            <textarea id="noteIntervention" rows="3" placeholder="What will directly reduce the barrier?"></textarea>
+          </label>
+          <label>Owner / next move
+            <textarea id="noteOwner" rows="3" placeholder="Who is responsible for the next move?"></textarea>
+          </label>
+          <label>Review point
+            <textarea id="noteReview" rows="3" placeholder="When will implementation and attendance impact be reviewed?"></textarea>
+          </label>
+        </div>
+        <div class="working-note-actions">
+          <button type="button" id="copyRoleNote">Copy working note</button>
+          <span id="copyRoleNoteStatus" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="school-boundary-note">
+        <b>School ownership remains visible.</b>
+        <span>If the barrier is school-controlled—academic access, belonging, safety, behavior, scheduling, instructional access, or a school process—the school remains responsible for changing that condition. FSS/KSSN support does not transfer that ownership.</span>
+        <a href="#schoolpath" data-page="schoolpath">Open School Team Decision Path →</a>
       </div>
     </div>
-    <div class="connection-band" id="roleConnection"></div>
   </div>
-</div></section>
+</section>
+
 
 <section id="connect" class="page-panel"><div class="action-layer"><h3>Decide whether this needs joint FSS + KSSN work</h3><p>Use these choices instead of automatically referring from one role to the other.</p><div class="action-choices"><button class="action-choice" data-action-result="act-connect-1">Barrier is still unclear</button><button class="action-choice" data-action-result="act-connect-2">Both functions are clearly needed</button><button class="action-choice" data-action-result="act-connect-3">Current support is stalled</button></div><div class="action-result" id="act-connect-1"><h4>Barrier is still unclear</h4><ol><li>Bring attendance pattern, scholar/caregiver voice, and school evidence.</li><li>Build a shared working hypothesis.</li><li>Do not add a partner until the need is clear.</li></ol><div class="output">Required output: Leave with a barrier hypothesis and next evidence/action needed.</div></div><div class="action-result" id="act-connect-2"><h4>Both functions are clearly needed</h4><ol><li>Name the FSS contribution.</li><li>Name the KSSN contribution.</li><li>Coordinate family contact and define who closes the loop.</li></ol><div class="output">Required output: Leave with distinct ownership and one family experience.</div></div><div class="action-result" id="act-connect-3"><h4>Current support is stalled</h4><ol><li>Check implementation first.</li><li>Ask whether the family could access/use the support.</li><li>Adjust the intervention, ownership, or hypothesis based on evidence.</li></ol><div class="output">Required output: Leave with a decision: continue, adjust, intensify, or change.</div></div></div><div class="section-shell connection-strong">
 <a class="back-home-button" href="#home" data-page="home">← Home</a>
@@ -2053,93 +2174,336 @@ main .eyebrow, main .support-eyebrow{font-size:15px!important}
 <footer>Grand Rapids Public Schools · Family Support Specialist & Kent School Services Integration · 2026–27</footer>
 
 <script>
-const roles={
-  "FSS":{
-    color:"#176b87", badge:"FSS", small:"Attendance Intervention Lead",
-    title:"Family Support Specialist — Attendance Intervention Lead",
-    summary:"FSS owns the targeted attendance intervention when the work requires direct, sustained scholar/family engagement. The role is not simply outreach. FSS is responsible for understanding why attendance is breaking down, building the attendance plan, staying connected through implementation, and bringing stalled cases back for reassessment.",
-    points:[
-      "Review attendance patterns and prioritize assigned scholars needing targeted follow-up",
-      "Initiate caring outreach and conduct scholar/family root-cause conversations",
-      "Identify the primary attendance pathway: barrier, aversion, disengagement, or misconception",
-      "Develop one attendance action plan with the scholar/family and school team",
-      "Complete home visits and caregiver meetings when appropriate",
-      "Monitor implementation, barrier reduction, and attendance response",
-      "Return stalled cases to the Building Attendance Team for reassessment or escalation"
-    ],
-    connection:"FSS remains the ongoing attendance connection even when KSSN, Behavioral Health, DHHS, housing support, or another service joins the plan. A referral is an action; it does not transfer the attendance intervention.",
-    when:["The family-facing root cause is unclear and requires deeper conversation","A Student Success/attendance plan needs to be developed or revised","A home visit or caregiver meeting is appropriate","The intervention needs sustained follow-up over multiple weeks","A partner has joined but someone must continue monitoring the attendance goal"],
-    example:"A scholar is missing school because the caregiver's rotating work schedule is disrupting morning routines. FSS reviews the pattern, meets with the caregiver, develops a concrete attendance plan, agrees on backup routines, follows up, and reviews whether the barrier and attendance changed.",
-    output:"Attendance pattern + root-cause hypothesis + one matched attendance intervention + named lead + follow-up date + evidence of response."
+
+const roleWorkspaceData={
+  FSS:{
+    kicker:"FSS · ATTENDANCE INTERVENTION LEAD",
+    title:"Family Support Specialist",
+    summary:"Use this workspace when the work requires direct, sustained scholar/family attendance intervention. FSS does more than make contact: understand the barrier, build the attendance plan, follow through, and determine whether the barrier and attendance actually changed.",
+    output:"A clear barrier hypothesis, one matched attendance intervention, a named next move, and a review point.",
+    tasks:[
+      {
+        title:"Understand the attendance barrier",
+        why:"Use when the reason for absence is unclear, based mostly on assumptions, or needs deeper scholar/caregiver voice.",
+        steps:[
+          "Review the attendance pattern: days, times, classes, transitions, and what is different on successful days.",
+          "Ask the scholar/caregiver what has been making attendance harder lately.",
+          "Identify what the family has already tried and what has or has not helped.",
+          "Check whether a school-controlled condition may be contributing.",
+          "Write one working hypothesis—not a list of concerns."
+        ],
+        links:[
+          ["Barrier Explorer","#examples","examples"],
+          ["Scholar/Caregiver Conversation Prompts","#fieldtools","fieldtools"]
+        ],
+        result:"One working attendance-barrier hypothesis supported by pattern + scholar/family voice."
+      },
+      {
+        title:"Build or revise the attendance plan",
+        why:"Use after the barrier is reasonably clear and a targeted attendance response is needed.",
+        steps:[
+          "Name the barrier the plan is designed to reduce.",
+          "Choose the intervention that directly addresses that barrier.",
+          "Define what FSS will do, what the family/scholar will do, and what the school must do.",
+          "Set the expected frequency/dosage and start date.",
+          "Set the date when implementation and attendance response will be reviewed."
+        ],
+        links:[
+          ["Attendance Plan tools","#tools","tools"],
+          ["School Team Decision Path","#schoolpath","schoolpath"]
+        ],
+        result:"One implementable attendance plan with owner(s), dosage/frequency, and review date."
+      },
+      {
+        title:"Prepare for a caregiver meeting / home visit",
+        why:"Use when a deeper family conversation is needed to understand or reduce the attendance barrier.",
+        steps:[
+          "Bring the actual attendance pattern—not assumptions.",
+          "Review prior contacts, supports, and what has already been attempted.",
+          "Prepare 2–3 caring questions focused on what is making attendance harder.",
+          "Identify any school-controlled barrier that must be addressed by the building.",
+          "End the meeting with specific next moves and a follow-up date."
+        ],
+        links:[
+          ["Field Tools","#fieldtools","fieldtools"],
+          ["Barrier Explorer","#examples","examples"]
+        ],
+        result:"Shared understanding of the barrier plus concrete next steps—not simply 'meeting completed.'"
+      },
+      {
+        title:"Review whether the intervention is working",
+        why:"Use after the intervention has had enough time to occur. Do not default to 'continue monitoring.'",
+        steps:[
+          "Confirm the intervention occurred as intended.",
+          "Confirm the family/scholar could actually use the support.",
+          "Review whether the identified barrier is becoming easier.",
+          "Compare the attendance pattern to baseline.",
+          "Decide: continue, adjust, intensify, step down, or change the hypothesis."
+        ],
+        links:[
+          ["10/20/30-Day Review","#tools","tools"],
+          ["How We Work","#rhythm","rhythm"]
+        ],
+        result:"A documented decision about the next phase of the attendance intervention."
+      },
+      {
+        title:"Warm handoff to KSSN / another support",
+        why:"Use when a defined barrier requires wraparound, community, behavioral-health, housing, basic-needs, or other partner support.",
+        steps:[
+          "Explain to the family why the connection is being made.",
+          "Share the relevant barrier and attendance context so the family does not have to start over.",
+          "Name what FSS will continue to own in the attendance plan.",
+          "Confirm who will make the connection and how access will be verified.",
+          "Set when FSS will follow up on whether the support reduced the barrier."
+        ],
+        links:[
+          ["When to Connect","#connect","connect"],
+          ["Find More Support","#tools","tools"]
+        ],
+        result:"A warm, coordinated connection with continued FSS ownership of the attendance goal when appropriate."
+      }
+    ]
   },
-  "KSSN":{
-    color:"#59636e", badge:"KSSN", small:"Wraparound / Resource Coordination Lead",
-    title:"KSSN Coordinator — Wraparound / Resource Coordination Lead",
-    summary:"KSSN joins when a defined attendance barrier requires community resources, integrated supports, or coordination across providers. The role is not to become another attendance case manager. KSSN adds value by finding the right resource fit, coordinating access, troubleshooting service connections, and surfacing recurring resource gaps.",
-    points:[
-      "Receive a warm handoff after the attendance barrier is sufficiently understood",
-      "Assess resource fit instead of giving the family a generic resource list",
-      "Coordinate providers when more than one agency or service is involved",
-      "Troubleshoot incomplete or unsuccessful service connections",
-      "Confirm whether the family actually accessed and could use the support",
-      "Communicate service status and unresolved barriers back to the FSS/school team",
-      "Elevate repeated community-resource gaps for broader school or district action"
-    ],
-    connection:"KSSN should be added because a distinct Community School/resource-coordination function is needed—not simply because a scholar is absent or a family needs another phone call.",
-    when:["Housing, food, health, transportation, or another defined barrier requires outside resources","Multiple agencies need coordination","A referral was made but the family did not successfully connect","A recurring need suggests a partnership or Community School capacity gap","The school needs a broader partner response rather than another individual workaround"],
-    example:"A family has unstable housing and has already missed two appointments with different agencies. KSSN coordinates the providers, confirms eligibility and access, troubleshoots the failed connections, and reports back what remains unresolved while FSS continues the attendance plan.",
-    output:"Named resource/partner strategy + confirmed access path + service status + unresolved gap + connection back to the attendance plan."
+  KSSN:{
+    kicker:"KSSN · WRAPAROUND / RESOURCE COORDINATION LEAD",
+    title:"KSSN Coordinator",
+    summary:"Use this workspace when a defined attendance barrier requires community resources, integrated supports, partner coordination, or a broader Community School response. KSSN should add coordination and access—not duplicate attendance outreach.",
+    output:"A matched resource/partner strategy, confirmed access path, clear coordination responsibility, and connection back to the attendance plan.",
+    tasks:[
+      {
+        title:"Assess resource fit",
+        why:"Use before referring a family. The goal is to determine whether a resource actually matches the identified barrier.",
+        steps:[
+          "Confirm the attendance barrier FSS/school is trying to reduce.",
+          "Identify the narrowest resource category that fits the barrier.",
+          "Check eligibility, service area, hours, waitlist, cost, language/access needs, and availability.",
+          "Identify who will make the warm connection.",
+          "Clarify how successful access will be confirmed."
+        ],
+        links:[
+          ["Barrier Explorer","#examples","examples"],
+          ["Partner / Resource Directory","#tools","tools"]
+        ],
+        result:"One resource/partner option that is verified and matched to the attendance barrier."
+      },
+      {
+        title:"Coordinate a warm handoff",
+        why:"Use when a family should not be sent away with a phone number or list of websites.",
+        steps:[
+          "Explain the resource and why it matches the identified need.",
+          "Connect the family directly when possible.",
+          "Share only the information needed to avoid repeated storytelling.",
+          "Confirm who is responsible for the next contact.",
+          "Tell FSS/school what was connected and what still needs follow-up."
+        ],
+        links:[
+          ["When to Connect","#connect","connect"],
+          ["Warm Handoff Standard","#fieldtools","fieldtools"]
+        ],
+        result:"A completed handoff with a named next step—not 'referral sent.'"
+      },
+      {
+        title:"Confirm family access",
+        why:"Use after a referral or connection has been made. A resource is not useful if the family could not access it.",
+        steps:[
+          "Confirm the family connected with the provider/resource.",
+          "Check whether eligibility or paperwork blocked access.",
+          "Check transportation, language, cost, waitlist, scheduling, or technology barriers.",
+          "Troubleshoot the access problem or select a better-fit option.",
+          "Report status back to the attendance plan owner."
+        ],
+        links:[
+          ["Find More Support","#tools","tools"],
+          ["How We Work","#rhythm","rhythm"]
+        ],
+        result:"Confirmed access, a specific unresolved access barrier, or a decision to change the resource."
+      },
+      {
+        title:"Coordinate multiple providers",
+        why:"Use when the family is navigating more than one agency or service and the support plan is becoming fragmented.",
+        steps:[
+          "List each provider and the distinct function it is serving.",
+          "Identify overlap, gaps, or conflicting expectations.",
+          "Clarify which provider/action is essential to the attendance barrier.",
+          "Coordinate information and next steps with the school/FSS.",
+          "Set one point for checking whether the coordinated supports are reducing the barrier."
+        ],
+        links:[
+          ["Connection Moments","#connect","connect"],
+          ["10-minute Case Huddle","#meetingtools","meetingtools"]
+        ],
+        result:"A coordinated provider plan with reduced duplication and a clear connection to attendance."
+      },
+      {
+        title:"Elevate a repeated resource gap",
+        why:"Use when the same community-resource problem is affecting multiple scholars/families.",
+        steps:[
+          "Name the repeated barrier and the evidence that it is recurring.",
+          "Identify existing assets/resources and where capacity is failing.",
+          "Gather family/community voice about the gap.",
+          "Determine whether a new/stronger partnership, program, or district response is needed.",
+          "Assign an owner, next action, and measure of whether the broader response helps."
+        ],
+        links:[
+          ["Case → System","#system","system"],
+          ["KSSN Community School tools","#tools","tools"]
+        ],
+        result:"A defined system/partnership gap with an owner and next system-level action."
+      }
+    ]
   },
-  "SHARED":{
-    color:"#f47b20", badge:"SHARED", small:"One Coordinated Attendance Plan",
-    title:"Shared work — one plan, distinct responsibilities",
-    summary:"Shared work is required only when the attendance plan needs both sustained family intervention and wraparound/resource coordination. The purpose is not to create two case managers. The purpose is to combine distinct functions without making the family repeat the story or navigate disconnected adults.",
-    points:[
-      "Use one shared barrier hypothesis",
-      "Name one attendance lead",
-      "Separate FSS, KSSN, and school responsibilities",
-      "Coordinate family contact before outreach occurs",
-      "Use warm handoffs instead of referral lists",
-      "Set one review date and review the same evidence",
-      "Decide together whether to continue, adjust, intensify, step down, or escalate"
-    ],
-    connection:"Non-negotiable: one scholar, one coordinated attendance plan, one named attendance lead, shared actions, a review date, and evidence of barrier reduction and attendance response.",
-    when:["The attendance intervention needs sustained family follow-up and external resource coordination","Multiple providers are involved","The family is receiving duplicate or confusing outreach","The case is stalled because different people hold different information","A recurring barrier may need a broader school/community response"],
-    example:"A scholar's chronic illness is affecting attendance and the family is struggling to coordinate medical appointments, transportation, and school accommodations. FSS maintains the attendance plan; KSSN coordinates external supports; the school addresses instructional access and accommodations; everyone reviews one agreed plan.",
-    output:"One coordinated plan + one attendance lead + distinct role assignments + one family message + one review date."
-  },
-  "SCHOOL":{
-    color:"#b65d1d", badge:"SCHOOL", small:"Principal / Building Attendance Team — System Owner",
-    title:"Principal / Building Attendance Team — System Owner",
-    summary:"The school owns the attendance system at the building level. It prioritizes cases, assures the agreed process is followed, removes barriers within school authority, checks whether interventions are actually implemented, and escalates recurring barriers the building cannot solve.",
-    points:[
-      "Prioritize attendance cases and assign the appropriate intervention lead",
-      "Remove school-controlled barriers involving climate, belonging, discipline, academics, scheduling, or internal processes",
-      "Assure school staff complete the agreed actions and interventions",
-      "Review fidelity, barrier reduction, and attendance response",
-      "Decide whether to continue, change, intensify, or step down support",
-      "Prevent duplicate or disconnected case management",
-      "Escalate recurring barriers beyond building authority"
-    ],
-    connection:"School-controlled barriers do not transfer to FSS or KSSN. Those partners may support the scholar/family, but the school remains responsible for changing the school condition.",
-    when:["Academic avoidance is tied to missing work, course access, or instructional mismatch","Belonging, bullying, safety, behavior, or discipline is driving absence","Scheduling, enrollment, transportation process, or another internal system is failing","The intervention is not being implemented consistently","The same barrier is appearing across multiple scholars"],
-    example:"A scholar is avoiding first hour because repeated peer conflict and a schedule issue have not been resolved. The school team owns the intervention: repair the peer/safety issue, correct the schedule problem, assign staff, and monitor implementation. FSS may support family communication; ownership stays with the school.",
-    output:"School-controlled barrier + named school owner + concrete intervention + implementation evidence + review decision."
+  SHARED:{
+    kicker:"SHARED WORK · ONE COORDINATED ATTENDANCE PLAN",
+    title:"FSS + KSSN Shared Work",
+    summary:"Use this workspace only when the attendance plan genuinely needs both sustained family attendance intervention and wraparound/resource coordination. Shared work should simplify the family experience—not create two case managers.",
+    output:"One attendance lead, distinct FSS/KSSN responsibilities, coordinated family contact, and one review date.",
+    tasks:[
+      {
+        title:"Assign lead + supporting roles",
+        why:"Use at the start of joint work so the family and school know who is responsible for what.",
+        steps:[
+          "Name the attendance barrier/hypothesis.",
+          "Name one attendance lead.",
+          "Define the FSS contribution.",
+          "Define the KSSN contribution.",
+          "Identify any school-owned condition that remains with the building."
+        ],
+        links:[
+          ["When to Connect","#connect","connect"],
+          ["School Team Decision Path","#schoolpath","schoolpath"]
+        ],
+        result:"One lead plus clearly separated FSS, KSSN, and school responsibilities."
+      },
+      {
+        title:"Coordinate family contact",
+        why:"Use before both roles contact the family. The family should not have to tell the same story twice.",
+        steps:[
+          "Decide who contacts the family first and why.",
+          "Agree on the key message and information already known.",
+          "Decide what information must be shared between FSS and KSSN.",
+          "Name who closes the loop after the contact.",
+          "Avoid duplicate calls, texts, meetings, and intake."
+        ],
+        links:[
+          ["Family Experience Standard","#fieldtools","fieldtools"],
+          ["Connection Moments","#connect","connect"]
+        ],
+        result:"One coordinated family-contact plan with no unnecessary duplicate outreach."
+      },
+      {
+        title:"Build one joint plan",
+        why:"Use when FSS and KSSN are both actively contributing to the same attendance barrier.",
+        steps:[
+          "Use one barrier hypothesis.",
+          "Name the FSS intervention/action.",
+          "Name the KSSN coordination/resource action.",
+          "Name what the school must change or provide.",
+          "Set one review date and agree on the evidence everyone will review."
+        ],
+        links:[
+          ["Intervention Quality Check","#tools","tools"],
+          ["Barrier Explorer","#examples","examples"]
+        ],
+        result:"One coordinated attendance plan—not parallel FSS and KSSN plans."
+      },
+      {
+        title:"Resolve a stalled joint case",
+        why:"Use when everyone is active but attendance is not improving or the case feels stuck.",
+        steps:[
+          "Check whether each agreed action actually occurred.",
+          "Check whether the family could access each support.",
+          "Identify where ownership became unclear or duplicated.",
+          "Revisit the barrier hypothesis if the intervention does not fit the evidence.",
+          "Decide: continue, adjust, intensify, change, or escalate."
+        ],
+        links:[
+          ["10-minute Case Huddle","#meetingtools","meetingtools"],
+          ["10/20/30-Day Review","#tools","tools"]
+        ],
+        result:"A concrete decision and reset of ownership—not another status update."
+      },
+      {
+        title:"Move a repeated barrier to system action",
+        why:"Use when the same problem is appearing across multiple scholars/families.",
+        steps:[
+          "Describe the repeating pattern using attendance/case evidence.",
+          "Separate individual circumstances from the common system barrier.",
+          "Identify whether the gap is school-controlled, partnership-related, or district-level.",
+          "Assign who will address the broader condition.",
+          "Define how the team will know the system response improved access/attendance."
+        ],
+        links:[
+          ["Case → System","#system","system"],
+          ["Monthly Pattern Review","#meetingtools","meetingtools"]
+        ],
+        result:"A system-level action with an owner, timeline, and measure of impact."
+      }
+    ]
   }
 };
-const roleBtns=document.getElementById("roleButtons");
-function renderRole(k){
-  [...roleBtns.children].forEach(b=>b.classList.toggle("active",b.dataset.key===k));
-  const r=roles[k];
-  const badge=document.getElementById("roleBadge");
-  badge.style.background=r.color; badge.innerHTML=r.badge+"<small>"+r.small+"</small>";
-  document.getElementById("roleTitle").textContent=r.title;
-  document.getElementById("roleSummary").textContent=r.summary;
-  document.getElementById("rolePoints").innerHTML=r.points.map(x=>'<div class="point">'+x+'</div>').join("");
-  document.getElementById("roleConnection").textContent=r.connection;
+
+const rwButtons=[...document.querySelectorAll('[data-role-workspace]')];
+const rwPanel=document.getElementById('rwTaskPanel');
+let activeRoleKey='FSS';
+
+function renderRoleWorkspace(key){
+  activeRoleKey=key;
+  const r=roleWorkspaceData[key];
+  rwButtons.forEach(b=>b.classList.toggle('active',b.dataset.roleWorkspace===key));
+  document.getElementById('rwKicker').textContent=r.kicker;
+  document.getElementById('rwTitle').textContent=r.title;
+  document.getElementById('rwSummary').textContent=r.summary;
+  document.getElementById('rwOutput').textContent=r.output;
+  const taskWrap=document.getElementById('rwTasks');
+  taskWrap.innerHTML=r.tasks.map((t,i)=>`
+    <button type="button" class="role-task-card" data-rw-task="${i}">
+      <span class="role-task-number">${i+1}</span>
+      <span><b>${t.title}</b><small>${t.why}</small></span>
+      <span class="role-task-arrow">→</span>
+    </button>`).join('');
+  taskWrap.querySelectorAll('[data-rw-task]').forEach(btn=>{
+    btn.addEventListener('click',()=>openRoleTask(Number(btn.dataset.rwTask)));
+  });
+  rwPanel.hidden=true;
 }
-Object.keys(roles).forEach((k,i)=>{const b=document.createElement("button");b.textContent=k==="SHARED"?"Shared Work":k;b.dataset.key=k;b.onclick=()=>renderRole(k);roleBtns.appendChild(b);});
-renderRole("FSS");
+
+function openRoleTask(index){
+  const t=roleWorkspaceData[activeRoleKey].tasks[index];
+  document.getElementById('rwTaskTitle').textContent=t.title;
+  document.getElementById('rwTaskWhy').textContent=t.why;
+  document.getElementById('rwTaskSteps').innerHTML=t.steps.map((s,i)=>`
+    <label class="role-step-check"><input type="checkbox"><span><b>${i+1}.</b> ${s}</span></label>`).join('');
+  document.getElementById('rwTaskLinks').innerHTML=t.links.map(([label,href,page])=>
+    `<a href="${href}" data-page="${page}">${label} →</a>`).join('');
+  document.getElementById('rwTaskResult').textContent=t.result;
+  rwPanel.hidden=false;
+  rwPanel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+rwButtons.forEach(b=>b.addEventListener('click',()=>renderRoleWorkspace(b.dataset.roleWorkspace)));
+document.getElementById('rwCloseTask').addEventListener('click',()=>{rwPanel.hidden=true;});
+renderRoleWorkspace('FSS');
+
+const noteFields=['noteBarrier','noteIntervention','noteOwner','noteReview'];
+document.getElementById('clearRoleNote').addEventListener('click',()=>{
+  noteFields.forEach(id=>document.getElementById(id).value='');
+  document.getElementById('copyRoleNoteStatus').textContent='';
+});
+document.getElementById('copyRoleNote').addEventListener('click',async()=>{
+  const text=[
+    'Barrier / working hypothesis: '+document.getElementById('noteBarrier').value.trim(),
+    'Matched intervention / support: '+document.getElementById('noteIntervention').value.trim(),
+    'Owner / next move: '+document.getElementById('noteOwner').value.trim(),
+    'Review point: '+document.getElementById('noteReview').value.trim()
+  ].join('\n');
+  const status=document.getElementById('copyRoleNoteStatus');
+  try{
+    await navigator.clipboard.writeText(text);
+    status.textContent='Copied.';
+  }catch(e){
+    status.textContent='Select and copy manually.';
+  }
+});
 
 const barrierData={
  "Basic Needs":{partners:["KSSN community partners","United Way 211","DHHS","Food/basic-needs resources"],f:"Clarify how the unmet need is affecting attendance; maintain the attendance plan and family follow-up.",k:"Connect or coordinate community resources and identify whether the same need is affecting multiple families.",s:"Remove school access or logistics barriers within school control.",b:"Coordinate the support plan and avoid duplicate family intake or outreach.",success:"The identified need is reduced, the family can use the support, and attendance improves."},
