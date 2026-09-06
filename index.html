@@ -1141,6 +1141,61 @@ section{padding-top:46px!important;padding-bottom:46px!important}
   .page-workbench-grid-v48,.quick-launch-grid-v48{grid-template-columns:1fr}
 }
 </style>
+
+<style>
+/* V49 — homepage callout + floating controls correction */
+
+/* Keep the orange barrier reminder content-sized instead of stretching to match
+   the height of the adjacent homepage visual. */
+.home-core{
+  align-items:start!important;
+}
+.core-rule{
+  align-self:start!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding:12px 14px!important;
+  margin-top:16px!important;
+}
+
+/* Keep the pilot check clear of the fixed Home button. */
+.page-output-cue{
+  position:fixed!important;
+  left:22px!important;
+  right:auto!important;
+  bottom:22px!important;
+  width:auto!important;
+  max-width:calc(100vw - 170px)!important;
+  padding:9px 13px!important;
+  font-size:14px!important;
+  line-height:1.25!important;
+  border-radius:12px!important;
+  white-space:normal!important;
+  z-index:45!important;
+}
+.floating-home{
+  right:22px!important;
+  bottom:22px!important;
+  z-index:60!important;
+}
+
+/* On smaller screens, stack the pilot prompt above Home so neither control
+   blocks the other or consumes the full width. */
+@media(max-width:700px){
+  .page-output-cue{
+    left:14px!important;
+    right:14px!important;
+    bottom:78px!important;
+    max-width:none!important;
+    text-align:left!important;
+  }
+  .floating-home{
+    right:14px!important;
+    bottom:16px!important;
+  }
+}
+</style>
 </head>
 <body id="top">
 <div class="pilot-status">
