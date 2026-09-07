@@ -1196,7 +1196,23 @@ section{padding-top:46px!important;padding-bottom:46px!important}
   }
 }
 </style>
-<style>.fss-tool-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.fss-tool-tabs button,.decision-row button{border:1px solid #cbd5e1;background:#fff;color:#123b63;border-radius:999px;padding:8px 11px;font-weight:700;cursor:pointer}.fss-tool-tabs button.active,.decision-row button.selected{background:#0b5f9e;color:#fff}.fss-action-tool{display:none;border:1px solid #dce4eb;border-radius:15px;padding:17px}.fss-action-tool.active{display:block}.fss-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:12px 0}.fss-steps.team{grid-template-columns:repeat(3,1fr)}.fss-steps>div,.fss-visit>div{border:1px solid #dce4eb;border-radius:10px;padding:11px;background:#fafcfd}.fss-steps b,.fss-visit b{color:#0b5f9e}.fss-steps p{font-size:13.5px!important}.fss-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fss-fields label{font-size:13.5px!important;font-weight:700}.fss-fields textarea{display:block;width:100%;box-sizing:border-box;margin-top:5px;border:1px solid #cbd5e1;border-radius:8px;padding:8px;font:inherit;font-size:14px!important;min-height:64px}.fss-visit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.fss-visit label{display:block;font-size:13.5px!important;margin:7px 0}.fss-copy{margin-top:12px;border:0;border-radius:8px;background:#0b5f9e;color:#fff;padding:9px 12px;font-weight:800;cursor:pointer}.copy-status{font-size:13px!important;margin-left:8px}.decision-row{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}@media(max-width:800px){.fss-steps,.fss-steps.team,.fss-fields,.fss-visit{grid-template-columns:1fr}}</style></head>
+<style>.fss-tool-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.fss-tool-tabs button,.decision-row button{border:1px solid #cbd5e1;background:#fff;color:#123b63;border-radius:999px;padding:8px 11px;font-weight:700;cursor:pointer}.fss-tool-tabs button.active,.decision-row button.selected{background:#0b5f9e;color:#fff}.fss-action-tool{display:none;border:1px solid #dce4eb;border-radius:15px;padding:17px}.fss-action-tool.active{display:block}.fss-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:12px 0}.fss-steps.team{grid-template-columns:repeat(3,1fr)}.fss-steps>div,.fss-visit>div{border:1px solid #dce4eb;border-radius:10px;padding:11px;background:#fafcfd}.fss-steps b,.fss-visit b{color:#0b5f9e}.fss-steps p{font-size:13.5px!important}.fss-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fss-fields label{font-size:13.5px!important;font-weight:700}.fss-fields textarea{display:block;width:100%;box-sizing:border-box;margin-top:5px;border:1px solid #cbd5e1;border-radius:8px;padding:8px;font:inherit;font-size:14px!important;min-height:64px}.fss-visit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.fss-visit label{display:block;font-size:13.5px!important;margin:7px 0}.fss-copy{margin-top:12px;border:0;border-radius:8px;background:#0b5f9e;color:#fff;padding:9px 12px;font-weight:800;cursor:pointer}.copy-status{font-size:13px!important;margin-left:8px}.decision-row{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}@media(max-width:800px){.fss-steps,.fss-steps.team,.fss-fields,.fss-visit{grid-template-columns:1fr}}</style><!-- V51: delegated navigation fix for dynamically generated role-workspace links -->
+<!-- V52: comprehensive navigation repair — all internal page links use platform routing -->
+<!-- V53: removed obsolete modal code found during full interaction testing -->
+<!-- V54: completed all eight Practice the Model scenarios discovered during full interaction QA -->
+<!-- V55: full QA build — repaired current external attendance-resource URLs -->
+
+<style>
+/* V56 — mobile cadence workbench overflow correction */
+.cadence-checklist-v47{min-width:0!important;width:100%!important;box-sizing:border-box!important;}
+.cadence-step-v47{min-width:0!important;width:100%!important;box-sizing:border-box!important;}
+.cadence-step-v47 span{min-width:0!important;overflow-wrap:anywhere!important;word-break:normal!important;}
+@media(max-width:700px){
+  .cadence-workbench-v47{min-width:0!important;width:100%!important;box-sizing:border-box!important;}
+}
+</style>
+<!-- V56: corrected mobile overflow after interactive cadence selection -->
+</head>
 <body id="top">
 <div class="pilot-status">
   <div class="pilot-status-inner"><b>Pilot build:</b> Use de-identified/sample scenarios. Note where users hesitate, cannot determine ownership, cannot select a matched intervention, or cannot find the needed tool.</div>
@@ -1234,7 +1250,7 @@ section{padding-top:46px!important;padding-bottom:46px!important}
     </div>
 
     <div class="home-core">
-      <div class="model-frame clickable-model dynamic-model" id="modelTrigger" role="button" tabindex="0" aria-label="Enlarge integration model">
+      <div class="model-frame dynamic-model" id="modelTrigger">
         
 
 
@@ -2134,8 +2150,8 @@ section{padding-top:46px!important;padding-bottom:46px!important}
     <div class="audience-summary-head"><b>FSS: Attendance-focused family intervention</b><span>Use when FSS is the attendance intervention lead: root-cause conversation, one attendance plan, home/caregiver work when appropriate, sustained follow-up, and review of whether the barrier and attendance changed.</span></div>
     <div class="audience-summary-grid">
       <a href="#fieldtools" data-page="fieldtools"><b>Barrier conversation</b><span>Understand what is making attendance harder without relying on assumptions.</span></a>
-      <a href="#tools" data-jump="fss-workspace"><b>Build an attendance plan</b><span>Match the intervention to the barrier, name ownership, and establish a review point.</span></a>
-      <a href="#tools" data-jump="fss-workspace"><b>Follow up on implementation</b><span>Confirm the support happened, the family could access it, and attendance changed.</span></a>
+      <a href="#tools" data-page="tools" data-jump="fss-workspace"><b>Build an attendance plan</b><span>Match the intervention to the barrier, name ownership, and establish a review point.</span></a>
+      <a href="#tools" data-page="tools" data-jump="fss-workspace"><b>Follow up on implementation</b><span>Confirm the support happened, the family could access it, and attendance changed.</span></a>
       <a href="#connect" data-page="connect"><b>Coordinate with KSSN</b><span>Connect when a distinct Community School function is needed—not simply another family contact.</span></a>
     </div>
   </div>
@@ -2143,9 +2159,9 @@ section{padding-top:46px!important;padding-bottom:46px!important}
   <div class="audience-summary" data-summary="kssn" hidden>
     <div class="audience-summary-head"><b>KSSN: Community School strategy + integrated supports</b><span>Use when a defined barrier requires wraparound/community resources, provider coordination, troubleshooting access, or a recurring resource gap that should be addressed beyond one family.</span></div>
     <div class="audience-summary-grid">
-      <a href="#tools" data-jump="kssn-workspace"><b>Coordinate integrated supports</b><span>Align school and community resources around the identified barrier.</span></a>
-      <a href="#tools" data-jump="kssn-workspace"><b>Assess needs + assets</b><span>Identify existing capacity, gaps, and partner opportunities.</span></a>
-      <a href="#tools" data-jump="kssn-workspace"><b>Strengthen partner strategy</b><span>Define partner contribution, access pathway, outcome, and accountability.</span></a>
+      <a href="#tools" data-page="tools" data-jump="kssn-workspace"><b>Coordinate integrated supports</b><span>Align school and community resources around the identified barrier.</span></a>
+      <a href="#tools" data-page="tools" data-jump="kssn-workspace"><b>Assess needs + assets</b><span>Identify existing capacity, gaps, and partner opportunities.</span></a>
+      <a href="#tools" data-page="tools" data-jump="kssn-workspace"><b>Strengthen partner strategy</b><span>Define partner contribution, access pathway, outcome, and accountability.</span></a>
       <a href="#system" data-page="system"><b>Move case → system</b><span>Use repeated barriers and family/community voice to build a broader response.</span></a>
     </div>
   </div>
@@ -2216,9 +2232,9 @@ section{padding-top:46px!important;padding-bottom:46px!important}
     <div class="resource-buckets">
       <div class="resource-bucket"><h5>Attendance + family engagement</h5>
         <a href="https://parents.grps.org/resource-category/attendance/" target="_blank" rel="noopener">GRPS Parent University — Attendance ↗</a>
-        <a href="https://parents.grps.org/article/family-attendance-guides-2/" target="_blank" rel="noopener">GRPS Family Attendance Guides ↗</a>
+        <a href="https://parents.grps.org/article/family-attendance-guides-3/" target="_blank" rel="noopener">GRPS Family Attendance Guides ↗</a>
         <a href="https://parents.grps.org/article/attendance-matters/" target="_blank" rel="noopener">GRPS Attendance Matters ↗</a>
-        <a href="https://www.attendanceworks.org/resources/handouts-for-families/" target="_blank" rel="noopener">Attendance Works Family Handouts ↗</a>
+        <a href="https://www.attendanceworks.org/resources/handouts-for-families-2/" target="_blank" rel="noopener">Attendance Works Family Handouts ↗</a>
       </div>
       <div class="resource-bucket"><h5>Basic needs + navigation</h5>
         <a href="https://www.findhelp.org/" target="_blank" rel="noopener">Findhelp ↗</a>
@@ -2488,13 +2504,6 @@ section{padding-top:46px!important;padding-bottom:46px!important}
 </div></section>
 </main>
 
-
-<div class="model-modal" id="modelModal" aria-hidden="true">
-  <button class="modal-close" id="modalClose" aria-label="Close enlarged graphic">×</button>
-  <div class="modal-content">
-    <img id="modalImage" alt="Enlarged GRPS FSS KSSN Attendance Partnership model">
-  </div>
-</div>
 
 <footer>Grand Rapids Public Schools · Family Support Specialist & Kent School Services Integration · 2026–27</footer>
 
@@ -2853,57 +2862,30 @@ Object.keys(barrierData).forEach(k=>{const b=document.createElement("button");b.
 renderBarrier("Basic Needs");
 </script>
 
-<script>
-(function(){
-  const trigger=document.getElementById('modelTrigger');
-  const source=document.getElementById('modelImage');
-  const modal=document.getElementById('modelModal');
-  const modalImage=document.getElementById('modalImage');
-  const close=document.getElementById('modalClose');
 
-  function openModel(){
-    modalImage.src=source.src;
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-    close.focus();
-  }
-  function closeModel(){
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-    trigger.focus();
-  }
-
-  trigger.addEventListener('click',openModel);
-  trigger.addEventListener('keydown',e=>{
-    if(e.key==='Enter'||e.key===' '){e.preventDefault();openModel();}
-  });
-  close.addEventListener('click',closeModel);
-  modal.addEventListener('click',e=>{if(e.target===modal)closeModel();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModel();});
-})();
-</script>
 
 
 <script>
 (function(){
   const pages=[...document.querySelectorAll('main>section.page-panel')];
-  const navLinks=[...document.querySelectorAll('[data-page]')];
 
   function showPage(id, updateHash=true){
     const target=document.getElementById(id) || document.getElementById('home');
     pages.forEach(p=>p.classList.toggle('active-page',p===target));
-    navLinks.forEach(a=>a.classList.toggle('active-nav',a.dataset.page===id && a.closest('header')));
+    document.querySelectorAll('[data-page]').forEach(a=>{
+      a.classList.toggle('active-nav',a.dataset.page===id && a.closest('header'));
+    });
     if(updateHash) history.replaceState(null,'','#'+id);
     window.scrollTo(0,0);
   }
 
-  navLinks.forEach(a=>{
-    a.addEventListener('click',e=>{
-      e.preventDefault();
-      showPage(a.dataset.page);
-    });
+  // Delegated navigation is required because role-workspace links are created
+  // dynamically after the initial page load.
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('[data-page]');
+    if(!a) return;
+    e.preventDefault();
+    showPage(a.dataset.page);
   });
 
   const initial=(location.hash||'#home').slice(1);
@@ -3016,7 +2998,11 @@ const scenarios={
 transport:{title:"Repeated late arrivals and absences",text:"A scholar has missed several first periods and two full days. The caregiver says transportation has been inconsistent since a work-schedule change.",choices:["Send a standard attendance letter and wait for improvement.","Ask FSS to take the case and close school involvement.","Clarify the transportation barrier, identify what is school-controlled vs. family/community-controlled, and match support before assigning ownership.","Immediately refer the family to several transportation resources."],correct:2,feedback:"The team already has a plausible barrier. The next move is to confirm it, identify ownership, and match a specific intervention. A broad referral list or attendance letter does not solve transportation.",moves:[["FSS","Clarify family routines/constraints and maintain attendance follow-up."],["KSSN","Explore community or partner transportation options if needed."],["School","Address district/school transportation processes or schedule flexibility if applicable."],["Monitor","Confirm whether transportation access improves and whether first-period/full-day attendance changes."]]},
 belonging:{title:"School avoidance after peer conflict",text:"A scholar is missing days after repeated peer conflict. Caregiver reports the scholar says school does not feel safe.",choices:["Refer to KSSN for community programming.","Treat this as a school-controlled barrier first and address safety, belonging, and peer conflict while coordinating family support as needed.","Focus only on caregiver morning routines.","Increase robocalls and attendance letters."],correct:1,feedback:"Safety, belonging, and peer conflict are school-controlled conditions. FSS/KSSN can support the scholar/family, but the school cannot transfer ownership of the underlying condition.",moves:[["School","Lead the safety/peer-conflict response and repair the school condition."],["FSS","Support caregiver/scholar engagement and attendance planning if helpful."],["KSSN","Add belonging/enrichment/community connection only if it matches the need."],["Monitor","Track both the school condition and attendance response."]]},
 housing:{title:"Temporary living arrangement",text:"A family is moving between relatives' homes and the scholar's attendance has become inconsistent.",choices:["Ask KSSN to find housing and stop FSS follow-up.","Coordinate attendance planning with family stabilization supports and activate district/community resources that fit the family's situation.","Wait until the family has permanent housing before intervening.","Send the same attendance warning used for all chronic absence cases."],correct:1,feedback:"Housing instability often requires coordinated support. Attendance planning should continue while district/community stabilization resources are activated. The family should experience one coordinated plan.",moves:[["FSS","Maintain family engagement, attendance planning, and follow-up."],["KSSN","Coordinate community resources and integrated supports."],["School","Activate applicable district supports, including Homeless Coordinator processes where appropriate."],["Monitor","Confirm access to supports and changes in attendance stability."]]},
-mental:{title:"Increasing morning anxiety",text:"A scholar has begun missing mornings and reports feeling overwhelmed before school. The pattern is worsening.",choices:["Assume the caregiver needs stronger attendance expectations.","Connect immediately to an outside provider without school-team review.","Use scholar/caregiver voice and school evidence to understand the anxiety pattern, activate appropriate school behavioral-health/counseling support, and coordinate additional resources if needed.","Focus only on transportation because the absences occur in the morning."],correct:2,feedback:"The response should begin with understanding the pattern and activating appropriate school-based support. Additional partners can be added when matched to the identified need.",moves:[["School","Use Behavioral Health/Counseling and review school factors contributing to anxiety."],["FSS","Support caregiver/scholar engagement and attendance planning."],["KSSN","Coordinate additional community supports when needed."],["Monitor","Review whether anxiety-related barriers and morning attendance are improving."]]}
+mental:{title:"Increasing morning anxiety",text:"A scholar has begun missing mornings and reports feeling overwhelmed before school. The pattern is worsening.",choices:["Assume the caregiver needs stronger attendance expectations.","Connect immediately to an outside provider without school-team review.","Use scholar/caregiver voice and school evidence to understand the anxiety pattern, activate appropriate school behavioral-health/counseling support, and coordinate additional resources if needed.","Focus only on transportation because the absences occur in the morning."],correct:2,feedback:"The response should begin with understanding the pattern and activating appropriate school-based support. Additional partners can be added when matched to the identified need.",moves:[["School","Use Behavioral Health/Counseling and review school factors contributing to anxiety."],["FSS","Support caregiver/scholar engagement and attendance planning."],["KSSN","Coordinate additional community supports when needed."],["Monitor","Review whether anxiety-related barriers and morning attendance are improving."]]},
+academic:{title:"Missing work and class avoidance",text:"A scholar has begun skipping days with two classes where missing assignments have piled up. The caregiver says the scholar feels embarrassed and believes there is no way to catch up.",choices:["Treat the concern as a family motivation problem.","Add an attendance incentive without addressing the academic barrier.","Have the school address academic access and recovery while FSS supports the scholar/family attendance plan and monitors whether avoidance decreases.","Refer the family to multiple community programs before speaking with teachers."],correct:2,feedback:"The attendance response must address the academic condition driving avoidance. The school owns instructional access and recovery; FSS can support the attendance plan and family follow-through.",moves:[["School","Create a realistic academic recovery/access plan and identify a supportive adult."],["FSS","Bring scholar/family voice into the plan and reinforce the attendance goal."],["KSSN","Add tutoring or expanded-learning support only when it directly fits the barrier."],["Monitor","Review assignment access, class participation, and attendance together."]]},
+routine:{title:"Morning routine breakdown",text:"A younger scholar is frequently late or absent after a household schedule change. The caregiver reports mornings have become unpredictable and transportation is available.",choices:["Send escalating attendance notices only.","Use a caring conversation to map the morning routine, identify the specific breakdown, build a simple family attendance plan, and set a follow-up point.","Ask KSSN to take over because the issue is outside the school building.","Wait until the scholar reaches a higher absence threshold."],correct:1,feedback:"A clear family-routine barrier calls for direct problem-solving, a manageable attendance plan, and follow-up. Additional roles should be added only if another barrier emerges.",moves:[["FSS","Lead routine problem-solving with the family and build a backup plan."],["School","Reinforce welcome, on-time entry, and any school-side supports."],["KSSN","Join only if the routine issue reveals a resource or community-support need."],["Monitor","Check whether mornings become more reliable and lateness/absence decreases."]]},
+basic:{title:"Utilities and food insecurity",text:"A caregiver shares that utilities were recently shut off and food has been inconsistent. The scholar has missed school while the family manages immediate needs.",choices:["Give the family a long resource list and close the attendance concern.","Focus on attendance consequences so the family understands the seriousness.","Coordinate immediate basic-needs support through a warm connection while FSS maintains the attendance plan and confirms whether the family can actually access the support.","Wait for the family to request a specific agency."],correct:2,feedback:"Resource location alone is not the intervention. The response should connect the family to usable support, confirm access, and continue the attendance-focused plan.",moves:[["FSS","Maintain the family relationship, attendance plan, and follow-up."],["KSSN","Coordinate appropriate school/community resources and warm handoffs."],["School","Use available school supports and remove school-side access barriers."],["Monitor","Confirm the family accessed support and whether attendance stabilizes."]]},
+systemic:{title:"The same barrier keeps appearing",text:"Several families report the same transportation gap after an after-school schedule change. Staff are solving the issue one family at a time, but the pattern continues.",choices:["Continue separate referrals because each family is different.","Assign every case to FSS for individual follow-up.","Name the repeated pattern, combine FSS family intelligence, KSSN partner information, and school data, then assign a building or district-level response with an owner and measure.","Pause all individual support until a district solution is created."],correct:2,feedback:"Repeated barriers should trigger case-to-system thinking while individual families continue receiving support. The goal is to stop recreating the same workaround.",moves:[["FSS","Bring recurring family experience and attendance impact."],["KSSN","Bring partner/community capacity and resource-gap information."],["School","Determine what can be changed at building or district level."],["Monitor","Track whether the system response reduces the repeated barrier across families."]]}
 };
 const picker=document.getElementById("scenarioPicker"); if(!picker)return;
 let current="transport";
