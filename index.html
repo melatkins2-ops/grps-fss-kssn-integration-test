@@ -66,12 +66,53 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 .context-tools-v65{margin-top:28px;background:#eef8f7;border-left:5px solid #258b87;border-radius:0 14px 14px 0;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.context-tools-v65 small{display:block;font-weight:800;letter-spacing:.07em;color:#258b87;margin-bottom:4px}.context-tools-v65 b{color:var(--navy)}.context-buttons-v65{display:flex;gap:7px;flex-wrap:wrap}.context-buttons-v65 button{border:1px solid #c8dedb;background:#fff;color:var(--navy);border-radius:999px;padding:8px 11px;font-weight:750;cursor:pointer}
 @media(max-width:900px){.tool-grid-v65{grid-template-columns:1fr 1fr}.context-tools-v65{display:block}.context-buttons-v65{margin-top:12px}}@media(max-width:620px){.tool-grid-v65,.tw-steps{grid-template-columns:1fr}}
 </style>
-<style>.route,.route *{box-sizing:border-box}.route p{overflow-wrap:anywhere}</style></head><body>
+<style>.route,.route *{box-sizing:border-box}.route p{overflow-wrap:anywhere}</style>
+<style id="v66-framework">
+/* V66: framework replaces the space-consuming student image */
+.home-framework-v66{max-width:1160px;margin:26px auto 30px;padding:0 24px;box-sizing:border-box}
+.hf66-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:16px}
+.hf66-head h2{font-size:clamp(25px,3vw,36px);line-height:1.12;color:var(--navy);margin:5px 0 6px}
+.hf66-head p{font-size:16px;line-height:1.45;color:var(--muted);margin:0}
+.hf66-more{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer;white-space:nowrap}
+.hf66-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.hf66-step{position:relative;border:1px solid #d8e4ea;background:#fff;border-radius:13px;padding:15px 12px;text-align:left;cursor:pointer;min-width:0;box-sizing:border-box}
+.hf66-step span{display:flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;background:#eaf5fb;color:var(--blue);font-size:12px;font-weight:900;margin-bottom:9px}
+.hf66-step b{display:block;color:var(--navy);font-size:17px;margin-bottom:4px}.hf66-step small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
+.hf66-step.active{border-color:var(--blue);box-shadow:0 0 0 2px #0877b915;background:#f7fcff}.hf66-step.active span{background:var(--blue);color:#fff}
+.hf66-detail{margin-top:10px;background:#f5f9fb;border-left:5px solid var(--orange);border-radius:0 12px 12px 0;padding:16px 18px;display:grid;grid-template-columns:1.1fr 1.4fr 1fr;gap:20px;align-items:center}
+.hf66-detail small{display:block;font-size:10px;letter-spacing:.08em;font-weight:850;color:#71818d;margin-bottom:4px}.hf66-detail b{color:var(--navy);font-size:15px}.hf66-detail p{font-size:14px;color:var(--muted);line-height:1.4;margin:0}.hf66-output{border-left:1px solid #d7e3e8;padding-left:18px}
+@media(max-width:820px){.hf66-head{display:block}.hf66-more{margin-top:12px}.hf66-steps{grid-template-columns:1fr 1fr}.hf66-step:last-child{grid-column:1/-1}.hf66-detail{grid-template-columns:1fr}.hf66-output{border-left:0;border-top:1px solid #d7e3e8;padding:12px 0 0}}
+@media(max-width:520px){.hf66-steps{grid-template-columns:1fr}.hf66-step:last-child{grid-column:auto}}
+</style>
+</head><body>
 <div id="home">
 <header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
+
+<section class="home-framework-v66" aria-labelledby="frameworkTitleV66">
+  <div class="hf66-head">
+    <div>
+      <div class="eyebrow">HOW WE WORK</div>
+      <h2 id="frameworkTitleV66">Pattern → Barrier → Ownership → Support → Impact</h2>
+      <p>Use the same five decisions from the first attendance concern through progress review.</p>
+    </div>
+    <button type="button" class="hf66-more" data-open="model">Open How We Work →</button>
+  </div>
+  <div class="hf66-steps" role="list">
+    <button class="hf66-step active" data-fw66="pattern" role="listitem"><span>1</span><b>Pattern</b><small>What do we see?</small></button>
+    <button class="hf66-step" data-fw66="barrier" role="listitem"><span>2</span><b>Barrier</b><small>What is getting in the way?</small></button>
+    <button class="hf66-step" data-fw66="ownership" role="listitem"><span>3</span><b>Ownership</b><small>Who needs to act?</small></button>
+    <button class="hf66-step" data-fw66="support" role="listitem"><span>4</span><b>Support</b><small>What will reduce the barrier?</small></button>
+    <button class="hf66-step" data-fw66="impact" role="listitem"><span>5</span><b>Impact</b><small>Is it working?</small></button>
+  </div>
+  <div class="hf66-detail" id="fwDetailV66">
+    <div><small>DECISION</small><b>Confirm the attendance pattern.</b></div>
+    <p>Describe what is happening before deciding who should respond.</p>
+    <div class="hf66-output"><small>OUTPUT</small><b>A clear description of the attendance concern.</b></div>
+  </div>
+</section>
 <section class="hero"><div class="hero-inner"><div><div class="eyebrow">ATTENDANCE SUPPORT • GRPS</div><h1>One barrier.<br>One coordinated response.</h1><p>Use the platform to understand what is getting in the way of attendance, determine who needs to act, and move toward a response that makes a difference for the scholar and family.</p><div class="rule">Start with the barrier—not the role.</div></div>
 <figure class="hero-photo student-visual">
-<img src="student_shared_work.png" alt="Student-centered FSS and KSSN shared-work visual">
+
 </figure></div></section>
 <main><div class="introline"><div><div class="eyebrow">START WHERE YOU ARE</div><h2>What do you need to do?</h2></div><p>Three entry points. The deeper tools appear when you need them.</p></div>
 <div class="routes">
@@ -227,4 +268,18 @@ document.addEventListener('click',e=>{
  const contextual=e.target.closest('[data-open-tool]'); if(contextual){show('tools');setTimeout(()=>openToolV65(contextual.dataset.openTool),0);}
 });
 document.getElementById('toolCloseV65')?.addEventListener('click',()=>{document.getElementById('toolWorkspaceV65').hidden=true;document.querySelector('.tool-grid-v65').hidden=false;document.querySelector('.tool-filter').hidden=false;});
+
+const fw66Data={
+pattern:["Confirm the attendance pattern.","Describe what is happening before deciding who should respond.","A clear description of the attendance concern."],
+barrier:["Develop a working barrier hypothesis.","Use scholar/family voice, attendance evidence, and school conditions. Do not assume the reason for absence.","A barrier statement the team can test and act on."],
+ownership:["Clarify who needs to act.","Name one attendance lead and distinct FSS, KSSN, school, and partner responsibilities. Overlap is intentional; duplication is not.","Clear ownership without competing case management."],
+support:["Match support to the barrier.","Choose an intervention designed to reduce the identified barrier—not simply another contact, referral, or task.","A barrier-matched intervention with owner, dosage, goal, and review point."],
+impact:["Review whether the response is working.","Check implementation, access, barrier reduction, and attendance response before deciding what happens next.","Continue, adjust, intensify, reassess, step down, or escalate."]
+};
+function renderFw66(k){
+ const d=fw66Data[k]; if(!d)return;
+ document.querySelectorAll('.hf66-step').forEach(x=>x.classList.toggle('active',x.dataset.fw66===k));
+ document.getElementById('fwDetailV66').innerHTML=`<div><small>DECISION</small><b>${d[0]}</b></div><p>${d[1]}</p><div class="hf66-output"><small>OUTPUT</small><b>${d[2]}</b></div>`;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-fw66]');if(b)renderFw66(b.dataset.fw66);});
 </script></body></html>
