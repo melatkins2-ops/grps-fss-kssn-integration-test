@@ -143,6 +143,15 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 .operating-depth-v70{margin:34px 0 0;padding-top:26px;border-top:1px solid var(--line)}.cadence-v70{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:15px 0}.cadence-v70 div{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}.cadence-v70 b{display:block;color:var(--navy);margin-bottom:4px}.cadence-v70 span{font-size:13px;color:var(--muted);line-height:1.4}.case-system-v70{background:#fff4e8;border-left:5px solid var(--orange);padding:15px 17px;border-radius:0 12px 12px 0}.case-system-v70 b{display:block;color:var(--navy);margin-bottom:4px}.case-system-v70 span{color:var(--muted);font-size:14px}
 @media(max-width:760px){.library-items-v70,.deep-grid-v70,.role-grid-v70,.cadence-v70{grid-template-columns:1fr}}
 </style>
+
+<style id="v71-consistent-navigation">
+.global-page-nav-v71{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:34px 0 6px;padding-top:20px;border-top:1px solid var(--line)}
+.global-page-nav-v71 button,.workspace-home-v71{border:1px solid var(--line);border-radius:999px;padding:10px 15px;font-weight:850;cursor:pointer}
+.global-back-v71{background:#fff;color:var(--navy)}.global-home-v71,.workspace-home-v71{background:var(--navy);color:#fff;border-color:var(--navy)!important}
+.workspace-nav-v71{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.workspace-nav-v71 .tool-close-v65,.workspace-nav-v71 .deep-back-v70{margin:0!important}
+@media(max-width:520px){.global-page-nav-v71,.workspace-nav-v71{flex-wrap:wrap}}
+</style>
 </head><body>
 <div id="home">
 <header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
@@ -172,7 +181,10 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 <button data-open-tool="plan">Attendance Plan</button>
 <button data-open-tool="review">Review Impact</button>
 </div></div>
-</section>
+<div class="global-page-nav-v71" data-nav-for="concern">
+<button type="button" class="global-back-v71">← Back</button>
+<button type="button" class="global-home-v71" data-home>⌂ Home</button>
+</div></section>
 <section class="home-framework-v66" aria-labelledby="frameworkTitleV66">
   <div class="hf66-head">
     <div>
@@ -223,7 +235,10 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
  </div>
  <div id="roleContentV70"></div>
 </div>
-</section>
+<div class="global-page-nav-v71" data-nav-for="coord">
+<button type="button" class="global-back-v71">← Back</button>
+<button type="button" class="global-home-v71" data-home>⌂ Home</button>
+</div></section>
 
 <section class="page" id="tools">
 <div class="pagehead tools-head"><div class="pagehead-inner">
@@ -253,7 +268,7 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 </div>
 
 <div class="tool-workspace-v65" id="toolWorkspaceV65" hidden>
-<button class="tool-close-v65" type="button" id="toolCloseV65">← Back to tools</button>
+<div class="workspace-nav-v71"><button class="tool-close-v65" type="button" id="toolCloseV65">← Back to tools</button><button type="button" class="workspace-home-v71" data-home>⌂ Home</button></div>
 <div id="toolWorkspaceContentV65"></div>
 </div>
 </div>
@@ -300,11 +315,14 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
     </div></details>
   </div>
   <div class="deep-workspace-v70" id="deepWorkspaceV70" hidden>
-    <button class="deep-back-v70" id="deepBackV70" type="button">← Back to full tool library</button>
+    <div class="workspace-nav-v71"><button class="deep-back-v70" id="deepBackV70" type="button">← Back to full tool library</button><button type="button" class="workspace-home-v71" data-home>⌂ Home</button></div>
     <div id="deepContentV70"></div>
   </div>
 </div>
-</section>
+<div class="global-page-nav-v71" data-nav-for="tools">
+<button type="button" class="global-back-v71">← Back</button>
+<button type="button" class="global-home-v71" data-home>⌂ Home</button>
+</div></section>
 <section class="page" id="model">
 <div class="pagehead framework-head"><div class="pagehead-inner">
 <button class="back" data-home>← Home</button>
@@ -367,7 +385,10 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
  </div>
  <div class="case-system-v70"><b>Case → System</b><span>One family → Repeated barrier → Pattern identified → Building response → District response, if needed.</span></div>
 </div>
-</section>
+<div class="global-page-nav-v71" data-nav-for="model">
+<button type="button" class="global-back-v71">← Back</button>
+<button type="button" class="global-home-v71" data-home>⌂ Home</button>
+</div></section>
 <script>
 const home=document.getElementById('home'),pages=[...document.querySelectorAll('.page')];
 function openP(id){home.style.display='none';pages.forEach(p=>p.classList.toggle('active',p.id===id));scrollTo(0,0)}
@@ -470,4 +491,21 @@ shared:[["Assign lead + support","One attendance lead; distinct responsibilities
 function renderRole70(k){document.querySelectorAll('[data-role70]').forEach(x=>x.classList.toggle('active',x.dataset.role70===k));document.getElementById('roleContentV70').innerHTML=`<div class="role-grid-v70">${role70[k].map(x=>`<div class="role-task-v70"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div>`;}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-role70]');if(b)renderRole70(b.dataset.role70);});
 renderRole70("fss");
+
+let navStackV71=[];
+document.addEventListener('click',e=>{
+ const opener=e.target.closest('[data-open]');
+ if(opener){
+   const current=document.querySelector('.page.active,.page[style*="display: block"],.page[style*="display:block"]');
+   if(current && current.id && current.id!==opener.dataset.open) navStackV71.push(current.id);
+ }
+});
+document.addEventListener('click',e=>{
+ const b=e.target.closest('.global-back-v71');
+ if(!b)return;
+ const prev=navStackV71.pop();
+ if(prev && typeof show==="function"){show(prev);}
+ else if(typeof showHome==="function"){showHome();}
+ else document.querySelector('[data-home]')?.click();
+});
 </script></body></html>
