@@ -134,6 +134,15 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 @media(max-width:760px){.coord-fw-steps-v69{grid-template-columns:1fr 1fr}.coord-fw-step-v69:last-child{grid-column:1/-1}}
 @media(max-width:480px){.coord-fw-steps-v69{grid-template-columns:1fr}.coord-fw-step-v69:last-child{grid-column:auto}}
 </style>
+
+<style id="v70-reconciliation">
+.full-library-v70{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}.library-head-v70 h3,.role-workspaces-v70 h3,.operating-depth-v70 h3{font-size:25px;color:var(--navy);margin:4px 0 7px}.library-head-v70 p{color:var(--muted);margin:0 0 18px}
+.library-groups-v70 details{border:1px solid var(--line);border-radius:14px;background:#fff;margin:10px 0;overflow:hidden}.library-groups-v70 summary{padding:16px 18px;font-weight:850;color:var(--navy);cursor:pointer;background:#f8fbfc}.library-items-v70{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}.library-items-v70 button{border:0;background:#fff;padding:17px;text-align:left;cursor:pointer}.library-items-v70 b{display:block;color:var(--navy);font-size:16px;margin-bottom:4px}.library-items-v70 span{font-size:13px;color:var(--muted);line-height:1.4}
+.deep-workspace-v70{margin-top:16px;background:#f7fafc;border-radius:16px;padding:24px}.deep-back-v70{border:0;background:none;color:var(--blue);font-weight:850;cursor:pointer;margin-bottom:14px}.deep-content-v70 h3{font-size:26px;color:var(--navy);margin:4px 0 8px}.deep-content-v70 p{color:var(--muted);line-height:1.5}.deep-grid-v70{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:17px 0}.deep-step-v70{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px}.deep-step-v70 b{display:block;color:var(--navy);margin-bottom:4px}.deep-step-v70 span{font-size:13px;color:var(--muted);line-height:1.4}.deep-note-v70{width:100%;min-height:100px;border:1px solid var(--line);border-radius:11px;padding:12px;box-sizing:border-box;font:inherit}
+.role-workspaces-v70{margin:32px 0 0;padding-top:26px;border-top:1px solid var(--line)}.role-tabs-v70{display:flex;gap:8px;margin:15px 0}.role-tabs-v70 button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer}.role-tabs-v70 button.active{background:var(--navy);color:#fff}.role-grid-v70{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.role-task-v70{background:#f7fafc;border:1px solid var(--line);border-radius:12px;padding:15px}.role-task-v70 b{display:block;color:var(--navy);margin-bottom:4px}.role-task-v70 span{font-size:13px;color:var(--muted);line-height:1.4}
+.operating-depth-v70{margin:34px 0 0;padding-top:26px;border-top:1px solid var(--line)}.cadence-v70{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:15px 0}.cadence-v70 div{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}.cadence-v70 b{display:block;color:var(--navy);margin-bottom:4px}.cadence-v70 span{font-size:13px;color:var(--muted);line-height:1.4}.case-system-v70{background:#fff4e8;border-left:5px solid var(--orange);padding:15px 17px;border-radius:0 12px 12px 0}.case-system-v70 b{display:block;color:var(--navy);margin-bottom:4px}.case-system-v70 span{color:var(--muted);font-size:14px}
+@media(max-width:760px){.library-items-v70,.deep-grid-v70,.role-grid-v70,.cadence-v70{grid-template-columns:1fr}}
+</style>
 </head><body>
 <div id="home">
 <header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
@@ -206,6 +215,14 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
   <button type="button" id="coordBackV69">← Back</button>
   <button type="button" class="home-v69" data-home>⌂ Home</button>
 </div>
+
+<div class="role-workspaces-v70">
+ <div class="eyebrow">ROLE WORKSPACES</div><h3>Do the work by function.</h3>
+ <div class="role-tabs-v70">
+  <button class="active" data-role70="fss">FSS</button><button data-role70="kssn">KSSN</button><button data-role70="shared">Shared Work</button>
+ </div>
+ <div id="roleContentV70"></div>
+</div>
 </section>
 
 <section class="page" id="tools">
@@ -239,6 +256,53 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 <button class="tool-close-v65" type="button" id="toolCloseV65">← Back to tools</button>
 <div id="toolWorkspaceContentV65"></div>
 </div>
+</div>
+
+<div class="full-library-v70">
+  <div class="library-head-v70">
+    <div><div class="eyebrow">FULL TOOL LIBRARY</div><h3>Use the tool that matches the work.</h3>
+    <p>The deeper tools from the earlier platform are restored here without adding more top-level pathways.</p></div>
+  </div>
+  <div class="library-groups-v70">
+    <details open><summary>Understand the attendance concern</summary><div class="library-items-v70">
+      <button data-tool="barrier"><b>Barrier Explorer</b><span>Pattern → root cause → working barrier hypothesis.</span></button>
+      <button data-v70-tool="connect"><b>When to Connect</b><span>Understand • Coordinate • Connect • Adjust • Scale.</span></button>
+      <button data-tool="caring"><b>Caring Conversation</b><span>Learn → Share → Inform → Discuss → Arrive at a Plan.</span></button>
+      <button data-v70-tool="homevisit"><b>Family / Home Visit Prep</b><span>Prepare for a purposeful, relationship-centered conversation.</span></button>
+    </div></details>
+    <details><summary>Build the response</summary><div class="library-items-v70">
+      <button data-tool="plan"><b>Attendance Plan</b><span>Barrier, intervention, owner, goal, dosage and review point.</span></button>
+      <button data-v70-tool="quality"><b>Intervention Quality Check</b><span>Confirm the response is an intervention—not just an action.</span></button>
+      <button data-tool="handoff"><b>Warm Handoff</b><span>Explain → Connect → Confirm → Follow through.</span></button>
+      <button data-tool="resource"><b>Find More Support</b><span>Verify fit, connect, confirm access and monitor impact.</span></button>
+    </div></details>
+    <details><summary>FSS field tools</summary><div class="library-items-v70">
+      <button data-v70-tool="routine"><b>Morning Routine Problem-Solver</b><span>Break down the morning barrier and identify a realistic change.</span></button>
+      <button data-v70-tool="followup"><b>Follow-Up / Impact Review</b><span>Review what was implemented, what changed and what happens next.</span></button>
+      <button data-v70-tool="teamreturn"><b>Bring Back to Team</b><span>Prepare a concise barrier, intervention, impact and decision summary.</span></button>
+    </div></details>
+    <details><summary>KSSN Community School tools</summary><div class="library-items-v70">
+      <button data-v70-tool="assets"><b>Needs + Assets Quick Scan</b><span>Identify the need, existing assets and the gap that remains.</span></button>
+      <button data-v70-tool="partnerfit"><b>Partner Fit Check</b><span>Test whether a partner/resource actually fits the barrier.</span></button>
+      <button data-v70-tool="integrated"><b>Integrated Support Plan</b><span>Coordinate multiple supports without creating competing plans.</span></button>
+      <button data-v70-tool="expanded"><b>Expanded Opportunity Match</b><span>Use belonging, enrichment and expanded learning when they fit the barrier.</span></button>
+    </div></details>
+    <details><summary>School team + progress review</summary><div class="library-items-v70">
+      <button data-tool="school"><b>School Team Decision Path</b><span>Define → Understand → Match → Implement → Monitor → Decide.</span></button>
+      <button data-tool="review"><b>10 / 20 / 30-Day Review</b><span>Check fidelity, access, barrier reduction and attendance response.</span></button>
+      <button data-tool="huddle"><b>10-Minute Case Huddle</b><span>Unstick a case and clarify the immediate move.</span></button>
+      <button data-v70-tool="monthly"><b>Monthly Pattern Review</b><span>Move repeated barriers from individual cases to a system response.</span></button>
+    </div></details>
+    <details><summary>Practice + case to system</summary><div class="library-items-v70">
+      <button data-tool="practice"><b>Practice the Model</b><span>Eight attendance scenarios restored for role/intervention decisions.</span></button>
+      <button data-v70-tool="casesystem"><b>Case → System Builder</b><span>One family → repeated barrier → pattern → building response → district response.</span></button>
+      <button data-v70-tool="guardrails"><b>Implementation Guardrails</b><span>Check for duplication, unclear ownership and activity without impact.</span></button>
+    </div></details>
+  </div>
+  <div class="deep-workspace-v70" id="deepWorkspaceV70" hidden>
+    <button class="deep-back-v70" id="deepBackV70" type="button">← Back to full tool library</button>
+    <div id="deepContentV70"></div>
+  </div>
 </div>
 </section>
 <section class="page" id="model">
@@ -292,6 +356,17 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 <div class="case-flow"><span>One family</span><b>→</b><span>Repeated barrier</span><b>→</b><span>Pattern identified</span><b>→</b><span>Building response</span><b>→</b><span>District response, if needed</span></div>
 </div>
 </div>
+
+<div class="operating-depth-v70">
+ <div class="eyebrow">OPERATING RHYTHM</div><h3>Use the framework at the right cadence.</h3>
+ <div class="cadence-v70">
+  <div><b>Daily</b><span>Do the assigned intervention and document the meaningful move.</span></div>
+  <div><b>Weekly</b><span>Unstick cases, clarify ownership and fix access or implementation problems.</span></div>
+  <div><b>Monthly</b><span>Identify repeated barriers across scholars and families.</span></div>
+  <div><b>Quarterly</b><span>Change, build or scale the system response.</span></div>
+ </div>
+ <div class="case-system-v70"><b>Case → System</b><span>One family → Repeated barrier → Pattern identified → Building response → District response, if needed.</span></div>
+</div>
 </section>
 <script>
 const home=document.getElementById('home'),pages=[...document.querySelectorAll('.page')];
@@ -322,7 +397,7 @@ resource:{label:"KSSN • RESOURCE FIT",title:"Find More Support",intro:"Use com
 school:{label:"SCHOOL TEAM",title:"School Team Decision Path",intro:"Use the team to make an evidence-based attendance decision—not simply review a list of cases.",steps:[["Define","Describe the pattern and desired outcome."],["Understand","Identify the barrier using data and voice."],["Match","Choose a barrier-matched intervention and ownership."],["Implement + Monitor","Check fidelity, access, barrier reduction, and attendance."],["Decide","Continue, adjust, intensify, reassess, step down, or escalate."]],out:"A specific team decision with owner and review point."},
 review:{label:"PROGRESS REVIEW",title:"10 / 20 / 30-Day Review",intro:"Do not wait until the end of a plan to discover that it was not implemented or could not be accessed.",steps:[["10 days","Confirm implementation and access. Fix immediate breakdowns."],["20 days","Review early barrier reduction and attendance response. Adjust if needed."],["30 days","Make a clear decision: continue, adjust, intensify, reassess, step down, or escalate."]],out:"An evidence-based next decision, not another activity log."},
 huddle:{label:"TEAM TOOL",title:"10-Minute Case Huddle",intro:"Use a short huddle when a case is stalled or ownership is unclear.",steps:[["2 min","State the attendance pattern and barrier hypothesis."],["3 min","What has been tried? What changed? What did not happen?"],["3 min","Clarify FSS, KSSN, school, and partner responsibilities."],["2 min","Name the immediate move, owner, and review date."]],out:"The case leaves the huddle unstuck with one coordinated next move."},
-practice:{label:"PRACTICE",title:"Practice the Model",intro:"Use a scenario to test whether the team starts with the barrier and matches ownership appropriately.",steps:[["Scenario","A scholar's absences are increasing. The caregiver reports unstable morning transportation and the scholar also says they avoid first hour because they feel behind academically."],["Decide","What are the barriers? Which condition is school-controlled? What belongs to family intervention? Where could KSSN add value?"],["Check","Avoid assigning the entire case to one role. Build one plan with distinct responsibilities."],["Review","What evidence would tell you the response is working?"]],out:"Practice the decision process: Pattern → Barrier → Ownership → Support → Impact."}
+practice:{label:"PRACTICE",title:"Practice the Model",intro:"Use eight scenarios to test whether the team starts with the barrier and matches ownership appropriately: Transportation, Belonging, Housing, Mental Health, Academic Avoidance, Family Routine, Basic Needs, and Repeated Barrier/Systemic.",steps:[["Scenario","A scholar's absences are increasing. The caregiver reports unstable morning transportation and the scholar also says they avoid first hour because they feel behind academically."],["Decide","What are the barriers? Which condition is school-controlled? What belongs to family intervention? Where could KSSN add value?"],["Check","Avoid assigning the entire case to one role. Build one plan with distinct responsibilities."],["Review","What evidence would tell you the response is working?"]],out:"Practice the decision process: Pattern → Barrier → Ownership → Support → Impact."}
 };
 function openToolV65(key){
  const d=toolDataV65[key]; if(!d)return;
@@ -363,4 +438,36 @@ document.addEventListener('click',e=>{
  if(b){document.querySelectorAll('.coord-fw-step-v69').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('coordFwDetailV69').innerHTML=coordFw69[b.dataset.cfw69];}
 });
 document.getElementById('coordBackV69')?.addEventListener('click',()=>{ if(history.length>1){history.back();} else {showHome();} });
+
+const deepToolsV70={
+connect:["When to Connect","Use a connection moment when the barrier is unclear, both functions are needed, a community asset could help, the current response is stalled, or the same barrier is repeating.",[["UNDERSTAND","Barrier is unclear."],["COORDINATE","Family needs both FSS and KSSN functions."],["CONNECT","A community asset could help."],["ADJUST","The current response is not working."],["SCALE","The same barrier repeats."]]],
+homevisit:["Family / Home Visit Prep","Prepare for a relationship-centered visit that helps understand the barrier and build a plan.",[["Before","Review the attendance pattern; decide what you need to learn—not what you need to tell."],["Open","Lead with care, strengths and family priorities."],["Explore","Use caring questions and the 5 Whys when useful."],["Close","Agree on one next move, ownership and follow-up."]]],
+quality:["Intervention Quality Check","An action is what staff did. An intervention is a support intentionally selected to reduce the identified barrier.",[["Barrier","What exactly are we trying to change?"],["Intervention","How should this support reduce the barrier?"],["Owner + dosage","Who will do what, and how often?"],["Goal + review","What improvement are we looking for and when will we decide?"]]],
+routine:["Morning Routine Problem-Solver","Use when morning routines are contributing to missed time.",[["Map","What happens from wake-up to arrival?"],["Find friction","Where does the routine break down?"],["Choose one change","Select a realistic change the family can test."],["Review","Did the change reduce missed time?"]]],
+followup:["Follow-Up / Impact Review","Review the response, not just whether contact occurred.",[["Implementation","Did the intervention happen as intended?"],["Access","Could the scholar/family actually use it?"],["Barrier reduction","Is the barrier changing?"],["Attendance response","Is attendance improving?"],["Decision","Continue, adjust, intensify, reassess or step down."]]],
+teamreturn:["Bring Back to Team","Prepare the minimum information the team needs to make the next decision.",[["Barrier","Working hypothesis and relevant voice/evidence."],["Intervention","What was actually implemented?"],["Impact","What changed in barrier and attendance?"],["Decision needed","What does the team need to decide now?"]]],
+assets:["Needs + Assets Quick Scan","Community School work starts with both needs and assets.",[["Need","What barrier or condition needs to change?"],["Assets","What family, school or community strengths already exist?"],["Gap","What is still missing?"],["Response","What Community School strategy or partner action adds value?"]]],
+partnerfit:["Partner Fit Check","Do not send a generic resource list. Test fit first.",[["Fit","Does the service address the actual barrier?"],["Access","Eligibility, location, timing, language and capacity."],["Role","What will the partner do that FSS/school is not already doing?"],["Confirm","How will we know the family connected and could use it?"]]],
+integrated:["Integrated Support Plan","Coordinate multiple supports around one attendance goal.",[["Shared outcome","What are all supports trying to change?"],["Distinct roles","Who owns each part?"],["Family contact","Who communicates what, and when?"],["Review","Use one review point and one attendance outcome."]]],
+expanded:["Expanded Opportunity Match","Use expanded learning, belonging and enrichment when they address the barrier.",[["Barrier fit","Would connection, belonging, adult relationship or opportunity address the barrier?"],["Access","Can the scholar participate consistently?"],["Connection","Who makes the warm introduction?"],["Impact","Does engagement and attendance improve?"]]],
+monthly:["Monthly Pattern Review","Move from individual cases to system learning.",[["Aggregate","What barriers are repeating?"],["Locate","Which grades, times, groups or conditions show the pattern?"],["System cause","What school/community condition may be producing it?"],["Respond","What building or district change is needed?"]]],
+casesystem:["Case → System Builder","Use repeated individual barriers to identify a broader response.",[["One family","Document the barrier and response."],["Repeated barrier","Notice recurrence across cases."],["Pattern","Confirm with data and team knowledge."],["Building response","Change a school/community condition."],["District response","Escalate when the issue exceeds building authority."]]],
+guardrails:["Implementation Guardrails","Use these checks before adding more activity.",[["One plan","Avoid competing attendance plans."],["One lead","Name who keeps the attendance goal moving."],["Distinct value","FSS, KSSN and school should not duplicate the same action."],["Impact","Measure barrier reduction and attendance response—not contacts completed."]]]
+};
+function openDeep70(key){
+ const d=deepToolsV70[key]; if(!d)return;
+ document.querySelector('.library-groups-v70').hidden=true;
+ const w=document.getElementById('deepWorkspaceV70');w.hidden=false;
+ document.getElementById('deepContentV70').innerHTML=`<div class="deep-content-v70"><div class="eyebrow">ACTION TOOL</div><h3>${d[0]}</h3><p>${d[1]}</p><div class="deep-grid-v70">${d[2].map(x=>`<div class="deep-step-v70"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div><textarea class="deep-note-v70" placeholder="Working note — nothing is saved."></textarea></div>`;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-v70-tool]');if(b)openDeep70(b.dataset.v70Tool);});
+document.getElementById('deepBackV70')?.addEventListener('click',()=>{document.getElementById('deepWorkspaceV70').hidden=true;document.querySelector('.library-groups-v70').hidden=false;});
+const role70={
+fss:[["Understand the barrier","Caring inquiry, family voice and root-cause work."],["Build / revise the attendance plan","Keep the attendance goal, intervention and review point moving."],["Prepare family meeting / home visit","Use relationship-centered questions and strengths."],["Review progress","Check implementation, barrier reduction and attendance response."],["Warm handoff to KSSN","Connect when Community School resources or partner coordination add value."]],
+kssn:[["Assess resource fit","Match community assets to the known barrier."],["Coordinate warm handoff","Connect family, FSS/school and provider with context."],["Confirm access","Verify the family could actually use the support."],["Coordinate multiple providers","Align supports around one attendance outcome."],["Elevate repeated gap","Turn recurring resource barriers into Community School/system work."]],
+shared:[["Assign lead + support","One attendance lead; distinct responsibilities."],["Coordinate family contact","Avoid multiple staff asking the family the same questions."],["Build one joint plan","One barrier hypothesis, one outcome and one review point."],["Resolve stalled case","Check implementation and access before adding more services."],["Case → System","Escalate repeated barriers into a building/community response."]]
+};
+function renderRole70(k){document.querySelectorAll('[data-role70]').forEach(x=>x.classList.toggle('active',x.dataset.role70===k));document.getElementById('roleContentV70').innerHTML=`<div class="role-grid-v70">${role70[k].map(x=>`<div class="role-task-v70"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div>`;}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-role70]');if(b)renderRole70(b.dataset.role70);});
+renderRole70("fss");
 </script></body></html>
