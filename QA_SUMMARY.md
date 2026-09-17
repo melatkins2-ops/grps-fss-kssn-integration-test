@@ -1,12 +1,8 @@
-# V56 — Comprehensive QA Summary
-
-PASS — all V55 navigation and interaction repairs retained.
-PASS — all internal links route correctly.
-PASS — all 8 scenarios and response choices are implemented.
-PASS — FSS field tools and decision buttons work.
-PASS — role workspaces and generated role-task links work.
-PASS — full-size role visual controls work.
-PASS — obsolete image-modal code remains removed.
-PASS — current GRPS/Attendance Works attendance links retained.
-PASS — mobile cadence workbench no longer expands beyond the viewport after Daily/Weekly/Monthly/Quarterly interaction.
-PASS — JavaScript syntax checks pass.
+# V65 QA Summary
+- Built from the cleaner V62 architecture, not the confusing V56 navigation.
+- Four top-level destinations only: Start Here, FSS + KSSN, Tools & Resources, How We Work.
+- Tools & Resources rebuilt as a working in-place tool hub with role filters.
+- Framework retained under How We Work: Pattern → Barrier → Ownership → Support → Impact.
+- Case → System retained.
+- Key V56 operational content restored contextually rather than as separate navigation destinations.
+- Static checks: no duplicate IDs; all top-level navigation targets exist; inline JavaScript syntax checked.
