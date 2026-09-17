@@ -152,6 +152,17 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 .workspace-nav-v71 .tool-close-v65,.workspace-nav-v71 .deep-back-v70{margin:0!important}
 @media(max-width:520px){.global-page-nav-v71,.workspace-nav-v71{flex-wrap:wrap}}
 </style>
+
+<style id="v72-navigation-role-visual">
+/* One predictable navigation pair only */
+.single-page-nav-v72{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:10px max(18px,calc((100vw - 1180px)/2));background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.single-page-nav-v72[hidden]{display:none!important}.single-page-nav-v72 button{border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-weight:850;cursor:pointer;background:#fff;color:var(--navy)}.single-page-nav-v72 .home-v72{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* Hide obsolete injected nav controls if any survive legacy markup */
+.global-page-nav-v71,.page-nav-v69{display:none!important}
+.role-relationship-v72{margin:32px 0;padding-top:28px;border-top:1px solid var(--line)}.role-relationship-v72 h3{font-size:25px;color:var(--navy);margin:4px 0 16px}
+.relationship-grid-v72{display:grid;grid-template-columns:1fr .86fr 1fr;gap:12px;align-items:stretch}.relationship-card-v72{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}.relationship-card-v72 h4{font-size:19px;color:var(--navy);margin:7px 0 8px}.relationship-card-v72 p{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 13px}.relationship-label-v72{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--blue)}.shared-v72{background:#f2f8fb;text-align:center;display:flex;flex-direction:column;justify-content:center}.shared-v72 strong{color:var(--navy);font-size:15px;line-height:1.5}.relationship-tags-v72{display:flex;flex-wrap:wrap;gap:6px}.relationship-tags-v72 span{font-size:11px;font-weight:750;color:var(--navy);background:#f5f8fa;border-radius:999px;padding:6px 8px}.relationship-flow-v72{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:12px;color:var(--navy);font-size:13px;font-weight:850}.relationship-flow-v72 b{color:var(--orange);font-size:21px}
+@media(max-width:760px){.relationship-grid-v72{grid-template-columns:1fr}.relationship-flow-v72{flex-wrap:wrap}}
+</style>
 </head><body>
 <div id="home">
 <header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
@@ -159,6 +170,11 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 
 <section class="hero"><div class="hero-inner"><div><div class="eyebrow">ATTENDANCE SUPPORT • GRPS</div><h1>One barrier.<br>One coordinated response.</h1><p>Use the platform to understand what is getting in the way of attendance, determine who needs to act, and move toward a response that makes a difference for the scholar and family.</p><div class="rule">Start with the barrier—not the role.</div></div>
 </div></section>
+
+<div class="single-page-nav-v72" id="singlePageNavV72" hidden>
+  <button type="button" id="singleBackV72">← Back</button>
+  <button type="button" class="home-v72" data-home>⌂ Home</button>
+</div>
 <main><div class="introline"><div><div class="eyebrow">START WHERE YOU ARE</div><h2>What do you need to do?</h2></div><p>Three entry points. The deeper tools appear when you need them.</p></div>
 <div class="routes">
 <button class="route primary" data-open="concern"><span class="kicker">MOST COMMON START</span><h3>Work through an attendance concern</h3><p>A guided workspace for one scholar/family. Understand the pattern, identify the barrier, match the intervention, assign responsibility, and set a review point.</p><span class="go">Start the work →</span></button>
@@ -168,7 +184,7 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 <div class="band"><div><h4>FSS</h4><p>Attendance-focused family intervention, planning, follow-up, and monitoring.</p></div><div><h4>KSSN</h4><p>Community School strategy, integrated supports, partners, resources, and system connections.</p></div><div><h4>Shared</h4><p>One barrier hypothesis, coordinated family contact, distinct responsibilities, and one review point.</p></div></div>
 <div class="footer">V62 visual mock-up • official GRPS branding + restored operating framework</div></main></div>
 
-<section class="page" id="concern"><div class="pagehead"><div class="pagehead-inner"><button class="back" data-home>← Home</button><h2>Work through an attendance concern</h2><p>One workspace. The next step stays visible without sending you through multiple pages or pathways.</p></div></div><div class="content"><div class="workspace-grid"><aside class="rail"><div class="stage active">01 · Pattern</div><div class="stage">02 · Barrier</div><div class="stage">03 · Response</div><div class="stage">04 · Ownership</div><div class="stage">05 · Review</div></aside><div class="work"><div class="eyebrow">STEP 01</div><h3>What is happening with attendance?</h3><p class="lead">Start with evidence and voice. Do not decide the intervention—or the role—before understanding what is happening.</p>
+<section class="page" id="concern"><div class="pagehead"><div class="pagehead-inner"><h2>Work through an attendance concern</h2><p>One workspace. The next step stays visible without sending you through multiple pages or pathways.</p></div></div><div class="content"><div class="workspace-grid"><aside class="rail"><div class="stage active">01 · Pattern</div><div class="stage">02 · Barrier</div><div class="stage">03 · Response</div><div class="stage">04 · Ownership</div><div class="stage">05 · Review</div></aside><div class="work"><div class="eyebrow">STEP 01</div><h3>What is happening with attendance?</h3><p class="lead">Start with evidence and voice. Do not decide the intervention—or the role—before understanding what is happening.</p>
 <div class="promptbox"><h4>Attendance pattern</h4><p>What does the data show? What changed? When does the concern occur?</p><textarea rows="3" placeholder="Capture the pattern in a few sentences..."></textarea></div>
 <div class="promptbox"><h4>Scholar + family voice</h4><p>What are they experiencing? What is going well? What do they believe is making attendance harder?</p><textarea rows="3" placeholder="Capture strengths, experience, and concerns..."></textarea></div>
 <div class="callout"><b>Need help with the conversation?</b><br>The Caring Conversation Guide would open here as a supporting drawer—not take you to another pathway.</div>
@@ -181,10 +197,7 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 <button data-open-tool="plan">Attendance Plan</button>
 <button data-open-tool="review">Review Impact</button>
 </div></div>
-<div class="global-page-nav-v71" data-nav-for="concern">
-<button type="button" class="global-back-v71">← Back</button>
-<button type="button" class="global-home-v71" data-home>⌂ Home</button>
-</div></section>
+</section>
 <section class="home-framework-v66" aria-labelledby="frameworkTitleV66">
   <div class="hf66-head">
     <div>
@@ -209,7 +222,7 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 </section>
 
 
-<section class="page" id="coord"><div class="pagehead"><div class="pagehead-inner"><button class="back" data-home>← Home</button><h2>Coordinate FSS + KSSN</h2><p>One plan with clear responsibilities. Overlap is intentional; duplication is not.</p></div></div><div class="content"><div class="band" style="margin-top:0"><div><h4>Attendance lead</h4><p>Name one person responsible for keeping the attendance goal and review point moving.</p></div><div><h4>FSS contribution</h4><p>Family voice, attendance intervention, plan, follow-through, and monitoring.</p></div><div><h4>KSSN contribution</h4><p>Resource fit, partner coordination, access, integrated supports, and repeated-gap response.</p></div></div><div class="work" style="max-width:850px;margin-top:35px"><h3>Build the coordinated response</h3><div class="promptbox"><h4>Shared barrier</h4><textarea rows="2" placeholder="What are we jointly trying to change?"></textarea></div><div class="promptbox"><h4>Distinct responsibilities</h4><textarea rows="5" placeholder="Attendance lead:&#10;FSS will:&#10;KSSN will:&#10;School will:&#10;Family/scholar will:"></textarea></div><div class="actions"><button class="btn primary">Set review point →</button></div></div></div>
+<section class="page" id="coord"><div class="pagehead"><div class="pagehead-inner"><h2>Coordinate FSS + KSSN</h2><p>One plan with clear responsibilities. Overlap is intentional; duplication is not.</p></div></div><div class="content"><div class="band" style="margin-top:0"><div><h4>Attendance lead</h4><p>Name one person responsible for keeping the attendance goal and review point moving.</p></div><div><h4>FSS contribution</h4><p>Family voice, attendance intervention, plan, follow-through, and monitoring.</p></div><div><h4>KSSN contribution</h4><p>Resource fit, partner coordination, access, integrated supports, and repeated-gap response.</p></div></div><div class="work" style="max-width:850px;margin-top:35px"><h3>Build the coordinated response</h3><div class="promptbox"><h4>Shared barrier</h4><textarea rows="2" placeholder="What are we jointly trying to change?"></textarea></div><div class="promptbox"><h4>Distinct responsibilities</h4><textarea rows="5" placeholder="Attendance lead:&#10;FSS will:&#10;KSSN will:&#10;School will:&#10;Family/scholar will:"></textarea></div><div class="actions"><button class="btn primary">Set review point →</button></div></div></div>
 <div class="coord-framework-v69">
   <div class="eyebrow">HOW WE WORK TOGETHER</div>
   <h3>Pattern → Barrier → Ownership → Support → Impact</h3>
@@ -223,11 +236,34 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
   </div>
   <div class="coord-fw-detail-v69" id="coordFwDetailV69"><b>Pattern:</b> Confirm the attendance pattern before deciding which role should respond.</div>
 </div>
-<div class="page-nav-v69">
-  <button type="button" id="coordBackV69">← Back</button>
-  <button type="button" class="home-v69" data-home>⌂ Home</button>
-</div>
 
+
+
+<div class="role-relationship-v72">
+ <div class="eyebrow">HOW THE FUNCTIONS FIT TOGETHER</div>
+ <h3>Different functions. One coordinated attendance response.</h3>
+ <div class="relationship-grid-v72">
+  <div class="relationship-card-v72 fss-v72">
+   <div class="relationship-label-v72">FSS</div>
+   <h4>Attendance Intervention Lead</h4>
+   <p>Works directly with scholars and families to understand attendance barriers, build the attendance intervention, and monitor whether the barrier and attendance pattern are changing.</p>
+   <div class="relationship-tags-v72"><span>Caring inquiry</span><span>Attendance plan</span><span>Family routines</span><span>Follow-through</span></div>
+  </div>
+  <div class="relationship-card-v72 shared-v72">
+   <div class="relationship-label-v72">TOGETHER</div>
+   <h4>One Coordinated Plan</h4>
+   <p>Use one shared barrier hypothesis, one attendance lead, distinct responsibilities, coordinated family contact, warm handoffs, and one review point.</p>
+   <strong>Overlap is intentional.<br>Duplication is not.</strong>
+  </div>
+  <div class="relationship-card-v72 kssn-v72">
+   <div class="relationship-label-v72">KSSN</div>
+   <h4>Community School / Resource Coordination</h4>
+   <p>Connects the attendance barrier to community assets, integrated supports, partners, programs, and system-level responses when those functions add value.</p>
+   <div class="relationship-tags-v72"><span>Resource fit</span><span>Partner coordination</span><span>Integrated supports</span><span>Access</span></div>
+  </div>
+ </div>
+ <div class="relationship-flow-v72"><span>FSS</span><b>⇄</b><span>Shared attendance goal</span><b>⇄</b><span>KSSN</span></div>
+</div>
 <div class="role-workspaces-v70">
  <div class="eyebrow">ROLE WORKSPACES</div><h3>Do the work by function.</h3>
  <div class="role-tabs-v70">
@@ -235,14 +271,11 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
  </div>
  <div id="roleContentV70"></div>
 </div>
-<div class="global-page-nav-v71" data-nav-for="coord">
-<button type="button" class="global-back-v71">← Back</button>
-<button type="button" class="global-home-v71" data-home>⌂ Home</button>
-</div></section>
+</section>
 
 <section class="page" id="tools">
 <div class="pagehead tools-head"><div class="pagehead-inner">
-<button class="back" data-home>← Home</button><div class="eyebrow light">TOOLS &amp; RESOURCES</div>
+<div class="eyebrow light">TOOLS &amp; RESOURCES</div>
 <h2>Open the tool you need.</h2>
 <p>No pathway to complete first. Choose the work in front of you and use the tool in place.</p>
 </div></div>
@@ -319,13 +352,10 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
     <div id="deepContentV70"></div>
   </div>
 </div>
-<div class="global-page-nav-v71" data-nav-for="tools">
-<button type="button" class="global-back-v71">← Back</button>
-<button type="button" class="global-home-v71" data-home>⌂ Home</button>
-</div></section>
+</section>
 <section class="page" id="model">
 <div class="pagehead framework-head"><div class="pagehead-inner">
-<button class="back" data-home>← Home</button>
+
 <div class="eyebrow light">OPERATING FRAMEWORK</div>
 <h2>How We Work</h2>
 <p>Use the framework to move from an attendance concern to a coordinated response—and to recognize when one case is pointing to a larger system issue.</p>
@@ -385,10 +415,7 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
  </div>
  <div class="case-system-v70"><b>Case → System</b><span>One family → Repeated barrier → Pattern identified → Building response → District response, if needed.</span></div>
 </div>
-<div class="global-page-nav-v71" data-nav-for="model">
-<button type="button" class="global-back-v71">← Back</button>
-<button type="button" class="global-home-v71" data-home>⌂ Home</button>
-</div></section>
+</section>
 <script>
 const home=document.getElementById('home'),pages=[...document.querySelectorAll('.page')];
 function openP(id){home.style.display='none';pages.forEach(p=>p.classList.toggle('active',p.id===id));scrollTo(0,0)}
@@ -492,20 +519,22 @@ function renderRole70(k){document.querySelectorAll('[data-role70]').forEach(x=>x
 document.addEventListener('click',e=>{const b=e.target.closest('[data-role70]');if(b)renderRole70(b.dataset.role70);});
 renderRole70("fss");
 
-let navStackV71=[];
+
+
+const nav72=document.getElementById('singlePageNavV72');
+let pageStack72=[];
+function activePage72(){return [...document.querySelectorAll('section.page')].find(p=>getComputedStyle(p).display!=='none');}
+function syncNav72(){const p=activePage72();if(nav72)nav72.hidden=!p;}
 document.addEventListener('click',e=>{
- const opener=e.target.closest('[data-open]');
- if(opener){
-   const current=document.querySelector('.page.active,.page[style*="display: block"],.page[style*="display:block"]');
-   if(current && current.id && current.id!==opener.dataset.open) navStackV71.push(current.id);
- }
+ const open=e.target.closest('[data-open]');
+ if(open){const cur=activePage72();if(cur&&cur.id!==open.dataset.open)pageStack72.push(cur.id);setTimeout(syncNav72,0);}
+ if(e.target.closest('[data-home]')){pageStack72=[];setTimeout(syncNav72,0);}
 });
-document.addEventListener('click',e=>{
- const b=e.target.closest('.global-back-v71');
- if(!b)return;
- const prev=navStackV71.pop();
- if(prev && typeof show==="function"){show(prev);}
- else if(typeof showHome==="function"){showHome();}
- else document.querySelector('[data-home]')?.click();
+document.getElementById('singleBackV72')?.addEventListener('click',()=>{
+ const prev=pageStack72.pop();
+ if(prev && typeof show==='function')show(prev);
+ else if(typeof showHome==='function')showHome();
+ setTimeout(syncNav72,0);
 });
+syncNav72();
 </script></body></html>
