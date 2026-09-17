@@ -163,6 +163,53 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 .relationship-grid-v72{display:grid;grid-template-columns:1fr .86fr 1fr;gap:12px;align-items:stretch}.relationship-card-v72{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}.relationship-card-v72 h4{font-size:19px;color:var(--navy);margin:7px 0 8px}.relationship-card-v72 p{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 13px}.relationship-label-v72{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--blue)}.shared-v72{background:#f2f8fb;text-align:center;display:flex;flex-direction:column;justify-content:center}.shared-v72 strong{color:var(--navy);font-size:15px;line-height:1.5}.relationship-tags-v72{display:flex;flex-wrap:wrap;gap:6px}.relationship-tags-v72 span{font-size:11px;font-weight:750;color:var(--navy);background:#f5f8fa;border-radius:999px;padding:6px 8px}.relationship-flow-v72{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:12px;color:var(--navy);font-size:13px;font-weight:850}.relationship-flow-v72 b{color:var(--orange);font-size:21px}
 @media(max-width:760px){.relationship-grid-v72{grid-template-columns:1fr}.relationship-flow-v72{flex-wrap:wrap}}
 </style>
+
+<style id="v73-route-card-overlap-fix">
+/* V73: route-card content must participate in normal document flow */
+.routes .route,
+.route-grid .route,
+.route{
+  display:flex!important;
+  flex-direction:column!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+  padding-bottom:22px!important;
+}
+.routes .route h3,
+.route-grid .route h3,
+.route h3{
+  position:static!important;
+  margin-bottom:12px!important;
+}
+.routes .route p,
+.route-grid .route p,
+.route p{
+  position:static!important;
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+  margin:0 0 18px!important;
+  line-height:1.48!important;
+}
+.routes .route .go,
+.route-grid .route .go,
+.route .go{
+  position:static!important;
+  inset:auto!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  margin-top:auto!important;
+  padding-top:4px!important;
+  line-height:1.25!important;
+  transform:none!important;
+}
+@media(max-width:760px){
+  .routes .route,.route-grid .route,.route{padding-bottom:20px!important}
+  .routes .route p,.route-grid .route p,.route p{margin-bottom:16px!important}
+}
+</style>
 </head><body>
 <div id="home">
 <header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
