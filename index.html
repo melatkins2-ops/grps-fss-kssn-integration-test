@@ -105,6 +105,35 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 .hero .hero-inner>div:first-child{max-width:920px!important;width:100%!important}
 .hero figure,.hero-photo,.student-visual,.hero-visual,.hero-media,.hero-art,.visual-card{display:none!important;width:0!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;aspect-ratio:auto!important}
 </style>
+
+<style id="v69-targeted-coordinate-fixes">
+/* Targeted V69 fixes only — preserve existing V68 design */
+#coord .route,#coord .role-card,#coord .coord-card,#coord .coord-panel{
+  height:auto!important;min-height:0!important;overflow:visible!important;
+}
+#coord .route p,#coord .role-card p,#coord .coord-card p,#coord .coord-panel p{
+  position:static!important;margin-bottom:12px!important;overflow:visible!important;
+}
+#coord .go,#coord .route .go{
+  position:static!important;display:inline-block!important;margin-top:8px!important;
+}
+.coord-framework-v69{margin:28px 0 8px;border-top:1px solid var(--line);padding-top:24px}
+.coord-framework-v69 h3{font-size:24px;color:var(--navy);margin:4px 0 6px}
+.coord-framework-v69>p{font-size:15px;color:var(--muted);margin:0 0 14px}
+.coord-fw-steps-v69{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.coord-fw-step-v69{border:1px solid #d8e4ea;background:#fff;border-radius:12px;padding:13px 11px;text-align:left;cursor:pointer;min-width:0}
+.coord-fw-step-v69 span{display:flex;width:24px;height:24px;border-radius:50%;align-items:center;justify-content:center;background:#eaf5fb;color:var(--blue);font-size:11px;font-weight:900;margin-bottom:7px}
+.coord-fw-step-v69 b{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}
+.coord-fw-step-v69 small{display:block;color:var(--muted);font-size:11px;line-height:1.3}
+.coord-fw-step-v69.active{border-color:var(--blue);background:#f7fcff}
+.coord-fw-detail-v69{margin-top:8px;border-left:4px solid var(--orange);background:#f5f9fb;border-radius:0 10px 10px 0;padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.4}
+.coord-fw-detail-v69 b{color:var(--navy)}
+.page-nav-v69{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:26px 0 4px;padding-top:18px;border-top:1px solid var(--line)}
+.page-nav-v69 button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:10px 15px;font-weight:800;cursor:pointer}
+.page-nav-v69 .home-v69{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:760px){.coord-fw-steps-v69{grid-template-columns:1fr 1fr}.coord-fw-step-v69:last-child{grid-column:1/-1}}
+@media(max-width:480px){.coord-fw-steps-v69{grid-template-columns:1fr}.coord-fw-step-v69:last-child{grid-column:auto}}
+</style>
 </head><body>
 <div id="home">
 <header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
@@ -159,7 +188,25 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 </section>
 
 
-<section class="page" id="coord"><div class="pagehead"><div class="pagehead-inner"><button class="back" data-home>← Home</button><h2>Coordinate FSS + KSSN</h2><p>One plan with clear responsibilities. Overlap is intentional; duplication is not.</p></div></div><div class="content"><div class="band" style="margin-top:0"><div><h4>Attendance lead</h4><p>Name one person responsible for keeping the attendance goal and review point moving.</p></div><div><h4>FSS contribution</h4><p>Family voice, attendance intervention, plan, follow-through, and monitoring.</p></div><div><h4>KSSN contribution</h4><p>Resource fit, partner coordination, access, integrated supports, and repeated-gap response.</p></div></div><div class="work" style="max-width:850px;margin-top:35px"><h3>Build the coordinated response</h3><div class="promptbox"><h4>Shared barrier</h4><textarea rows="2" placeholder="What are we jointly trying to change?"></textarea></div><div class="promptbox"><h4>Distinct responsibilities</h4><textarea rows="5" placeholder="Attendance lead:&#10;FSS will:&#10;KSSN will:&#10;School will:&#10;Family/scholar will:"></textarea></div><div class="actions"><button class="btn primary">Set review point →</button></div></div></div></section>
+<section class="page" id="coord"><div class="pagehead"><div class="pagehead-inner"><button class="back" data-home>← Home</button><h2>Coordinate FSS + KSSN</h2><p>One plan with clear responsibilities. Overlap is intentional; duplication is not.</p></div></div><div class="content"><div class="band" style="margin-top:0"><div><h4>Attendance lead</h4><p>Name one person responsible for keeping the attendance goal and review point moving.</p></div><div><h4>FSS contribution</h4><p>Family voice, attendance intervention, plan, follow-through, and monitoring.</p></div><div><h4>KSSN contribution</h4><p>Resource fit, partner coordination, access, integrated supports, and repeated-gap response.</p></div></div><div class="work" style="max-width:850px;margin-top:35px"><h3>Build the coordinated response</h3><div class="promptbox"><h4>Shared barrier</h4><textarea rows="2" placeholder="What are we jointly trying to change?"></textarea></div><div class="promptbox"><h4>Distinct responsibilities</h4><textarea rows="5" placeholder="Attendance lead:&#10;FSS will:&#10;KSSN will:&#10;School will:&#10;Family/scholar will:"></textarea></div><div class="actions"><button class="btn primary">Set review point →</button></div></div></div>
+<div class="coord-framework-v69">
+  <div class="eyebrow">HOW WE WORK TOGETHER</div>
+  <h3>Pattern → Barrier → Ownership → Support → Impact</h3>
+  <p>Use the same framework here to coordinate the work without creating competing plans or duplicate follow-up.</p>
+  <div class="coord-fw-steps-v69">
+    <button class="coord-fw-step-v69 active" data-cfw69="pattern"><span>1</span><b>Pattern</b><small>What do we see?</small></button>
+    <button class="coord-fw-step-v69" data-cfw69="barrier"><span>2</span><b>Barrier</b><small>What is getting in the way?</small></button>
+    <button class="coord-fw-step-v69" data-cfw69="ownership"><span>3</span><b>Ownership</b><small>Who needs to act?</small></button>
+    <button class="coord-fw-step-v69" data-cfw69="support"><span>4</span><b>Support</b><small>What will reduce the barrier?</small></button>
+    <button class="coord-fw-step-v69" data-cfw69="impact"><span>5</span><b>Impact</b><small>Is it working?</small></button>
+  </div>
+  <div class="coord-fw-detail-v69" id="coordFwDetailV69"><b>Pattern:</b> Confirm the attendance pattern before deciding which role should respond.</div>
+</div>
+<div class="page-nav-v69">
+  <button type="button" id="coordBackV69">← Back</button>
+  <button type="button" class="home-v69" data-home>⌂ Home</button>
+</div>
+</section>
 
 <section class="page" id="tools">
 <div class="pagehead tools-head"><div class="pagehead-inner">
@@ -303,4 +350,17 @@ function renderFw66(k){
  document.getElementById('fwDetailV66').innerHTML=`<div><small>DECISION</small><b>${d[0]}</b></div><p>${d[1]}</p><div class="hf66-output"><small>OUTPUT</small><b>${d[2]}</b></div>`;
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-fw66]');if(b)renderFw66(b.dataset.fw66);});
+
+const coordFw69={
+pattern:"<b>Pattern:</b> Confirm the attendance pattern before deciding which role should respond.",
+barrier:"<b>Barrier:</b> Build one shared barrier hypothesis using scholar/family voice, attendance evidence, and school conditions.",
+ownership:"<b>Ownership:</b> Name one attendance lead and clarify distinct FSS, KSSN, school, and partner responsibilities.",
+support:"<b>Support:</b> Match the response to the barrier. FSS and KSSN should add different value to one coordinated plan.",
+impact:"<b>Impact:</b> Review implementation, access, barrier reduction, and attendance response together."
+};
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-cfw69]');
+ if(b){document.querySelectorAll('.coord-fw-step-v69').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('coordFwDetailV69').innerHTML=coordFw69[b.dataset.cfw69];}
+});
+document.getElementById('coordBackV69')?.addEventListener('click',()=>{ if(history.length>1){history.back();} else {showHome();} });
 </script></body></html>
