@@ -26,28 +26,100 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 @media(max-width:900px){.nav{display:none}.pathgrid,.toolgrid{grid-template-columns:1fr}.pulse{grid-template-columns:1fr 1fr}.pulse>div{border-top:1px solid var(--line)}.band{grid-template-columns:1fr}.band-intro{position:static}.model{grid-template-columns:1fr 1fr;grid-template-areas:"center center" "fss kssn" "shared school"}.cadence{grid-template-columns:1fr 1fr}.cadence>div:first-child{grid-column:1/-1}.framework{grid-template-columns:1fr 1fr}.go-check-stop,.resourcegrid{grid-template-columns:1fr}.tool-flow{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){body{font-size:17px}.wrap{width:min(100% - 24px,1180px)}.utility .wrap{justify-content:center}.utility .wrap span{display:none}.brandrow{min-height:66px}.brand span{display:none}.hero .wrap{padding:38px 0 32px}.pathgrid,.pulse,.model,.cadence,.framework,.tool-flow{grid-template-columns:1fr}.model{grid-template-areas:"center" "fss" "kssn" "shared" "school"}.pulse>div:first-child,.cadence>div:first-child{grid-column:auto}.circle{width:190px;height:190px;font-size:23px}.model-top,.section-head,.footer{display:block}.expand{margin-top:10px}.crumbs{position:sticky;top:66px;background:#fbfdfe;padding:8px 0;z-index:20}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Parent University structural rebuild */
+.brandbar{box-shadow:0 4px 18px rgba(15,39,65,.05)}
+.brand{border:0;background:transparent;text-align:left;cursor:pointer}
+.grps-logo{height:58px;width:auto;display:block;object-fit:contain}
+.brand-title{padding-left:14px;border-left:1px solid var(--line)}
+.brand-title b{font-size:17px}.brand-title small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.menuBtn{display:none;border:1px solid var(--line);background:#fff;color:var(--navy);font-weight:800;border-radius:10px;padding:9px 12px}
+.hero{background:linear-gradient(135deg,#f7fbff 0%,#fff 58%,#fff3ea 100%);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(239,107,34,.08);right:-120px;top:-150px}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:48px;align-items:center;padding:64px 0 58px}
+.hero-copy{min-width:0}.hero h1{letter-spacing:-.04em;line-height:.99}
+.todayCard{background:linear-gradient(145deg,var(--navy),#175887);color:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.todayCard .eyebrow{color:#cfe6fb}.todayCard h2{color:#fff;font-size:29px;margin:4px 0 14px}.todayCard p{color:#dbe9f5;font-size:16px}
+.todayCard button{display:block;width:100%;text-align:left;border:0;border-top:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;padding:14px 2px;font-weight:800}.todayCard button:last-child{color:#ffbc93}
+.dailyHub{padding:18px 0 58px}.dailyShell{border:1px solid #dde6ee;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 18px 55px rgba(18,63,102,.12)}
+.dailyTop{background:linear-gradient(90deg,var(--navy),#175887);color:#fff;padding:25px 28px}.dailyTop .eyebrow{color:#cfe6fb}.dailyTop h2{color:#fff;margin:4px 0 4px}.dailyTop p{margin:0;color:#dbe9f5}
+.dailyGrid{display:grid;grid-template-columns:repeat(4,1fr)}.dailyTile{border:0;border-right:1px solid var(--line);background:#fff;text-align:left;padding:23px 20px;min-height:165px;display:flex;flex-direction:column}.dailyTile:last-child{border-right:0}.dailyTile:hover{background:var(--sky)}.dailyIcon{width:42px;height:42px;border-radius:12px;background:var(--sky);color:var(--navy);display:grid;place-items:center;font-weight:900;margin-bottom:14px}.dailyTile strong{color:var(--navy);font-size:17px}.dailyTile span{color:var(--muted);font-size:14px;margin-top:5px}.dailyTile b{color:var(--orange);font-size:13px;margin-top:auto;padding-top:10px}
+.choiceBand{background:var(--soft);border-top:1px solid #e8edf2;border-bottom:1px solid #e8edf2}
+.choiceBand .path{border-top:4px solid var(--blue);box-shadow:none}.choiceBand .path:nth-child(1){border-top-color:var(--orange)}.choiceBand .path:nth-child(2){border-top-color:var(--blue)}.choiceBand .path:nth-child(3){border-top-color:var(--green)}
+.familyStage .framework{grid-template-columns:repeat(5,1fr)}.familyStage .step{min-height:150px;display:flex;flex-direction:column}.familyStage .step b{font-size:20px}.familyStage .step span{margin-top:7px}.familyStage .step:after{content:"Open step →";font-size:12px;font-weight:900;color:var(--blue);margin-top:auto;padding-top:12px}
+.homeFloat{position:fixed;right:20px;bottom:20px;z-index:45;border:0;background:var(--orange);color:#fff;border-radius:999px;padding:11px 15px;font-weight:900;box-shadow:var(--shadow)}
+@media(max-width:980px){.hero .wrap{grid-template-columns:1fr}.dailyGrid{grid-template-columns:repeat(2,1fr)}.dailyTile{border-bottom:1px solid var(--line)}.familyStage .framework{grid-template-columns:repeat(2,1fr)}.brand-title{display:none}.grps-logo{height:50px}}
+@media(max-width:760px){.menuBtn{display:block}.nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0}.nav.open{display:flex}.nav button{text-align:left}.brandrow{flex-wrap:wrap}.hero .wrap{display:block;padding:42px 0}.todayCard{margin-top:28px}.dailyGrid,.familyStage .framework{grid-template-columns:1fr}.dailyTile{border-right:0}.grps-logo{height:44px}.homeFloat{right:12px;bottom:12px}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="utility"><div class="wrap"><span>GRPS attendance collaboration resource</span><div><a href="#" onclick="go('home');return false">Home</a></div></div></div>
-<header class="brandbar"><div class="wrap brandrow"><div class="brand"><div class="mark">GR</div><div><b>Family Support Specialist & Kent School Services Integration</b><span>One coordinated response to attendance barriers</span></div></div><nav class="nav" aria-label="Primary"><button onclick="go('home')">Start Here</button><button onclick="go('roles')">FSS + KSSN</button><button onclick="go('tools')">Tools & Resources</button><button onclick="go('model')">How We Work</button></nav></div></header>
+<div class="utility"><div class="wrap"><span>GRPS Community & Student Affairs</span><div><a href="#" onclick="go('home');return false">Start Here</a><a href="#" onclick="go('tools');return false">Tools & Resources</a></div></div></div>
+<header class="brandbar"><div class="wrap brandrow">
+  <button class="brand" onclick="go('home')" aria-label="Go to home">
+    <img class="grps-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice">
+    <span class="brand-title"><b>FSS + KSSN Attendance Collaboration</b><small>Family Support Specialist & Kent School Services Integration</small></span>
+  </button>
+  <button class="menuBtn" id="menuBtn" onclick="toggleMenu()" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  <nav class="nav" id="mainNav" aria-label="Primary"><button onclick="go('home')">Start Here</button><button onclick="go('roles')">FSS + KSSN</button><button onclick="go('tools')">Tools & Resources</button><button onclick="go('model')">How We Work</button></nav>
+</div></header>
 <main id="main">
 <section class="page active" id="home">
-  <div class="hero"><div class="wrap"><div class="eyebrow">GRPS ATTENDANCE COLLABORATION</div><h1>One barrier. One coordinated response.</h1><p class="lede">A practical operating resource for Family Support Specialists, KSSN Coordinators and school teams to understand the barrier, clarify ownership, match support and monitor impact.</p><div class="barrier-rule">Start with the barrier—not the role.</div></div></div>
-  <div class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">WHERE SHOULD I START?</div><h2>What do you need to do?</h2></div><p>Choose the task that is closest to the work in front of you. The site will take you directly to the next useful step.</p></div>
-  <div class="pathgrid">
-    <button class="path" onclick="go('concern')"><span class="num">01</span><h3>Work through an attendance concern</h3><p>Start with the attendance pattern, identify the barrier, determine ownership and match the response.</p><span class="go">Start with the concern →</span></button>
-    <button class="path" onclick="go('roles')"><span class="num">02</span><h3>Coordinate FSS + KSSN</h3><p>See what FSS owns, what KSSN owns, where the school acts, and where shared work adds value.</p><span class="go">Clarify the work →</span></button>
-    <button class="path" onclick="go('tools')"><span class="num">03</span><h3>Use a field tool</h3><p>Open a caring conversation, barrier explorer, attendance plan, warm handoff, review or team huddle.</p><span class="go">Choose a tool →</span></button>
+  <div class="hero"><div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">FAMILY SUPPORT SPECIALIST + KSSN</div>
+      <h1>Removing attendance barriers, together.</h1>
+      <p class="lede">A practical GRPS resource for coordinating Family Support Specialists, KSSN Coordinators and school teams around the barrier keeping a scholar from attending.</p>
+      <div class="barrier-rule">Start with the barrier—not the role.</div>
+    </div>
+    <aside class="todayCard" aria-label="Quick start">
+      <div class="eyebrow">START HERE</div>
+      <h2>What is happening right now?</h2>
+      <p>Choose the closest match. You can always return home without losing your place.</p>
+      <button onclick="go('concern')">The barrier is not clear →</button>
+      <button onclick="go('roles')">FSS + KSSN are both involved →</button>
+      <button onclick="openTool('review')">The current response is not working →</button>
+      <button onclick="go('tools')">I know the tool I need →</button>
+    </aside>
+  </div></div>
+
+  <div class="dailyHub"><div class="wrap"><div class="dailyShell">
+    <div class="dailyTop"><div class="eyebrow">WORK THE ATTENDANCE CONCERN</div><h2>From concern to coordinated response.</h2><p>Use the same decision logic no matter which role first notices the issue.</p></div>
+    <div class="dailyGrid">
+      <button class="dailyTile" onclick="go('concern')"><div class="dailyIcon">1</div><strong>Understand the concern</strong><span>Confirm the pattern and hear scholar/family voice.</span><b>Start →</b></button>
+      <button class="dailyTile" onclick="openTool('barrier')"><div class="dailyIcon">2</div><strong>Identify the barrier</strong><span>Move from symptoms to the barrier getting in the way.</span><b>Explore →</b></button>
+      <button class="dailyTile" onclick="go('roles')"><div class="dailyIcon">3</div><strong>Clarify who does what</strong><span>FSS, KSSN, school and shared responsibilities.</span><b>Coordinate →</b></button>
+      <button class="dailyTile" onclick="openTool('review')"><div class="dailyIcon">4</div><strong>Check impact</strong><span>Review implementation, access, barrier reduction and attendance.</span><b>Review →</b></button>
+    </div>
   </div></div></div>
-  <div class="section soft"><div class="wrap"><div class="pulse"><div><b>HOW THE WORK MOVES</b><span>Simple rhythm. Clear purpose.</span></div><div><b>Daily</b><span>Do the assigned work.</span></div><div><b>Weekly</b><span>Unstick what is not moving.</span></div><div><b>Monthly + Quarterly</b><span>Find patterns and change the system.</span></div></div></div></div>
-  <div class="section"><div class="wrap band"><div class="band-intro"><div class="eyebrow">QUICK START</div><h2>Choose what is happening.</h2><p>The platform is organized around the attendance problem—not around an organizational chart.</p></div><div class="choice-list">
-    <button class="choice" onclick="go('concern')"><div class="ico">?</div><div><strong>We know the scholar is missing school, but the barrier is unclear.</strong><span>Use the Barrier Explorer and caring conversation.</span></div></button>
-    <button class="choice" onclick="openTool('plan')"><div class="ico">→</div><div><strong>We understand the barrier and need an attendance plan.</strong><span>Match an intervention, assign ownership and set the review point.</span></div></button>
-    <button class="choice" onclick="go('roles')"><div class="ico">⇄</div><div><strong>FSS and KSSN are both involved.</strong><span>Clarify the attendance lead and distinct responsibilities.</span></div></button>
-    <button class="choice" onclick="openTool('review')"><div class="ico">30</div><div><strong>The response is in place, but attendance is not improving.</strong><span>Check implementation, access, barrier reduction and attendance response.</span></div></button>
-  </div></div></div>
+
+  <div class="section choiceBand"><div class="wrap"><div class="section-head"><div><div class="eyebrow">CHOOSE YOUR PATH</div><h2>What do you need to do?</h2></div><p>Three clear destinations. The deeper tools stay inside the destination where they belong.</p></div>
+    <div class="pathgrid">
+      <button class="path" onclick="go('concern')"><span class="num">01</span><h3>Work through an attendance concern</h3><p>Pattern → Barrier → Ownership → Support → Impact.</p><span class="go">Start with the concern →</span></button>
+      <button class="path" onclick="go('roles')"><span class="num">02</span><h3>Coordinate FSS + KSSN</h3><p>See explicit FSS, KSSN, school and shared work around the scholar + family.</p><span class="go">Clarify roles →</span></button>
+      <button class="path" onclick="go('tools')"><span class="num">03</span><h3>Tools & Resources</h3><p>Open a field tool without navigating through a long page or creating another tracker.</p><span class="go">Open tools →</span></button>
+    </div>
+  </div></div>
+
+  <div class="section familyStage"><div class="wrap"><div class="section-head"><div><div class="eyebrow">OUR DECISION FRAMEWORK</div><h2>Pattern → Barrier → Ownership → Support → Impact</h2></div><p>Click any stage for the decision that belongs there.</p></div>
+    <div class="framework" id="homeFramework">
+      <button class="step" onclick="homeFramework('pattern',this)"><b>Pattern</b><span>What do we see?</span></button>
+      <button class="step" onclick="homeFramework('barrier',this)"><b>Barrier</b><span>What is getting in the way?</span></button>
+      <button class="step" onclick="homeFramework('ownership',this)"><b>Ownership</b><span>Who needs to act?</span></button>
+      <button class="step" onclick="homeFramework('support',this)"><b>Support</b><span>What will reduce the barrier?</span></button>
+      <button class="step" onclick="homeFramework('impact',this)"><b>Impact</b><span>Is it working?</span></button>
+    </div>
+    <div class="framework-detail" id="homeFrameworkDetail"><b>Framework:</b> Select a stage to see the decision and expected output.</div>
+  </div></div>
+
+  <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2></div><p>The model stays compact here. Open the role page for the full interactive view and expanded version.</p></div>
+    <div class="choice-list">
+      <button class="choice" onclick="go('roles')"><div class="ico">F</div><div><strong>FSS — Attendance Intervention Lead</strong><span>Family-centered root-cause work, attendance intervention, follow-through and monitoring.</span></div></button>
+      <button class="choice" onclick="go('roles')"><div class="ico">K</div><div><strong>KSSN — Community School / Resource Coordination</strong><span>Partner coordination, integrated supports, community assets, access confirmation and system patterns.</span></div></button>
+      <button class="choice" onclick="go('roles')"><div class="ico">⇄</div><div><strong>Shared Work — One coordinated plan</strong><span>One barrier hypothesis, one attendance lead, distinct responsibilities and one review point.</span></div></button>
+    </div>
+  </div></div>
 </section>
 
 <section class="page" id="roles">
@@ -101,13 +173,16 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
  <div class="section"><div class="wrap tool-view"><div class="tool-flow"><div>1. Understand</div><div>2. Decide</div><div>3. Act</div><div>4. Review</div></div><div class="workbox"><div id="toolPrompts"></div><textarea id="notes" aria-label="Working notes" placeholder="Working notes… Nothing is saved."></textarea><div class="actions"><button class="primary" onclick="copyNotes()">Copy notes</button><button onclick="document.getElementById('notes').value=''">Clear</button></div></div></div></div>
 </section>
 </main>
-<footer><div class="wrap footer"><div><b>Family Support Specialist & Kent School Services Integration</b><br><small>GRPS attendance collaboration resource</small></div><small>Start with the barrier—not the role.</small></div></footer>
+<button class="homeFloat" onclick="go('home')" aria-label="Home">⌂ Home</button>
+<footer><div class="wrap footer"><div style="display:flex;gap:18px;align-items:center"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice" style="height:64px;width:auto;background:#fff;border-radius:8px;padding:6px"><div><b>Family Support Specialist & Kent School Services Integration</b><br><small>GRPS attendance collaboration resource</small></div></div><small>Start with the barrier—not the role.</small></div></footer>
 
 <div class="modal" id="modelModal" role="dialog" aria-modal="true" aria-label="Expanded operating model"><div class="modalbox"><button class="modalclose" onclick="closeModel()">Close ×</button><div id="modalContent"></div></div></div>
 <script>
 const historyStack=['home'];
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');if(historyStack.at(-1)!==id)historyStack.push(id);window.scrollTo(0,0);location.hash=id}
-function back(){if(historyStack.length>1)historyStack.pop();go(historyStack.pop()||'home')}
+function toggleMenu(){const n=document.getElementById('mainNav'),b=document.getElementById('menuBtn');n.classList.toggle('open');b.setAttribute('aria-expanded',n.classList.contains('open')?'true':'false')}
+function homeFramework(k,el){const d=fdata[k];document.getElementById('homeFrameworkDetail').innerHTML=`<b>${d[0]}:</b> ${d[1]}`;document.querySelectorAll('#homeFramework .step').forEach(x=>x.classList.remove('active'));if(el)el.classList.add('active')}
+function go(id){const nav=document.getElementById('mainNav');const mb=document.getElementById('menuBtn');if(nav)nav.classList.remove('open');if(mb)mb.setAttribute('aria-expanded','false');document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');if(historyStack.at(-1)!==id)historyStack.push(id);window.scrollTo(0,0);location.hash=id}
+function back(){if(historyStack.length>1){historyStack.pop();const target=historyStack.pop()||'home';go(target)}else{go('home')}}
 window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(document.getElementById(id)&&document.getElementById(id).classList.contains('page'))go(id)})
 const fdata={
 pattern:["Pattern","Confirm the attendance pattern. Look at when absences occur, what changed, and whether the pattern is isolated or repeating."],
