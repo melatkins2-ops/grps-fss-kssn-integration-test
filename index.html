@@ -210,6 +210,31 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
   .routes .route p,.route-grid .route p,.route p{margin-bottom:16px!important}
 }
 </style>
+
+<style id="v74-explicit-role-map-and-nav">
+.single-page-nav-v72{
+  position:sticky!important;top:0!important;z-index:999!important;
+  display:flex!important;justify-content:space-between!important;align-items:center!important;
+  padding:12px max(20px,calc((100vw - 1180px)/2))!important;
+  background:#fff!important;border-bottom:1px solid var(--line)!important;
+}
+.single-page-nav-v72[hidden]{display:none!important}
+.single-page-nav-v72 button{font-size:15px!important;padding:10px 16px!important}
+.role-map-v74{margin:0 0 30px;padding:26px 0 30px;border-bottom:1px solid var(--line)}
+.role-map-v74 h3{font-size:28px;color:var(--navy);margin:5px 0 7px;line-height:1.18}
+.role-map-intro-v74{font-size:16px!important;line-height:1.5!important;color:var(--muted);max-width:900px;margin:0 0 18px!important}
+.role-map-grid-v74{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:stretch}
+.role-map-card-v74{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}
+.fss-map-v74{border-top:5px solid #1678b8}.together-map-v74{border-top:5px solid var(--orange);background:#fffaf3}.kssn-map-v74{border-top:5px solid #16856c}
+.role-map-label-v74{font-size:12px;font-weight:900;letter-spacing:.09em;color:var(--blue)}
+.role-map-card-v74 h4{font-size:20px;color:var(--navy);margin:7px 0 8px;line-height:1.2}
+.role-map-purpose-v74{font-size:14px!important;line-height:1.45!important;color:var(--muted);margin:0 0 12px!important}
+.role-map-card-v74 ul{padding-left:20px;margin:0}.role-map-card-v74 li{font-size:14px;line-height:1.45;color:#334e60;margin:6px 0}
+.overlap-rule-v74{margin-top:14px;padding:10px 12px;background:#fff;border-left:4px solid var(--orange);font-size:14px;color:var(--navy)}
+.role-map-flow-v74{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:14px;font-weight:850;color:var(--navy)}
+.role-map-flow-v74 b{font-size:22px;color:var(--orange)}
+@media(max-width:850px){.role-map-grid-v74{grid-template-columns:1fr}.role-map-flow-v74{flex-wrap:wrap;text-align:center}}
+</style>
 </head><body>
 <div id="home">
 <header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
@@ -269,7 +294,62 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 </section>
 
 
-<section class="page" id="coord"><div class="pagehead"><div class="pagehead-inner"><h2>Coordinate FSS + KSSN</h2><p>One plan with clear responsibilities. Overlap is intentional; duplication is not.</p></div></div><div class="content"><div class="band" style="margin-top:0"><div><h4>Attendance lead</h4><p>Name one person responsible for keeping the attendance goal and review point moving.</p></div><div><h4>FSS contribution</h4><p>Family voice, attendance intervention, plan, follow-through, and monitoring.</p></div><div><h4>KSSN contribution</h4><p>Resource fit, partner coordination, access, integrated supports, and repeated-gap response.</p></div></div><div class="work" style="max-width:850px;margin-top:35px"><h3>Build the coordinated response</h3><div class="promptbox"><h4>Shared barrier</h4><textarea rows="2" placeholder="What are we jointly trying to change?"></textarea></div><div class="promptbox"><h4>Distinct responsibilities</h4><textarea rows="5" placeholder="Attendance lead:&#10;FSS will:&#10;KSSN will:&#10;School will:&#10;Family/scholar will:"></textarea></div><div class="actions"><button class="btn primary">Set review point →</button></div></div></div>
+<section class="page" id="coord"><div class="pagehead"><div class="pagehead-inner"><h2>Coordinate FSS + KSSN</h2><p>One plan with clear responsibilities. Overlap is intentional; duplication is not.</p></div></div><div class="content">
+<div class="role-map-v74">
+  <div class="eyebrow">WHO DOES WHAT — AND HOW WE WORK TOGETHER</div>
+  <h3>FSS and KSSN bring different functions to one attendance goal.</h3>
+  <p class="role-map-intro-v74">Start with the barrier. Then decide which function is needed. Both may be involved at the same time, but they should not duplicate the same work.</p>
+
+  <div class="role-map-grid-v74">
+    <section class="role-map-card-v74 fss-map-v74">
+      <div class="role-map-label-v74">FSS</div>
+      <h4>Attendance Intervention Lead</h4>
+      <p class="role-map-purpose-v74">Works directly with the scholar and family to understand the attendance barrier and keep the attendance intervention moving.</p>
+      <ul>
+        <li>Review attendance patterns and prioritize assigned scholars.</li>
+        <li>Use caring conversations to understand root causes and family voice.</li>
+        <li>Build and monitor the attendance intervention/plan.</li>
+        <li>Conduct caregiver meetings or home visits when appropriate.</li>
+        <li>Problem-solve routines and barriers with the family.</li>
+        <li>Follow up on whether the barrier and attendance are changing.</li>
+      </ul>
+    </section>
+
+    <section class="role-map-card-v74 together-map-v74">
+      <div class="role-map-label-v74">WORK TOGETHER</div>
+      <h4>One Coordinated Response</h4>
+      <p class="role-map-purpose-v74">FSS ⇄ KSSN when the barrier requires both attendance intervention and Community School/resource coordination.</p>
+      <ul>
+        <li>Use one shared barrier hypothesis.</li>
+        <li>Name one attendance lead.</li>
+        <li>Assign distinct responsibilities.</li>
+        <li>Coordinate family contact.</li>
+        <li>Use warm handoffs instead of passing the family off.</li>
+        <li>Set one review point and make the next decision together.</li>
+      </ul>
+      <div class="overlap-rule-v74">Overlap is intentional. <strong>Duplication is not.</strong></div>
+    </section>
+
+    <section class="role-map-card-v74 kssn-map-v74">
+      <div class="role-map-label-v74">KSSN</div>
+      <h4>Community School / Resource Coordination</h4>
+      <p class="role-map-purpose-v74">Adds Community School strategy, partners, integrated supports, and resource coordination when those functions can reduce the barrier.</p>
+      <ul>
+        <li>Assess whether a community resource or partner fits the barrier.</li>
+        <li>Coordinate warm connections to providers and supports.</li>
+        <li>Confirm the family can actually access and use the support.</li>
+        <li>Align multiple partners around the same attendance goal.</li>
+        <li>Connect scholars to programs and expanded opportunities when relevant.</li>
+        <li>Elevate repeated resource gaps into a broader Community School response.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="role-map-flow-v74">
+    <span>FSS</span><b>⇄</b><span>Shared barrier + attendance goal</span><b>⇄</b><span>KSSN</span>
+  </div>
+</div>
+<div class="band" style="margin-top:0"><div><h4>Attendance lead</h4><p>Name one person responsible for keeping the attendance goal and review point moving.</p></div><div><h4>FSS contribution</h4><p>Family voice, attendance intervention, plan, follow-through, and monitoring.</p></div><div><h4>KSSN contribution</h4><p>Resource fit, partner coordination, access, integrated supports, and repeated-gap response.</p></div></div><div class="work" style="max-width:850px;margin-top:35px"><h3>Build the coordinated response</h3><div class="promptbox"><h4>Shared barrier</h4><textarea rows="2" placeholder="What are we jointly trying to change?"></textarea></div><div class="promptbox"><h4>Distinct responsibilities</h4><textarea rows="5" placeholder="Attendance lead:&#10;FSS will:&#10;KSSN will:&#10;School will:&#10;Family/scholar will:"></textarea></div><div class="actions"><button class="btn primary">Set review point →</button></div></div></div>
 <div class="coord-framework-v69">
   <div class="eyebrow">HOW WE WORK TOGETHER</div>
   <h3>Pattern → Barrier → Ownership → Support → Impact</h3>
@@ -286,31 +366,6 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 
 
 
-<div class="role-relationship-v72">
- <div class="eyebrow">HOW THE FUNCTIONS FIT TOGETHER</div>
- <h3>Different functions. One coordinated attendance response.</h3>
- <div class="relationship-grid-v72">
-  <div class="relationship-card-v72 fss-v72">
-   <div class="relationship-label-v72">FSS</div>
-   <h4>Attendance Intervention Lead</h4>
-   <p>Works directly with scholars and families to understand attendance barriers, build the attendance intervention, and monitor whether the barrier and attendance pattern are changing.</p>
-   <div class="relationship-tags-v72"><span>Caring inquiry</span><span>Attendance plan</span><span>Family routines</span><span>Follow-through</span></div>
-  </div>
-  <div class="relationship-card-v72 shared-v72">
-   <div class="relationship-label-v72">TOGETHER</div>
-   <h4>One Coordinated Plan</h4>
-   <p>Use one shared barrier hypothesis, one attendance lead, distinct responsibilities, coordinated family contact, warm handoffs, and one review point.</p>
-   <strong>Overlap is intentional.<br>Duplication is not.</strong>
-  </div>
-  <div class="relationship-card-v72 kssn-v72">
-   <div class="relationship-label-v72">KSSN</div>
-   <h4>Community School / Resource Coordination</h4>
-   <p>Connects the attendance barrier to community assets, integrated supports, partners, programs, and system-level responses when those functions add value.</p>
-   <div class="relationship-tags-v72"><span>Resource fit</span><span>Partner coordination</span><span>Integrated supports</span><span>Access</span></div>
-  </div>
- </div>
- <div class="relationship-flow-v72"><span>FSS</span><b>⇄</b><span>Shared attendance goal</span><b>⇄</b><span>KSSN</span></div>
-</div>
 <div class="role-workspaces-v70">
  <div class="eyebrow">ROLE WORKSPACES</div><h3>Do the work by function.</h3>
  <div class="role-tabs-v70">
@@ -465,8 +520,20 @@ main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex
 </section>
 <script>
 const home=document.getElementById('home'),pages=[...document.querySelectorAll('.page')];
-function openP(id){home.style.display='none';pages.forEach(p=>p.classList.toggle('active',p.id===id));scrollTo(0,0)}
-function goH(){home.style.display='block';pages.forEach(p=>p.classList.remove('active'));scrollTo(0,0)}
+function openP(id){
+      home.style.display='none';
+      pages.forEach(p=>p.classList.toggle('active',p.id===id));
+      const nav=document.getElementById('singlePageNavV72');
+      if(nav) nav.hidden=false;
+      scrollTo(0,0);
+    }
+function goH(){
+      home.style.display='block';
+      pages.forEach(p=>p.classList.remove('active'));
+      const nav=document.getElementById('singlePageNavV72');
+      if(nav) nav.hidden=true;
+      scrollTo(0,0);
+    }
 document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o)openP(o.dataset.open);if(e.target.closest('[data-home]'))goH()});
 
 const fwData={
@@ -568,20 +635,9 @@ renderRole70("fss");
 
 
 
-const nav72=document.getElementById('singlePageNavV72');
-let pageStack72=[];
-function activePage72(){return [...document.querySelectorAll('section.page')].find(p=>getComputedStyle(p).display!=='none');}
-function syncNav72(){const p=activePage72();if(nav72)nav72.hidden=!p;}
-document.addEventListener('click',e=>{
- const open=e.target.closest('[data-open]');
- if(open){const cur=activePage72();if(cur&&cur.id!==open.dataset.open)pageStack72.push(cur.id);setTimeout(syncNav72,0);}
- if(e.target.closest('[data-home]')){pageStack72=[];setTimeout(syncNav72,0);}
-});
+
+
 document.getElementById('singleBackV72')?.addEventListener('click',()=>{
- const prev=pageStack72.pop();
- if(prev && typeof show==='function')show(prev);
- else if(typeof showHome==='function')showHome();
- setTimeout(syncNav72,0);
+  goH();
 });
-syncNav72();
 </script></body></html>
