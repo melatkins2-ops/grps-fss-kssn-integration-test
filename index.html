@@ -51,6 +51,24 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 @media(max-width:980px){.hero .wrap{grid-template-columns:1fr}.dailyGrid{grid-template-columns:repeat(2,1fr)}.dailyTile{border-bottom:1px solid var(--line)}.familyStage .framework{grid-template-columns:repeat(2,1fr)}.brand-title{display:none}.grps-logo{height:50px}}
 @media(max-width:760px){.menuBtn{display:block}.nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0}.nav.open{display:flex}.nav button{text-align:left}.brandrow{flex-wrap:wrap}.hero .wrap{display:block;padding:42px 0}.todayCard{margin-top:28px}.dailyGrid,.familyStage .framework{grid-template-columns:1fr}.dailyTile{border-right:0}.grps-logo{height:44px}.homeFloat{right:12px;bottom:12px}}
 
+
+/* V3 — Guided Attendance Concern + Barrier Explorer */
+.guideShell{display:grid;grid-template-columns:270px minmax(0,1fr);gap:24px;align-items:start}
+.guideRail{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;position:sticky;top:110px}
+.guideRailHead{padding:18px;background:var(--navy);color:#fff}.guideRailHead b{display:block}.guideRailHead span{display:block;color:#dce9f2;font-size:13px;margin-top:3px}
+.guideNav{display:grid}.guideNav button{border:0;border-top:1px solid var(--line);background:#fff;text-align:left;padding:15px 16px;color:var(--muted);font-weight:800}.guideNav button:first-child{border-top:0}.guideNav button.active{background:var(--sky);color:var(--navy);border-left:5px solid var(--orange);padding-left:11px}.guideNav button small{display:block;font-weight:500;font-size:12px;margin-top:2px}
+.guidePanel{border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow);overflow:hidden}.guidePanelTop{padding:25px 27px;background:linear-gradient(120deg,#f7fbfe,#fff)}.guidePanelTop h2{margin-bottom:7px}.guidePanelTop p{color:var(--muted);margin:0;max-width:760px}
+.guideBody{padding:27px}.question{border-top:1px solid var(--line);padding:20px 0}.question:first-child{border-top:0;padding-top:0}.question h3{font-size:20px;margin-bottom:5px}.question p{font-size:15px;color:var(--muted);margin-top:0}
+.optionGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.opt{border:1px solid #cbdbe4;background:#fff;border-radius:12px;padding:13px 14px;text-align:left;color:var(--ink);font-weight:700}.opt:hover,.opt.selected{border-color:var(--blue);background:var(--sky);color:var(--navy)}.opt small{display:block;color:var(--muted);font-weight:500;margin-top:3px}
+.guideText{width:100%;border:1px solid #b9ccd7;border-radius:11px;padding:13px;font:inherit;min-height:96px;resize:vertical}.guideActions{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.guideActions button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:10px;padding:10px 15px;font-weight:900}.guideActions .next{background:var(--navy);color:#fff;border-color:var(--navy)}
+.outputBox{background:#f7fafc;border:1px solid var(--line);border-radius:14px;padding:17px;margin-top:17px}.outputBox b{color:var(--navy)}.outputBox p{margin:5px 0 0;color:var(--muted);font-size:15px}
+.barrierHub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.barrierCard{border:1px solid var(--line);border-radius:16px;background:#fff;padding:19px;text-align:left;min-height:180px;display:flex;flex-direction:column}.barrierCard:hover,.barrierCard.selected{border-color:var(--blue);box-shadow:var(--shadow);background:#fbfdff}.barrierCard .tag{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--blue)}.barrierCard h3{font-size:20px;margin:7px 0}.barrierCard p{font-size:14px;color:var(--muted);margin:0}.barrierCard span{margin-top:auto;padding-top:13px;color:var(--blue);font-size:13px;font-weight:900}
+.barrierDetail{display:none;margin-top:18px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.barrierDetail.open{display:block}.barrierDetailHead{padding:21px 23px;background:var(--navy);color:#fff}.barrierDetailHead h3{color:#fff;margin:0}.barrierDetailHead p{color:#dce9f2;margin:5px 0 0;font-size:14px}.barrierDetailBody{padding:22px}.detailCols{display:grid;grid-template-columns:1fr 1fr;gap:18px}.detailBlock{background:var(--soft);border-radius:13px;padding:16px}.detailBlock b{color:var(--navy)}.detailBlock ul{margin:8px 0 0;padding-left:20px}.detailBlock li{font-size:14px;color:var(--muted);margin:4px 0}
+.matchRow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}.match{border-top:5px solid var(--line);background:#fff;border-radius:12px;padding:14px;border:1px solid var(--line);border-top-width:5px}.match.f{border-top-color:var(--teal)}.match.k{border-top-color:var(--blue)}.match.s{border-top-color:var(--purple)}.match.sh{border-top-color:var(--orange)}.match b{display:block;color:var(--navy);font-size:15px}.match span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+.summarySheet{border:1px solid var(--line);border-radius:18px;background:#fff;padding:24px}.summaryGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.summaryItem{background:var(--soft);border-radius:12px;padding:15px}.summaryItem b{display:block;color:var(--navy);font-size:13px;text-transform:uppercase;letter-spacing:.05em}.summaryItem span{display:block;margin-top:4px}.microNote{font-size:13px;color:var(--muted);margin-top:10px}
+@media(max-width:950px){.guideShell{grid-template-columns:1fr}.guideRail{position:static}.guideNav{grid-template-columns:repeat(5,1fr)}.guideNav button{border-top:0;border-left:1px solid var(--line);font-size:13px;padding:12px}.guideNav button.active{border-left:1px solid var(--line);border-bottom:4px solid var(--orange);padding-left:12px}.guideNav button small{display:none}.barrierHub{grid-template-columns:repeat(2,1fr)}.matchRow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.guideNav{grid-template-columns:1fr}.guideNav button{border-left:0;border-top:1px solid var(--line)}.guideNav button.active{border-bottom:0;border-left:5px solid var(--orange)}.optionGrid,.barrierHub,.detailCols,.matchRow,.summaryGrid{grid-template-columns:1fr}.guidePanelTop,.guideBody{padding:20px}.guideActions{position:sticky;bottom:0;background:#fff;padding:13px 0 4px}}
+
 </style>
 </head>
 <body>
@@ -88,7 +106,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
     <div class="dailyTop"><div class="eyebrow">WORK THE ATTENDANCE CONCERN</div><h2>From concern to coordinated response.</h2><p>Use the same decision logic no matter which role first notices the issue.</p></div>
     <div class="dailyGrid">
       <button class="dailyTile" onclick="go('concern')"><div class="dailyIcon">1</div><strong>Understand the concern</strong><span>Confirm the pattern and hear scholar/family voice.</span><b>Start →</b></button>
-      <button class="dailyTile" onclick="openTool('barrier')"><div class="dailyIcon">2</div><strong>Identify the barrier</strong><span>Move from symptoms to the barrier getting in the way.</span><b>Explore →</b></button>
+      <button class="dailyTile" onclick="go('barriers')"><div class="dailyIcon">2</div><strong>Identify the barrier</strong><span>Move from symptoms to the barrier getting in the way.</span><b>Explore →</b></button>
       <button class="dailyTile" onclick="go('roles')"><div class="dailyIcon">3</div><strong>Clarify who does what</strong><span>FSS, KSSN, school and shared responsibilities.</span><b>Coordinate →</b></button>
       <button class="dailyTile" onclick="openTool('review')"><div class="dailyIcon">4</div><strong>Check impact</strong><span>Review implementation, access, barrier reduction and attendance.</span><b>Review →</b></button>
     </div>
@@ -136,15 +154,31 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 </section>
 
 <section class="page" id="concern">
- <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">ATTENDANCE CONCERN</div><h1 style="font-size:44px">Work the concern from pattern to impact.</h1><p class="lede">Attendance percentage tells us the level of concern. Root-cause analysis determines the intervention.</p></div></div>
- <div class="section"><div class="wrap"><div class="framework" id="framework">
-  <button class="step active" data-step="pattern"><b>1. Pattern</b><span>What do we see?</span></button><button class="step" data-step="barrier"><b>2. Barrier</b><span>What is getting in the way?</span></button><button class="step" data-step="ownership"><b>3. Ownership</b><span>Who needs to act?</span></button><button class="step" data-step="support"><b>4. Support</b><span>What will reduce the barrier?</span></button><button class="step" data-step="impact"><b>5. Impact</b><span>Is it working?</span></button>
- </div><div class="framework-detail" id="frameworkDetail"><b>Pattern:</b> Confirm the attendance pattern before deciding which role should respond.</div></div></div>
- <div class="section soft"><div class="wrap band"><div class="band-intro"><div class="eyebrow">BARRIER MATCHING</div><h2>Family barrier or school barrier?</h2><p>The intervention matrix starts with attendance patterns, then separates family and school barriers before matching resources and interventions.</p></div><div class="choice-list">
-  <button class="choice" onclick="openTool('barrier')"><div class="ico">1</div><div><strong>Identify the barrier</strong><span>Transportation, housing, chronic illness, academic challenge, engagement, belonging, mental health and more.</span></div></button>
-  <button class="choice" onclick="openTool('plan')"><div class="ico">2</div><div><strong>Match the support</strong><span>Choose an intervention that addresses the barrier—not simply another contact or referral.</span></div></button>
-  <button class="choice" onclick="openTool('review')"><div class="ico">3</div><div><strong>Review impact</strong><span>Check whether the intervention happened, the family accessed it, the barrier changed and attendance responded.</span></div></button>
- </div></div></div>
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">GUIDED ATTENDANCE CONCERN</div><h1 style="font-size:44px">Work the concern. Do not jump to the role.</h1><p class="lede">Move from the attendance pattern to the barrier, clarify ownership, match an intervention and decide how impact will be reviewed.</p></div></div>
+ <div class="section"><div class="wrap guideShell">
+   <aside class="guideRail"><div class="guideRailHead"><b>Attendance Concern</b><span>Your working path</span></div><div class="guideNav">
+     <button id="gn-pattern" class="active" onclick="guideStep('pattern')">1. Pattern<small>What do we see?</small></button>
+     <button id="gn-barrier" onclick="guideStep('barrier')">2. Barrier<small>What is getting in the way?</small></button>
+     <button id="gn-ownership" onclick="guideStep('ownership')">3. Ownership<small>Who needs to act?</small></button>
+     <button id="gn-support" onclick="guideStep('support')">4. Support<small>What will reduce it?</small></button>
+     <button id="gn-impact" onclick="guideStep('impact')">5. Impact<small>Is it working?</small></button>
+   </div></aside>
+   <div class="guidePanel">
+     <div class="guidePanelTop"><div class="eyebrow" id="guideEyebrow">STEP 1 OF 5</div><h2 id="guideTitle">Confirm the attendance pattern.</h2><p id="guideIntro">Attendance percentage determines the level of concern; the pattern helps the team understand where to look next.</p></div>
+     <div class="guideBody" id="guideBody"></div>
+   </div>
+ </div></div>
+</section>
+
+
+<section class="page" id="barriers">
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="go('concern')">← Attendance Concern</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">BARRIER EXPLORER</div><h1 style="font-size:44px">Understand the barrier before matching the support.</h1><p class="lede">Use scholar and family voice with attendance and school data. The categories below are prompts for inquiry—not labels for families.</p></div></div>
+ <div class="section"><div class="wrap">
+   <div class="section-head"><div><div class="eyebrow">WHAT MAY BE GETTING IN THE WAY?</div><h2>Explore the working barrier.</h2></div><p>Choose the closest category. More than one barrier may be present; identify the barrier most directly connected to the current attendance pattern.</p></div>
+   <div class="barrierHub" id="barrierHub"></div>
+   <div class="barrierDetail" id="barrierDetail"></div>
+ </div></div>
+ <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">IMPORTANT DISTINCTION</div><h2>Action is not the same as intervention.</h2></div></div><div class="pulse"><div><b>ACTION</b><span>What staff did.</span></div><div><b>Call / text / letter</b><span>May support engagement, but does not automatically reduce the barrier.</span></div><div><b>Referral</b><span>Connection step; not complete until access and fit are confirmed.</span></div><div><b>INTERVENTION</b><span>Intentionally selected support designed to reduce the identified barrier.</span></div></div></div></div>
 </section>
 
 <section class="page" id="model">
@@ -159,7 +193,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
  <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">TOOLS & RESOURCES</div><h1 style="font-size:44px">Open the tool you need. Do the work. Return to the case.</h1><p class="lede">No tracker. No extra system. Each tool is a short working space for the decision in front of you.</p></div></div>
  <div class="section"><div class="wrap"><div class="toolgrid">
   <button class="toolcard" onclick="openTool('caring')"><small>FSS / SHARED</small><h3>Caring Conversation</h3><p>Learn → Share → Inform → Discuss → Arrive at a Plan.</p></button>
-  <button class="toolcard" onclick="openTool('barrier')"><small>ALL ROLES</small><h3>Barrier Explorer</h3><p>Move from the attendance pattern to a working barrier hypothesis.</p></button>
+  <button class="toolcard" onclick="go('barriers')"><small>ALL ROLES</small><h3>Barrier Explorer</h3><p>Move from the attendance pattern to a working barrier hypothesis.</p></button>
   <button class="toolcard" onclick="openTool('plan')"><small>FSS / SCHOOL / SHARED</small><h3>Attendance Plan</h3><p>Match the intervention, owner, goal and review point.</p></button>
   <button class="toolcard" onclick="openTool('handoff')"><small>FSS + KSSN</small><h3>Warm Handoff</h3><p>Explain → Connect → Confirm → Follow through.</p></button>
   <button class="toolcard" onclick="openTool('review')"><small>ALL ROLES</small><h3>10/20/30-Day Review</h3><p>Check implementation, access, barrier reduction and attendance response.</p></button>
@@ -206,6 +240,107 @@ function copyNotes(){navigator.clipboard?.writeText(document.getElementById('not
 function expandModel(){let src=document.getElementById('operatingModel').cloneNode(true);let goal=document.querySelector('#roles .goal').cloneNode(true);let cadence=document.querySelector('#roles .cadence').cloneNode(true);let c=document.getElementById('modalContent');c.innerHTML='<div class="eyebrow">EXPANDED OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2>';c.append(src,goal,cadence);document.getElementById('modelModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeModel(){document.getElementById('modelModal').classList.remove('open');document.body.style.overflow=''}
 document.getElementById('modelModal').addEventListener('click',e=>{if(e.target.id==='modelModal')closeModel()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModel()})
+
+const guideState={pattern:"",voice:"",barrier:"",ownership:"",support:"",impact:""};
+const guideOrder=["pattern","barrier","ownership","support","impact"];
+const guideContent={
+ pattern:{title:"Confirm the attendance pattern.",intro:"Attendance percentage determines the level of concern; the pattern helps the team understand where to look next.",html:`
+  <div class="question"><h3>What does the pattern look like?</h3><p>Select the closest description.</p><div class="optionGrid">
+   <button class="opt" onclick="pickGuide('pattern','Frequent single-day absences',this)">Frequent single-day absences<small>Absences occur across many weeks.</small></button>
+   <button class="opt" onclick="pickGuide('pattern','Repeated day-of-week pattern',this)">Repeated day-of-week pattern<small>For example, Mondays, Fridays or another recurring day.</small></button>
+   <button class="opt" onclick="pickGuide('pattern','Consecutive absences',this)">Consecutive absences<small>Several days are missed together.</small></button>
+   <button class="opt" onclick="pickGuide('pattern','Tardiness / partial-day pattern',this)">Tardiness / partial-day pattern<small>Late arrival, early departure or missed portions of the day.</small></button>
+  </div></div>
+  <div class="question"><h3>What changed or surfaced?</h3><p>Note timing, recent changes, classes/periods, transportation, health, relationships, routines or other information that may help explain the pattern.</p><textarea class="guideText" id="patternNote" oninput="guideState.voice=this.value" placeholder="Working note…"></textarea></div>
+  <div class="outputBox"><b>Output from this step</b><p>A confirmed attendance pattern and the questions that need to be explored with the scholar/family.</p></div>`},
+ barrier:{title:"Understand what is getting in the way.",intro:"Do not assign the case to a role yet. Use voice and data to develop a working barrier hypothesis.",html:`
+  <div class="question"><h3>Whose perspective do we have?</h3><div class="optionGrid"><button class="opt" onclick="pickGuide('voice','Scholar voice',this)">Scholar voice</button><button class="opt" onclick="pickGuide('voice','Family/caregiver voice',this)">Family/caregiver voice</button><button class="opt" onclick="pickGuide('voice','School data/observations',this)">School data/observations</button><button class="opt" onclick="pickGuide('voice','Multiple perspectives',this)">Multiple perspectives</button></div></div>
+  <div class="question"><h3>Explore possible barriers.</h3><p>Open the Barrier Explorer for family/community and school-controlled possibilities.</p><button class="next" style="border:0;border-radius:10px;padding:12px 16px;background:var(--navy);color:#fff;font-weight:900" onclick="go('barriers')">Open Barrier Explorer →</button></div>
+  <div class="question"><h3>Current working barrier hypothesis</h3><textarea class="guideText" id="barrierNote" oninput="guideState.barrier=this.value" placeholder="Example: Morning transportation is unreliable after a family schedule change…"></textarea></div>
+  <div class="outputBox"><b>Output from this step</b><p>A working barrier hypothesis supported by scholar/family voice and available evidence.</p></div>`},
+ ownership:{title:"Clarify ownership around the barrier.",intro:"Assign the function that can act on the barrier. One attendance lead does not mean one person does all of the work.",html:`
+  <div class="question"><h3>Where does the primary action belong?</h3><div class="optionGrid">
+   <button class="opt" onclick="pickGuide('ownership','FSS — Attendance Intervention Lead',this)">FSS<small>Sustained family-centered attendance intervention and monitoring.</small></button>
+   <button class="opt" onclick="pickGuide('ownership','KSSN — Community School / Resource Coordination',this)">KSSN<small>Partners, community assets, integrated supports and access coordination.</small></button>
+   <button class="opt" onclick="pickGuide('ownership','School — School-controlled barrier',this)">School<small>Academic access, belonging, safety, relationships, schedule, instruction or school process.</small></button>
+   <button class="opt" onclick="pickGuide('ownership','Shared — Distinct coordinated responsibilities',this)">Shared<small>Both functions are needed; identify one attendance lead and distinct actions.</small></button>
+  </div></div>
+  <div class="outputBox"><b>Coordination rule</b><p>Overlap is intentional; duplication is not. A referral to a partner does not automatically transfer the attendance intervention.</p></div>`},
+ support:{title:"Match the intervention to the barrier.",intro:"Select what is expected to reduce the barrier—not simply the next task staff can complete.",html:`
+  <div class="question"><h3>What support is being selected?</h3><textarea class="guideText" id="supportNote" oninput="guideState.support=this.value" placeholder="Describe the intervention/support and how it addresses the barrier…"></textarea></div>
+  <div class="question"><h3>Quality check</h3><div class="optionGrid">
+   <button class="opt" onclick="this.classList.toggle('selected')">It directly addresses the identified barrier.</button>
+   <button class="opt" onclick="this.classList.toggle('selected')">The scholar/family can realistically access it.</button>
+   <button class="opt" onclick="this.classList.toggle('selected')">Ownership and dosage/frequency are clear.</button>
+   <button class="opt" onclick="this.classList.toggle('selected')">A review date is identified.</button>
+  </div></div>
+  <div class="outputBox"><b>Output from this step</b><p>A barrier-matched intervention with clear ownership, access and review expectations.</p></div>`},
+ impact:{title:"Review impact and make the next decision.",intro:"Check whether the response happened, was accessed, reduced the barrier and changed attendance.",html:`
+  <div class="question"><h3>What will the team review?</h3><div class="optionGrid">
+   <button class="opt" onclick="this.classList.toggle('selected')">Implementation<small>Did the intervention happen as intended?</small></button>
+   <button class="opt" onclick="this.classList.toggle('selected')">Access<small>Could the scholar/family use the support?</small></button>
+   <button class="opt" onclick="this.classList.toggle('selected')">Barrier reduction<small>What changed in the identified barrier?</small></button>
+   <button class="opt" onclick="this.classList.toggle('selected')">Attendance response<small>What changed in attendance?</small></button>
+  </div></div>
+  <div class="question"><h3>Next decision</h3><div class="optionGrid"><button class="opt" onclick="pickGuide('impact','Continue',this)">Continue</button><button class="opt" onclick="pickGuide('impact','Adjust',this)">Adjust</button><button class="opt" onclick="pickGuide('impact','Intensify',this)">Intensify</button><button class="opt" onclick="pickGuide('impact','Step down / escalate',this)">Step down / escalate</button></div></div>
+  <div class="outputBox"><b>Output from this step</b><p>An evidence-based decision about what happens next.</p></div>`}
+};
+function guideStep(k){
+ const i=guideOrder.indexOf(k),d=guideContent[k];
+ document.querySelectorAll('.guideNav button').forEach(x=>x.classList.remove('active'));
+ const n=document.getElementById('gn-'+k);if(n)n.classList.add('active');
+ document.getElementById('guideEyebrow').textContent=`STEP ${i+1} OF 5`;
+ document.getElementById('guideTitle').textContent=d.title;
+ document.getElementById('guideIntro').textContent=d.intro;
+ document.getElementById('guideBody').innerHTML=d.html+`<div class="guideActions"><button onclick="guideStep('${guideOrder[Math.max(0,i-1)]}')">${i===0?'⌂ Stay here':'← Previous'}</button>${i<4?`<button class="next" onclick="guideStep('${guideOrder[i+1]}')">Next: ${guideOrder[i+1][0].toUpperCase()+guideOrder[i+1].slice(1)} →</button>`:`<button class="next" onclick="showGuideSummary()">Review working summary →</button>`}</div>`;
+}
+function pickGuide(key,val,el){guideState[key]=val;const p=el.parentElement;p.querySelectorAll('.opt').forEach(x=>x.classList.remove('selected'));el.classList.add('selected')}
+function showGuideSummary(){
+ const body=document.getElementById('guideBody');document.getElementById('guideTitle').textContent='Working attendance response summary';document.getElementById('guideIntro').textContent='Use this as a conversation aid. Nothing is saved in the site.';
+ body.innerHTML=`<div class="summarySheet"><div class="summaryGrid">
+ <div class="summaryItem"><b>Pattern</b><span>${guideState.pattern||'Not yet identified'}</span></div>
+ <div class="summaryItem"><b>Voice / evidence</b><span>${guideState.voice||'Not yet documented'}</span></div>
+ <div class="summaryItem"><b>Barrier</b><span>${guideState.barrier||'Not yet identified'}</span></div>
+ <div class="summaryItem"><b>Ownership</b><span>${guideState.ownership||'Not yet assigned'}</span></div>
+ <div class="summaryItem"><b>Support</b><span>${guideState.support||'Not yet selected'}</span></div>
+ <div class="summaryItem"><b>Next decision</b><span>${guideState.impact||'Review point not yet completed'}</span></div>
+ </div><p class="microNote">This summary is not saved. Copy it into the district's existing documentation process when useful.</p>
+ <div class="actions"><button class="primary" onclick="copyGuideSummary()">Copy summary</button><button onclick="guideStep('pattern')">Start over</button></div></div>`;
+}
+function copyGuideSummary(){
+ const t=`Attendance concern working summary\nPattern: ${guideState.pattern||''}\nVoice/evidence: ${guideState.voice||''}\nBarrier: ${guideState.barrier||''}\nOwnership: ${guideState.ownership||''}\nSupport: ${guideState.support||''}\nNext decision: ${guideState.impact||''}`;
+ navigator.clipboard?.writeText(t);
+}
+const barrierData=[
+ {id:"transport",tag:"FAMILY / COMMUNITY",title:"Transportation",desc:"Getting to school consistently is difficult or unreliable.",ask:["What part of the trip breaks down?","Is the issue daily, occasional or tied to a schedule?","What has the family already tried?"],look:["Arrival/day-of-week pattern","Family work or caregiving schedule","Existing transportation eligibility/options"],f:"Understand the family situation; build the attendance plan; monitor whether attendance improves.",k:"Coordinate community/partner options when a resource connection is needed.",s:"Check school-controlled transportation processes, schedule and arrival supports.",sh:"Confirm one plan and whether the transportation barrier actually changed."},
+ {id:"housing",tag:"FAMILY / COMMUNITY",title:"Housing / basic needs",desc:"Housing instability, utilities, food, clothing or other basic needs affect attendance.",ask:["What immediate need is affecting attendance?","Is housing stable right now?","What support is already connected?"],look:["Recent moves/address changes","McKinney-Vento/homelessness indicators when applicable","Repeated basic-needs requests"],f:"Caring inquiry, attendance intervention and sustained follow-up.",k:"Coordinate community resources, partners and access.",s:"Activate appropriate district/school supports and remove school barriers.",sh:"Warm handoff, confirm access and keep the attendance goal visible."},
+ {id:"health",tag:"FAMILY / COMMUNITY",title:"Physical health",desc:"Illness, chronic health needs, appointments or access to care affect attendance.",ask:["What health issue is affecting attendance?","Is there a care plan or provider?","What makes returning to school difficult?"],look:["Nurse/health aide information","Absence timing and duration","Available school-based/community health supports"],f:"Understand family impact; support attendance planning and follow-up.",k:"Coordinate health/community resources when needed.",s:"Nurse/health aide and school team address school-based health access/accommodations.",sh:"Coordinate without duplicating clinical or school health functions."},
+ {id:"mental",tag:"BOTH",title:"Mental health / school refusal",desc:"Anxiety, distress, avoidance or other mental health concerns may be connected to absence.",ask:["What happens before the scholar misses school?","What does the scholar say about coming to school?","Are there safety concerns requiring immediate professional response?"],look:["Behavioral health/counseling information available to the team","Attendance pattern around transitions/classes","School conditions contributing to distress"],f:"Caring conversation, family engagement and attendance intervention.",k:"Coordinate community/partner supports when appropriate.",s:"Behavioral Health/Counseling and school team address school-controlled conditions and appropriate supports.",sh:"One coordinated plan with appropriate professional roles clearly protected."},
+ {id:"academic",tag:"SCHOOL / BOTH",title:"Academic access / challenge",desc:"Academic difficulty, missed learning, course access or instructional conditions contribute to absence.",ask:["Which classes/times are hardest to attend?","Is the scholar avoiding work they feel unable to complete?","What would make re-entry manageable?"],look:["Course/class pattern","Academic data and missed work","Intervention/tutoring supports already available"],f:"Bring scholar/family perspective into the attendance plan and monitor attendance.",k:"Connect expanded learning/community opportunities when they add value.",s:"Own academic/instructional response, re-entry, tutoring/intervention and access.",sh:"Align academic support with the attendance goal."},
+ {id:"belonging",tag:"SCHOOL / BOTH",title:"Belonging / relationships",desc:"The scholar does not feel connected, welcomed, known or safe at school.",ask:["Who at school does the scholar trust?","Where/when does the scholar feel disconnected?","What would make school feel more welcoming?"],look:["Scholar voice","Class/period/activity pattern","Relationships, climate, bullying/safety information"],f:"Build trust, elevate scholar/family voice and monitor attendance impact.",k:"Support engagement, enrichment, mentoring or community connections where appropriate.",s:"Own school climate, relationships, safety and belonging conditions.",sh:"Coordinate a relationship-centered response and review whether belonging improves."},
+ {id:"routine",tag:"FAMILY / BOTH",title:"Morning / family routines",desc:"Sleep, caregiving, work schedules or morning routines interfere with getting to school.",ask:["Walk me through a typical school morning.","Where does the routine break down?","What small change would make tomorrow easier?"],look:["Tardy/first-period pattern","Family schedule changes","Sleep and morning logistics"],f:"Lead family-centered problem-solving, routines and sustained follow-up.",k:"Connect resources only when a community support is part of the barrier solution.",s:"Consider arrival/re-entry supports and school-controlled schedule issues.",sh:"Avoid multiple staff giving the family competing plans."},
+ {id:"engagement",tag:"BOTH",title:"Engagement / motivation",desc:"The scholar sees limited value in attending or is disconnected from learning/opportunities.",ask:["What makes school worth coming to?","What interests or goals matter to the scholar?","When is attendance strongest?"],look:["Scholar interests and strengths","Participation/activity pattern","Course/program fit"],f:"Use caring conversation and attendance planning tied to scholar goals.",k:"Connect programs, enrichment, mentoring and community opportunities.",s:"Strengthen relevance, relationships, instructional engagement and school opportunities.",sh:"Build one engagement strategy around the scholar's strengths."},
+ {id:"safety",tag:"SCHOOL",title:"Safety / bullying / discipline",desc:"A school-controlled safety, bullying, discipline or re-entry issue may be driving absence.",ask:["Where/when does the scholar feel unsafe or unwelcome?","Is there a specific incident, person or setting?","What needs to change at school?"],look:["Incident/discipline information","Class/location pattern","Existing safety or re-entry plan"],f:"Support family voice and attendance follow-through; do not own the school-controlled fix.",k:"Coordinate partners if an external/community support is needed.",s:"Own safety, bullying, discipline, restorative/re-entry and school-process response.",sh:"Keep attendance support coordinated while the school removes the school-controlled barrier."}
+];
+function renderBarriers(){
+ const hub=document.getElementById('barrierHub');if(!hub)return;
+ hub.innerHTML=barrierData.map(b=>`<button class="barrierCard" onclick="showBarrier('${b.id}',this)"><div class="tag">${b.tag}</div><h3>${b.title}</h3><p>${b.desc}</p><span>Explore this barrier →</span></button>`).join('');
+}
+function showBarrier(id,el){
+ const b=barrierData.find(x=>x.id===id);if(!b)return;
+ document.querySelectorAll('.barrierCard').forEach(x=>x.classList.remove('selected'));if(el)el.classList.add('selected');
+ const d=document.getElementById('barrierDetail');d.classList.add('open');
+ d.innerHTML=`<div class="barrierDetailHead"><h3>${b.title}</h3><p>${b.desc}</p></div><div class="barrierDetailBody"><div class="detailCols">
+ <div class="detailBlock"><b>Questions to understand the barrier</b><ul>${b.ask.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+ <div class="detailBlock"><b>Information to review</b><ul>${b.look.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
+ <h3 style="margin-top:22px">Who may need to act?</h3><div class="matchRow">
+ <div class="match f"><b>FSS</b><span>${b.f}</span></div><div class="match k"><b>KSSN</b><span>${b.k}</span></div><div class="match s"><b>School</b><span>${b.s}</span></div><div class="match sh"><b>Shared</b><span>${b.sh}</span></div></div>
+ <div class="guideActions"><button onclick="go('concern');guideStep('barrier')">← Return to guided concern</button><button class="next" onclick="guideState.barrier='${b.title}';go('concern');guideStep('ownership')">Use ${b.title} as working barrier →</button></div></div>`;
+ d.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+renderBarriers();
+guideStep('pattern');
 if(location.hash && document.getElementById(location.hash.slice(1))) go(location.hash.slice(1));
 </script>
 </body></html>
