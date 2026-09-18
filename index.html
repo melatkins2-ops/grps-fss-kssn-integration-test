@@ -1,613 +1,136 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FSS & KSSN Integration — V58 Editorial Mock-up</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Family Support Specialist & Kent School Services Integration | GRPS</title>
 <style>
-:root{--navy:#123d63;--blue:#0877b9;--sky:#eaf5fb;--ink:#243746;--muted:#60717e;--orange:#ee7d23;--cream:#fbf8f2;--line:#d9e3e9;--teal:#258b87;--tealsoft:#e9f6f4;--gold:#d99a27;--goldsoft:#fff5df;--orangesoft:#fff0e5}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-header{background:#fff;border-bottom:1px solid var(--line)}.top{max-width:1240px;margin:auto;padding:18px 30px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{font-size:22px;font-weight:800;color:var(--navy)}nav{display:flex;gap:26px}nav button{border:0;background:none;font:inherit;font-size:15px;font-weight:700;color:#4b5d6b;cursor:pointer}nav button:hover{color:var(--blue)}
-.hero{background:linear-gradient(110deg,#eef8fc 0%,#fff 57%,#fbf6ed 100%);border-bottom:1px solid #e4ebef}.hero-inner{max-width:1240px;margin:auto;padding:66px 30px 58px;display:grid;grid-template-columns:1.35fr .65fr;gap:55px;align-items:center}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue)}h1{font-size:53px;line-height:1.03;color:var(--navy);margin:12px 0 16px}.hero p{font-size:21px;line-height:1.5;color:var(--muted);max-width:720px}.rule{margin-top:25px;border-left:5px solid var(--orange);padding:7px 0 7px 16px;font-size:18px;font-weight:800;color:var(--navy)}
-.visual{background:#fff;border-radius:24px;padding:25px;box-shadow:0 14px 40px #173f5f17}.visual-title{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:17px}.flowline{display:flex;flex-direction:column;gap:9px}.flowitem{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy)}.circle{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:var(--sky);color:var(--blue)}.flowarrow{margin-left:16px;color:#91a3b0}
-main{max-width:1240px;margin:auto;padding:48px 30px 80px}.introline{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}.introline h2{font-size:31px;color:var(--navy);margin:0}.introline p{margin:0;color:var(--muted);font-size:16px}
-.routes{display:grid;grid-template-columns:1.3fr .85fr .85fr;gap:16px}.route{border-radius:18px;padding:26px;min-height:250px;cursor:pointer;border:1px solid var(--line);background:#fff;text-align:left;position:relative;overflow:hidden}.route.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.route .kicker{font-size:12px;letter-spacing:.08em;font-weight:800;color:var(--orange)}.route.primary .kicker{color:#ffb36e}.route h3{font-size:26px;line-height:1.2;margin:13px 0 10px;color:var(--navy)}.route.primary h3{color:#fff}.route p{font-size:16px;line-height:1.48;color:var(--muted);margin:0}.route.primary p{color:#dce9f2}.route .go{position:absolute;bottom:24px;font-weight:800;color:var(--blue)}.route.primary .go{color:#fff}
-.band{margin-top:44px;background:var(--cream);border-radius:18px;padding:27px 30px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:25px}.band h4{margin:0 0 7px;color:var(--navy);font-size:18px}.band p{margin:0;color:var(--muted);line-height:1.45;font-size:15px}
-.page{display:none}.page.active{display:block}.pagehead{background:var(--navy);color:#fff}.pagehead-inner{max-width:1240px;margin:auto;padding:42px 30px}.back{border:0;background:none;color:#cce5f5;font:inherit;font-weight:800;padding:0;cursor:pointer}.pagehead h2{font-size:38px;margin:20px 0 8px}.pagehead p{font-size:18px;color:#d9e8f1;max-width:780px;line-height:1.45}
-.content{max-width:1240px;margin:auto;padding:40px 30px 80px}.workspace-grid{display:grid;grid-template-columns:260px 1fr;gap:40px}.rail{border-right:1px solid var(--line);padding-right:24px}.rail .stage{padding:13px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:800;color:#75838e}.rail .stage.active{color:var(--blue)}.work h3{font-size:28px;color:var(--navy);margin:0 0 8px}.work .lead{font-size:17px;line-height:1.5;color:var(--muted);max-width:760px}.promptbox{margin-top:25px;padding:23px 0;border-top:1px solid var(--line)}.promptbox h4{font-size:19px;color:var(--navy);margin:0 0 7px}.promptbox p{color:var(--muted);line-height:1.45;margin:0 0 13px}textarea,select{width:100%;max-width:800px;border:1px solid #cbd8e0;border-radius:10px;padding:12px;font:inherit;background:#fff}.actions{display:flex;gap:10px;margin-top:18px}.btn{border:0;border-radius:9px;padding:11px 16px;font:inherit;font-weight:800;cursor:pointer}.btn.primary{background:var(--blue);color:#fff}.btn.secondary{background:#eef3f6;color:var(--navy)}
-.callout{margin-top:25px;background:var(--cream);border-left:4px solid var(--orange);padding:17px 19px;max-width:800px;line-height:1.5}.footer{margin-top:55px;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:#778792}
-@media(max-width:850px){nav{display:none}.hero-inner{grid-template-columns:1fr;padding:45px 20px}.visual{display:none}h1{font-size:40px}main{padding:35px 20px}.routes{grid-template-columns:1fr}.route{min-height:210px}.band{grid-template-columns:1fr}.workspace-grid{grid-template-columns:1fr}.rail{border-right:0;border-bottom:1px solid var(--line);display:flex;overflow:auto;gap:20px;padding:0 0 12px}.rail .stage{white-space:nowrap;border:0}.content{padding:30px 20px}.pagehead-inner{padding:30px 20px}}
+:root{--navy:#123f66;--blue:#0878b9;--sky:#eaf5fb;--teal:#138e91;--orange:#ef6b22;--ink:#19384e;--muted:#5d7180;--line:#d8e5ec;--paper:#fff;--soft:#f6f9fb;--purple:#6f3c91;--green:#3c7f64;--shadow:0 10px 28px rgba(18,63,102,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;font-size:18px;line-height:1.5}
+button,a{font:inherit}button{cursor:pointer}a{color:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:999}
+.utility{background:var(--navy);color:#fff}.utility .wrap{min-height:42px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:14px}.utility a{text-decoration:none;font-weight:700}
+.wrap{width:min(1180px,calc(100% - 36px));margin:auto}.brandbar{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}.brandrow{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:78px}.brand{display:flex;align-items:center;gap:14px}.mark{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.brand b{display:block;color:var(--navy);font-size:18px}.brand span{display:block;color:var(--muted);font-size:13px}.nav{display:flex;gap:7px;align-items:center}.nav button{border:0;background:transparent;color:var(--navy);font-weight:800;padding:11px 13px;border-radius:9px}.nav button:hover,.nav button:focus-visible{background:var(--sky);outline:3px solid rgba(8,120,185,.18)}
+.page{display:none}.page.active{display:block}.hero{background:linear-gradient(110deg,#f4fafc 0,#fff 70%);border-bottom:1px solid var(--line)}.hero .wrap{padding:58px 0 46px}.eyebrow{font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--blue)}h1,h2,h3{color:var(--navy);line-height:1.12}h1{font-size:clamp(38px,5vw,62px);max-width:880px;margin:8px 0 18px}h2{font-size:clamp(29px,3vw,40px);margin:6px 0 12px}h3{font-size:23px;margin:4px 0 8px}.lede{font-size:22px;color:var(--muted);max-width:790px}.barrier-rule{display:inline-block;margin-top:18px;padding:10px 14px;border-left:5px solid var(--orange);background:#fff;font-weight:900;color:var(--navy);box-shadow:var(--shadow)}
+.section{padding:44px 0}.section.soft{background:var(--soft)}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:22px}.section-head p{margin:0;color:var(--muted);max-width:650px}.pathgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.path{border:1px solid var(--line);border-radius:18px;padding:24px;background:#fff;text-align:left;box-shadow:var(--shadow);min-height:220px;transition:.15s}.path:hover{transform:translateY(-2px);border-color:#9ccce4}.path .num{font-size:13px;font-weight:900;color:var(--blue)}.path h3{font-size:25px}.path p{color:var(--muted);margin:8px 0 20px}.go{color:var(--blue);font-weight:900}
+.pulse{display:grid;grid-template-columns:1.25fr repeat(3,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.pulse>div{padding:20px;border-left:1px solid var(--line)}.pulse>div:first-child{border:0;background:var(--navy);color:#fff}.pulse b{display:block}.pulse span{display:block;font-size:15px;color:var(--muted)}.pulse>div:first-child span{color:#dceaf3}
+.band{display:grid;grid-template-columns:.85fr 1.5fr;gap:28px;align-items:start}.band-intro{position:sticky;top:110px}.band-intro p{color:var(--muted)}.choice-list{display:grid;gap:12px}.choice{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff;text-align:left}.choice:hover{border-color:#9ccce4;background:#fbfdfe}.choice .ico{width:46px;height:46px;border-radius:13px;background:var(--sky);display:grid;place-items:center;color:var(--navy);font-weight:900;flex:0 0 auto}.choice strong{display:block;color:var(--navy)}.choice span{display:block;color:var(--muted);font-size:15px}
+.pagehead{padding:34px 0 24px;border-bottom:1px solid var(--line);background:#fbfdfe}.crumbs{display:flex;justify-content:space-between;gap:12px;margin-bottom:22px}.crumbs button{border:1px solid var(--line);background:#fff;color:var(--navy);font-weight:800;border-radius:999px;padding:9px 14px}.crumbs button:hover{background:var(--sky)}
+.model-shell{border:1px solid var(--line);border-radius:22px;background:#fff;padding:24px;box-shadow:var(--shadow)}.model-top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:20px}.expand{border:1px solid #b7d7e7;background:var(--sky);color:var(--navy);font-weight:900;border-radius:10px;padding:10px 14px}.model{display:grid;grid-template-columns:1fr .8fr 1fr;grid-template-areas:"fss center kssn" "shared center school";gap:14px;align-items:stretch}.role{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.role h3{font-size:20px}.role p,.role li{font-size:15px;color:var(--muted)}.role ul{padding-left:20px}.fss{grid-area:fss;border-top:5px solid var(--teal)}.kssn{grid-area:kssn;border-top:5px solid var(--blue)}.shared{grid-area:shared;border-top:5px solid var(--orange)}.school{grid-area:school;border-top:5px solid var(--purple)}.center{grid-area:center;display:grid;place-items:center}.circle{width:230px;height:230px;border-radius:50%;border:7px solid var(--navy);box-shadow:0 0 0 9px var(--sky);display:grid;place-items:center;text-align:center;color:var(--navy);font-weight:900;font-size:28px;line-height:1.05}.circle small{display:block;font-size:14px;color:var(--muted);margin-top:10px}.goal{margin:18px auto 0;max-width:620px;text-align:center;padding:13px;border:1px solid var(--line);border-radius:12px;background:var(--sky);color:var(--navy);font-weight:900}
+.cadence{display:grid;grid-template-columns:150px repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:16px}.cadence>div{padding:17px;border-left:1px solid var(--line)}.cadence>div:first-child{border:0;background:var(--navy);color:#fff;font-weight:900}.cadence b{display:block;color:var(--navy)}.cadence span{font-size:14px;color:var(--muted)}
+.framework{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{border:1px solid var(--line);background:#fff;border-radius:14px;padding:17px;text-align:left}.step:hover,.step.active{border-color:var(--blue);background:#f6fbfe}.step b{display:block;color:var(--navy);font-size:18px}.step span{font-size:14px;color:var(--muted)}.framework-detail{margin-top:12px;border-left:5px solid var(--orange);background:var(--soft);padding:16px;border-radius:0 12px 12px 0}
+.toolgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.toolcard{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px;text-align:left}.toolcard:hover{border-color:#9ccce4;box-shadow:var(--shadow)}.toolcard small{font-weight:900;color:var(--blue)}.toolcard p{font-size:15px;color:var(--muted)}.tool-view{max-width:900px}.tool-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 0}.tool-flow div{background:var(--sky);border-radius:12px;padding:12px;font-weight:900;color:var(--navy);font-size:15px}.workbox{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff}.workbox textarea{width:100%;min-height:190px;border:1px solid #b9ccd7;border-radius:10px;padding:14px;font:inherit}.actions{display:flex;gap:10px;margin-top:12px}.actions button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 13px;font-weight:800}.actions .primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.go-check-stop{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gcs{border:1px solid var(--line);border-radius:16px;padding:20px}.gcs b{font-size:21px;color:var(--navy)}.gcs p,.gcs li{font-size:15px;color:var(--muted)}.gcs.go{border-top:6px solid var(--green)}.gcs.check{border-top:6px solid var(--orange)}.gcs.stop{border-top:6px solid #a94442}
+.resourcegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.resource{border:1px solid var(--line);border-radius:14px;padding:18px}.resource b{color:var(--navy)}.resource p{font-size:15px;color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(7,30,48,.82);z-index:100;display:none;align-items:center;justify-content:center;padding:28px}.modal.open{display:flex}.modalbox{background:#fff;border-radius:20px;width:min(1400px,96vw);max-height:94vh;overflow:auto;padding:24px}.modalclose{float:right;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font-weight:900}
+footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;display:flex;justify-content:space-between;gap:24px}.footer small{color:#cfe0ea}
+@media(max-width:900px){.nav{display:none}.pathgrid,.toolgrid{grid-template-columns:1fr}.pulse{grid-template-columns:1fr 1fr}.pulse>div{border-top:1px solid var(--line)}.band{grid-template-columns:1fr}.band-intro{position:static}.model{grid-template-columns:1fr 1fr;grid-template-areas:"center center" "fss kssn" "shared school"}.cadence{grid-template-columns:1fr 1fr}.cadence>div:first-child{grid-column:1/-1}.framework{grid-template-columns:1fr 1fr}.go-check-stop,.resourcegrid{grid-template-columns:1fr}.tool-flow{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){body{font-size:17px}.wrap{width:min(100% - 24px,1180px)}.utility .wrap{justify-content:center}.utility .wrap span{display:none}.brandrow{min-height:66px}.brand span{display:none}.hero .wrap{padding:38px 0 32px}.pathgrid,.pulse,.model,.cadence,.framework,.tool-flow{grid-template-columns:1fr}.model{grid-template-areas:"center" "fss" "kssn" "shared" "school"}.pulse>div:first-child,.cadence>div:first-child{grid-column:auto}.circle{width:190px;height:190px;font-size:23px}.model-top,.section-head,.footer{display:block}.expand{margin-top:10px}.crumbs{position:sticky;top:66px;background:#fbfdfe;padding:8px 0;z-index:20}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
-<style>
-/* V59 — richer color, still restrained */
-.route:nth-child(2){background:linear-gradient(145deg,#ffffff 0%,var(--tealsoft) 100%);border-top:5px solid var(--teal)}
-.route:nth-child(3){background:linear-gradient(145deg,#ffffff 0%,var(--goldsoft) 100%);border-top:5px solid var(--gold)}
-.route:nth-child(2) .kicker{color:var(--teal)}
-.route:nth-child(3) .kicker{color:#a56c09}
-.band>div{padding:14px 16px;border-radius:12px}
-.band>div:nth-child(1){background:#edf6fb}
-.band>div:nth-child(2){background:var(--tealsoft)}
-.band>div:nth-child(3){background:var(--orangesoft)}
-.visual{border-top:6px solid var(--blue)}
-.flowitem:nth-of-type(3) .circle{background:var(--tealsoft);color:var(--teal)}
-.flowitem:nth-of-type(5) .circle{background:var(--goldsoft);color:#a56c09}
-.flowitem:nth-of-type(7) .circle{background:var(--orangesoft);color:var(--orange)}
-.pagehead{background:linear-gradient(105deg,var(--navy),#075f8e)}
-#coord .pagehead{background:linear-gradient(105deg,var(--navy),var(--teal))}
-#tools .pagehead{background:linear-gradient(105deg,var(--navy),#8b671b)}
-#model .pagehead{background:linear-gradient(105deg,var(--navy),#345f7d)}
-#tools .route:nth-child(3n+1){border-top:5px solid var(--blue);background:#f5fbfe}
-#tools .route:nth-child(3n+2){border-top:5px solid var(--teal);background:#f3fbfa}
-#tools .route:nth-child(3n){border-top:5px solid var(--orange);background:#fff8f2}
-.rail .stage.active{background:var(--sky);border-radius:8px;padding-left:10px}
-</style>
-
-<style>
-/* V60 — one authentic GRPS photo, used as the hero's human anchor */
-.hero-photo{margin:0;position:relative;border-radius:24px;overflow:hidden;min-height:330px;box-shadow:0 16px 42px #173f5f24;background:#dce8ef}
-.hero-photo img{width:100%;height:100%;min-height:330px;position:absolute;inset:0;object-fit:contain;object-position:center;display:block;background:#f5fbfc}
-.hero-photo:after{display:none}
-.hero-photo figcaption{display:none}
-@media(max-width:850px){.hero-photo{display:block;min-height:260px}.hero-photo img{min-height:260px}}
-</style>
-
-<style>
-.brand-lockup{display:flex;align-items:center;gap:16px;min-width:0}.brand-lockup img{width:112px;height:auto;display:block;flex:none}.brand-lockup .brand{max-width:430px;line-height:1.15}
-.framework-head{background:linear-gradient(105deg,#123d63,#0877b9)}.eyebrow.light{color:#bde9f5}
-.framework-intro{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin-bottom:30px}.framework-intro h3{font-size:29px;color:var(--navy);margin:0 0 7px}.framework-intro p{margin:0;color:var(--muted);font-size:17px}.framework-rule{background:#fff4e8;border-left:5px solid var(--orange);padding:18px 22px;border-radius:0 12px 12px 0;color:var(--navy);font-size:18px}
-.framework-flow{display:flex;align-items:stretch;gap:8px;margin:28px 0}.fw-step{flex:1;border:1px solid var(--line);background:#fff;border-radius:14px;padding:17px 14px;text-align:left;display:flex;gap:10px;align-items:flex-start;cursor:pointer;color:var(--navy)}.fw-step.active{border-color:var(--blue);background:#edf7fc;box-shadow:0 5px 16px #0877b914}.fw-step b{display:block;font-size:17px}.fw-step small{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:3px}.fw-num{width:28px;height:28px;border-radius:50%;background:#e9f4fa;color:var(--blue);display:grid;place-items:center;font-weight:800;flex:none}.fw-arrow{align-self:center;color:#8fa2af;font-size:22px}
-.fw-detail{display:grid;grid-template-columns:1fr 230px;gap:30px;background:#f7fafc;border-radius:18px;padding:27px 30px;margin-bottom:42px}.fw-detail h3{font-size:25px;color:var(--navy);margin:8px 0}.fw-detail p{font-size:16px;line-height:1.5;color:var(--muted);margin:0}.fw-questions{margin-top:16px;line-height:1.5}.fw-output{background:#fff;border-radius:13px;padding:18px;align-self:stretch;display:flex;flex-direction:column;justify-content:center;border-top:4px solid var(--orange)}.fw-output span{font-size:11px;font-weight:800;color:var(--orange);letter-spacing:.09em;margin-bottom:8px}.fw-output b{font-size:17px;color:var(--navy);line-height:1.35}
-.ownership-map{margin-top:12px}.ownership-title{max-width:760px}.ownership-title h3{font-size:29px;color:var(--navy);margin:8px 0}.ownership-title p{color:var(--muted);font-size:17px}.ownership-grid{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:14px;margin-top:22px}.owner{border-radius:16px;padding:21px;border:1px solid var(--line)}.owner span{font-size:11px;font-weight:800;letter-spacing:.08em}.owner h4{font-size:18px;color:var(--navy);margin:8px 0}.owner p{font-size:15px;line-height:1.45;color:var(--muted);margin:0}.owner.fss{background:#edf7fc;border-top:5px solid var(--blue)}.owner.kssn{background:#edf9f7;border-top:5px solid #258b87}.owner.shared{background:#fff5e5;border-top:5px solid var(--orange)}.owner.school{grid-column:1/-1;background:#f5f7f8;border-left:5px solid #71818d;padding:17px 21px}.overlap-rule{margin-top:14px;background:#123d63;color:#fff;border-radius:12px;padding:16px 20px;font-size:16px}
-.case-system{margin-top:40px;border-top:1px solid var(--line);padding-top:32px}.case-system h3{font-size:28px;color:var(--navy);margin:8px 0}.case-system p{color:var(--muted);font-size:16px;line-height:1.5;max-width:760px}.case-flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:20px}.case-flow span{background:#f2f7fa;border-radius:999px;padding:10px 14px;font-weight:700;color:var(--navy);font-size:14px}.case-flow b{color:var(--orange)}
-@media(max-width:900px){.brand-lockup img{width:86px}.brand-lockup .brand{font-size:17px}.framework-intro,.fw-detail{grid-template-columns:1fr}.framework-flow{display:grid;grid-template-columns:1fr}.fw-arrow{display:none}.ownership-grid{grid-template-columns:1fr}.owner.school{grid-column:auto}.fw-output{min-height:100px}}
-</style>
-
-<style id="v65-merge">
-.tools-head{background:linear-gradient(105deg,#123d63,#b27a22)}
-.tool-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.tool-chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font-weight:750;color:var(--navy);cursor:pointer}.tool-chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.tool-grid-v65{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.tool-card-v65{position:relative;overflow:hidden;border:1px solid var(--line);background:#fff;border-radius:16px;padding:22px;text-align:left;cursor:pointer;min-height:168px}.tool-card-v65:hover{transform:translateY(-2px);box-shadow:0 9px 24px #173f5f14}.tool-card-v65 small{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#71818d;margin-bottom:10px}.tool-card-v65 b{display:block;color:var(--navy);font-size:19px;margin-bottom:7px}.tool-card-v65 p{font-size:14px;line-height:1.45;color:var(--muted);margin:0}.tool-accent{position:absolute;left:0;top:0;right:0;height:5px}.tool-accent.blue{background:var(--blue)}.tool-accent.orange{background:var(--orange)}.tool-accent.teal{background:#258b87}.tool-accent.gold{background:#d99a27}
-.tool-workspace-v65{background:#f7fafc;border-radius:20px;padding:28px;margin-top:8px}.tool-close-v65{border:0;background:none;color:var(--blue);font-weight:800;cursor:pointer;padding:0;margin-bottom:18px}.tw-head h3{font-size:28px;color:var(--navy);margin:6px 0}.tw-head p{font-size:16px;color:var(--muted);line-height:1.5;max-width:760px}.tw-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}.tw-step{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px}.tw-step b{display:block;color:var(--navy);margin-bottom:5px}.tw-step span{font-size:14px;line-height:1.4;color:var(--muted)}.tw-output{background:#fff4e8;border-left:5px solid var(--orange);padding:16px 18px;border-radius:0 12px 12px 0;margin-top:18px}.tw-note{width:100%;min-height:100px;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;margin-top:15px;box-sizing:border-box}.tw-actions{display:flex;gap:8px;margin-top:10px}.tw-actions button{border:0;border-radius:999px;padding:9px 13px;font-weight:750;cursor:pointer}.tw-copy{background:var(--navy);color:#fff}.tw-clear{background:#eaf2f6;color:var(--navy)}
-.context-tools-v65{margin-top:28px;background:#eef8f7;border-left:5px solid #258b87;border-radius:0 14px 14px 0;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.context-tools-v65 small{display:block;font-weight:800;letter-spacing:.07em;color:#258b87;margin-bottom:4px}.context-tools-v65 b{color:var(--navy)}.context-buttons-v65{display:flex;gap:7px;flex-wrap:wrap}.context-buttons-v65 button{border:1px solid #c8dedb;background:#fff;color:var(--navy);border-radius:999px;padding:8px 11px;font-weight:750;cursor:pointer}
-@media(max-width:900px){.tool-grid-v65{grid-template-columns:1fr 1fr}.context-tools-v65{display:block}.context-buttons-v65{margin-top:12px}}@media(max-width:620px){.tool-grid-v65,.tw-steps{grid-template-columns:1fr}}
-</style>
-<style>.route,.route *{box-sizing:border-box}.route p{overflow-wrap:anywhere}</style>
-<style id="v66-framework">
-/* V66: framework replaces the space-consuming student image */
-.home-framework-v66{max-width:1160px;margin:26px auto 30px;padding:0 24px;box-sizing:border-box}
-.hf66-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:16px}
-.hf66-head h2{font-size:clamp(25px,3vw,36px);line-height:1.12;color:var(--navy);margin:5px 0 6px}
-.hf66-head p{font-size:16px;line-height:1.45;color:var(--muted);margin:0}
-.hf66-more{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer;white-space:nowrap}
-.hf66-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.hf66-step{position:relative;border:1px solid #d8e4ea;background:#fff;border-radius:13px;padding:15px 12px;text-align:left;cursor:pointer;min-width:0;box-sizing:border-box}
-.hf66-step span{display:flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;background:#eaf5fb;color:var(--blue);font-size:12px;font-weight:900;margin-bottom:9px}
-.hf66-step b{display:block;color:var(--navy);font-size:17px;margin-bottom:4px}.hf66-step small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
-.hf66-step.active{border-color:var(--blue);box-shadow:0 0 0 2px #0877b915;background:#f7fcff}.hf66-step.active span{background:var(--blue);color:#fff}
-.hf66-detail{margin-top:10px;background:#f5f9fb;border-left:5px solid var(--orange);border-radius:0 12px 12px 0;padding:16px 18px;display:grid;grid-template-columns:1.1fr 1.4fr 1fr;gap:20px;align-items:center}
-.hf66-detail small{display:block;font-size:10px;letter-spacing:.08em;font-weight:850;color:#71818d;margin-bottom:4px}.hf66-detail b{color:var(--navy);font-size:15px}.hf66-detail p{font-size:14px;color:var(--muted);line-height:1.4;margin:0}.hf66-output{border-left:1px solid #d7e3e8;padding-left:18px}
-@media(max-width:820px){.hf66-head{display:block}.hf66-more{margin-top:12px}.hf66-steps{grid-template-columns:1fr 1fr}.hf66-step:last-child{grid-column:1/-1}.hf66-detail{grid-template-columns:1fr}.hf66-output{border-left:0;border-top:1px solid #d7e3e8;padding:12px 0 0}}
-@media(max-width:520px){.hf66-steps{grid-template-columns:1fr}.hf66-step:last-child{grid-column:auto}}
-</style>
-
-<style id="v67-home-order">
-/* Correct homepage hierarchy: Hero → primary choices → framework → supporting content */
-.hero-grid,.hero-inner,.hero-wrap{grid-template-columns:1fr!important}
-.hero-copy{max-width:900px!important;width:100%!important}
-.hero-visual,.hero-media,.hero-art,.visual-card{display:none!important}
-.home-framework-v66{margin-top:34px!important;margin-bottom:34px!important}
-.home-framework-v66 .hf66-head h2{font-size:clamp(23px,2.5vw,31px)!important}
-.home-framework-v66 .hf66-head p{font-size:15px!important}
-.home-framework-v66 .hf66-step{min-height:112px!important;padding:13px 11px!important}
-.home-framework-v66 .hf66-detail{padding:13px 16px!important}
-@media(max-width:820px){.hero-grid,.hero-inner,.hero-wrap{display:block!important}}
-</style>
-
-<style id="v68-blank-space-fix">
-/* V68 permanent fix: obsolete visual container removed; hero cannot reserve image space. */
-.hero{min-height:0!important;height:auto!important;padding-bottom:44px!important}
-.hero .hero-inner{display:block!important;grid-template-columns:none!important;min-height:0!important;height:auto!important}
-.hero .hero-inner>div:first-child{max-width:920px!important;width:100%!important}
-.hero figure,.hero-photo,.student-visual,.hero-visual,.hero-media,.hero-art,.visual-card{display:none!important;width:0!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;aspect-ratio:auto!important}
-</style>
-
-<style id="v69-targeted-coordinate-fixes">
-/* Targeted V69 fixes only — preserve existing V68 design */
-#coord .route,#coord .role-card,#coord .coord-card,#coord .coord-panel{
-  height:auto!important;min-height:0!important;overflow:visible!important;
-}
-#coord .route p,#coord .role-card p,#coord .coord-card p,#coord .coord-panel p{
-  position:static!important;margin-bottom:12px!important;overflow:visible!important;
-}
-#coord .go,#coord .route .go{
-  position:static!important;display:inline-block!important;margin-top:8px!important;
-}
-.coord-framework-v69{margin:28px 0 8px;border-top:1px solid var(--line);padding-top:24px}
-.coord-framework-v69 h3{font-size:24px;color:var(--navy);margin:4px 0 6px}
-.coord-framework-v69>p{font-size:15px;color:var(--muted);margin:0 0 14px}
-.coord-fw-steps-v69{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.coord-fw-step-v69{border:1px solid #d8e4ea;background:#fff;border-radius:12px;padding:13px 11px;text-align:left;cursor:pointer;min-width:0}
-.coord-fw-step-v69 span{display:flex;width:24px;height:24px;border-radius:50%;align-items:center;justify-content:center;background:#eaf5fb;color:var(--blue);font-size:11px;font-weight:900;margin-bottom:7px}
-.coord-fw-step-v69 b{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}
-.coord-fw-step-v69 small{display:block;color:var(--muted);font-size:11px;line-height:1.3}
-.coord-fw-step-v69.active{border-color:var(--blue);background:#f7fcff}
-.coord-fw-detail-v69{margin-top:8px;border-left:4px solid var(--orange);background:#f5f9fb;border-radius:0 10px 10px 0;padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.4}
-.coord-fw-detail-v69 b{color:var(--navy)}
-.page-nav-v69{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:26px 0 4px;padding-top:18px;border-top:1px solid var(--line)}
-.page-nav-v69 button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:10px 15px;font-weight:800;cursor:pointer}
-.page-nav-v69 .home-v69{background:var(--navy);color:#fff;border-color:var(--navy)}
-@media(max-width:760px){.coord-fw-steps-v69{grid-template-columns:1fr 1fr}.coord-fw-step-v69:last-child{grid-column:1/-1}}
-@media(max-width:480px){.coord-fw-steps-v69{grid-template-columns:1fr}.coord-fw-step-v69:last-child{grid-column:auto}}
-</style>
-
-<style id="v70-reconciliation">
-.full-library-v70{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}.library-head-v70 h3,.role-workspaces-v70 h3,.operating-depth-v70 h3{font-size:25px;color:var(--navy);margin:4px 0 7px}.library-head-v70 p{color:var(--muted);margin:0 0 18px}
-.library-groups-v70 details{border:1px solid var(--line);border-radius:14px;background:#fff;margin:10px 0;overflow:hidden}.library-groups-v70 summary{padding:16px 18px;font-weight:850;color:var(--navy);cursor:pointer;background:#f8fbfc}.library-items-v70{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}.library-items-v70 button{border:0;background:#fff;padding:17px;text-align:left;cursor:pointer}.library-items-v70 b{display:block;color:var(--navy);font-size:16px;margin-bottom:4px}.library-items-v70 span{font-size:13px;color:var(--muted);line-height:1.4}
-.deep-workspace-v70{margin-top:16px;background:#f7fafc;border-radius:16px;padding:24px}.deep-back-v70{border:0;background:none;color:var(--blue);font-weight:850;cursor:pointer;margin-bottom:14px}.deep-content-v70 h3{font-size:26px;color:var(--navy);margin:4px 0 8px}.deep-content-v70 p{color:var(--muted);line-height:1.5}.deep-grid-v70{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:17px 0}.deep-step-v70{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px}.deep-step-v70 b{display:block;color:var(--navy);margin-bottom:4px}.deep-step-v70 span{font-size:13px;color:var(--muted);line-height:1.4}.deep-note-v70{width:100%;min-height:100px;border:1px solid var(--line);border-radius:11px;padding:12px;box-sizing:border-box;font:inherit}
-.role-workspaces-v70{margin:32px 0 0;padding-top:26px;border-top:1px solid var(--line)}.role-tabs-v70{display:flex;gap:8px;margin:15px 0}.role-tabs-v70 button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer}.role-tabs-v70 button.active{background:var(--navy);color:#fff}.role-grid-v70{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.role-task-v70{background:#f7fafc;border:1px solid var(--line);border-radius:12px;padding:15px}.role-task-v70 b{display:block;color:var(--navy);margin-bottom:4px}.role-task-v70 span{font-size:13px;color:var(--muted);line-height:1.4}
-.operating-depth-v70{margin:34px 0 0;padding-top:26px;border-top:1px solid var(--line)}.cadence-v70{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:15px 0}.cadence-v70 div{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}.cadence-v70 b{display:block;color:var(--navy);margin-bottom:4px}.cadence-v70 span{font-size:13px;color:var(--muted);line-height:1.4}.case-system-v70{background:#fff4e8;border-left:5px solid var(--orange);padding:15px 17px;border-radius:0 12px 12px 0}.case-system-v70 b{display:block;color:var(--navy);margin-bottom:4px}.case-system-v70 span{color:var(--muted);font-size:14px}
-@media(max-width:760px){.library-items-v70,.deep-grid-v70,.role-grid-v70,.cadence-v70{grid-template-columns:1fr}}
-</style>
-
-<style id="v71-consistent-navigation">
-.global-page-nav-v71{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:34px 0 6px;padding-top:20px;border-top:1px solid var(--line)}
-.global-page-nav-v71 button,.workspace-home-v71{border:1px solid var(--line);border-radius:999px;padding:10px 15px;font-weight:850;cursor:pointer}
-.global-back-v71{background:#fff;color:var(--navy)}.global-home-v71,.workspace-home-v71{background:var(--navy);color:#fff;border-color:var(--navy)!important}
-.workspace-nav-v71{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
-.workspace-nav-v71 .tool-close-v65,.workspace-nav-v71 .deep-back-v70{margin:0!important}
-@media(max-width:520px){.global-page-nav-v71,.workspace-nav-v71{flex-wrap:wrap}}
-</style>
-
-<style id="v72-navigation-role-visual">
-/* One predictable navigation pair only */
-.single-page-nav-v72{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:10px max(18px,calc((100vw - 1180px)/2));background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
-.single-page-nav-v72[hidden]{display:none!important}.single-page-nav-v72 button{border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-weight:850;cursor:pointer;background:#fff;color:var(--navy)}.single-page-nav-v72 .home-v72{background:var(--navy);color:#fff;border-color:var(--navy)}
-/* Hide obsolete injected nav controls if any survive legacy markup */
-.global-page-nav-v71,.page-nav-v69{display:none!important}
-.role-relationship-v72{margin:32px 0;padding-top:28px;border-top:1px solid var(--line)}.role-relationship-v72 h3{font-size:25px;color:var(--navy);margin:4px 0 16px}
-.relationship-grid-v72{display:grid;grid-template-columns:1fr .86fr 1fr;gap:12px;align-items:stretch}.relationship-card-v72{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}.relationship-card-v72 h4{font-size:19px;color:var(--navy);margin:7px 0 8px}.relationship-card-v72 p{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 13px}.relationship-label-v72{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--blue)}.shared-v72{background:#f2f8fb;text-align:center;display:flex;flex-direction:column;justify-content:center}.shared-v72 strong{color:var(--navy);font-size:15px;line-height:1.5}.relationship-tags-v72{display:flex;flex-wrap:wrap;gap:6px}.relationship-tags-v72 span{font-size:11px;font-weight:750;color:var(--navy);background:#f5f8fa;border-radius:999px;padding:6px 8px}.relationship-flow-v72{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:12px;color:var(--navy);font-size:13px;font-weight:850}.relationship-flow-v72 b{color:var(--orange);font-size:21px}
-@media(max-width:760px){.relationship-grid-v72{grid-template-columns:1fr}.relationship-flow-v72{flex-wrap:wrap}}
-</style>
-
-<style id="v73-route-card-overlap-fix">
-/* V73: route-card content must participate in normal document flow */
-.routes .route,
-.route-grid .route,
-.route{
-  display:flex!important;
-  flex-direction:column!important;
-  height:auto!important;
-  min-height:0!important;
-  overflow:visible!important;
-  padding-bottom:22px!important;
-}
-.routes .route h3,
-.route-grid .route h3,
-.route h3{
-  position:static!important;
-  margin-bottom:12px!important;
-}
-.routes .route p,
-.route-grid .route p,
-.route p{
-  position:static!important;
-  display:block!important;
-  height:auto!important;
-  min-height:0!important;
-  overflow:visible!important;
-  margin:0 0 18px!important;
-  line-height:1.48!important;
-}
-.routes .route .go,
-.route-grid .route .go,
-.route .go{
-  position:static!important;
-  inset:auto!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  margin-top:auto!important;
-  padding-top:4px!important;
-  line-height:1.25!important;
-  transform:none!important;
-}
-@media(max-width:760px){
-  .routes .route,.route-grid .route,.route{padding-bottom:20px!important}
-  .routes .route p,.route-grid .route p,.route p{margin-bottom:16px!important}
-}
-</style>
-<style id="v75-visible-fixes">
-.page-nav-v75{display:flex;justify-content:space-between;align-items:center;margin:0 0 24px;padding:12px 0 16px;border-bottom:1px solid var(--line)}
-.page-nav-v75 button{border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:15px;font-weight:850;cursor:pointer}.back-v75{background:#fff;color:var(--navy)}.home-v75{background:var(--navy);color:#fff;border-color:var(--navy)!important}
-.explicit-roles-v75{margin:0 0 32px;padding:6px 0 30px;border-bottom:1px solid var(--line)}.explicit-roles-v75 h3{font-size:28px;line-height:1.18;color:var(--navy);margin:5px 0 8px}.roles-lead-v75{font-size:16px!important;line-height:1.5!important;color:var(--muted);margin:0 0 18px!important}
-.roles-compare-v75{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.role-v75{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;min-width:0}.fss-v75{border-top:6px solid #1678b8}.together-v75{border-top:6px solid var(--orange);background:#fffaf3}.kssn-v75{border-top:6px solid #16856c}.role-name-v75{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--blue)}.role-v75 h4{font-size:20px;line-height:1.2;color:var(--navy);margin:7px 0 9px}.role-v75 p{font-size:14px!important;line-height:1.48!important;color:#425c6c;margin:0 0 12px!important}.role-v75 ul{margin:0;padding-left:20px}.role-v75 li{font-size:14px;line-height:1.45;color:#334e60;margin:6px 0}.rule-v75{margin-top:14px;padding:10px 12px;border-left:4px solid var(--orange);background:#fff;color:var(--navy);font-size:14px}.work-flow-v75{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:15px;font-size:14px;font-weight:850;color:var(--navy)}.work-flow-v75 b{font-size:22px;color:var(--orange)}
-@media(max-width:850px){.roles-compare-v75{grid-template-columns:1fr}.work-flow-v75{flex-wrap:wrap;text-align:center}}</style>
-
-<style id="v77-operating-graphic">
-.operating-graphic-v77{margin:0 0 34px;padding:6px 0 30px;border-bottom:1px solid var(--line)}
-.operating-graphic-head-v77{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:16px}.operating-graphic-head-v77 h3{font-size:28px;line-height:1.18;color:var(--navy);margin:4px 0 6px}.operating-graphic-head-v77 p{font-size:16px!important;color:var(--muted);margin:0!important}.enlarge-v77{flex:0 0 auto;border:1px solid #c9ddea;border-radius:12px;background:#edf6fc;color:var(--navy);padding:12px 16px;font-size:15px;font-weight:900;cursor:pointer}
-.graphic-button-v77{display:block;position:relative;width:100%;padding:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;cursor:zoom-in;box-shadow:0 8px 26px rgba(12,58,91,.07)}.graphic-button-v77 img{display:block;width:100%;height:auto}.graphic-expand-label-v77{position:absolute;right:14px;bottom:14px;background:rgba(9,58,98,.94);color:#fff;border-radius:999px;padding:9px 12px;font-size:13px;font-weight:850}.graphic-accessible-v77{margin-top:10px;font-size:14px;color:var(--muted)}.graphic-accessible-v77 summary{cursor:pointer;font-weight:850;color:var(--navy)}
-.model-lightbox-v77{position:fixed;inset:0;z-index:2000;background:rgba(7,28,44,.86);padding:20px;overflow:auto}.model-lightbox-v77[hidden]{display:none!important}.model-lightbox-bar-v77{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;max-width:1500px;margin:0 auto;background:#fff;border-radius:14px 14px 0 0;padding:12px 16px;color:var(--navy)}.model-lightbox-bar-v77 button{border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);padding:9px 13px;font-weight:850;cursor:pointer}.model-lightbox-body-v77{max-width:1500px;margin:0 auto;background:#fff;border-radius:0 0 14px 14px;padding:10px}.model-lightbox-body-v77 img{display:block;width:100%;height:auto}
-@media(max-width:700px){.operating-graphic-head-v77{display:block}.enlarge-v77{margin-top:12px}.graphic-expand-label-v77{font-size:12px}.model-lightbox-v77{padding:8px}}
-</style></head><body>
-<div id="home">
-<header><div class="top"><div class="brand-lockup"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice"><div class="brand">Family Support Specialist &amp; Kent School Services Integration</div></div><nav><button data-open="concern">Start Here</button><button data-open="coord">FSS + KSSN</button><button data-open="tools">Tools & Resources</button><button data-open="model">How We Work</button></nav></div></header>
-
-
-<section class="hero"><div class="hero-inner"><div><div class="eyebrow">ATTENDANCE SUPPORT • GRPS</div><h1>One barrier.<br>One coordinated response.</h1><p>Use the platform to understand what is getting in the way of attendance, determine who needs to act, and move toward a response that makes a difference for the scholar and family.</p><div class="rule">Start with the barrier—not the role.</div></div>
-</div></section>
-
-
-<main><div class="introline"><div><div class="eyebrow">START WHERE YOU ARE</div><h2>What do you need to do?</h2></div><p>Three entry points. The deeper tools appear when you need them.</p></div>
-<div class="routes">
-<button class="route primary" data-open="concern"><span class="kicker">MOST COMMON START</span><h3>Work through an attendance concern</h3><p>A guided workspace for one scholar/family. Understand the pattern, identify the barrier, match the intervention, assign responsibility, and set a review point.</p><span class="go">Start the work →</span></button>
-<button class="route" data-open="coord"><span class="kicker">SHARED WORK</span><h3>Coordinate FSS + KSSN</h3><p>Use when both functions are needed. Clarify the attendance lead and distinct responsibilities without duplicating work.</p><span class="go">Coordinate →</span></button>
-<button class="route" data-open="tools"><span class="kicker">QUICK ACCESS</span><h3>Open a tool or resource</h3><p>Go directly to caring conversations, attendance plans, home visits, warm handoffs, resources, or team tools.</p><span class="go">Browse tools →</span></button>
-</div>
-<div class="band"><div><h4>FSS</h4><p>Attendance-focused family intervention, planning, follow-up, and monitoring.</p></div><div><h4>KSSN</h4><p>Community School strategy, integrated supports, partners, resources, and system connections.</p></div><div><h4>Shared</h4><p>One barrier hypothesis, coordinated family contact, distinct responsibilities, and one review point.</p></div></div>
-<div class="footer">V62 visual mock-up • official GRPS branding + restored operating framework</div></main></div>
-
-<section class="page" id="concern"><div class="pagehead"><div class="pagehead-inner"><h2>Work through an attendance concern</h2><p>One workspace. The next step stays visible without sending you through multiple pages or pathways.</p></div></div><div class="content"><div class="page-nav-v75"><button type="button" class="back-v75">← Back</button><button type="button" class="home-v75" data-home>⌂ Home</button></div><div class="workspace-grid"><aside class="rail"><div class="stage active">01 · Pattern</div><div class="stage">02 · Barrier</div><div class="stage">03 · Response</div><div class="stage">04 · Ownership</div><div class="stage">05 · Review</div></aside><div class="work"><div class="eyebrow">STEP 01</div><h3>What is happening with attendance?</h3><p class="lead">Start with evidence and voice. Do not decide the intervention—or the role—before understanding what is happening.</p>
-<div class="promptbox"><h4>Attendance pattern</h4><p>What does the data show? What changed? When does the concern occur?</p><textarea rows="3" placeholder="Capture the pattern in a few sentences..."></textarea></div>
-<div class="promptbox"><h4>Scholar + family voice</h4><p>What are they experiencing? What is going well? What do they believe is making attendance harder?</p><textarea rows="3" placeholder="Capture strengths, experience, and concerns..."></textarea></div>
-<div class="callout"><b>Need help with the conversation?</b><br>The Caring Conversation Guide would open here as a supporting drawer—not take you to another pathway.</div>
-<div class="actions"><button class="btn primary">Continue to barrier →</button><button class="btn secondary" data-open="tools">Open a tool</button></div></div></div></div>
-<div class="context-tools-v65">
-<div><small>USE A TOOL WITHOUT LEAVING THIS WORK</small><b>Need help understanding the barrier or building the response?</b></div>
-<div class="context-buttons-v65">
-<button data-open-tool="barrier">Barrier Explorer</button>
-<button data-open-tool="caring">Caring Conversation</button>
-<button data-open-tool="plan">Attendance Plan</button>
-<button data-open-tool="review">Review Impact</button>
-</div></div>
-</section>
-<section class="home-framework-v66" aria-labelledby="frameworkTitleV66">
-  <div class="hf66-head">
-    <div>
-      <div class="eyebrow">HOW WE WORK</div>
-      <h2 id="frameworkTitleV66">Pattern → Barrier → Ownership → Support → Impact</h2>
-      <p>A shared decision process from the first attendance concern through progress review.</p>
-    </div>
-    <button type="button" class="hf66-more" data-open="model">Open How We Work →</button>
-  </div>
-  <div class="hf66-steps" role="list">
-    <button class="hf66-step active" data-fw66="pattern" role="listitem"><span>1</span><b>Pattern</b><small>What do we see?</small></button>
-    <button class="hf66-step" data-fw66="barrier" role="listitem"><span>2</span><b>Barrier</b><small>What is getting in the way?</small></button>
-    <button class="hf66-step" data-fw66="ownership" role="listitem"><span>3</span><b>Ownership</b><small>Who needs to act?</small></button>
-    <button class="hf66-step" data-fw66="support" role="listitem"><span>4</span><b>Support</b><small>What will reduce the barrier?</small></button>
-    <button class="hf66-step" data-fw66="impact" role="listitem"><span>5</span><b>Impact</b><small>Is it working?</small></button>
-  </div>
-  <div class="hf66-detail" id="fwDetailV66">
-    <div><small>DECISION</small><b>Confirm the attendance pattern.</b></div>
-    <p>Describe what is happening before deciding who should respond.</p>
-    <div class="hf66-output"><small>OUTPUT</small><b>A clear description of the attendance concern.</b></div>
-  </div>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="utility"><div class="wrap"><span>GRPS attendance collaboration resource</span><div><a href="#" onclick="go('home');return false">Home</a></div></div></div>
+<header class="brandbar"><div class="wrap brandrow"><div class="brand"><div class="mark">GR</div><div><b>Family Support Specialist & Kent School Services Integration</b><span>One coordinated response to attendance barriers</span></div></div><nav class="nav" aria-label="Primary"><button onclick="go('home')">Start Here</button><button onclick="go('roles')">FSS + KSSN</button><button onclick="go('tools')">Tools & Resources</button><button onclick="go('model')">How We Work</button></nav></div></header>
+<main id="main">
+<section class="page active" id="home">
+  <div class="hero"><div class="wrap"><div class="eyebrow">GRPS ATTENDANCE COLLABORATION</div><h1>One barrier. One coordinated response.</h1><p class="lede">A practical operating resource for Family Support Specialists, KSSN Coordinators and school teams to understand the barrier, clarify ownership, match support and monitor impact.</p><div class="barrier-rule">Start with the barrier—not the role.</div></div></div>
+  <div class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">WHERE SHOULD I START?</div><h2>What do you need to do?</h2></div><p>Choose the task that is closest to the work in front of you. The site will take you directly to the next useful step.</p></div>
+  <div class="pathgrid">
+    <button class="path" onclick="go('concern')"><span class="num">01</span><h3>Work through an attendance concern</h3><p>Start with the attendance pattern, identify the barrier, determine ownership and match the response.</p><span class="go">Start with the concern →</span></button>
+    <button class="path" onclick="go('roles')"><span class="num">02</span><h3>Coordinate FSS + KSSN</h3><p>See what FSS owns, what KSSN owns, where the school acts, and where shared work adds value.</p><span class="go">Clarify the work →</span></button>
+    <button class="path" onclick="go('tools')"><span class="num">03</span><h3>Use a field tool</h3><p>Open a caring conversation, barrier explorer, attendance plan, warm handoff, review or team huddle.</p><span class="go">Choose a tool →</span></button>
+  </div></div></div>
+  <div class="section soft"><div class="wrap"><div class="pulse"><div><b>HOW THE WORK MOVES</b><span>Simple rhythm. Clear purpose.</span></div><div><b>Daily</b><span>Do the assigned work.</span></div><div><b>Weekly</b><span>Unstick what is not moving.</span></div><div><b>Monthly + Quarterly</b><span>Find patterns and change the system.</span></div></div></div></div>
+  <div class="section"><div class="wrap band"><div class="band-intro"><div class="eyebrow">QUICK START</div><h2>Choose what is happening.</h2><p>The platform is organized around the attendance problem—not around an organizational chart.</p></div><div class="choice-list">
+    <button class="choice" onclick="go('concern')"><div class="ico">?</div><div><strong>We know the scholar is missing school, but the barrier is unclear.</strong><span>Use the Barrier Explorer and caring conversation.</span></div></button>
+    <button class="choice" onclick="openTool('plan')"><div class="ico">→</div><div><strong>We understand the barrier and need an attendance plan.</strong><span>Match an intervention, assign ownership and set the review point.</span></div></button>
+    <button class="choice" onclick="go('roles')"><div class="ico">⇄</div><div><strong>FSS and KSSN are both involved.</strong><span>Clarify the attendance lead and distinct responsibilities.</span></div></button>
+    <button class="choice" onclick="openTool('review')"><div class="ico">30</div><div><strong>The response is in place, but attendance is not improving.</strong><span>Check implementation, access, barrier reduction and attendance response.</span></div></button>
+  </div></div></div>
 </section>
 
-
-<section class="page" id="coord"><div class="pagehead"><div class="pagehead-inner"><h2>Coordinate FSS + KSSN</h2><p>One plan with clear responsibilities. Overlap is intentional; duplication is not.</p></div></div><div class="content"><div class="page-nav-v75"><button type="button" class="back-v75">← Back</button><button type="button" class="home-v75" data-home>⌂ Home</button></div><div class="band" style="margin-top:0"><div><h4>Attendance lead</h4><p>Name one person responsible for keeping the attendance goal and review point moving.</p></div><div><h4>FSS contribution</h4><p>Family voice, attendance intervention, plan, follow-through, and monitoring.</p></div><div><h4>KSSN contribution</h4><p>Resource fit, partner coordination, access, integrated supports, and repeated-gap response.</p></div></div><div class="work" style="max-width:850px;margin-top:35px"><h3>Build the coordinated response</h3><div class="promptbox"><h4>Shared barrier</h4><textarea rows="2" placeholder="What are we jointly trying to change?"></textarea></div><div class="promptbox"><h4>Distinct responsibilities</h4><textarea rows="5" placeholder="Attendance lead:&#10;FSS will:&#10;KSSN will:&#10;School will:&#10;Family/scholar will:"></textarea></div><div class="actions"><button class="btn primary">Set review point →</button></div></div></div>
-
-<section class="operating-graphic-v77" aria-labelledby="operatingGraphicTitleV77">
-  <div class="operating-graphic-head-v77">
-    <div><div class="eyebrow">OUR OPERATING MODEL</div><h3 id="operatingGraphicTitleV77">Different functions. Shared responsibility. One goal.</h3><p>See how FSS, KSSN, the school, scholars and families connect around attendance.</p></div>
-    <button type="button" class="enlarge-v77" id="enlargeModelV77" aria-haspopup="dialog">↗ Click to enlarge</button>
-  </div>
-  <button type="button" class="graphic-button-v77" id="graphicButtonV77" aria-label="Enlarge the FSS and KSSN operating model">
-    <img src="fss-kssn-operating-model.png" alt="Operating model showing Scholar and Family at the center, connected to FSS, KSSN, Shared Work, School, one attendance goal, and daily, weekly, monthly and quarterly collaboration." loading="eager">
-    <span class="graphic-expand-label-v77">Click image to enlarge</span>
-  </button>
-  <details class="graphic-accessible-v77"><summary>Read the operating model</summary><p><strong>FSS:</strong> family attendance support and sustained attendance intervention. <strong>KSSN:</strong> Community School support, partners and resource coordination. <strong>Shared Work:</strong> identify the barrier, coordinate, connect supports, check impact and share patterns. <strong>School:</strong> remove school-controlled barriers and provide school-based support. <strong>Cadence:</strong> daily do the work; weekly unstick the work; monthly find patterns; quarterly change the system.</p></details>
+<section class="page" id="roles">
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">FSS + KSSN</div><h1 style="font-size:44px">Different functions. Shared responsibility. One goal.</h1><p class="lede">Scholar + family stay at the center. FSS, KSSN and the school contribute different functions around the same attendance barrier.</p></div></div>
+ <div class="section"><div class="wrap"><div class="model-shell"><div class="model-top"><div><div class="eyebrow">OUR OPERATING MODEL</div><h2>Removing attendance barriers, together.</h2></div><button class="expand" onclick="expandModel()">↗ Expand model</button></div><div id="operatingModel" class="model">
+   <article class="role fss"><h3>FSS</h3><b>Attendance Intervention Lead</b><ul><li>Understand the family and situation</li><li>Build trust and engage</li><li>Develop and guide the attendance intervention</li><li>Follow up and monitor impact</li><li>Bring stalled work back to the team</li></ul></article>
+   <div class="center"><div class="circle">SCHOLAR<br>+ FAMILY<small>Our focus.<br>Our why.</small></div></div>
+   <article class="role kssn"><h3>KSSN</h3><b>Community School / Resource Coordination</b><ul><li>Connect partners and resources</li><li>Coordinate needs and services</li><li>Build programs and opportunities</li><li>Mobilize community assets</li><li>Confirm access and surface resource gaps</li></ul></article>
+   <article class="role shared"><h3>Shared Work</h3><b>Remove the Barrier</b><ul><li>One barrier hypothesis</li><li>One attendance lead</li><li>Distinct responsibilities</li><li>Coordinated family contact</li><li>One review point</li></ul></article>
+   <article class="role school"><h3>School</h3><b>School-Based Support</b><ul><li>Remove school-controlled barriers</li><li>Provide academic/instructional access</li><li>Strengthen belonging and relationships</li><li>Assure implementation</li><li>Monitor progress with the team</li></ul></article>
+ </div><div class="goal">ONE GOAL — Improve attendance by reducing the barrier.</div>
+ <div class="cadence"><div>HOW WE<br>WORK<br>TOGETHER</div><div><b>DAILY</b><span>Do the work. Support scholars and families.</span></div><div><b>WEEKLY</b><span>Unstick the work. Collaborate and problem-solve.</span></div><div><b>MONTHLY</b><span>Find patterns. Use data and stories to improve.</span></div><div><b>QUARTERLY</b><span>Change the system. Strengthen partnerships.</span></div></div></div></div></div>
+ <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">KSSN ROLE CLARITY</div><h2>Go. Check. Stop.</h2></div><p>A quick decision aid for distinguishing core Community School Coordinator work from work that needs consultation or should remain with another role.</p></div><div class="go-check-stop"><div class="gcs go"><b>GO</b><p>Core coordinator functions.</p><ul><li>Resource coordination</li><li>Family/community engagement</li><li>Community partnerships</li><li>Attendance team participation</li><li>Programs and opportunities</li></ul></div><div class="gcs check"><b>CHECK</b><p>Coordinate with the appropriate lead before acting.</p><ul><li>Behavior interventions</li><li>School counseling functions</li><li>Supervision/lunchroom coverage</li><li>School-specific operational duties</li></ul></div><div class="gcs stop"><b>STOP</b><p>Work that should remain with the appropriately assigned professional.</p><ul><li>Substitute teaching</li><li>Ongoing therapy</li><li>Secretarial work</li><li>Serving as disciplinarian</li><li>Running detention</li></ul></div></div></div></div>
 </section>
-<div class="model-lightbox-v77" id="modelLightboxV77" role="dialog" aria-modal="true" aria-label="Expanded FSS and KSSN operating model" hidden>
-  <div class="model-lightbox-bar-v77"><strong>FSS + KSSN Operating Model</strong><button type="button" id="closeModelV77" aria-label="Close expanded model">✕ Close</button></div>
-  <div class="model-lightbox-body-v77"><img src="fss-kssn-operating-model.png" alt="Expanded FSS and KSSN operating model"></div>
-</div>
-<div class="coord-framework-v69">
-  <div class="eyebrow">HOW WE WORK TOGETHER</div>
-  <h3>Pattern → Barrier → Ownership → Support → Impact</h3>
-  <p>Use the same framework here to coordinate the work without creating competing plans or duplicate follow-up.</p>
-  <div class="coord-fw-steps-v69">
-    <button class="coord-fw-step-v69 active" data-cfw69="pattern"><span>1</span><b>Pattern</b><small>What do we see?</small></button>
-    <button class="coord-fw-step-v69" data-cfw69="barrier"><span>2</span><b>Barrier</b><small>What is getting in the way?</small></button>
-    <button class="coord-fw-step-v69" data-cfw69="ownership"><span>3</span><b>Ownership</b><small>Who needs to act?</small></button>
-    <button class="coord-fw-step-v69" data-cfw69="support"><span>4</span><b>Support</b><small>What will reduce the barrier?</small></button>
-    <button class="coord-fw-step-v69" data-cfw69="impact"><span>5</span><b>Impact</b><small>Is it working?</small></button>
-  </div>
-  <div class="coord-fw-detail-v69" id="coordFwDetailV69"><b>Pattern:</b> Confirm the attendance pattern before deciding which role should respond.</div>
-</div>
 
+<section class="page" id="concern">
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">ATTENDANCE CONCERN</div><h1 style="font-size:44px">Work the concern from pattern to impact.</h1><p class="lede">Attendance percentage tells us the level of concern. Root-cause analysis determines the intervention.</p></div></div>
+ <div class="section"><div class="wrap"><div class="framework" id="framework">
+  <button class="step active" data-step="pattern"><b>1. Pattern</b><span>What do we see?</span></button><button class="step" data-step="barrier"><b>2. Barrier</b><span>What is getting in the way?</span></button><button class="step" data-step="ownership"><b>3. Ownership</b><span>Who needs to act?</span></button><button class="step" data-step="support"><b>4. Support</b><span>What will reduce the barrier?</span></button><button class="step" data-step="impact"><b>5. Impact</b><span>Is it working?</span></button>
+ </div><div class="framework-detail" id="frameworkDetail"><b>Pattern:</b> Confirm the attendance pattern before deciding which role should respond.</div></div></div>
+ <div class="section soft"><div class="wrap band"><div class="band-intro"><div class="eyebrow">BARRIER MATCHING</div><h2>Family barrier or school barrier?</h2><p>The intervention matrix starts with attendance patterns, then separates family and school barriers before matching resources and interventions.</p></div><div class="choice-list">
+  <button class="choice" onclick="openTool('barrier')"><div class="ico">1</div><div><strong>Identify the barrier</strong><span>Transportation, housing, chronic illness, academic challenge, engagement, belonging, mental health and more.</span></div></button>
+  <button class="choice" onclick="openTool('plan')"><div class="ico">2</div><div><strong>Match the support</strong><span>Choose an intervention that addresses the barrier—not simply another contact or referral.</span></div></button>
+  <button class="choice" onclick="openTool('review')"><div class="ico">3</div><div><strong>Review impact</strong><span>Check whether the intervention happened, the family accessed it, the barrier changed and attendance responded.</span></div></button>
+ </div></div></div>
+</section>
 
-
-<div class="role-workspaces-v70">
- <div class="eyebrow">ROLE WORKSPACES</div><h3>Do the work by function.</h3>
- <div class="role-tabs-v70">
-  <button class="active" data-role70="fss">FSS</button><button data-role70="kssn">KSSN</button><button data-role70="shared">Shared Work</button>
- </div>
- <div id="roleContentV70"></div>
-</div>
+<section class="page" id="model">
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">HOW WE WORK</div><h1 style="font-size:44px">A shared way to make attendance decisions.</h1><p class="lede">Use the same decision logic across FSS, KSSN and school teams so families receive one coordinated response.</p></div></div>
+ <div class="section"><div class="wrap"><h2>Pattern → Barrier → Ownership → Support → Impact</h2><div class="framework" id="framework2">
+  <button class="step" onclick="showFramework('pattern')"><b>Pattern</b><span>Confirm what is happening.</span></button><button class="step" onclick="showFramework('barrier')"><b>Barrier</b><span>Understand why.</span></button><button class="step" onclick="showFramework('ownership')"><b>Ownership</b><span>Assign the right lead.</span></button><button class="step" onclick="showFramework('support')"><b>Support</b><span>Match the response.</span></button><button class="step" onclick="showFramework('impact')"><b>Impact</b><span>Review and decide.</span></button>
+ </div><div class="framework-detail" id="frameworkDetail2"><b>Use the framework:</b> Select a step to see the decision that belongs there.</div></div></div>
+ <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">CASE → SYSTEM</div><h2>Do not solve the same barrier one family at a time forever.</h2></div></div><div class="pulse"><div><b>ONE FAMILY</b><span>Barrier is identified.</span></div><div><b>REPEATED BARRIER</b><span>Pattern becomes visible.</span></div><div><b>BUILDING RESPONSE</b><span>School/Community School adjusts.</span></div><div><b>DISTRICT RESPONSE</b><span>Scale when the pattern requires it.</span></div></div></div></div>
 </section>
 
 <section class="page" id="tools">
-<div class="pagehead tools-head"><div class="pagehead-inner">
-<div class="eyebrow light">TOOLS &amp; RESOURCES</div>
-<h2>Open the tool you need.</h2>
-<p>No pathway to complete first. Choose the work in front of you and use the tool in place.</p>
-</div></div>
-<div class="content"><div class="page-nav-v75"><button type="button" class="back-v75">← Back</button><button type="button" class="home-v75" data-home>⌂ Home</button></div>
-<div class="tool-filter" role="tablist" aria-label="Filter tools">
-<button class="tool-chip active" data-tool-filter="all">All</button>
-<button class="tool-chip" data-tool-filter="fss">FSS</button>
-<button class="tool-chip" data-tool-filter="kssn">KSSN</button>
-<button class="tool-chip" data-tool-filter="team">School Team</button>
-<button class="tool-chip" data-tool-filter="shared">Shared</button>
-</div>
-
-<div class="tool-grid-v65">
-<button class="tool-card-v65" data-tool="caring" data-tags="fss shared"><span class="tool-accent blue"></span><small>FSS • FAMILY VOICE</small><b>Caring Conversation</b><p>Learn → Share → Inform → Discuss → Arrive at a Plan.</p></button>
-<button class="tool-card-v65" data-tool="barrier" data-tags="fss kssn team shared"><span class="tool-accent orange"></span><small>EVERYONE</small><b>Barrier Explorer</b><p>Move from the attendance pattern to a working barrier hypothesis.</p></button>
-<button class="tool-card-v65" data-tool="plan" data-tags="fss shared"><span class="tool-accent teal"></span><small>FSS • SHARED</small><b>Attendance Plan</b><p>Build one barrier-matched plan with an owner, action, goal, and review date.</p></button>
-<button class="tool-card-v65" data-tool="handoff" data-tags="fss kssn shared"><span class="tool-accent gold"></span><small>FSS + KSSN</small><b>Warm Handoff</b><p>Explain → Connect → Confirm → Follow through.</p></button>
-<button class="tool-card-v65" data-tool="resource" data-tags="kssn shared"><span class="tool-accent teal"></span><small>KSSN • RESOURCE FIT</small><b>Find More Support</b><p>Identify → Verify → Connect → Confirm → Monitor.</p></button>
-<button class="tool-card-v65" data-tool="school" data-tags="team shared"><span class="tool-accent blue"></span><small>SCHOOL TEAM</small><b>School Team Decision Path</b><p>Define → Understand → Match → Implement → Monitor → Decide.</p></button>
-<button class="tool-card-v65" data-tool="review" data-tags="fss kssn team shared"><span class="tool-accent orange"></span><small>PROGRESS REVIEW</small><b>10 / 20 / 30-Day Review</b><p>Check fidelity, access, barrier reduction, and attendance response.</p></button>
-<button class="tool-card-v65" data-tool="huddle" data-tags="team shared"><span class="tool-accent gold"></span><small>TEAM TOOL</small><b>10-Minute Case Huddle</b><p>Clarify the barrier, ownership, immediate move, and review point.</p></button>
-<button class="tool-card-v65" data-tool="practice" data-tags="fss kssn team shared"><span class="tool-accent teal"></span><small>PRACTICE</small><b>Practice the Model</b><p>Use short attendance scenarios to test role and intervention decisions.</p></button>
-</div>
-
-<div class="tool-workspace-v65" id="toolWorkspaceV65" hidden>
-<div class="workspace-nav-v71"><button class="tool-close-v65" type="button" id="toolCloseV65">← Back to tools</button><button type="button" class="workspace-home-v71" data-home>⌂ Home</button></div>
-<div id="toolWorkspaceContentV65"></div>
-</div>
-</div>
-
-<div class="full-library-v70">
-  <div class="library-head-v70">
-    <div><div class="eyebrow">FULL TOOL LIBRARY</div><h3>Use the tool that matches the work.</h3>
-    <p>The deeper tools from the earlier platform are restored here without adding more top-level pathways.</p></div>
-  </div>
-  <div class="library-groups-v70">
-    <details open><summary>Understand the attendance concern</summary><div class="library-items-v70">
-      <button data-tool="barrier"><b>Barrier Explorer</b><span>Pattern → root cause → working barrier hypothesis.</span></button>
-      <button data-v70-tool="connect"><b>When to Connect</b><span>Understand • Coordinate • Connect • Adjust • Scale.</span></button>
-      <button data-tool="caring"><b>Caring Conversation</b><span>Learn → Share → Inform → Discuss → Arrive at a Plan.</span></button>
-      <button data-v70-tool="homevisit"><b>Family / Home Visit Prep</b><span>Prepare for a purposeful, relationship-centered conversation.</span></button>
-    </div></details>
-    <details><summary>Build the response</summary><div class="library-items-v70">
-      <button data-tool="plan"><b>Attendance Plan</b><span>Barrier, intervention, owner, goal, dosage and review point.</span></button>
-      <button data-v70-tool="quality"><b>Intervention Quality Check</b><span>Confirm the response is an intervention—not just an action.</span></button>
-      <button data-tool="handoff"><b>Warm Handoff</b><span>Explain → Connect → Confirm → Follow through.</span></button>
-      <button data-tool="resource"><b>Find More Support</b><span>Verify fit, connect, confirm access and monitor impact.</span></button>
-    </div></details>
-    <details><summary>FSS field tools</summary><div class="library-items-v70">
-      <button data-v70-tool="routine"><b>Morning Routine Problem-Solver</b><span>Break down the morning barrier and identify a realistic change.</span></button>
-      <button data-v70-tool="followup"><b>Follow-Up / Impact Review</b><span>Review what was implemented, what changed and what happens next.</span></button>
-      <button data-v70-tool="teamreturn"><b>Bring Back to Team</b><span>Prepare a concise barrier, intervention, impact and decision summary.</span></button>
-    </div></details>
-    <details><summary>KSSN Community School tools</summary><div class="library-items-v70">
-      <button data-v70-tool="assets"><b>Needs + Assets Quick Scan</b><span>Identify the need, existing assets and the gap that remains.</span></button>
-      <button data-v70-tool="partnerfit"><b>Partner Fit Check</b><span>Test whether a partner/resource actually fits the barrier.</span></button>
-      <button data-v70-tool="integrated"><b>Integrated Support Plan</b><span>Coordinate multiple supports without creating competing plans.</span></button>
-      <button data-v70-tool="expanded"><b>Expanded Opportunity Match</b><span>Use belonging, enrichment and expanded learning when they fit the barrier.</span></button>
-    </div></details>
-    <details><summary>School team + progress review</summary><div class="library-items-v70">
-      <button data-tool="school"><b>School Team Decision Path</b><span>Define → Understand → Match → Implement → Monitor → Decide.</span></button>
-      <button data-tool="review"><b>10 / 20 / 30-Day Review</b><span>Check fidelity, access, barrier reduction and attendance response.</span></button>
-      <button data-tool="huddle"><b>10-Minute Case Huddle</b><span>Unstick a case and clarify the immediate move.</span></button>
-      <button data-v70-tool="monthly"><b>Monthly Pattern Review</b><span>Move repeated barriers from individual cases to a system response.</span></button>
-    </div></details>
-    <details><summary>Practice + case to system</summary><div class="library-items-v70">
-      <button data-tool="practice"><b>Practice the Model</b><span>Eight attendance scenarios restored for role/intervention decisions.</span></button>
-      <button data-v70-tool="casesystem"><b>Case → System Builder</b><span>One family → repeated barrier → pattern → building response → district response.</span></button>
-      <button data-v70-tool="guardrails"><b>Implementation Guardrails</b><span>Check for duplication, unclear ownership and activity without impact.</span></button>
-    </div></details>
-  </div>
-  <div class="deep-workspace-v70" id="deepWorkspaceV70" hidden>
-    <div class="workspace-nav-v71"><button class="deep-back-v70" id="deepBackV70" type="button">← Back to full tool library</button><button type="button" class="workspace-home-v71" data-home>⌂ Home</button></div>
-    <div id="deepContentV70"></div>
-  </div>
-</div>
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">TOOLS & RESOURCES</div><h1 style="font-size:44px">Open the tool you need. Do the work. Return to the case.</h1><p class="lede">No tracker. No extra system. Each tool is a short working space for the decision in front of you.</p></div></div>
+ <div class="section"><div class="wrap"><div class="toolgrid">
+  <button class="toolcard" onclick="openTool('caring')"><small>FSS / SHARED</small><h3>Caring Conversation</h3><p>Learn → Share → Inform → Discuss → Arrive at a Plan.</p></button>
+  <button class="toolcard" onclick="openTool('barrier')"><small>ALL ROLES</small><h3>Barrier Explorer</h3><p>Move from the attendance pattern to a working barrier hypothesis.</p></button>
+  <button class="toolcard" onclick="openTool('plan')"><small>FSS / SCHOOL / SHARED</small><h3>Attendance Plan</h3><p>Match the intervention, owner, goal and review point.</p></button>
+  <button class="toolcard" onclick="openTool('handoff')"><small>FSS + KSSN</small><h3>Warm Handoff</h3><p>Explain → Connect → Confirm → Follow through.</p></button>
+  <button class="toolcard" onclick="openTool('review')"><small>ALL ROLES</small><h3>10/20/30-Day Review</h3><p>Check implementation, access, barrier reduction and attendance response.</p></button>
+  <button class="toolcard" onclick="openTool('huddle')"><small>SCHOOL TEAM</small><h3>10-Minute Case Huddle</h3><p>Clarify the barrier, ownership, next action and review point.</p></button>
+ </div></div></div>
+ <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">RESOURCE CONNECTIONS</div><h2>Find support after the barrier is understood.</h2></div><p>Resource discovery is part of the intervention only when it is intentionally matched to the barrier and access is confirmed.</p></div><div class="resourcegrid"><div class="resource"><b>GRPS / building supports</b><p>Check what already exists in the school or district before creating another pathway.</p></div><div class="resource"><b>Community resources</b><p>KSSN can coordinate partners and community assets when those supports add value to the attendance plan.</p></div></div></div></div>
 </section>
-<section class="page" id="model">
-<div class="pagehead framework-head"><div class="pagehead-inner">
 
-<div class="eyebrow light">OPERATING FRAMEWORK</div>
-<h2>How We Work</h2>
-<p>Use the framework to move from an attendance concern to a coordinated response—and to recognize when one case is pointing to a larger system issue.</p>
-</div></div>
-<div class="content"><div class="page-nav-v75"><button type="button" class="back-v75">← Back</button><button type="button" class="home-v75" data-home>⌂ Home</button></div>
-<div class="framework-intro">
-<div><h3>Start with the barrier—not the role.</h3><p>The framework keeps the team focused on what is affecting attendance before deciding who should act.</p></div>
-<div class="framework-rule"><b>Pattern → Barrier → Ownership → Support → Impact</b></div>
-</div>
-
-<div class="framework-flow">
-<button class="fw-step active" data-fw="pattern"><span class="fw-num">1</span><span><b>Pattern</b><small>What is happening?</small></span></button>
-<div class="fw-arrow">→</div>
-<button class="fw-step" data-fw="barrier"><span class="fw-num">2</span><span><b>Barrier</b><small>What is getting in the way?</small></span></button>
-<div class="fw-arrow">→</div>
-<button class="fw-step" data-fw="ownership"><span class="fw-num">3</span><span><b>Ownership</b><small>Who needs to act?</small></span></button>
-<div class="fw-arrow">→</div>
-<button class="fw-step" data-fw="support"><span class="fw-num">4</span><span><b>Support</b><small>What will reduce the barrier?</small></span></button>
-<div class="fw-arrow">→</div>
-<button class="fw-step" data-fw="impact"><span class="fw-num">5</span><span><b>Impact</b><small>Is it working?</small></span></button>
-</div>
-
-<div class="fw-detail" id="fwDetail">
-<div class="fw-detail-copy">
-<div class="eyebrow">STEP 01 · PATTERN</div>
-<h3>Notice the attendance pattern.</h3>
-<p>Use attendance data, context, and scholar/family voice to describe what is happening before jumping to a solution.</p>
-<div class="fw-questions"><b>Ask:</b> When is the absence occurring? What changed? What does the scholar or family say? What strengths can we build on?</div>
-</div>
-<div class="fw-output"><span>OUTPUT</span><b>A clear description of the attendance concern.</b></div>
-</div>
-
-<div class="ownership-map">
-<div class="ownership-title"><span class="eyebrow">OWNERSHIP + SUPPORT</span><h3>Different roles. One coordinated response.</h3><p>Ownership changes with the barrier. These are functions—not separate cases.</p></div>
-<div class="ownership-grid">
-<div class="owner fss"><span>FSS</span><h4>Attendance-focused family intervention</h4><p>Family voice, attendance planning, barrier-focused intervention, follow-through, and monitoring.</p></div>
-<div class="owner shared"><span>SHARED WORK</span><h4>Coordinate when both functions add value</h4><p>One barrier hypothesis, one attendance lead, distinct responsibilities, coordinated family contact, and one review point.</p></div>
-<div class="owner kssn"><span>KSSN</span><h4>Community School + integrated supports</h4><p>Resource fit, partner coordination, warm connections, access, and repeated community-resource gaps.</p></div>
-<div class="owner school"><span>SCHOOL</span><h4>School-controlled conditions</h4><p>Academic access, belonging, safety, discipline, scheduling, instructional access, and school processes.</p></div>
-</div>
-<div class="overlap-rule"><b>Overlap is intentional; duplication is not.</b> A referral does not automatically transfer ownership of the attendance goal.</div>
-</div>
-
-<div class="case-system">
-<div><span class="eyebrow">WHEN THE SAME BARRIER KEEPS APPEARING</span><h3>Case → System</h3><p>A repeated barrier should not remain a series of isolated family cases. Use the pattern to improve the building or district response.</p></div>
-<div class="case-flow"><span>One family</span><b>→</b><span>Repeated barrier</span><b>→</b><span>Pattern identified</span><b>→</b><span>Building response</span><b>→</b><span>District response, if needed</span></div>
-</div>
-</div>
-
-<div class="operating-depth-v70">
- <div class="eyebrow">OPERATING RHYTHM</div><h3>Use the framework at the right cadence.</h3>
- <div class="cadence-v70">
-  <div><b>Daily</b><span>Do the assigned intervention and document the meaningful move.</span></div>
-  <div><b>Weekly</b><span>Unstick cases, clarify ownership and fix access or implementation problems.</span></div>
-  <div><b>Monthly</b><span>Identify repeated barriers across scholars and families.</span></div>
-  <div><b>Quarterly</b><span>Change, build or scale the system response.</span></div>
- </div>
- <div class="case-system-v70"><b>Case → System</b><span>One family → Repeated barrier → Pattern identified → Building response → District response, if needed.</span></div>
-</div>
+<section class="page" id="tool">
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="go('tools')">← Back to Tools</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow" id="toolKicker">FIELD TOOL</div><h1 id="toolTitle" style="font-size:44px">Tool</h1><p class="lede" id="toolPurpose"></p></div></div>
+ <div class="section"><div class="wrap tool-view"><div class="tool-flow"><div>1. Understand</div><div>2. Decide</div><div>3. Act</div><div>4. Review</div></div><div class="workbox"><div id="toolPrompts"></div><textarea id="notes" aria-label="Working notes" placeholder="Working notes… Nothing is saved."></textarea><div class="actions"><button class="primary" onclick="copyNotes()">Copy notes</button><button onclick="document.getElementById('notes').value=''">Clear</button></div></div></div></div>
 </section>
+</main>
+<footer><div class="wrap footer"><div><b>Family Support Specialist & Kent School Services Integration</b><br><small>GRPS attendance collaboration resource</small></div><small>Start with the barrier—not the role.</small></div></footer>
+
+<div class="modal" id="modelModal" role="dialog" aria-modal="true" aria-label="Expanded operating model"><div class="modalbox"><button class="modalclose" onclick="closeModel()">Close ×</button><div id="modalContent"></div></div></div>
 <script>
-const home=document.getElementById('home'),pages=[...document.querySelectorAll('.page')];
-function openP(id){home.style.display='none';pages.forEach(p=>p.classList.toggle('active',p.id===id));scrollTo(0,0)}
-function goH(){home.style.display='block';pages.forEach(p=>p.classList.remove('active'));scrollTo(0,0)}
-document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o)openP(o.dataset.open);if(e.target.closest('[data-home]'))goH()});
-
-const fwData={
-pattern:{step:"STEP 01 · PATTERN",title:"Notice the attendance pattern.",body:"Use attendance data, context, and scholar/family voice to describe what is happening before jumping to a solution.",ask:"When is the absence occurring? What changed? What does the scholar or family say? What strengths can we build on?",out:"A clear description of the attendance concern."},
-barrier:{step:"STEP 02 · BARRIER",title:"Understand what is getting in the way.",body:"Use caring inquiry and root-cause analysis to move beyond the absence itself. The percentage tells you the level of concern; the barrier guides the response.",ask:"Is this a family/basic-needs barrier, negative school experience, disengagement, misconception, school-controlled condition, or something still unclear?",out:"A working barrier hypothesis grounded in evidence and voice."},
-ownership:{step:"STEP 03 · OWNERSHIP",title:"Name who needs to act.",body:"Match ownership to the barrier. The question is not whether this is an FSS or KSSN case; it is who must do what to reduce the barrier.",ask:"What belongs to FSS? KSSN? The school? A specialized partner? Who is keeping the attendance goal moving?",out:"One attendance lead with distinct responsibilities."},
-support:{step:"STEP 04 · SUPPORT",title:"Match an intervention to the barrier.",body:"Choose support that is intentionally designed to reduce the identified barrier. A call, letter, meeting, or referral may be an action; it is not automatically an intervention.",ask:"What will change for the scholar or family? Is the support accessible? Who will deliver it, how often, and for how long?",out:"A barrier-matched intervention with owner, dosage, and review point."},
-impact:{step:"STEP 05 · IMPACT",title:"Review whether the response is working.",body:"Check implementation first, then access, barrier reduction, and attendance response. Use the evidence to decide what happens next.",ask:"Did we do what we said? Could the scholar/family access the support? Is the barrier reducing? Is attendance responding?",out:"Continue, adjust, intensify, reassess, step down, or escalate."}
+const historyStack=['home'];
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');if(historyStack.at(-1)!==id)historyStack.push(id);window.scrollTo(0,0);location.hash=id}
+function back(){if(historyStack.length>1)historyStack.pop();go(historyStack.pop()||'home')}
+window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(document.getElementById(id)&&document.getElementById(id).classList.contains('page'))go(id)})
+const fdata={
+pattern:["Pattern","Confirm the attendance pattern. Look at when absences occur, what changed, and whether the pattern is isolated or repeating."],
+barrier:["Barrier","Use scholar and family voice plus available data to identify what is getting in the way. Distinguish family barriers from school-controlled barriers."],
+ownership:["Ownership","Assign the function that can act on the barrier. Clarify one attendance lead and distinct FSS, KSSN and school responsibilities."],
+support:["Support","Choose an intervention that is intentionally designed to reduce the identified barrier. A call, letter or referral by itself is an action—not necessarily an intervention."],
+impact:["Impact","Review implementation, access, barrier reduction and attendance response. Continue, adjust, intensify, step down or escalate based on evidence."]
 };
-document.addEventListener('click',e=>{
- const b=e.target.closest('[data-fw]'); if(!b)return;
- document.querySelectorAll('.fw-step').forEach(x=>x.classList.remove('active')); b.classList.add('active');
- const d=fwData[b.dataset.fw], box=document.getElementById('fwDetail');
- box.innerHTML=`<div class="fw-detail-copy"><div class="eyebrow">${d.step}</div><h3>${d.title}</h3><p>${d.body}</p><div class="fw-questions"><b>Ask:</b> ${d.ask}</div></div><div class="fw-output"><span>OUTPUT</span><b>${d.out}</b></div>`;
-});
-
-const toolDataV65={
-caring:{label:"FSS • FAMILY VOICE",title:"Caring Conversation",intro:"Use partnership-focused inquiry before deciding what the family needs.",steps:[["Learn","Listen for hopes, strengths, routines, and what has changed."],["Share","Reflect what you heard and name the attendance pattern without blame."],["Inform","Share relevant attendance information and why it matters."],["Discuss","Explore barriers, assets, and what support could realistically help."],["Arrive at a Plan","Agree on the next move, owner, and when you will reconnect."]],out:"A shared understanding of the barrier and a next step built with the family."},
-barrier:{label:"EVERYONE",title:"Barrier Explorer",intro:"The attendance percentage tells you the level of concern. Root-cause analysis guides the intervention.",steps:[["Confirm the pattern","When, how often, and under what conditions are absences occurring?"],["Listen for the why","Use scholar/family voice and school evidence. Avoid assuming."],["Check school-controlled conditions","Academic access, belonging, safety, discipline, scheduling, instructional access."],["Name a working hypothesis","State the barrier in a way the team can test and act on."]],out:"A working barrier hypothesis—not just a description of the absence."},
-plan:{label:"FSS • SHARED",title:"Attendance Plan",intro:"Build one coordinated plan around the identified barrier.",steps:[["Barrier","State the barrier or working hypothesis."],["Intervention","Name the support designed to reduce that barrier."],["Ownership","Name the attendance lead and distinct responsibilities."],["Goal + review","Define what improvement looks like and set the review point."]],out:"One barrier-matched attendance plan with clear ownership and a review date."},
-handoff:{label:"FSS + KSSN",title:"Warm Handoff",intro:"A resource connection should feel coordinated to the family—not like being passed off.",steps:[["Explain","Tell the family why this support fits the barrier."],["Connect","Make the connection with enough context and family voice."],["Confirm","Verify that the receiving person/partner connected."],["Follow through","Check whether the family could access and use the support."]],out:"A confirmed connection. Referral alone does not end the attendance work."},
-resource:{label:"KSSN • RESOURCE FIT",title:"Find More Support",intro:"Use community resources to address a known barrier. Finding a resource is an action; the intervention is how that support reduces the barrier.",steps:[["Identify","Be specific about the barrier and desired support."],["Verify","Check eligibility, location, availability, language, and practical fit."],["Connect","Use a warm connection rather than only sending a list."],["Confirm + Monitor","Confirm access and review attendance impact."]],out:"A usable support connection tied to the attendance plan."},
-school:{label:"SCHOOL TEAM",title:"School Team Decision Path",intro:"Use the team to make an evidence-based attendance decision—not simply review a list of cases.",steps:[["Define","Describe the pattern and desired outcome."],["Understand","Identify the barrier using data and voice."],["Match","Choose a barrier-matched intervention and ownership."],["Implement + Monitor","Check fidelity, access, barrier reduction, and attendance."],["Decide","Continue, adjust, intensify, reassess, step down, or escalate."]],out:"A specific team decision with owner and review point."},
-review:{label:"PROGRESS REVIEW",title:"10 / 20 / 30-Day Review",intro:"Do not wait until the end of a plan to discover that it was not implemented or could not be accessed.",steps:[["10 days","Confirm implementation and access. Fix immediate breakdowns."],["20 days","Review early barrier reduction and attendance response. Adjust if needed."],["30 days","Make a clear decision: continue, adjust, intensify, reassess, step down, or escalate."]],out:"An evidence-based next decision, not another activity log."},
-huddle:{label:"TEAM TOOL",title:"10-Minute Case Huddle",intro:"Use a short huddle when a case is stalled or ownership is unclear.",steps:[["2 min","State the attendance pattern and barrier hypothesis."],["3 min","What has been tried? What changed? What did not happen?"],["3 min","Clarify FSS, KSSN, school, and partner responsibilities."],["2 min","Name the immediate move, owner, and review date."]],out:"The case leaves the huddle unstuck with one coordinated next move."},
-practice:{label:"PRACTICE",title:"Practice the Model",intro:"Use eight scenarios to test whether the team starts with the barrier and matches ownership appropriately: Transportation, Belonging, Housing, Mental Health, Academic Avoidance, Family Routine, Basic Needs, and Repeated Barrier/Systemic.",steps:[["Scenario","A scholar's absences are increasing. The caregiver reports unstable morning transportation and the scholar also says they avoid first hour because they feel behind academically."],["Decide","What are the barriers? Which condition is school-controlled? What belongs to family intervention? Where could KSSN add value?"],["Check","Avoid assigning the entire case to one role. Build one plan with distinct responsibilities."],["Review","What evidence would tell you the response is working?"]],out:"Practice the decision process: Pattern → Barrier → Ownership → Support → Impact."}
+function showFramework(k){const d=fdata[k];document.getElementById('frameworkDetail2').innerHTML=`<b>${d[0]}:</b> ${d[1]}`}
+document.querySelectorAll('#framework .step').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#framework .step').forEach(x=>x.classList.remove('active'));b.classList.add('active');let d=fdata[b.dataset.step];document.getElementById('frameworkDetail').innerHTML=`<b>${d[0]}:</b> ${d[1]}`}))
+const tools={
+caring:{k:"FSS / SHARED",t:"Caring Conversation",p:"Use relationship-centered conversation to understand strengths, hopes and the attendance barrier.",q:["Learn — What is the family experiencing? What is going well?","Share — What have we noticed about attendance?","Inform — What information or options would be useful?","Discuss — What feels realistic and helpful?","Arrive at a Plan — What will happen next, who owns it, and when will we reconnect?"]},
+barrier:{k:"ALL ROLES",t:"Barrier Explorer",p:"Move from the attendance pattern to a working barrier hypothesis before selecting a response.",q:["Confirm the attendance pattern.","What does the scholar say? What does the family say?","Is the barrier primarily family/community, school-controlled, or both?","What evidence supports the working barrier hypothesis?","What needs to be learned before selecting an intervention?"]},
+plan:{k:"FSS / SCHOOL / SHARED",t:"Attendance Plan",p:"Build one barrier-matched attendance plan with clear ownership and a review point.",q:["Barrier we are trying to reduce:","Attendance goal:","Intervention/support selected and why it matches:","Attendance lead:","FSS will / KSSN will / School will / Scholar + family will:","Review date and evidence we will check:"]},
+handoff:{k:"FSS + KSSN",t:"Warm Handoff",p:"Connect the family to KSSN/community support without transferring away the attendance goal.",q:["Explain — What support is being connected and why?","Connect — Who will make the connection with the family present/aware?","Confirm — Did the family reach and access the support?","Follow through — What remains the FSS attendance responsibility?","When will FSS + KSSN review impact together?"]},
+review:{k:"ALL ROLES",t:"10/20/30-Day Review",p:"Determine whether the intervention is being implemented, accessed and reducing the barrier.",q:["Implementation — Did the intervention happen as intended?","Access — Could the scholar/family actually use the support?","Barrier reduction — What changed?","Attendance response — What changed in attendance?","Decision — Continue, adjust, intensify, step down or escalate?"]},
+huddle:{k:"SCHOOL TEAM",t:"10-Minute Case Huddle",p:"Use a short team conversation to unstick a case without creating competing plans.",q:["1. Pattern — What changed or surfaced?","2. Barrier — What is the current working hypothesis?","3. Ownership — Who is the attendance lead? Who else has a distinct action?","4. Support — What is happening before the next review?","5. Review — When will we reconvene and what evidence will we bring?"]}
 };
-function openToolV65(key){
- const d=toolDataV65[key]; if(!d)return;
- document.querySelector('.tool-grid-v65').hidden=true; document.querySelector('.tool-filter').hidden=true;
- const w=document.getElementById('toolWorkspaceV65'); w.hidden=false;
- document.getElementById('toolWorkspaceContentV65').innerHTML=`<div class="tw-head"><div class="eyebrow">${d.label}</div><h3>${d.title}</h3><p>${d.intro}</p></div><div class="tw-steps">${d.steps.map(s=>`<div class="tw-step"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div><div class="tw-output"><b>Expected output:</b> ${d.out}</div><textarea class="tw-note" id="twNoteV65" placeholder="Working note — use this space during the conversation or meeting. Nothing is saved."></textarea><div class="tw-actions"><button class="tw-copy" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('twNoteV65').value)">Copy note</button><button class="tw-clear" type="button" onclick="document.getElementById('twNoteV65').value=''">Clear</button></div>`;
-}
-document.addEventListener('click',e=>{
- const card=e.target.closest('[data-tool]'); if(card) openToolV65(card.dataset.tool);
- const filter=e.target.closest('[data-tool-filter]'); if(filter){document.querySelectorAll('.tool-chip').forEach(x=>x.classList.remove('active'));filter.classList.add('active');const f=filter.dataset.toolFilter;document.querySelectorAll('.tool-card-v65').forEach(c=>c.hidden=!(f==='all'||c.dataset.tags.split(' ').includes(f)));}
- const contextual=e.target.closest('[data-open-tool]'); if(contextual){show('tools');setTimeout(()=>openToolV65(contextual.dataset.openTool),0);}
-});
-document.getElementById('toolCloseV65')?.addEventListener('click',()=>{document.getElementById('toolWorkspaceV65').hidden=true;document.querySelector('.tool-grid-v65').hidden=false;document.querySelector('.tool-filter').hidden=false;});
-
-const fw66Data={
-pattern:["Confirm the attendance pattern.","Describe what is happening before deciding who should respond.","A clear description of the attendance concern."],
-barrier:["Develop a working barrier hypothesis.","Use scholar/family voice, attendance evidence, and school conditions. Do not assume the reason for absence.","A barrier statement the team can test and act on."],
-ownership:["Clarify who needs to act.","Name one attendance lead and distinct FSS, KSSN, school, and partner responsibilities. Overlap is intentional; duplication is not.","Clear ownership without competing case management."],
-support:["Match support to the barrier.","Choose an intervention designed to reduce the identified barrier—not simply another contact, referral, or task.","A barrier-matched intervention with owner, dosage, goal, and review point."],
-impact:["Review whether the response is working.","Check implementation, access, barrier reduction, and attendance response before deciding what happens next.","Continue, adjust, intensify, reassess, step down, or escalate."]
-};
-function renderFw66(k){
- const d=fw66Data[k]; if(!d)return;
- document.querySelectorAll('.hf66-step').forEach(x=>x.classList.toggle('active',x.dataset.fw66===k));
- document.getElementById('fwDetailV66').innerHTML=`<div><small>DECISION</small><b>${d[0]}</b></div><p>${d[1]}</p><div class="hf66-output"><small>OUTPUT</small><b>${d[2]}</b></div>`;
-}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-fw66]');if(b)renderFw66(b.dataset.fw66);});
-
-const coordFw69={
-pattern:"<b>Pattern:</b> Confirm the attendance pattern before deciding which role should respond.",
-barrier:"<b>Barrier:</b> Build one shared barrier hypothesis using scholar/family voice, attendance evidence, and school conditions.",
-ownership:"<b>Ownership:</b> Name one attendance lead and clarify distinct FSS, KSSN, school, and partner responsibilities.",
-support:"<b>Support:</b> Match the response to the barrier. FSS and KSSN should add different value to one coordinated plan.",
-impact:"<b>Impact:</b> Review implementation, access, barrier reduction, and attendance response together."
-};
-document.addEventListener('click',e=>{
- const b=e.target.closest('[data-cfw69]');
- if(b){document.querySelectorAll('.coord-fw-step-v69').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('coordFwDetailV69').innerHTML=coordFw69[b.dataset.cfw69];}
-});
-document.getElementById('coordBackV69')?.addEventListener('click',()=>{ if(history.length>1){history.back();} else {showHome();} });
-
-const deepToolsV70={
-connect:["When to Connect","Use a connection moment when the barrier is unclear, both functions are needed, a community asset could help, the current response is stalled, or the same barrier is repeating.",[["UNDERSTAND","Barrier is unclear."],["COORDINATE","Family needs both FSS and KSSN functions."],["CONNECT","A community asset could help."],["ADJUST","The current response is not working."],["SCALE","The same barrier repeats."]]],
-homevisit:["Family / Home Visit Prep","Prepare for a relationship-centered visit that helps understand the barrier and build a plan.",[["Before","Review the attendance pattern; decide what you need to learn—not what you need to tell."],["Open","Lead with care, strengths and family priorities."],["Explore","Use caring questions and the 5 Whys when useful."],["Close","Agree on one next move, ownership and follow-up."]]],
-quality:["Intervention Quality Check","An action is what staff did. An intervention is a support intentionally selected to reduce the identified barrier.",[["Barrier","What exactly are we trying to change?"],["Intervention","How should this support reduce the barrier?"],["Owner + dosage","Who will do what, and how often?"],["Goal + review","What improvement are we looking for and when will we decide?"]]],
-routine:["Morning Routine Problem-Solver","Use when morning routines are contributing to missed time.",[["Map","What happens from wake-up to arrival?"],["Find friction","Where does the routine break down?"],["Choose one change","Select a realistic change the family can test."],["Review","Did the change reduce missed time?"]]],
-followup:["Follow-Up / Impact Review","Review the response, not just whether contact occurred.",[["Implementation","Did the intervention happen as intended?"],["Access","Could the scholar/family actually use it?"],["Barrier reduction","Is the barrier changing?"],["Attendance response","Is attendance improving?"],["Decision","Continue, adjust, intensify, reassess or step down."]]],
-teamreturn:["Bring Back to Team","Prepare the minimum information the team needs to make the next decision.",[["Barrier","Working hypothesis and relevant voice/evidence."],["Intervention","What was actually implemented?"],["Impact","What changed in barrier and attendance?"],["Decision needed","What does the team need to decide now?"]]],
-assets:["Needs + Assets Quick Scan","Community School work starts with both needs and assets.",[["Need","What barrier or condition needs to change?"],["Assets","What family, school or community strengths already exist?"],["Gap","What is still missing?"],["Response","What Community School strategy or partner action adds value?"]]],
-partnerfit:["Partner Fit Check","Do not send a generic resource list. Test fit first.",[["Fit","Does the service address the actual barrier?"],["Access","Eligibility, location, timing, language and capacity."],["Role","What will the partner do that FSS/school is not already doing?"],["Confirm","How will we know the family connected and could use it?"]]],
-integrated:["Integrated Support Plan","Coordinate multiple supports around one attendance goal.",[["Shared outcome","What are all supports trying to change?"],["Distinct roles","Who owns each part?"],["Family contact","Who communicates what, and when?"],["Review","Use one review point and one attendance outcome."]]],
-expanded:["Expanded Opportunity Match","Use expanded learning, belonging and enrichment when they address the barrier.",[["Barrier fit","Would connection, belonging, adult relationship or opportunity address the barrier?"],["Access","Can the scholar participate consistently?"],["Connection","Who makes the warm introduction?"],["Impact","Does engagement and attendance improve?"]]],
-monthly:["Monthly Pattern Review","Move from individual cases to system learning.",[["Aggregate","What barriers are repeating?"],["Locate","Which grades, times, groups or conditions show the pattern?"],["System cause","What school/community condition may be producing it?"],["Respond","What building or district change is needed?"]]],
-casesystem:["Case → System Builder","Use repeated individual barriers to identify a broader response.",[["One family","Document the barrier and response."],["Repeated barrier","Notice recurrence across cases."],["Pattern","Confirm with data and team knowledge."],["Building response","Change a school/community condition."],["District response","Escalate when the issue exceeds building authority."]]],
-guardrails:["Implementation Guardrails","Use these checks before adding more activity.",[["One plan","Avoid competing attendance plans."],["One lead","Name who keeps the attendance goal moving."],["Distinct value","FSS, KSSN and school should not duplicate the same action."],["Impact","Measure barrier reduction and attendance response—not contacts completed."]]]
-};
-function openDeep70(key){
- const d=deepToolsV70[key]; if(!d)return;
- document.querySelector('.library-groups-v70').hidden=true;
- const w=document.getElementById('deepWorkspaceV70');w.hidden=false;
- document.getElementById('deepContentV70').innerHTML=`<div class="deep-content-v70"><div class="eyebrow">ACTION TOOL</div><h3>${d[0]}</h3><p>${d[1]}</p><div class="deep-grid-v70">${d[2].map(x=>`<div class="deep-step-v70"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div><textarea class="deep-note-v70" placeholder="Working note — nothing is saved."></textarea></div>`;
-}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-v70-tool]');if(b)openDeep70(b.dataset.v70Tool);});
-document.getElementById('deepBackV70')?.addEventListener('click',()=>{document.getElementById('deepWorkspaceV70').hidden=true;document.querySelector('.library-groups-v70').hidden=false;});
-const role70={
-fss:[["Understand the barrier","Caring inquiry, family voice and root-cause work."],["Build / revise the attendance plan","Keep the attendance goal, intervention and review point moving."],["Prepare family meeting / home visit","Use relationship-centered questions and strengths."],["Review progress","Check implementation, barrier reduction and attendance response."],["Warm handoff to KSSN","Connect when Community School resources or partner coordination add value."]],
-kssn:[["Assess resource fit","Match community assets to the known barrier."],["Coordinate warm handoff","Connect family, FSS/school and provider with context."],["Confirm access","Verify the family could actually use the support."],["Coordinate multiple providers","Align supports around one attendance outcome."],["Elevate repeated gap","Turn recurring resource barriers into Community School/system work."]],
-shared:[["Assign lead + support","One attendance lead; distinct responsibilities."],["Coordinate family contact","Avoid multiple staff asking the family the same questions."],["Build one joint plan","One barrier hypothesis, one outcome and one review point."],["Resolve stalled case","Check implementation and access before adding more services."],["Case → System","Escalate repeated barriers into a building/community response."]]
-};
-function renderRole70(k){document.querySelectorAll('[data-role70]').forEach(x=>x.classList.toggle('active',x.dataset.role70===k));document.getElementById('roleContentV70').innerHTML=`<div class="role-grid-v70">${role70[k].map(x=>`<div class="role-task-v70"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div>`;}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-role70]');if(b)renderRole70(b.dataset.role70);});
-renderRole70("fss");
-
-
-
-const nav72=document.getElementById('singlePageNavV72');
-let pageStack72=[];
-function activePage72(){return [...document.querySelectorAll('section.page')].find(p=>getComputedStyle(p).display!=='none');}
-function syncNav72(){const p=activePage72();if(nav72)nav72.hidden=!p;}
-document.addEventListener('click',e=>{
- const open=e.target.closest('[data-open]');
- if(open){const cur=activePage72();if(cur&&cur.id!==open.dataset.open)pageStack72.push(cur.id);setTimeout(syncNav72,0);}
- if(e.target.closest('[data-home]')){pageStack72=[];setTimeout(syncNav72,0);}
-});
-document.getElementById('singleBackV72')?.addEventListener('click',()=>{
- const prev=pageStack72.pop();
- if(prev && typeof show==='function')show(prev);
- else if(typeof showHome==='function')showHome();
- setTimeout(syncNav72,0);
-});
-syncNav72();
-document.addEventListener('click',e=>{if(e.target.closest('.back-v75')&&typeof goH==='function')goH();});
-const model76={
-fss:["FSS — Attendance Intervention Lead","Sustained family-centered attendance intervention: understand the barrier, build the plan, follow through, and monitor attendance impact."],
-kssn:["KSSN — Community School Support","Coordinate community assets, partners, integrated supports, programs, and access when those functions can reduce the identified barrier."],
-shared:["Shared Work — Remove the Barrier","Use one barrier hypothesis, one attendance lead, distinct responsibilities, coordinated family contact, warm handoffs, and one review point."],
-school:["School — School-Based Support","Own school-controlled conditions: academic access, belonging, relationships, safety, behavior/discipline, scheduling, instructional access, and implementation."],
-daily:["Daily — Do the work","Carry out the assigned intervention and support scholars and families."],
-weekly:["Weekly — Unstick the work","Resolve implementation/access problems, clarify ownership, and problem-solve stalled cases."],
-monthly:["Monthly — Find the patterns","Identify repeated barriers across scholars/families and use data plus stories to improve the building response."],
-quarterly:["Quarterly — Change the system","Strengthen partnerships, programs, processes, and district/building responses to recurring barriers."]
-};
-document.addEventListener('click',e=>{
- const b=e.target.closest('[data-model76]');if(!b)return;
- document.querySelectorAll('[data-model76]').forEach(x=>x.classList.toggle('active',x===b));
- const d=model76[b.dataset.model76];document.getElementById('modelDetailV76').innerHTML=`<b>${d[0]}</b><span>${d[1]}</span>`;
-});
-
-const modelLightboxV77=document.getElementById('modelLightboxV77');
-function openModelV77(){modelLightboxV77.hidden=false;document.body.style.overflow='hidden';document.getElementById('closeModelV77')?.focus();}
-function closeModelV77(){modelLightboxV77.hidden=true;document.body.style.overflow='';document.getElementById('enlargeModelV77')?.focus();}
-document.getElementById('enlargeModelV77')?.addEventListener('click',openModelV77);
-document.getElementById('graphicButtonV77')?.addEventListener('click',openModelV77);
-document.getElementById('closeModelV77')?.addEventListener('click',closeModelV77);
-modelLightboxV77?.addEventListener('click',e=>{if(e.target===modelLightboxV77)closeModelV77();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape' && modelLightboxV77 && !modelLightboxV77.hidden)closeModelV77();});
-</script></body></html>
+function openTool(k){let d=tools[k];document.getElementById('toolKicker').textContent=d.k;document.getElementById('toolTitle').textContent=d.t;document.getElementById('toolPurpose').textContent=d.p;document.getElementById('toolPrompts').innerHTML=d.q.map(x=>`<p><b>${x}</b></p>`).join('');document.getElementById('notes').value='';go('tool')}
+function copyNotes(){navigator.clipboard?.writeText(document.getElementById('notes').value)}
+function expandModel(){let src=document.getElementById('operatingModel').cloneNode(true);let goal=document.querySelector('#roles .goal').cloneNode(true);let cadence=document.querySelector('#roles .cadence').cloneNode(true);let c=document.getElementById('modalContent');c.innerHTML='<div class="eyebrow">EXPANDED OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2>';c.append(src,goal,cadence);document.getElementById('modelModal').classList.add('open');document.body.style.overflow='hidden'}
+function closeModel(){document.getElementById('modelModal').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('modelModal').addEventListener('click',e=>{if(e.target.id==='modelModal')closeModel()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModel()})
+if(location.hash && document.getElementById(location.hash.slice(1))) go(location.hash.slice(1));
+</script>
+</body></html>
