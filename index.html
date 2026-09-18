@@ -149,7 +149,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 
   <div class="section choiceBand"><div class="wrap"><div class="section-head"><div><div class="eyebrow">CHOOSE YOUR PATH</div><h2>What do you need to do?</h2></div><p>Three clear destinations. The deeper tools stay inside the destination where they belong.</p></div>
     <div class="pathgrid">
-      <button class="path" onclick="go('concern')"><span class="num">01</span><h3>Work through an attendance concern</h3><p>Pattern → Barrier → Ownership → Support → Impact.</p><span class="go">Start with the concern →</span></button>
+      <button class="path" onclick="go('concern')"><span class="num">01</span><h3>Work through an attendance concern</h3><p>Pattern → Barrier → Who Acts → Response → Impact.</p><span class="go">Start with the concern →</span></button>
       <button class="path" onclick="go('roles')"><span class="num">02</span><h3>Coordinate FSS + KSSN</h3><p>See explicit FSS, KSSN, school and shared work around the scholar + family.</p><span class="go">Clarify roles →</span></button>
       <button class="path" onclick="go('tools')"><span class="num">03</span><h3>Tools & Resources</h3><p>Open a field tool without navigating through a long page or creating another tracker.</p><span class="go">Open tools →</span></button>
     </div>
@@ -163,8 +163,8 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
     <div class="frameworkGuide" id="homeFramework">
       <button class="step active" data-num="1" onclick="homeFrameworkV4('pattern',this)"><b>Pattern</b><span>Confirm what is happening before deciding why.</span><em>Show me what to decide →</em></button>
       <button class="step" data-num="2" onclick="homeFrameworkV4('barrier',this)"><b>Barrier</b><span>Understand what is keeping the scholar from attending.</span><em>Show me what to decide →</em></button>
-      <button class="step" data-num="3" onclick="homeFrameworkV4('ownership',this)"><b>Ownership</b><span>Clarify who can act on the barrier.</span><em>Show me what to decide →</em></button>
-      <button class="step" data-num="4" onclick="homeFrameworkV4('support',this)"><b>Support</b><span>Match an intervention designed to reduce the barrier.</span><em>Show me what to decide →</em></button>
+      <button class="step" data-num="3" onclick="homeFrameworkV4('ownership',this)"><b>Who Acts</b><span>See who needs to do what.</span><em>Show me what to decide →</em></button>
+      <button class="step" data-num="4" onclick="homeFrameworkV4('support',this)"><b>Response</b><span>Choose what will be done to reduce the barrier.</span><em>Show me what to decide →</em></button>
       <button class="step" data-num="5" onclick="homeFrameworkV4('impact',this)"><b>Impact</b><span>Check whether the barrier and attendance changed.</span><em>Show me what to decide →</em></button>
     </div>
     <div class="frameworkResponse" id="homeFrameworkDetail">
@@ -201,8 +201,8 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
    <aside class="guideRail"><div class="guideRailHead"><b>Attendance Concern</b><span>Your working path</span></div><div class="guideNav">
      <button id="gn-pattern" class="active" onclick="guideStep('pattern')">1. Pattern<small>What do we see?</small></button>
      <button id="gn-barrier" onclick="guideStep('barrier')">2. Barrier<small>What is getting in the way?</small></button>
-     <button id="gn-ownership" onclick="guideStep('ownership')">3. Ownership<small>Who needs to act?</small></button>
-     <button id="gn-support" onclick="guideStep('support')">4. Support<small>What will reduce it?</small></button>
+     <button id="gn-ownership" onclick="guideStep('ownership')">3. Who Acts<small>Who needs to act?</small></button>
+     <button id="gn-support" onclick="guideStep('support')">4. Response<small>What will reduce it?</small></button>
      <button id="gn-impact" onclick="guideStep('impact')">5. Impact<small>Is it working?</small></button>
    </div></aside>
    <div class="guidePanel">
@@ -225,7 +225,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 
 <section class="page" id="model">
  <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">HOW WE WORK</div><h1 style="font-size:44px">A shared way to make attendance decisions.</h1><p class="lede">Use the same decision logic across FSS, KSSN and school teams so families receive one coordinated response.</p></div></div>
- <div class="section"><div class="wrap"><h2>Pattern → Barrier → Ownership → Support → Impact</h2><div class="framework" id="framework2">
+ <div class="section"><div class="wrap"><h2>Pattern → Barrier → Who Acts → Response → Impact</h2><div class="framework" id="framework2">
   <button class="step" onclick="showFramework('pattern')"><b>Pattern</b><span>Confirm what is happening.</span></button><button class="step" onclick="showFramework('barrier')"><b>Barrier</b><span>Understand why.</span></button><button class="step" onclick="showFramework('ownership')"><b>Ownership</b><span>Assign the right lead.</span></button><button class="step" onclick="showFramework('support')"><b>Support</b><span>Match the response.</span></button><button class="step" onclick="showFramework('impact')"><b>Impact</b><span>Review and decide.</span></button>
  </div><div class="framework-detail" id="frameworkDetail2"><b>Use the framework:</b> Select a step to see the decision that belongs there.</div></div></div>
  <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">CASE → SYSTEM</div><h2>Do not solve the same barrier one family at a time forever.</h2></div></div><div class="pulse"><div><b>ONE FAMILY</b><span>Barrier is identified.</span></div><div><b>REPEATED BARRIER</b><span>Pattern becomes visible.</span></div><div><b>BUILDING RESPONSE</b><span>School/Community School adjusts.</span></div><div><b>DISTRICT RESPONSE</b><span>Scale when the pattern requires it.</span></div></div></div></div>
@@ -275,7 +275,7 @@ barrier:{k:"ALL ROLES",t:"Barrier Explorer",p:"Move from the attendance pattern 
 plan:{k:"FSS / SCHOOL / SHARED",t:"Attendance Plan",p:"Build one barrier-matched attendance plan with clear ownership and a review point.",q:["Barrier we are trying to reduce:","Attendance goal:","Intervention/support selected and why it matches:","Attendance lead:","FSS will / KSSN will / School will / Scholar + family will:","Review date and evidence we will check:"]},
 handoff:{k:"FSS + KSSN",t:"Warm Handoff",p:"Connect the family to KSSN/community support without transferring away the attendance goal.",q:["Explain — What support is being connected and why?","Connect — Who will make the connection with the family present/aware?","Confirm — Did the family reach and access the support?","Follow through — What remains the FSS attendance responsibility?","When will FSS + KSSN review impact together?"]},
 review:{k:"ALL ROLES",t:"10/20/30-Day Review",p:"Determine whether the intervention is being implemented, accessed and reducing the barrier.",q:["Implementation — Did the intervention happen as intended?","Access — Could the scholar/family actually use the support?","Barrier reduction — What changed?","Attendance response — What changed in attendance?","Decision — Continue, adjust, intensify, step down or escalate?"]},
-huddle:{k:"SCHOOL TEAM",t:"10-Minute Case Huddle",p:"Use a short team conversation to unstick a case without creating competing plans.",q:["1. Pattern — What changed or surfaced?","2. Barrier — What is the current working hypothesis?","3. Ownership — Who is the attendance lead? Who else has a distinct action?","4. Support — What is happening before the next review?","5. Review — When will we reconvene and what evidence will we bring?"]}
+huddle:{k:"SCHOOL TEAM",t:"10-Minute Case Huddle",p:"Use a short team conversation to unstick a case without creating competing plans.",q:["1. Pattern — What changed or surfaced?","2. Barrier — What is the current working hypothesis?","3. Who Acts — Who is the attendance lead? Who else has a distinct action?","4. Response — What is happening before the next review?","5. Review — When will we reconvene and what evidence will we bring?"]}
 };
 function openTool(k){let d=tools[k];document.getElementById('toolKicker').textContent=d.k;document.getElementById('toolTitle').textContent=d.t;document.getElementById('toolPurpose').textContent=d.p;document.getElementById('toolPrompts').innerHTML=d.q.map(x=>`<p><b>${x}</b></p>`).join('');document.getElementById('notes').value='';go('tool')}
 function copyNotes(){navigator.clipboard?.writeText(document.getElementById('notes').value)}
@@ -288,8 +288,8 @@ function homeFrameworkV4(k,el){
  const content={
  pattern:{n:"1",t:"Pattern — What do we see?",p:"Confirm when absences occur, what changed, and whether the pattern is isolated or repeating. Do not jump to a barrier or role yet.",d:"What attendance pattern needs to be understood?"},
  barrier:{n:"2",t:"Barrier — What is getting in the way?",p:"Use scholar and family voice with available data to develop a working barrier hypothesis. Distinguish family/community barriers from school-controlled barriers.",d:"What is the best-supported working barrier hypothesis?"},
- ownership:{n:"3",t:"Ownership — Who needs to act?",p:"Identify the function that can act on the barrier. Clarify one attendance lead and distinct FSS, KSSN and school responsibilities.",d:"Who is the attendance lead, and what does each role own?"},
- support:{n:"4",t:"Support — What will reduce the barrier?",p:"Choose an intervention intentionally matched to the barrier. A call, letter or referral alone is an action—not automatically an intervention.",d:"What support is most likely to reduce this barrier?"},
+ ownership:{n:"3",t:"Who Acts — Who needs to do what?",p:"Use the barrier to clarify the work across FSS, KSSN and the school. The guided pathway suggests a starting point.",d:"Who needs to act on this barrier?"},
+ support:{n:"4",t:"Response — What will we do?",p:"Choose an intervention intentionally matched to the barrier. A call, letter or referral alone is an action—not automatically an intervention.",d:"What response is most likely to reduce this barrier?"},
  impact:{n:"5",t:"Impact — Is it working?",p:"Review implementation, access, barrier reduction and attendance response. Then continue, adjust, intensify, step down or escalate.",d:"What evidence will determine the next decision?"}
  }[k];
  document.querySelectorAll('#homeFramework .step').forEach(x=>x.classList.remove('active'));if(el)el.classList.add('active');
@@ -303,7 +303,7 @@ const guideState={
 const guideOrder=["pattern","barrier","ownership","support","impact"];
 function esc(v){return String(v||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 function caseStrip(){
- const vals=[["Pattern",guideState.pattern],["Barrier",guideState.barrier],["Ownership",guideState.ownership],["Support",guideState.support],["Impact",guideState.impact]];
+ const vals=[["Pattern",guideState.pattern],["Barrier",guideState.barrier],["Who Acts",guideState.ownership],["Response",guideState.support],["Impact",guideState.impact]];
  return `<div class="caseStrip">${vals.map(([k,v])=>`<div class="caseChip ${v?'filled':''}"><b>${k}</b><span title="${esc(v)}">${esc(v)||'Not yet decided'}</span></div>`).join('')}</div>`;
 }
 const barrierOwnership={
@@ -337,8 +337,8 @@ function guideStep(k){
  const titles={
   pattern:["Confirm the attendance pattern.","Attendance percentage tells the level of concern. The pattern helps determine what needs to be understood next."],
   barrier:["Understand what is getting in the way.","Use scholar/family voice and available data. Do not assign the concern to a role until the barrier is reasonably understood."],
-  ownership:["Clarify ownership around the barrier.","The site uses the selected barrier to suggest where the primary action belongs. Confirm or adjust based on the actual situation."],
-  support:["Match support to the barrier.","Choose an intervention designed to reduce the selected barrier. The choices below respond to the barrier you identified."],
+  ownership:["Who needs to act?","The site uses the selected barrier to suggest who needs to do what. Confirm the starting point or adjust it for the actual situation."],
+  support:["What will we do?","Choose a response designed to reduce the selected barrier. The choices below respond to the barrier you identified."],
   impact:["Review the entire response.","Check implementation, access, barrier reduction and attendance response before deciding what happens next."]
  };
  document.getElementById('guideEyebrow').textContent=`STEP ${i+1} OF 5`;document.getElementById('guideTitle').textContent=titles[k][0];document.getElementById('guideIntro').textContent=titles[k][1];
@@ -351,19 +351,22 @@ function guideStep(k){
   <div class="question"><h3>What changed or surfaced?</h3><p>Note timing, recent changes, classes/periods, transportation, health, relationships, routines or other information that may help explain the pattern.</p><textarea class="guideText" oninput="guideState.patternNote=this.value" placeholder="Working note…">${esc(guideState.patternNote)}</textarea></div>
   <div class="outputBox"><b>Output from this step</b><p>A confirmed attendance level/pattern and questions to explore with the scholar/family.</p></div>`;
  if(k==="barrier") html+=`
-  <div class="question"><h3>What evidence are we using?</h3><div class="optionGrid">${["Scholar voice","Family/caregiver voice","School data/observations","Multiple perspectives"].map(v=>`<button class="opt ${guideState.voice===v?'selected':''}" onclick="pickGuide('voice','${v}',this)">${v}</button>`).join('')}</div></div>
+  <div class="question"><h3>What do we know from the scholar, family and school?</h3><div class="optionGrid">${["Scholar voice","Family/caregiver voice","School data/observations","Multiple perspectives"].map(v=>`<button class="opt ${guideState.voice===v?'selected':''}" onclick="pickGuide('voice','${v}',this)">${v}</button>`).join('')}</div></div>
   ${guideState.barrier?`<div class="recommend"><b>Current working barrier</b><p><strong>${esc(guideState.barrier)}</strong>${guideState.barrierSource?` — selected in the Barrier Explorer`:''}</p></div>`:''}
-  <div class="question"><h3>Use the Barrier Explorer.</h3><p>Explore family/community, school-controlled, and shared possibilities. Selecting a barrier there will carry it back into this workflow.</p><button class="next" style="border:0;border-radius:10px;padding:12px 16px;background:var(--navy);color:#fff;font-weight:900" onclick="go('barriers')">Open Barrier Explorer →</button></div>
-  <div class="question"><h3>Or document a working barrier in your own words.</h3><textarea class="guideText" oninput="guideState.barrier=this.value;guideState.barrierSource='manual'" placeholder="Working barrier hypothesis…">${guideState.barrierSource==='manual'?esc(guideState.barrier):''}</textarea></div>`;
+  <div class="question"><h3>Find the barrier.</h3><p>Open the Barrier Explorer if you need help identifying what is getting in the way. Select the closest barrier and it will carry forward automatically.</p><button class="next" style="border:0;border-radius:10px;padding:12px 16px;background:var(--navy);color:#fff;font-weight:900" onclick="go('barriers')">Open Barrier Explorer →</button></div>
+  <div class="question"><h3>Or describe the barrier in your own words.</h3><textarea class="guideText" oninput="guideState.barrier=this.value;guideState.barrierSource='manual'" placeholder="Working barrier hypothesis…">${guideState.barrierSource==='manual'?esc(guideState.barrier):''}</textarea></div>`;
  if(k==="ownership") html+=`
-  ${guideState.barrier?`<div class="recommend"><b>Based on the working barrier: ${esc(guideState.barrier)}</b><p>Suggested starting point: <strong>${esc(recommendOwnership())}</strong></p></div>`:`<div class="recommend"><b>No barrier selected yet.</b><p>Ownership should follow the barrier. <button onclick="guideStep('barrier')" style="border:0;background:transparent;color:var(--blue);font-weight:900">Return to Barrier →</button></p></div>`}
-  <div class="question"><h3>Confirm the attendance lead / ownership.</h3><p>The suggestion is a starting point, not an automatic assignment. Choose what fits the actual barrier and school context.</p><div class="optionGrid">
-  ${["FSS — Attendance Intervention Lead","KSSN — Community School / Resource Coordination","School — School-controlled barrier","Shared — Distinct coordinated responsibilities"].map(v=>`<button class="opt ${guideState.ownership===v?'selected':''}" onclick="pickGuide('ownership','${v}',this)">${v}</button>`).join('')}</div></div>
-  <div class="outputBox"><b>Coordination rule</b><p>Overlap is intentional; duplication is not. A referral does not automatically transfer the attendance intervention.</p></div>`;
+  ${guideState.barrier?`<div class="recommend"><b>Based on the working barrier: ${esc(guideState.barrier)}</b><p><strong>Suggested starting point:</strong> ${esc(recommendOwnership())}</p></div>`:`<div class="recommend"><b>Select the barrier first.</b><p>Who needs to act should follow the barrier. <button onclick="guideStep('barrier')" style="border:0;background:transparent;color:var(--blue);font-weight:900">Return to Barrier →</button></p></div>`}
+  <div class="question"><h3>Does this starting point fit?</h3><p>You do not need to decide who “owns the case.” Confirm the suggested division of work, or adjust it only when the actual situation is different.</p><div class="optionGrid">
+   <button class="opt ${guideState.ownership.startsWith('Use suggested')?'selected':''}" onclick="pickGuide('ownership','Use suggested roles — '+recommendOwnership(),this)">Yes — use this starting point<small>Continue with the suggested division of work.</small></button>
+   <button class="opt ${guideState.ownership.startsWith('Adjusted')?'selected':''}" onclick="pickGuide('ownership','Adjusted roles needed',this);document.getElementById('adjustRoles').style.display='block'">Adjust the roles<small>Use only when the situation requires something different.</small></button>
+  </div></div>
+  <div id="adjustRoles" class="question" style="display:${guideState.ownership.startsWith('Adjusted')?'block':'none'}"><h3>What needs to be different?</h3><textarea class="guideText" oninput="guideState.ownership='Adjusted roles — '+this.value" placeholder="Example: School will lead the transportation correction; FSS will continue family follow-up…"></textarea></div>
+  <div class="outputBox"><b>Coordination rule</b><p>Overlap is intentional; duplication is not. One attendance lead can stay connected while other roles address the parts of the barrier they can change.</p></div>`;
  if(k==="support"){
   const opts=supportMap[guideState.barrier]||["Barrier-matched attendance intervention","School-controlled response","Warm handoff/resource connection with access confirmation"];
   html+=`${guideState.barrier?`<div class="recommend"><b>Barrier being addressed</b><p><strong>${esc(guideState.barrier)}</strong> · Ownership: ${esc(guideState.ownership)||'not yet confirmed'}</p></div>`:''}
-  <div class="question"><h3>Which support is most likely to reduce this barrier?</h3><div class="supportChoices">${opts.map(v=>`<button class="supportChoice ${guideState.support===v?'selected':''}" onclick="pickSupport('${v.replace(/'/g,"&#39;")}',this)"><b>${v}</b><span>Choose only if it directly addresses the identified barrier and is realistically accessible.</span></button>`).join('')}</div></div>
+  <div class="question"><h3>Which response is most likely to reduce this barrier?</h3><div class="supportChoices">${opts.map(v=>`<button class="supportChoice ${guideState.support===v?'selected':''}" onclick="pickSupport('${v.replace(/'/g,"&#39;")}',this)"><b>${v}</b><span>Choose only if it directly addresses the identified barrier and is realistically accessible.</span></button>`).join('')}</div></div>
   <div class="question"><h3>Add the specific plan.</h3><textarea class="guideText" oninput="guideState.supportNote=this.value" placeholder="Who will do what, how often, and by when?">${esc(guideState.supportNote)}</textarea></div>
   <div class="question"><h3>When will the team review?</h3><input class="dataInput" type="date" value="${esc(guideState.reviewDate)}" onchange="guideState.reviewDate=this.value"></div>`;
  }
@@ -371,8 +374,8 @@ function guideStep(k){
   <div class="reviewGrid">
    <div class="reviewCell"><b>Pattern</b><span>${esc(guideState.pattern)||'Not identified'}${guideState.attendanceLevel?` · ${esc(guideState.attendanceLevel)}`:''}</span></div>
    <div class="reviewCell"><b>Barrier</b><span>${esc(guideState.barrier)||'Not identified'}</span></div>
-   <div class="reviewCell"><b>Ownership</b><span>${esc(guideState.ownership)||'Not confirmed'}</span></div>
-   <div class="reviewCell"><b>Support</b><span>${esc(guideState.support)||'Not selected'}</span></div>
+   <div class="reviewCell"><b>Who Acts</b><span>${esc(guideState.ownership)||'Not confirmed'}</span></div>
+   <div class="reviewCell"><b>Response</b><span>${esc(guideState.support)||'Not selected'}</span></div>
   </div>
   <div class="question"><h3>Review four things.</h3><div class="optionGrid"><button class="opt" onclick="this.classList.toggle('selected')">Implementation<small>Did it happen as intended?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Access<small>Could the scholar/family use it?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Barrier reduction<small>Did the barrier change?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Attendance response<small>Did attendance change?</small></button></div></div>
   <div class="question"><h3>What happens next?</h3><div class="optionGrid">${["Continue","Adjust","Intensify","Step down","Escalate / return to team"].map(v=>`<button class="opt ${guideState.impact===v?'selected':''}" onclick="pickGuide('impact','${v}',this)">${v}</button>`).join('')}</div></div>`;
@@ -389,8 +392,8 @@ function showGuideSummary(){
  document.getElementById('guideBody').innerHTML=`${caseStrip()}<div class="summarySheet"><div class="summaryGrid">
  <div class="summaryItem"><b>Attendance level</b><span>${esc(guideState.attendanceLevel)||'Not entered'}</span></div><div class="summaryItem"><b>Pattern</b><span>${esc(guideState.pattern)||'Not identified'}</span></div>
  <div class="summaryItem"><b>Pattern note</b><span>${esc(guideState.patternNote)||'Not entered'}</span></div><div class="summaryItem"><b>Voice / evidence</b><span>${esc(guideState.voice)||'Not documented'}</span></div>
- <div class="summaryItem"><b>Barrier</b><span>${esc(guideState.barrier)||'Not identified'}</span></div><div class="summaryItem"><b>Ownership</b><span>${esc(guideState.ownership)||'Not confirmed'}</span></div>
- <div class="summaryItem"><b>Support</b><span>${esc(guideState.support)||'Not selected'}</span></div><div class="summaryItem"><b>Specific plan</b><span>${esc(guideState.supportNote)||'Not entered'}</span></div>
+ <div class="summaryItem"><b>Barrier</b><span>${esc(guideState.barrier)||'Not identified'}</span></div><div class="summaryItem"><b>Who Acts</b><span>${esc(guideState.ownership)||'Not confirmed'}</span></div>
+ <div class="summaryItem"><b>Response</b><span>${esc(guideState.support)||'Not selected'}</span></div><div class="summaryItem"><b>Specific plan</b><span>${esc(guideState.supportNote)||'Not entered'}</span></div>
  <div class="summaryItem"><b>Review date</b><span>${esc(guideState.reviewDate)||'Not set'}</span></div><div class="summaryItem"><b>Next decision</b><span>${esc(guideState.impact)||'Not decided'}</span></div>
  </div><p class="microNote">Copy this into the district's existing documentation process when useful. The site does not save this information.</p>
  <div class="actions"><button class="primary" onclick="copyGuideSummary()">Copy summary</button><button onclick="guideStep('impact')">← Back to Impact</button><button onclick="resetGuide()">Clear concern</button></div></div>`;
@@ -402,8 +405,8 @@ Pattern: ${guideState.pattern}
 Pattern note: ${guideState.patternNote}
 Voice/evidence: ${guideState.voice}
 Barrier: ${guideState.barrier}
-Ownership: ${guideState.ownership}
-Support: ${guideState.support}
+Who acts: ${guideState.ownership}
+Response: ${guideState.support}
 Specific plan: ${guideState.supportNote}
 Review date: ${guideState.reviewDate}
 Next decision: ${guideState.impact}`;
