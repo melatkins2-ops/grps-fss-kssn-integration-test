@@ -95,6 +95,15 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 @media(max-width:950px){.frameworkIntro{grid-template-columns:1fr}.frameworkGuide{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.frameworkGuide{grid-template-columns:1fr}.frameworkAction{align-items:flex-start;flex-direction:column}}
 
+
+/* V5 — workflow integrity */
+.caseStrip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px}.caseChip{border:1px solid var(--line);border-radius:11px;background:var(--soft);padding:10px 11px;min-height:66px}.caseChip b{display:block;color:var(--navy);font-size:11px;text-transform:uppercase;letter-spacing:.05em}.caseChip span{display:block;color:var(--muted);font-size:12px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.caseChip.filled{background:#eef8f4;border-color:#b9dfd3}.caseChip.filled span{color:var(--ink)}
+.dataRow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.dataInput{border:1px solid #b9ccd7;border-radius:10px;padding:12px;font:inherit;width:100%}.recommend{border:1px solid #bad9e8;background:#f1f9fd;border-radius:14px;padding:16px;margin:14px 0}.recommend b{color:var(--navy)}.recommend p{margin:5px 0 0;color:var(--muted);font-size:14px}.recommend strong{color:var(--blue)}
+.supportChoices{display:grid;gap:10px}.supportChoice{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff;text-align:left}.supportChoice:hover,.supportChoice.selected{background:var(--sky);border-color:var(--blue)}.supportChoice b{display:block;color:var(--navy)}.supportChoice span{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+.reviewGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.reviewCell{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--soft)}.reviewCell b{display:block;color:var(--navy);font-size:12px;text-transform:uppercase}.reviewCell span{display:block;margin-top:4px}
+.startOver{border:0!important;background:transparent!important;color:var(--muted)!important;font-size:13px;padding-left:0!important}
+@media(max-width:700px){.caseStrip{grid-template-columns:1fr}.caseChip{min-height:auto}.dataRow,.reviewGrid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -287,74 +296,117 @@ function homeFrameworkV4(k,el){
  document.getElementById('homeFrameworkDetail').innerHTML=`<div class="frameworkResponseTop"><div class="frameworkResponseNum">${content.n}</div><div><h3>${content.t}</h3><p>${content.p}</p></div></div><div class="frameworkAction"><b>Decision: ${content.d}</b><button onclick="go('concern');guideStep('${k}')">Work this step →</button></div>`;
 }
 
-const guideState={pattern:"",voice:"",barrier:"",ownership:"",support:"",impact:""};
-const guideOrder=["pattern","barrier","ownership","support","impact"];
-const guideContent={
- pattern:{title:"Confirm the attendance pattern.",intro:"Attendance percentage determines the level of concern; the pattern helps the team understand where to look next.",html:`
-  <div class="question"><h3>What does the pattern look like?</h3><p>Select the closest description.</p><div class="optionGrid">
-   <button class="opt" onclick="pickGuide('pattern','Frequent single-day absences',this)">Frequent single-day absences<small>Absences occur across many weeks.</small></button>
-   <button class="opt" onclick="pickGuide('pattern','Repeated day-of-week pattern',this)">Repeated day-of-week pattern<small>For example, Mondays, Fridays or another recurring day.</small></button>
-   <button class="opt" onclick="pickGuide('pattern','Consecutive absences',this)">Consecutive absences<small>Several days are missed together.</small></button>
-   <button class="opt" onclick="pickGuide('pattern','Tardiness / partial-day pattern',this)">Tardiness / partial-day pattern<small>Late arrival, early departure or missed portions of the day.</small></button>
-  </div></div>
-  <div class="question"><h3>What changed or surfaced?</h3><p>Note timing, recent changes, classes/periods, transportation, health, relationships, routines or other information that may help explain the pattern.</p><textarea class="guideText" id="patternNote" oninput="guideState.voice=this.value" placeholder="Working note…"></textarea></div>
-  <div class="outputBox"><b>Output from this step</b><p>A confirmed attendance pattern and the questions that need to be explored with the scholar/family.</p></div>`},
- barrier:{title:"Understand what is getting in the way.",intro:"Do not assign the case to a role yet. Use voice and data to develop a working barrier hypothesis.",html:`
-  <div class="question"><h3>Whose perspective do we have?</h3><div class="optionGrid"><button class="opt" onclick="pickGuide('voice','Scholar voice',this)">Scholar voice</button><button class="opt" onclick="pickGuide('voice','Family/caregiver voice',this)">Family/caregiver voice</button><button class="opt" onclick="pickGuide('voice','School data/observations',this)">School data/observations</button><button class="opt" onclick="pickGuide('voice','Multiple perspectives',this)">Multiple perspectives</button></div></div>
-  <div class="question"><h3>Explore possible barriers.</h3><p>Open the Barrier Explorer for family/community and school-controlled possibilities.</p><button class="next" style="border:0;border-radius:10px;padding:12px 16px;background:var(--navy);color:#fff;font-weight:900" onclick="go('barriers')">Open Barrier Explorer →</button></div>
-  <div class="question"><h3>Current working barrier hypothesis</h3><textarea class="guideText" id="barrierNote" oninput="guideState.barrier=this.value" placeholder="Example: Morning transportation is unreliable after a family schedule change…"></textarea></div>
-  <div class="outputBox"><b>Output from this step</b><p>A working barrier hypothesis supported by scholar/family voice and available evidence.</p></div>`},
- ownership:{title:"Clarify ownership around the barrier.",intro:"Assign the function that can act on the barrier. One attendance lead does not mean one person does all of the work.",html:`
-  <div class="question"><h3>Where does the primary action belong?</h3><div class="optionGrid">
-   <button class="opt" onclick="pickGuide('ownership','FSS — Attendance Intervention Lead',this)">FSS<small>Sustained family-centered attendance intervention and monitoring.</small></button>
-   <button class="opt" onclick="pickGuide('ownership','KSSN — Community School / Resource Coordination',this)">KSSN<small>Partners, community assets, integrated supports and access coordination.</small></button>
-   <button class="opt" onclick="pickGuide('ownership','School — School-controlled barrier',this)">School<small>Academic access, belonging, safety, relationships, schedule, instruction or school process.</small></button>
-   <button class="opt" onclick="pickGuide('ownership','Shared — Distinct coordinated responsibilities',this)">Shared<small>Both functions are needed; identify one attendance lead and distinct actions.</small></button>
-  </div></div>
-  <div class="outputBox"><b>Coordination rule</b><p>Overlap is intentional; duplication is not. A referral to a partner does not automatically transfer the attendance intervention.</p></div>`},
- support:{title:"Match the intervention to the barrier.",intro:"Select what is expected to reduce the barrier—not simply the next task staff can complete.",html:`
-  <div class="question"><h3>What support is being selected?</h3><textarea class="guideText" id="supportNote" oninput="guideState.support=this.value" placeholder="Describe the intervention/support and how it addresses the barrier…"></textarea></div>
-  <div class="question"><h3>Quality check</h3><div class="optionGrid">
-   <button class="opt" onclick="this.classList.toggle('selected')">It directly addresses the identified barrier.</button>
-   <button class="opt" onclick="this.classList.toggle('selected')">The scholar/family can realistically access it.</button>
-   <button class="opt" onclick="this.classList.toggle('selected')">Ownership and dosage/frequency are clear.</button>
-   <button class="opt" onclick="this.classList.toggle('selected')">A review date is identified.</button>
-  </div></div>
-  <div class="outputBox"><b>Output from this step</b><p>A barrier-matched intervention with clear ownership, access and review expectations.</p></div>`},
- impact:{title:"Review impact and make the next decision.",intro:"Check whether the response happened, was accessed, reduced the barrier and changed attendance.",html:`
-  <div class="question"><h3>What will the team review?</h3><div class="optionGrid">
-   <button class="opt" onclick="this.classList.toggle('selected')">Implementation<small>Did the intervention happen as intended?</small></button>
-   <button class="opt" onclick="this.classList.toggle('selected')">Access<small>Could the scholar/family use the support?</small></button>
-   <button class="opt" onclick="this.classList.toggle('selected')">Barrier reduction<small>What changed in the identified barrier?</small></button>
-   <button class="opt" onclick="this.classList.toggle('selected')">Attendance response<small>What changed in attendance?</small></button>
-  </div></div>
-  <div class="question"><h3>Next decision</h3><div class="optionGrid"><button class="opt" onclick="pickGuide('impact','Continue',this)">Continue</button><button class="opt" onclick="pickGuide('impact','Adjust',this)">Adjust</button><button class="opt" onclick="pickGuide('impact','Intensify',this)">Intensify</button><button class="opt" onclick="pickGuide('impact','Step down / escalate',this)">Step down / escalate</button></div></div>
-  <div class="outputBox"><b>Output from this step</b><p>An evidence-based decision about what happens next.</p></div>`}
+const guideState={
+ pattern:"",attendanceLevel:"",patternNote:"",voice:"",barrier:"",barrierSource:"",
+ ownership:"",support:"",supportNote:"",reviewDate:"",impact:""
 };
-function guideStep(k){
- const i=guideOrder.indexOf(k),d=guideContent[k];
- document.querySelectorAll('.guideNav button').forEach(x=>x.classList.remove('active'));
- const n=document.getElementById('gn-'+k);if(n)n.classList.add('active');
- document.getElementById('guideEyebrow').textContent=`STEP ${i+1} OF 5`;
- document.getElementById('guideTitle').textContent=d.title;
- document.getElementById('guideIntro').textContent=d.intro;
- document.getElementById('guideBody').innerHTML=d.html+`<div class="guideActions"><button onclick="guideStep('${guideOrder[Math.max(0,i-1)]}')">${i===0?'⌂ Stay here':'← Previous'}</button>${i<4?`<button class="next" onclick="guideStep('${guideOrder[i+1]}')">Next: ${guideOrder[i+1][0].toUpperCase()+guideOrder[i+1].slice(1)} →</button>`:`<button class="next" onclick="showGuideSummary()">Review working summary →</button>`}</div>`;
+const guideOrder=["pattern","barrier","ownership","support","impact"];
+function esc(v){return String(v||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function caseStrip(){
+ const vals=[["Pattern",guideState.pattern],["Barrier",guideState.barrier],["Ownership",guideState.ownership],["Support",guideState.support],["Impact",guideState.impact]];
+ return `<div class="caseStrip">${vals.map(([k,v])=>`<div class="caseChip ${v?'filled':''}"><b>${k}</b><span title="${esc(v)}">${esc(v)||'Not yet decided'}</span></div>`).join('')}</div>`;
 }
-function pickGuide(key,val,el){guideState[key]=val;const p=el.parentElement;p.querySelectorAll('.opt').forEach(x=>x.classList.remove('selected'));el.classList.add('selected')}
+const barrierOwnership={
+ "Transportation":"Shared — FSS attendance lead + KSSN/resource coordination as needed",
+ "Housing / basic needs":"Shared — FSS attendance lead + KSSN/resource coordination",
+ "Physical health":"Shared — FSS attendance lead + School health role; KSSN if resource access is needed",
+ "Mental health / school refusal":"Shared — FSS attendance lead + School Behavioral Health/Counseling; KSSN if partner coordination is needed",
+ "Academic access / challenge":"School — school-controlled academic response, with FSS monitoring attendance/family voice",
+ "Belonging / relationships":"School — school-controlled belonging/relationship response, with FSS family/scholar voice",
+ "Morning / family routines":"FSS — Attendance Intervention Lead",
+ "Engagement / motivation":"Shared — School engagement response + FSS attendance intervention; KSSN for opportunities when useful",
+ "Safety / bullying / discipline":"School — school-controlled safety/discipline response, with FSS attendance follow-through"
+};
+const supportMap={
+ "Transportation":["Transportation problem-solving plan","School/district transportation correction when school-controlled","Warm connection to a community transportation resource when appropriate"],
+ "Housing / basic needs":["Warm handoff to housing/basic-needs support with access confirmation","McKinney-Vento/homelessness support when applicable","Family attendance plan that accounts for current instability"],
+ "Physical health":["School health plan / nurse or health aide coordination","Return-to-school attendance plan around health needs","Warm connection to health care/community support when access is the barrier"],
+ "Mental health / school refusal":["Coordinated re-entry/attendance plan with appropriate Behavioral Health/Counseling support","Gradual return or transition support when determined appropriate by the school team","Warm connection to community mental-health support when access is needed"],
+ "Academic access / challenge":["Academic re-entry / missed-learning plan","Tutoring or targeted academic intervention","Schedule/course/instructional adjustment when school-controlled"],
+ "Belonging / relationships":["Trusted-adult connection / check-in","Belonging, mentoring or relationship-building support","School response to bullying, climate or relationship concern"],
+ "Morning / family routines":["Morning routine problem-solving plan","Family-defined wake-up / preparation / departure routine","Short-cycle FSS follow-up on the routine and attendance"],
+ "Engagement / motivation":["Strength/interest-based attendance goal","Expanded learning, mentoring or enrichment connection","School engagement / relevance strategy tied to scholar goals"],
+ "Safety / bullying / discipline":["School safety/bullying response","Restorative or re-entry plan","School-controlled discipline/process correction tied to return and belonging"]
+};
+function recommendOwnership(){
+ return barrierOwnership[guideState.barrier]||"Use the barrier to determine whether FSS, KSSN, School, or coordinated Shared Work can act on it.";
+}
+function guideStep(k){
+ const i=guideOrder.indexOf(k);
+ document.querySelectorAll('.guideNav button').forEach(x=>x.classList.remove('active'));const n=document.getElementById('gn-'+k);if(n)n.classList.add('active');
+ const titles={
+  pattern:["Confirm the attendance pattern.","Attendance percentage tells the level of concern. The pattern helps determine what needs to be understood next."],
+  barrier:["Understand what is getting in the way.","Use scholar/family voice and available data. Do not assign the concern to a role until the barrier is reasonably understood."],
+  ownership:["Clarify ownership around the barrier.","The site uses the selected barrier to suggest where the primary action belongs. Confirm or adjust based on the actual situation."],
+  support:["Match support to the barrier.","Choose an intervention designed to reduce the selected barrier. The choices below respond to the barrier you identified."],
+  impact:["Review the entire response.","Check implementation, access, barrier reduction and attendance response before deciding what happens next."]
+ };
+ document.getElementById('guideEyebrow').textContent=`STEP ${i+1} OF 5`;document.getElementById('guideTitle').textContent=titles[k][0];document.getElementById('guideIntro').textContent=titles[k][1];
+ let html=caseStrip();
+ if(k==="pattern") html+=`
+  <div class="question"><h3>What is the attendance level?</h3><p>Use the current attendance data available to your team. This field is optional; it provides context for the pattern.</p><div class="dataRow"><input class="dataInput" value="${esc(guideState.attendanceLevel)}" oninput="guideState.attendanceLevel=this.value" placeholder="Example: 12% absent / 8 days missed"><div class="outputBox" style="margin:0"><b>Remember</b><p>Attendance level indicates concern; root-cause analysis determines the intervention.</p></div></div></div>
+  <div class="question"><h3>What does the pattern look like?</h3><p>Select the closest description.</p><div class="optionGrid">
+   ${["Frequent single-day absences","Repeated day-of-week pattern","Consecutive absences","Tardiness / partial-day pattern","Absence is increasing over time","Other / mixed pattern"].map(v=>`<button class="opt ${guideState.pattern===v?'selected':''}" onclick="pickGuide('pattern','${v}',this)">${v}</button>`).join('')}
+  </div></div>
+  <div class="question"><h3>What changed or surfaced?</h3><p>Note timing, recent changes, classes/periods, transportation, health, relationships, routines or other information that may help explain the pattern.</p><textarea class="guideText" oninput="guideState.patternNote=this.value" placeholder="Working note…">${esc(guideState.patternNote)}</textarea></div>
+  <div class="outputBox"><b>Output from this step</b><p>A confirmed attendance level/pattern and questions to explore with the scholar/family.</p></div>`;
+ if(k==="barrier") html+=`
+  <div class="question"><h3>What evidence are we using?</h3><div class="optionGrid">${["Scholar voice","Family/caregiver voice","School data/observations","Multiple perspectives"].map(v=>`<button class="opt ${guideState.voice===v?'selected':''}" onclick="pickGuide('voice','${v}',this)">${v}</button>`).join('')}</div></div>
+  ${guideState.barrier?`<div class="recommend"><b>Current working barrier</b><p><strong>${esc(guideState.barrier)}</strong>${guideState.barrierSource?` — selected in the Barrier Explorer`:''}</p></div>`:''}
+  <div class="question"><h3>Use the Barrier Explorer.</h3><p>Explore family/community, school-controlled, and shared possibilities. Selecting a barrier there will carry it back into this workflow.</p><button class="next" style="border:0;border-radius:10px;padding:12px 16px;background:var(--navy);color:#fff;font-weight:900" onclick="go('barriers')">Open Barrier Explorer →</button></div>
+  <div class="question"><h3>Or document a working barrier in your own words.</h3><textarea class="guideText" oninput="guideState.barrier=this.value;guideState.barrierSource='manual'" placeholder="Working barrier hypothesis…">${guideState.barrierSource==='manual'?esc(guideState.barrier):''}</textarea></div>`;
+ if(k==="ownership") html+=`
+  ${guideState.barrier?`<div class="recommend"><b>Based on the working barrier: ${esc(guideState.barrier)}</b><p>Suggested starting point: <strong>${esc(recommendOwnership())}</strong></p></div>`:`<div class="recommend"><b>No barrier selected yet.</b><p>Ownership should follow the barrier. <button onclick="guideStep('barrier')" style="border:0;background:transparent;color:var(--blue);font-weight:900">Return to Barrier →</button></p></div>`}
+  <div class="question"><h3>Confirm the attendance lead / ownership.</h3><p>The suggestion is a starting point, not an automatic assignment. Choose what fits the actual barrier and school context.</p><div class="optionGrid">
+  ${["FSS — Attendance Intervention Lead","KSSN — Community School / Resource Coordination","School — School-controlled barrier","Shared — Distinct coordinated responsibilities"].map(v=>`<button class="opt ${guideState.ownership===v?'selected':''}" onclick="pickGuide('ownership','${v}',this)">${v}</button>`).join('')}</div></div>
+  <div class="outputBox"><b>Coordination rule</b><p>Overlap is intentional; duplication is not. A referral does not automatically transfer the attendance intervention.</p></div>`;
+ if(k==="support"){
+  const opts=supportMap[guideState.barrier]||["Barrier-matched attendance intervention","School-controlled response","Warm handoff/resource connection with access confirmation"];
+  html+=`${guideState.barrier?`<div class="recommend"><b>Barrier being addressed</b><p><strong>${esc(guideState.barrier)}</strong> · Ownership: ${esc(guideState.ownership)||'not yet confirmed'}</p></div>`:''}
+  <div class="question"><h3>Which support is most likely to reduce this barrier?</h3><div class="supportChoices">${opts.map(v=>`<button class="supportChoice ${guideState.support===v?'selected':''}" onclick="pickSupport('${v.replace(/'/g,"&#39;")}',this)"><b>${v}</b><span>Choose only if it directly addresses the identified barrier and is realistically accessible.</span></button>`).join('')}</div></div>
+  <div class="question"><h3>Add the specific plan.</h3><textarea class="guideText" oninput="guideState.supportNote=this.value" placeholder="Who will do what, how often, and by when?">${esc(guideState.supportNote)}</textarea></div>
+  <div class="question"><h3>When will the team review?</h3><input class="dataInput" type="date" value="${esc(guideState.reviewDate)}" onchange="guideState.reviewDate=this.value"></div>`;
+ }
+ if(k==="impact") html+=`
+  <div class="reviewGrid">
+   <div class="reviewCell"><b>Pattern</b><span>${esc(guideState.pattern)||'Not identified'}${guideState.attendanceLevel?` · ${esc(guideState.attendanceLevel)}`:''}</span></div>
+   <div class="reviewCell"><b>Barrier</b><span>${esc(guideState.barrier)||'Not identified'}</span></div>
+   <div class="reviewCell"><b>Ownership</b><span>${esc(guideState.ownership)||'Not confirmed'}</span></div>
+   <div class="reviewCell"><b>Support</b><span>${esc(guideState.support)||'Not selected'}</span></div>
+  </div>
+  <div class="question"><h3>Review four things.</h3><div class="optionGrid"><button class="opt" onclick="this.classList.toggle('selected')">Implementation<small>Did it happen as intended?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Access<small>Could the scholar/family use it?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Barrier reduction<small>Did the barrier change?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Attendance response<small>Did attendance change?</small></button></div></div>
+  <div class="question"><h3>What happens next?</h3><div class="optionGrid">${["Continue","Adjust","Intensify","Step down","Escalate / return to team"].map(v=>`<button class="opt ${guideState.impact===v?'selected':''}" onclick="pickGuide('impact','${v}',this)">${v}</button>`).join('')}</div></div>`;
+ const prev=i>0?`<button onclick="guideStep('${guideOrder[i-1]}')">← Previous</button>`:`<button class="startOver" onclick="resetGuide()">Clear this concern</button>`;
+ const next=i<4?`<button class="next" onclick="guideStep('${guideOrder[i+1]}')">Next: ${guideOrder[i+1][0].toUpperCase()+guideOrder[i+1].slice(1)} →</button>`:`<button class="next" onclick="showGuideSummary()">Review working summary →</button>`;
+ document.getElementById('guideBody').innerHTML=html+`<div class="guideActions">${prev}${next}</div>`;
+}
+function pickGuide(key,val,el){guideState[key]=val;const p=el.parentElement;p.querySelectorAll('.opt').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');refreshStrip()}
+function pickSupport(val,el){guideState.support=val.replace(/&#39;/g,"'");document.querySelectorAll('.supportChoice').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');refreshStrip()}
+function refreshStrip(){document.querySelectorAll('.caseStrip').forEach(x=>x.outerHTML=caseStrip())}
+function resetGuide(){Object.keys(guideState).forEach(k=>guideState[k]="");guideStep("pattern")}
 function showGuideSummary(){
- const body=document.getElementById('guideBody');document.getElementById('guideTitle').textContent='Working attendance response summary';document.getElementById('guideIntro').textContent='Use this as a conversation aid. Nothing is saved in the site.';
- body.innerHTML=`<div class="summarySheet"><div class="summaryGrid">
- <div class="summaryItem"><b>Pattern</b><span>${guideState.pattern||'Not yet identified'}</span></div>
- <div class="summaryItem"><b>Voice / evidence</b><span>${guideState.voice||'Not yet documented'}</span></div>
- <div class="summaryItem"><b>Barrier</b><span>${guideState.barrier||'Not yet identified'}</span></div>
- <div class="summaryItem"><b>Ownership</b><span>${guideState.ownership||'Not yet assigned'}</span></div>
- <div class="summaryItem"><b>Support</b><span>${guideState.support||'Not yet selected'}</span></div>
- <div class="summaryItem"><b>Next decision</b><span>${guideState.impact||'Review point not yet completed'}</span></div>
- </div><p class="microNote">This summary is not saved. Copy it into the district's existing documentation process when useful.</p>
- <div class="actions"><button class="primary" onclick="copyGuideSummary()">Copy summary</button><button onclick="guideStep('pattern')">Start over</button></div></div>`;
+ document.getElementById('guideTitle').textContent='Working attendance response summary';document.getElementById('guideIntro').textContent='This is a working decision aid. Nothing is saved in the site.';
+ document.getElementById('guideBody').innerHTML=`${caseStrip()}<div class="summarySheet"><div class="summaryGrid">
+ <div class="summaryItem"><b>Attendance level</b><span>${esc(guideState.attendanceLevel)||'Not entered'}</span></div><div class="summaryItem"><b>Pattern</b><span>${esc(guideState.pattern)||'Not identified'}</span></div>
+ <div class="summaryItem"><b>Pattern note</b><span>${esc(guideState.patternNote)||'Not entered'}</span></div><div class="summaryItem"><b>Voice / evidence</b><span>${esc(guideState.voice)||'Not documented'}</span></div>
+ <div class="summaryItem"><b>Barrier</b><span>${esc(guideState.barrier)||'Not identified'}</span></div><div class="summaryItem"><b>Ownership</b><span>${esc(guideState.ownership)||'Not confirmed'}</span></div>
+ <div class="summaryItem"><b>Support</b><span>${esc(guideState.support)||'Not selected'}</span></div><div class="summaryItem"><b>Specific plan</b><span>${esc(guideState.supportNote)||'Not entered'}</span></div>
+ <div class="summaryItem"><b>Review date</b><span>${esc(guideState.reviewDate)||'Not set'}</span></div><div class="summaryItem"><b>Next decision</b><span>${esc(guideState.impact)||'Not decided'}</span></div>
+ </div><p class="microNote">Copy this into the district's existing documentation process when useful. The site does not save this information.</p>
+ <div class="actions"><button class="primary" onclick="copyGuideSummary()">Copy summary</button><button onclick="guideStep('impact')">← Back to Impact</button><button onclick="resetGuide()">Clear concern</button></div></div>`;
 }
 function copyGuideSummary(){
- const t=`Attendance concern working summary\nPattern: ${guideState.pattern||''}\nVoice/evidence: ${guideState.voice||''}\nBarrier: ${guideState.barrier||''}\nOwnership: ${guideState.ownership||''}\nSupport: ${guideState.support||''}\nNext decision: ${guideState.impact||''}`;
+ const t=`Attendance concern working summary
+Attendance level: ${guideState.attendanceLevel}
+Pattern: ${guideState.pattern}
+Pattern note: ${guideState.patternNote}
+Voice/evidence: ${guideState.voice}
+Barrier: ${guideState.barrier}
+Ownership: ${guideState.ownership}
+Support: ${guideState.support}
+Specific plan: ${guideState.supportNote}
+Review date: ${guideState.reviewDate}
+Next decision: ${guideState.impact}`;
  navigator.clipboard?.writeText(t);
 }
 const barrierData=[
@@ -372,6 +424,7 @@ function renderBarriers(){
  const hub=document.getElementById('barrierHub');if(!hub)return;
  hub.innerHTML=barrierData.map(b=>`<button class="barrierCard" onclick="showBarrier('${b.id}',this)"><div class="tag">${b.tag}</div><h3>${b.title}</h3><p>${b.desc}</p><span>Explore this barrier →</span></button>`).join('');
 }
+function selectBarrierAndContinue(id){const b=barrierData.find(x=>x.id===id);if(!b)return;guideState.barrier=b.title;guideState.barrierSource='explorer';guideState.ownership='';guideState.support='';go('concern');guideStep('ownership')}
 function showBarrier(id,el){
  const b=barrierData.find(x=>x.id===id);if(!b)return;
  document.querySelectorAll('.barrierCard').forEach(x=>x.classList.remove('selected'));if(el)el.classList.add('selected');
@@ -381,7 +434,7 @@ function showBarrier(id,el){
  <div class="detailBlock"><b>Information to review</b><ul>${b.look.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
  <h3 style="margin-top:22px">Who may need to act?</h3><div class="matchRow">
  <div class="match f"><b>FSS</b><span>${b.f}</span></div><div class="match k"><b>KSSN</b><span>${b.k}</span></div><div class="match s"><b>School</b><span>${b.s}</span></div><div class="match sh"><b>Shared</b><span>${b.sh}</span></div></div>
- <div class="guideActions"><button onclick="go('concern');guideStep('barrier')">← Return to guided concern</button><button class="next" onclick="guideState.barrier='${b.title}';go('concern');guideStep('ownership')">Use ${b.title} as working barrier →</button></div></div>`;
+ <div class="guideActions"><button onclick="go('concern');guideStep('barrier')">← Return without selecting</button><button class="next" onclick="selectBarrierAndContinue('${b.id}')">Use ${b.title} as working barrier →</button></div></div>`;
  d.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
