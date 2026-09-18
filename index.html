@@ -69,6 +69,32 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 @media(max-width:950px){.guideShell{grid-template-columns:1fr}.guideRail{position:static}.guideNav{grid-template-columns:repeat(5,1fr)}.guideNav button{border-top:0;border-left:1px solid var(--line);font-size:13px;padding:12px}.guideNav button.active{border-left:1px solid var(--line);border-bottom:4px solid var(--orange);padding-left:12px}.guideNav button small{display:none}.barrierHub{grid-template-columns:repeat(2,1fr)}.matchRow{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.guideNav{grid-template-columns:1fr}.guideNav button{border-left:0;border-top:1px solid var(--line)}.guideNav button.active{border-bottom:0;border-left:5px solid var(--orange)}.optionGrid,.barrierHub,.detailCols,.matchRow,.summaryGrid{grid-template-columns:1fr}.guidePanelTop,.guideBody{padding:20px}.guideActions{position:sticky;bottom:0;background:#fff;padding:13px 0 4px}}
 
+
+/* V4 — clearer decision framework + restrained Parent University color */
+:root{--cream:#fff8f2;--mint:#edf8f5;--lav:#f5f0fa;--gold:#fff4df}
+.frameworkIntro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:28px;align-items:end;margin-bottom:20px}
+.frameworkHelp{border-left:5px solid var(--orange);background:var(--cream);border-radius:0 14px 14px 0;padding:15px 17px;color:var(--ink)}
+.frameworkHelp b{display:block;color:var(--navy);margin-bottom:3px}.frameworkHelp span{display:block;color:var(--muted);font-size:15px}
+.frameworkGuide{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.frameworkGuide .step{position:relative;border-width:2px;min-height:176px;padding:18px 17px 16px;display:flex;flex-direction:column;overflow:hidden}
+.frameworkGuide .step:before{content:attr(data-num);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:900;margin-bottom:13px}
+.frameworkGuide .step:nth-child(1){background:#edf7fc;border-color:#a9d5eb}.frameworkGuide .step:nth-child(1):before{background:#cdebf8;color:#0a6595}
+.frameworkGuide .step:nth-child(2){background:var(--cream);border-color:#f3c8aa}.frameworkGuide .step:nth-child(2):before{background:#ffe0ca;color:#a9470e}
+.frameworkGuide .step:nth-child(3){background:var(--mint);border-color:#b9dfd3}.frameworkGuide .step:nth-child(3):before{background:#cfeee5;color:#226b58}
+.frameworkGuide .step:nth-child(4){background:var(--lav);border-color:#d7c5e5}.frameworkGuide .step:nth-child(4):before{background:#e6d9ef;color:#674080}
+.frameworkGuide .step:nth-child(5){background:var(--gold);border-color:#ead29b}.frameworkGuide .step:nth-child(5):before{background:#f8e3b4;color:#7b5a11}
+.frameworkGuide .step.active{box-shadow:0 0 0 3px rgba(18,63,102,.12);border-color:var(--navy)}
+.frameworkGuide .step b{font-size:21px}.frameworkGuide .step span{font-size:15px}.frameworkGuide .step em{font-style:normal;font-size:12px;font-weight:900;color:var(--blue);margin-top:auto;padding-top:15px}
+.frameworkResponse{margin-top:14px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 8px 20px rgba(18,63,102,.05)}
+.frameworkResponseTop{display:flex;gap:14px;align-items:flex-start;padding:18px 20px}.frameworkResponseNum{width:38px;height:38px;flex:0 0 auto;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.frameworkResponse h3{margin:0 0 3px;font-size:20px}.frameworkResponse p{margin:0;color:var(--muted);font-size:15px}
+.frameworkAction{border-top:1px solid var(--line);background:var(--soft);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}.frameworkAction b{color:var(--navy);font-size:14px}.frameworkAction button{border:0;background:var(--navy);color:#fff;border-radius:9px;padding:9px 13px;font-weight:900;font-size:14px}
+.sectionTintBlue{background:#f4faff}.sectionTintWarm{background:#fff8f2}.sectionTintMint{background:#f2faf7}
+.dailyTile:nth-child(1){background:#f3f9fd}.dailyTile:nth-child(2){background:#fff8f2}.dailyTile:nth-child(3){background:#f2faf7}.dailyTile:nth-child(4){background:#f8f4fb}
+.choice .ico{background:#e7f4fb}.choice:nth-child(2n) .ico{background:#fff0e6;color:#a9470e}.choice:nth-child(3n) .ico{background:#e9f7f1;color:#226b58}
+.toolcard:nth-child(3n+1){border-top:5px solid var(--teal)}.toolcard:nth-child(3n+2){border-top:5px solid var(--orange)}.toolcard:nth-child(3n){border-top:5px solid var(--purple)}
+@media(max-width:950px){.frameworkIntro{grid-template-columns:1fr}.frameworkGuide{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.frameworkGuide{grid-template-columns:1fr}.frameworkAction{align-items:flex-start;flex-direction:column}}
+
 </style>
 </head>
 <body>
@@ -120,18 +146,25 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
     </div>
   </div></div>
 
-  <div class="section familyStage"><div class="wrap"><div class="section-head"><div><div class="eyebrow">OUR DECISION FRAMEWORK</div><h2>Pattern → Barrier → Ownership → Support → Impact</h2></div><p>Click any stage for the decision that belongs there.</p></div>
-    <div class="framework" id="homeFramework">
-      <button class="step" onclick="homeFramework('pattern',this)"><b>Pattern</b><span>What do we see?</span></button>
-      <button class="step" onclick="homeFramework('barrier',this)"><b>Barrier</b><span>What is getting in the way?</span></button>
-      <button class="step" onclick="homeFramework('ownership',this)"><b>Ownership</b><span>Who needs to act?</span></button>
-      <button class="step" onclick="homeFramework('support',this)"><b>Support</b><span>What will reduce the barrier?</span></button>
-      <button class="step" onclick="homeFramework('impact',this)"><b>Impact</b><span>Is it working?</span></button>
+  <div class="section familyStage sectionTintBlue"><div class="wrap">
+    <div class="frameworkIntro">
+      <div><div class="eyebrow">OUR DECISION FRAMEWORK</div><h2>Use these five decisions to work an attendance concern.</h2><p style="color:var(--muted);margin:0">This is not a form to complete. Click a stage to understand the decision that belongs there. When you are working a real concern, use <b>Work Through an Attendance Concern</b> for the full guided process.</p></div>
+      <div class="frameworkHelp"><b>What am I supposed to do here?</b><span>1. Click a stage below. 2. Read the decision prompt. 3. Use the full guided pathway when you are ready to work the case.</span></div>
     </div>
-    <div class="framework-detail" id="homeFrameworkDetail"><b>Framework:</b> Select a stage to see the decision and expected output.</div>
+    <div class="frameworkGuide" id="homeFramework">
+      <button class="step active" data-num="1" onclick="homeFrameworkV4('pattern',this)"><b>Pattern</b><span>Confirm what is happening before deciding why.</span><em>Show me what to decide →</em></button>
+      <button class="step" data-num="2" onclick="homeFrameworkV4('barrier',this)"><b>Barrier</b><span>Understand what is keeping the scholar from attending.</span><em>Show me what to decide →</em></button>
+      <button class="step" data-num="3" onclick="homeFrameworkV4('ownership',this)"><b>Ownership</b><span>Clarify who can act on the barrier.</span><em>Show me what to decide →</em></button>
+      <button class="step" data-num="4" onclick="homeFrameworkV4('support',this)"><b>Support</b><span>Match an intervention designed to reduce the barrier.</span><em>Show me what to decide →</em></button>
+      <button class="step" data-num="5" onclick="homeFrameworkV4('impact',this)"><b>Impact</b><span>Check whether the barrier and attendance changed.</span><em>Show me what to decide →</em></button>
+    </div>
+    <div class="frameworkResponse" id="homeFrameworkDetail">
+      <div class="frameworkResponseTop"><div class="frameworkResponseNum">1</div><div><h3>Pattern — What do we see?</h3><p>Confirm when absences occur, what changed, and whether the pattern is isolated or repeating. Do not jump to a barrier or role yet.</p></div></div>
+      <div class="frameworkAction"><b>Decision: What attendance pattern needs to be understood?</b><button onclick="go('concern');guideStep('pattern')">Work this step →</button></div>
+    </div>
   </div></div>
 
-  <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2></div><p>The model stays compact here. Open the role page for the full interactive view and expanded version.</p></div>
+  <div class="section sectionTintWarm"><div class="wrap"><div class="section-head"><div><div class="eyebrow">OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2></div><p>The model stays compact here. Open the role page for the full interactive view and expanded version.</p></div>
     <div class="choice-list">
       <button class="choice" onclick="go('roles')"><div class="ico">F</div><div><strong>FSS — Attendance Intervention Lead</strong><span>Family-centered root-cause work, attendance intervention, follow-through and monitoring.</span></div></button>
       <button class="choice" onclick="go('roles')"><div class="ico">K</div><div><strong>KSSN — Community School / Resource Coordination</strong><span>Partner coordination, integrated supports, community assets, access confirmation and system patterns.</span></div></button>
@@ -150,7 +183,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
    <article class="role school"><h3>School</h3><b>School-Based Support</b><ul><li>Remove school-controlled barriers</li><li>Provide academic/instructional access</li><li>Strengthen belonging and relationships</li><li>Assure implementation</li><li>Monitor progress with the team</li></ul></article>
  </div><div class="goal">ONE GOAL — Improve attendance by reducing the barrier.</div>
  <div class="cadence"><div>HOW WE<br>WORK<br>TOGETHER</div><div><b>DAILY</b><span>Do the work. Support scholars and families.</span></div><div><b>WEEKLY</b><span>Unstick the work. Collaborate and problem-solve.</span></div><div><b>MONTHLY</b><span>Find patterns. Use data and stories to improve.</span></div><div><b>QUARTERLY</b><span>Change the system. Strengthen partnerships.</span></div></div></div></div></div>
- <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">KSSN ROLE CLARITY</div><h2>Go. Check. Stop.</h2></div><p>A quick decision aid for distinguishing core Community School Coordinator work from work that needs consultation or should remain with another role.</p></div><div class="go-check-stop"><div class="gcs go"><b>GO</b><p>Core coordinator functions.</p><ul><li>Resource coordination</li><li>Family/community engagement</li><li>Community partnerships</li><li>Attendance team participation</li><li>Programs and opportunities</li></ul></div><div class="gcs check"><b>CHECK</b><p>Coordinate with the appropriate lead before acting.</p><ul><li>Behavior interventions</li><li>School counseling functions</li><li>Supervision/lunchroom coverage</li><li>School-specific operational duties</li></ul></div><div class="gcs stop"><b>STOP</b><p>Work that should remain with the appropriately assigned professional.</p><ul><li>Substitute teaching</li><li>Ongoing therapy</li><li>Secretarial work</li><li>Serving as disciplinarian</li><li>Running detention</li></ul></div></div></div></div>
+ <div class="section sectionTintMint"><div class="wrap"><div class="section-head"><div><div class="eyebrow">KSSN ROLE CLARITY</div><h2>Go. Check. Stop.</h2></div><p>A quick decision aid for distinguishing core Community School Coordinator work from work that needs consultation or should remain with another role.</p></div><div class="go-check-stop"><div class="gcs go"><b>GO</b><p>Core coordinator functions.</p><ul><li>Resource coordination</li><li>Family/community engagement</li><li>Community partnerships</li><li>Attendance team participation</li><li>Programs and opportunities</li></ul></div><div class="gcs check"><b>CHECK</b><p>Coordinate with the appropriate lead before acting.</p><ul><li>Behavior interventions</li><li>School counseling functions</li><li>Supervision/lunchroom coverage</li><li>School-specific operational duties</li></ul></div><div class="gcs stop"><b>STOP</b><p>Work that should remain with the appropriately assigned professional.</p><ul><li>Substitute teaching</li><li>Ongoing therapy</li><li>Secretarial work</li><li>Serving as disciplinarian</li><li>Running detention</li></ul></div></div></div></div>
 </section>
 
 <section class="page" id="concern">
@@ -240,6 +273,19 @@ function copyNotes(){navigator.clipboard?.writeText(document.getElementById('not
 function expandModel(){let src=document.getElementById('operatingModel').cloneNode(true);let goal=document.querySelector('#roles .goal').cloneNode(true);let cadence=document.querySelector('#roles .cadence').cloneNode(true);let c=document.getElementById('modalContent');c.innerHTML='<div class="eyebrow">EXPANDED OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2>';c.append(src,goal,cadence);document.getElementById('modelModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeModel(){document.getElementById('modelModal').classList.remove('open');document.body.style.overflow=''}
 document.getElementById('modelModal').addEventListener('click',e=>{if(e.target.id==='modelModal')closeModel()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModel()})
+
+
+function homeFrameworkV4(k,el){
+ const content={
+ pattern:{n:"1",t:"Pattern — What do we see?",p:"Confirm when absences occur, what changed, and whether the pattern is isolated or repeating. Do not jump to a barrier or role yet.",d:"What attendance pattern needs to be understood?"},
+ barrier:{n:"2",t:"Barrier — What is getting in the way?",p:"Use scholar and family voice with available data to develop a working barrier hypothesis. Distinguish family/community barriers from school-controlled barriers.",d:"What is the best-supported working barrier hypothesis?"},
+ ownership:{n:"3",t:"Ownership — Who needs to act?",p:"Identify the function that can act on the barrier. Clarify one attendance lead and distinct FSS, KSSN and school responsibilities.",d:"Who is the attendance lead, and what does each role own?"},
+ support:{n:"4",t:"Support — What will reduce the barrier?",p:"Choose an intervention intentionally matched to the barrier. A call, letter or referral alone is an action—not automatically an intervention.",d:"What support is most likely to reduce this barrier?"},
+ impact:{n:"5",t:"Impact — Is it working?",p:"Review implementation, access, barrier reduction and attendance response. Then continue, adjust, intensify, step down or escalate.",d:"What evidence will determine the next decision?"}
+ }[k];
+ document.querySelectorAll('#homeFramework .step').forEach(x=>x.classList.remove('active'));if(el)el.classList.add('active');
+ document.getElementById('homeFrameworkDetail').innerHTML=`<div class="frameworkResponseTop"><div class="frameworkResponseNum">${content.n}</div><div><h3>${content.t}</h3><p>${content.p}</p></div></div><div class="frameworkAction"><b>Decision: ${content.d}</b><button onclick="go('concern');guideStep('${k}')">Work this step →</button></div>`;
+}
 
 const guideState={pattern:"",voice:"",barrier:"",ownership:"",support:"",impact:""};
 const guideOrder=["pattern","barrier","ownership","support","impact"];
