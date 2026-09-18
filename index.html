@@ -152,6 +152,24 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 
 .scopeNote{margin-top:18px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;max-width:760px}.scopeNote b{font-size:13px;color:var(--navy);margin-right:3px}.scopeNote span{font-size:11px;font-weight:900;color:#48647a;background:#fff;border:1px solid #d7e3ec;border-radius:999px;padding:6px 9px}
 
+
+/* V8.5 — task-oriented tools hub */
+.toolGuide{background:linear-gradient(135deg,#f3f9fc,#fff 62%,#fff7ef);border-bottom:1px solid var(--line)}
+.toolGuide .wrap{padding:42px 0 38px}
+.toolGuideGrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(390px,.9fr);gap:42px;align-items:start}
+.toolGuide h1{font-size:clamp(36px,4vw,56px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px;max-width:760px}
+.toolGuide .lede{font-size:18px;max-width:720px}
+.toolStart{background:#fff;border:1px solid #d9e6ef;border-radius:20px;padding:20px;box-shadow:0 15px 35px rgba(25,65,95,.09)}
+.toolStart h2{font-size:20px;margin:0 0 4px}.toolStart>p{font-size:13px;color:var(--muted);margin:0 0 14px}
+.toolStartChoices{display:grid;gap:8px}.toolStartChoice{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 13px;text-align:left}.toolStartChoice:hover{background:var(--sky)}.toolStartChoice b{display:block;color:var(--navy);font-size:14px}.toolStartChoice span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.toolJourney{padding:34px 0 18px}.toolJourney h2{font-size:27px;margin:0 0 7px}.toolJourney>p{color:var(--muted);margin:0 0 20px;max-width:850px}
+.journeyRow{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;position:relative}.journeyStep{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px;min-height:126px;text-align:left}.journeyStep:nth-child(1){border-top:4px solid var(--blue)}.journeyStep:nth-child(2){border-top:4px solid var(--orange)}.journeyStep:nth-child(3){border-top:4px solid var(--teal)}.journeyStep:nth-child(4){border-top:4px solid var(--purple)}.journeyStep:nth-child(5){border-top:4px solid #b98522}.journeyStep small{font-weight:900;color:var(--muted)}.journeyStep b{display:block;color:var(--navy);font-size:15px;margin:5px 0}.journeyStep span{font-size:12px;color:var(--muted);line-height:1.35}
+.contextTools{padding:20px 0 55px}.contextHead{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:17px}.contextHead h2{font-size:28px;margin:0}.contextHead p{color:var(--muted);margin:0;max-width:650px}
+.contextGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.contextCard{border:1px solid var(--line);border-radius:16px;background:#fff;padding:17px;text-align:left;min-height:164px}.contextCard:hover{box-shadow:0 9px 22px rgba(20,59,91,.08);transform:translateY(-1px)}.contextCard .who{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.05em;color:var(--blue);background:#eef7fc;border-radius:999px;padding:5px 7px}.contextCard h3{font-size:18px;margin:9px 0 5px}.contextCard p{font-size:13px;color:var(--muted);margin:0 0 10px}.contextCard .use{font-size:12px;font-weight:900;color:var(--navy)}
+.toolRec{display:none;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:12px}.toolRec.active{display:block}.toolRec h3{font-size:17px;margin:0 0 4px}.toolRec p{font-size:12px;color:var(--muted);margin:0 0 9px}.toolRecBtns{display:flex;gap:7px;flex-wrap:wrap}.toolRecBtns button{border:1px solid #bad0e0;background:#fff;border-radius:999px;padding:8px 10px;color:var(--navy);font-size:12px;font-weight:900}
+@media(max-width:980px){.toolGuideGrid{grid-template-columns:1fr}.journeyRow{grid-template-columns:1fr 1fr}.contextGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.journeyRow,.contextGrid{grid-template-columns:1fr}.contextHead{align-items:start;flex-direction:column}}
+
 </style>
 </head>
 <body>
@@ -254,17 +272,56 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 </section>
 
 <section class="page" id="tools">
- <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">TOOLS & RESOURCES</div><h1 style="font-size:44px">Open the tool you need. Do the work. Return to the case.</h1><p class="lede">No tracker. No extra system. Use the tool that fits the scholar, family, school, or Community School need in front of you.</p><div style="margin-top:18px"><button class="btn primary" onclick="go('home');puStart('concern')">Not sure where to start? Work a situation →</button></div></div></div>
- <div class="section"><div class="wrap"><div class="toolgrid">
-  <button class="toolcard" onclick="openTool('caring')"><small>FSS / SHARED</small><h3>Caring Conversation</h3><p>Learn → Share → Inform → Discuss → Arrive at a Plan.</p></button>
-  <button class="toolcard" onclick="go('barriers')"><small>ALL ROLES</small><h3>Need & Barrier Explorer</h3><p>Move from the pattern or concern to a working barrier hypothesis.</p></button>
-  <button class="toolcard" onclick="openTool('plan')"><small>FSS / SCHOOL / SHARED</small><h3>Support / Intervention Plan</h3><p>Match the intervention, owner, goal and review point.</p></button>
-  <button class="toolcard" onclick="openTool('handoff')"><small>FSS + KSSN</small><h3>Warm Handoff</h3><p>Explain → Connect → Confirm → Follow through.</p></button>
-  <button class="toolcard" onclick="openTool('review')"><small>ALL ROLES</small><h3>Progress & Impact Review</h3><p>Check implementation, access, barrier reduction and support response.</p></button>
-  <button class="toolcard" onclick="openTool('huddle')"><small>SCHOOL TEAM</small><h3>10-Minute Case Huddle</h3><p>Clarify the need, responsibilities, next action and review point.</p></button>
-  <button class="toolcard" onclick="openTool('resource')"><small>FSS + KSSN / SHARED</small><h3>Find More Support</h3><p>Match an understood need to existing GRPS, Community School, or community support and confirm access.</p></button>
- </div></div></div>
- <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">RESOURCE CONNECTIONS</div><h2>Find support after the barrier is understood.</h2></div><p>Resource discovery is part of the intervention only when it is intentionally matched to the barrier and access is confirmed.</p></div><div class="resourcegrid"><button class="resource" onclick="openTool('resource')" style="text-align:left"><b>GRPS / building supports</b><p>Check what already exists in the school or district before creating another pathway.</p><span style="font-weight:900;color:var(--blue)">Work through resource matching →</span></button><button class="resource" onclick="openTool('resource')" style="text-align:left"><b>Community resources</b><p>KSSN can coordinate partners and community assets when those supports add value to the intervention plan.</p><span style="font-weight:900;color:var(--blue)">Find and connect support →</span></button></div></div></div>
+ <div class="toolGuide"><div class="wrap">
+  <div class="page-actions"><button class="back" onclick="back()">← Back</button><button class="back" onclick="go('home')">⌂ Home</button></div>
+  <div class="toolGuideGrid">
+   <div>
+    <div class="eyebrow">TOOLS & RESOURCES</div>
+    <h1>Don't start with a tool. Start with what you need to accomplish.</h1>
+    <p class="lede">The tools support different moments in the work. Choose the situation first and the site will narrow what is useful—rather than asking you to sort through a toolbox.</p>
+   </div>
+   <div class="toolStart">
+    <h2>What are you trying to do?</h2>
+    <p>Choose the closest need. We’ll point you to the right working tool.</p>
+    <div class="toolStartChoices">
+     <button class="toolStartChoice" onclick="recommendTools('understand')"><b>Understand what is going on</b><span>Scholar/family voice, need, barrier, pattern or concern</span></button>
+     <button class="toolStartChoice" onclick="recommendTools('clarify')"><b>Clarify who should do what</b><span>FSS, KSSN, school—or coordinated work</span></button>
+     <button class="toolStartChoice" onclick="recommendTools('plan')"><b>Build the response</b><span>Intervention, responsibilities, connection or support</span></button>
+     <button class="toolStartChoice" onclick="recommendTools('stuck')"><b>Something is stuck</b><span>Support did not happen, access failed, or progress is limited</span></button>
+     <button class="toolStartChoice" onclick="recommendTools('system')"><b>We keep seeing the same need</b><span>Move from one situation to a school or Community School response</span></button>
+    </div>
+    <div class="toolRec" id="toolRec"></div>
+   </div>
+  </div>
+ </div></div>
+
+ <div class="wrap toolJourney">
+  <div class="eyebrow">USE THE PROCESS, NOT EVERY TOOL</div>
+  <h2>Five decisions. Use a tool only when it helps.</h2>
+  <p>This is not a checklist. You may enter at any point. The goal is to move the work forward with enough clarity to make the next decision.</p>
+  <div class="journeyRow">
+   <button class="journeyStep" onclick="recommendTools('understand')"><small>01</small><b>Need</b><span>What is the scholar, family or school experiencing?</span></button>
+   <button class="journeyStep" onclick="go('barriers')"><small>02</small><b>Understand</b><span>What is underneath the concern? What evidence and voice do we have?</span></button>
+   <button class="journeyStep" onclick="recommendTools('clarify')"><small>03</small><b>Who Acts</b><span>Which function is required? Where should work stay separate or connect?</span></button>
+   <button class="journeyStep" onclick="recommendTools('plan')"><small>04</small><b>Response</b><span>What will we actually do, who owns each part, and by when?</span></button>
+   <button class="journeyStep" onclick="recommendTools('stuck')"><small>05</small><b>Impact</b><span>Did it happen, was it accessible, and did the intended outcome change?</span></button>
+  </div>
+ </div>
+
+ <div class="wrap contextTools">
+  <div class="contextHead"><div><div class="eyebrow">WORKING TOOLS</div><h2>Open a tool when the work calls for it.</h2></div><p>Each tool below answers a specific question. The role label shows who is most likely to use it—not who is allowed to use it.</p></div>
+  <div class="contextGrid">
+   <button class="contextCard" onclick="openTool('caring')"><span class="who">FSS / SHARED</span><h3>Caring Conversation</h3><p><b>Use when:</b> the scholar/family perspective or need is not yet clear.</p><span class="use">Understand before solving →</span></button>
+   <button class="contextCard" onclick="go('barriers')"><span class="who">ALL ROLES</span><h3>Need & Barrier Explorer</h3><p><b>Use when:</b> the presenting concern may not be the underlying issue.</p><span class="use">Move toward a working hypothesis →</span></button>
+   <button class="contextCard" onclick="go('roles')"><span class="who">FSS + KSSN + SCHOOL</span><h3>Role Clarity</h3><p><b>Use when:</b> people are involved but responsibilities are blurred or duplicative.</p><span class="use">Clarify separate and shared functions →</span></button>
+   <button class="contextCard" onclick="openTool('plan')"><span class="who">FSS / SCHOOL / SHARED</span><h3>Support / Intervention Plan</h3><p><b>Use when:</b> the need is understood and the team is ready to define the response.</p><span class="use">Turn understanding into action →</span></button>
+   <button class="contextCard" onclick="openTool('handoff')"><span class="who">FSS + KSSN</span><h3>Warm Handoff</h3><p><b>Use when:</b> another person, service or partner needs to join without losing continuity.</p><span class="use">Connect without transferring the whole case →</span></button>
+   <button class="contextCard" onclick="openTool('resource')"><span class="who">KSSN / SHARED</span><h3>Find More Support</h3><p><b>Use when:</b> an understood need requires a GRPS, Community School or community resource.</p><span class="use">Match support to the need →</span></button>
+   <button class="contextCard" onclick="openTool('huddle')"><span class="who">SCHOOL TEAM</span><h3>10-Minute Case Huddle</h3><p><b>Use when:</b> the work is stuck, ownership is unclear, or multiple people are acting.</p><span class="use">Unstick the work →</span></button>
+   <button class="contextCard" onclick="openTool('review')"><span class="who">SHARED</span><h3>Progress & Impact Review</h3><p><b>Use when:</b> you need to decide whether to continue, adjust, intensify, step down or escalate.</p><span class="use">Make the next decision →</span></button>
+   <button class="contextCard" onclick="showSystemPath()"><span class="who">KSSN + SCHOOL</span><h3>Case → System</h3><p><b>Use when:</b> the same need is appearing across scholars or families.</p><span class="use">Move from individual response to system action →</span></button>
+  </div>
+ </div>
 </section>
 
 <section class="page" id="tool">
@@ -301,6 +358,28 @@ review:{k:"ALL ROLES",t:"Progress & Impact Review",p:"Determine whether the inte
 huddle:{k:"SCHOOL TEAM",t:"10-Minute Case Huddle",p:"Use a short team conversation to clarify a scholar/family need, responsibilities, next action and review point without creating competing plans.",q:["1. Pattern — What changed or surfaced?","2. Understand — What is the current working hypothesis?","3. Who Acts — Who is the intervention lead? Who else has a distinct action?","4. Response — What is happening before the next review?","5. Review — When will we reconvene and what evidence will we bring?"]},
 resource:{k:"FSS + KSSN / SHARED",t:"Find More Support",p:"Use resource discovery after the need is understood. Check existing GRPS and school supports first, then connect additional Community School or community support when it directly addresses the need.",q:["1. Need — What specific need are we trying to address?","2. Existing support — What GRPS/building support is already available?","3. Additional support — What community resource or partner directly matches the barrier?","4. Warm connection — Who will connect the family and explain why?","5. Access — Did the family actually reach and use the support?","6. Attendance impact — Did access to the support reduce the barrier and improve attendance?"]}
 };
+
+function recommendTools(kind){
+ const box=document.getElementById('toolRec'); if(!box)return;
+ const data={
+  understand:["Start here","Get enough voice and evidence to understand the need before selecting a response.",[["Caring Conversation","openTool('caring')"],["Need & Barrier Explorer","go('barriers')"]]],
+  clarify:["Clarify the functions","Decide what belongs with FSS, KSSN, the school, or coordinated work before adding activity.",[["Role Clarity","go('roles')"],["10-Minute Case Huddle","openTool('huddle')"]]],
+  plan:["Build one coherent response","Match the response to the need, make responsibilities explicit, and connect additional support only when it adds value.",[["Support / Intervention Plan","openTool('plan')"],["Warm Handoff","openTool('handoff')"],["Find More Support","openTool('resource')"]]],
+  stuck:["Find out what is not working","Check implementation, access, need/barrier change and progress before adding another action.",[["Progress & Impact Review","openTool('review')"],["10-Minute Case Huddle","openTool('huddle')"]]],
+  system:["Look beyond the individual situation","If the same need keeps appearing, examine the pattern and determine what the school or Community School strategy should change.",[["Case → System","showSystemPath()"],["Role Clarity","go('roles')"]]]
+ }[kind];
+ box.classList.add('active');
+ box.innerHTML=`<h3>${data[0]}</h3><p>${data[1]}</p><div class="toolRecBtns">${data[2].map(x=>`<button onclick="${x[1]}">${x[0]} →</button>`).join('')}</div>`;
+ box.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function showSystemPath(){
+ const box=document.getElementById('toolRec');
+ if(!box){go('tools');setTimeout(showSystemPath,50);return;}
+ box.classList.add('active');
+ box.innerHTML=`<h3>Case → System</h3><p>Use this when the same need is surfacing across scholars or families. Move through: <b>individual situation → repeated need → pattern → school/Community School response → district response when needed.</b></p><div class="toolRecBtns"><button onclick="go('roles')">Check roles →</button><button onclick="openTool('huddle')">Use a Case Huddle →</button></div>`;
+ box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
 function openTool(k){let d=tools[k];if(!d){go('tools');return;}document.getElementById('toolKicker').textContent=d.k;document.getElementById('toolTitle').textContent=d.t;document.getElementById('toolPurpose').textContent=d.p;document.getElementById('toolPrompts').innerHTML=d.q.map(x=>`<p><b>${x}</b></p>`).join('');document.getElementById('notes').value='';go('tool')}
 function copyNotes(){navigator.clipboard?.writeText(document.getElementById('notes').value)}
 function expandModel(){let src=document.getElementById('operatingModel').cloneNode(true);let goal=document.querySelector('#roles .goal').cloneNode(true);let cadence=document.querySelector('#roles .cadence').cloneNode(true);let c=document.getElementById('modalContent');c.innerHTML='<div class="eyebrow">EXPANDED OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2>';c.append(src,goal,cadence);document.getElementById('modelModal').classList.add('open');document.body.style.overflow='hidden'}
