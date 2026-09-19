@@ -282,6 +282,36 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 }
 .section-head{align-items:start}
 
+
+/* V8.16 — coherent intro: broader-than-attendance is part of the opening, not a second composition */
+.broader-centered{
+  max-width:1120px!important;
+  margin:22px 0 0!important;
+  padding:0!important;
+  text-align:left!important;
+}
+.broader-centered:before{display:none!important}
+.broader-centered h2{
+  margin:0 0 8px!important;
+  max-width:none!important;
+  font-size:21px!important;
+  line-height:1.3!important;
+  letter-spacing:0!important;
+  color:#123f66!important;
+}
+.broader-centered p{
+  margin:0!important;
+  max-width:1040px!important;
+  font-size:18px!important;
+  line-height:1.6!important;
+  color:#415f76!important;
+}
+@media(max-width:700px){
+ .broader-centered{margin-top:18px!important}
+ .broader-centered h2{font-size:20px!important}
+ .broader-centered p{font-size:17px!important}
+}
+
 </style>
 </head>
 <body>
@@ -340,7 +370,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 </section>
 
 <section class="page" id="roles">
- <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">FSS + KSSN</div><h1 style="font-size:44px">Different functions. Shared responsibility. One goal.</h1><p class="lede">Scholar + family stay at the center. FSS, KSSN and the school contribute different functions around the same identified need or barrier.</p></div><div class="broader-centered callout"><b>This is broader than attendance.</b><p>FSS and KSSN collaboration may support needs connected to academics, attendance, behavior, family circumstances, integrated supports, and Community School opportunities. The role decision should follow the need and the function required.</p></div></div>
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">FSS + KSSN</div><h1 style="font-size:44px">Different functions. Shared responsibility. One goal.</h1><p class="lede">Scholar + family stay at the center. FSS, KSSN and the school contribute different functions around the same identified need or barrier.</p></div><div class="broader-centered callout"><b>This work is broader than attendance.</b><p>Collaboration may address academics, attendance, behavior, family circumstances, integrated supports, and Community School opportunities. The need determines the function—not the other way around.</p></div></div>
  <div class="section"><div class="wrap"><div class="model-shell"><div class="model-top"><div><div class="eyebrow">OUR OPERATING MODEL</div><h2>Connecting scholar, family and community support.</h2></div><button class="expand" onclick="expandModel()">↗ Expand model</button></div><div id="operatingModel" class="model">
    <article class="role fss"><h3>FSS</h3><b>Scholar & Family Intervention</b><ul><li>Understand the scholar, caregiver and situation</li><li>Build trust and engage</li><li>Develop and guide the scholar/family intervention</li><li>Follow up and monitor impact</li><li>Bring stalled work back to the team</li></ul></article>
    <div class="center"><div class="circle">SCHOLAR<br>+ FAMILY<small>Our focus.<br>Our why.</small></div></div>
@@ -872,7 +902,7 @@ if(location.hash && document.getElementById(location.hash.slice(1))) go(location
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  const heading=[...document.querySelectorAll('h1,h2,h3,h4,b,strong')].find(x=>x.textContent.trim()==='This is broader than attendance.');
+  const heading=[...document.querySelectorAll('h1,h2,h3,h4,b,strong')].find(x=>x.textContent.trim()==='This work is broader than attendance.');
   if(heading){
     let box=heading.parentElement;
     while(box && box!==document.body){
