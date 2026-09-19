@@ -362,6 +362,63 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 }
 #roles .roles-context strong{color:#173f61;font-weight:800}
 
+
+/* V8.19 — hard overflow fix */
+html,body{max-width:100%;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+.wrap{
+  width:min(100% - 40px, 1210px)!important;
+  max-width:1210px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+#roles .pagehead,
+#roles .pagehead .wrap{
+  width:100%;
+  max-width:100%;
+}
+#roles .pagehead .wrap{
+  width:min(100% - 40px, 1210px)!important;
+  max-width:1210px!important;
+}
+#roles .pagehead h1,
+#roles .pagehead .lede,
+#roles .roles-context{
+  width:100%;
+  max-width:980px!important;
+  white-space:normal!important;
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
+}
+#roles .pagehead h1{font-size:clamp(38px,4vw,58px)!important;line-height:1.08!important}
+#roles .pagehead .lede{font-size:clamp(19px,1.8vw,23px)!important;line-height:1.5!important}
+#roles .roles-context{font-size:18px!important;line-height:1.55!important}
+@media(max-width:700px){
+  .wrap,#roles .pagehead .wrap{width:calc(100% - 32px)!important}
+  #roles .pagehead h1{font-size:clamp(32px,9vw,44px)!important}
+  #roles .roles-context{font-size:17px!important}
+}
+
+
+/* V8.20 — verified roles-page text flow */
+#roles .pagehead .lede{
+  display:block!important;
+  width:100%!important;
+  max-width:980px!important;
+  margin:22px 0 0!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+}
+#roles .pagehead .roles-context{
+  display:block!important;
+  width:100%!important;
+  max-width:980px!important;
+  margin:14px 0 0!important;
+  padding:0!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+}
+
 </style>
 </head>
 <body>
