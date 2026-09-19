@@ -241,6 +241,47 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 .modal-card,.modalPanel,.modal-content{max-height:calc(100vh - 48px)}
 @media(max-width:700px){.modal-card,.modalPanel,.modal-content{max-height:calc(100vh - 20px)}}
 
+
+/* V8.15 — centered content and readable line-length pass */
+.broader-centered{
+  max-width:1080px;
+  margin:0 auto;
+  padding:46px 28px 50px;
+  text-align:center;
+}
+.broader-centered h2{
+  margin:0 auto 18px;
+  max-width:760px;
+  font-size:clamp(28px,3vw,38px);
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+.broader-centered p{
+  margin:0 auto;
+  max-width:980px;
+  font-size:clamp(18px,1.65vw,22px);
+  line-height:1.6;
+}
+.broader-centered:before{
+  content:"";
+  display:block;
+  width:92px;
+  height:3px;
+  border-radius:3px;
+  background:#1d75a7;
+  margin:0 auto 24px;
+}
+@media(max-width:700px){
+  .broader-centered{padding:34px 22px 38px}
+  .broader-centered p{max-width:38rem}
+}
+
+/* Site-wide alignment guardrails for explanatory bands */
+.section-head>p,.lede,.intro-copy,.supporting-copy{
+  max-width:72ch;
+}
+.section-head{align-items:start}
+
 </style>
 </head>
 <body>
@@ -299,7 +340,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 </section>
 
 <section class="page" id="roles">
- <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">FSS + KSSN</div><h1 style="font-size:44px">Different functions. Shared responsibility. One goal.</h1><p class="lede">Scholar + family stay at the center. FSS, KSSN and the school contribute different functions around the same identified need or barrier.</p></div><div class="callout"><b>This is broader than attendance.</b><p>FSS and KSSN collaboration may support needs connected to academics, attendance, behavior, family circumstances, integrated supports, and Community School opportunities. The role decision should follow the need and the function required.</p></div></div>
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">FSS + KSSN</div><h1 style="font-size:44px">Different functions. Shared responsibility. One goal.</h1><p class="lede">Scholar + family stay at the center. FSS, KSSN and the school contribute different functions around the same identified need or barrier.</p></div><div class="broader-centered callout"><b>This is broader than attendance.</b><p>FSS and KSSN collaboration may support needs connected to academics, attendance, behavior, family circumstances, integrated supports, and Community School opportunities. The role decision should follow the need and the function required.</p></div></div>
  <div class="section"><div class="wrap"><div class="model-shell"><div class="model-top"><div><div class="eyebrow">OUR OPERATING MODEL</div><h2>Connecting scholar, family and community support.</h2></div><button class="expand" onclick="expandModel()">↗ Expand model</button></div><div id="operatingModel" class="model">
    <article class="role fss"><h3>FSS</h3><b>Scholar & Family Intervention</b><ul><li>Understand the scholar, caregiver and situation</li><li>Build trust and engage</li><li>Develop and guide the scholar/family intervention</li><li>Follow up and monitor impact</li><li>Bring stalled work back to the team</li></ul></article>
    <div class="center"><div class="circle">SCHOLAR<br>+ FAMILY<small>Our focus.<br>Our why.</small></div></div>
@@ -826,6 +867,20 @@ if(location.hash && document.getElementById(location.hash.slice(1))) go(location
   document.addEventListener('click',()=>setTimeout(auditCollabModal,30),true);
   new MutationObserver(()=>setTimeout(auditCollabModal,0)).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class','style']});
 })();
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const heading=[...document.querySelectorAll('h1,h2,h3,h4,b,strong')].find(x=>x.textContent.trim()==='This is broader than attendance.');
+  if(heading){
+    let box=heading.parentElement;
+    while(box && box!==document.body){
+      if(box.querySelector('p')){box.classList.add('broader-centered');break;}
+      box=box.parentElement;
+    }
+  }
+});
 </script>
 
 </body></html>
