@@ -192,6 +192,19 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 
 .modalDownloadLabel{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:#587185;margin:15px 0 7px}
 
+
+/* V8.12 — connected-response communication layer */
+.whyBand{background:#123f66;color:#fff}
+.whyBand .wrap{padding:46px 0}
+.whyGrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:46px;align-items:center}
+.whyKicker{font-size:13px;font-weight:900;letter-spacing:.12em;color:#bfe6f6;margin-bottom:10px}
+.whyBand h2{color:#fff;font-size:clamp(32px,4vw,50px);margin:0;letter-spacing:-.025em}
+.whyBand .whyLead{font-size:21px;line-height:1.55;margin:0 0 18px;color:#fff}
+.whyChecks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.whyCheck{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:13px 15px;font-weight:800}
+.whyCheck span{display:block;font-weight:500;font-size:15px;color:#dbe9f3;margin-top:3px}
+@media(max-width:800px){.whyGrid,.whyChecks{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -210,8 +223,8 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
  <div class="puHome"><div class="wrap"><div class="puGrid">
   <div class="puCopy">
    <div class="puBadges"><span class="puBadge">FSS + KSSN</span><span class="puBadge alt">Scholar & Family Support</span></div>
-   <h1>Different roles. One coordinated response for scholars and families.</h1>
-   <p class="lede">Start with the scholar or family need. We’ll help clarify the FSS scholar/family intervention function, the KSSN Community School function, what the school must address, and where coordinated work adds value.</p>
+   <h1>Different strengths. One connected response.</h1>
+   <p class="lede">Start with what the scholar or caregiver needs—not with a department or job title. Then clarify which function is needed, who should lead, where coordination adds value, and how the team will know the response is working.</p>
    <div class="puActions">
     <button class="puPill primary" onclick="puStart('concern')">Work a situation</button>
     <button class="puPill" onclick="puStart('roles')">Understand our roles</button>
@@ -237,6 +250,11 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
    </div>
   </div>
  </div></div></div>
+ <div class="whyBand"><div class="wrap"><div class="whyGrid">
+   <div><div class="whyKicker">WHY THIS COLLABORATION MATTERS</div><h2>Families don’t experience departments. They experience us.</h2></div>
+   <div><p class="whyLead">A coordinated response should feel different to a scholar or caregiver: fewer repeated conversations, clearer responsibilities, stronger connections, and follow-through that actually changes something.</p>
+   <div class="whyChecks"><div class="whyCheck">Listen first<span>Understand strengths, voice and need.</span></div><div class="whyCheck">Connect intentionally<span>Match the right function to the need.</span></div><div class="whyCheck">Follow through<span>A referral is not the end of support.</span></div><div class="whyCheck">Learn together<span>Repeated needs should strengthen the system.</span></div></div></div>
+ </div></div></div>
  <div class="puBelow"><div class="wrap"><div class="puBelowLine">
    <div><div class="eyebrow">HOW THE SITE HELPS</div><h2>The right support at the point of need.</h2></div>
    <p>The deeper support framework and tools stay available, but the homepage only asks what you need now. The next question appears after you make a choice.</p>
@@ -247,13 +265,15 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 <section class="page" id="roles">
  <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">FSS + KSSN</div><h1 style="font-size:44px">Different functions. Shared responsibility. One goal.</h1><p class="lede">Scholar + family stay at the center. FSS, KSSN and the school contribute different functions around the same identified need or barrier.</p></div><div class="callout"><b>This is broader than attendance.</b><p>FSS and KSSN collaboration may support needs connected to academics, attendance, behavior, family circumstances, integrated supports, and Community School opportunities. The role decision should follow the need and the function required.</p></div></div>
  <div class="section"><div class="wrap"><div class="model-shell"><div class="model-top"><div><div class="eyebrow">OUR OPERATING MODEL</div><h2>Connecting scholar, family and community support.</h2></div><button class="expand" onclick="expandModel()">↗ Expand model</button></div><div id="operatingModel" class="model">
-   <article class="role fss"><h3>FSS</h3><b>Attendance Intervention Lead</b><ul><li>Understand the family and situation</li><li>Build trust and engage</li><li>Develop and guide the scholar/family intervention</li><li>Follow up and monitor impact</li><li>Bring stalled work back to the team</li></ul></article>
+   <article class="role fss"><h3>FSS</h3><b>Scholar & Family Intervention</b><ul><li>Understand the scholar, caregiver and situation</li><li>Build trust and engage</li><li>Develop and guide the scholar/family intervention</li><li>Follow up and monitor impact</li><li>Bring stalled work back to the team</li></ul></article>
    <div class="center"><div class="circle">SCHOLAR<br>+ FAMILY<small>Our focus.<br>Our why.</small></div></div>
    <article class="role kssn"><h3>KSSN</h3><b>Community School / Resource Coordination</b><ul><li>Connect partners and resources</li><li>Coordinate needs and services</li><li>Build programs and opportunities</li><li>Mobilize community assets</li><li>Confirm access and surface resource gaps</li></ul></article>
-   <article class="role shared"><h3>Shared Work</h3><b>Remove the Barrier</b><ul><li>One barrier hypothesis</li><li>One intervention lead</li><li>Distinct responsibilities</li><li>Coordinated family contact</li><li>One review point</li></ul></article>
+   <article class="role shared"><h3>Shared Work</h3><b>Coordinate the Response</b><ul><li>One barrier hypothesis</li><li>One intervention lead</li><li>Distinct responsibilities</li><li>Coordinated family contact</li><li>One review point</li></ul></article>
    <article class="role school"><h3>School</h3><b>School-Based Support</b><ul><li>Remove school-controlled barriers</li><li>Provide academic/instructional access</li><li>Strengthen belonging and relationships</li><li>Assure implementation</li><li>Monitor progress with the team</li></ul></article>
- </div><div class="goal">ONE GOAL — Improve attendance by reducing the barrier.</div>
+ </div><div class="goal">ONE GOAL — A coordinated response that improves the scholar and family experience.</div>
  <div class="cadence"><div>HOW WE<br>WORK<br>TOGETHER</div><div><b>DAILY</b><span>Do the work. Support scholars and families.</span></div><div><b>WEEKLY</b><span>Unstick the work. Collaborate and problem-solve.</span></div><div><b>MONTHLY</b><span>Find patterns. Use data and stories to improve.</span></div><div><b>QUARTERLY</b><span>Change the system. Strengthen partnerships.</span></div></div></div></div></div>
+ <div class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">THE EXPERIENCE WE WANT</div><h2>Coordination should be visible in the experience—not in more meetings.</h2></div><p>The goal is not to make every role do everything. It is to make the work feel connected to the scholar and caregiver.</p></div>
+ <div class="pulse"><div><b>ONE UNDERSTANDING</b><span>The team is working from the same need, strengths and context.</span></div><div><b>CLEAR RESPONSIBILITIES</b><span>Each person knows what they own and what they do not.</span></div><div><b>CONNECTED SUPPORT</b><span>Handoffs preserve continuity instead of restarting the story.</span></div><div><b>FOLLOW-THROUGH</b><span>The team checks access, implementation and impact.</span></div></div></div></div>
  <div class="section sectionTintMint"><div class="wrap"><div class="section-head"><div><div class="eyebrow">KSSN ROLE CLARITY</div><h2>Go. Check. Stop.</h2></div><p>A quick decision aid for distinguishing core Community School Coordinator work from work that needs consultation or should remain with another role.</p></div><div class="go-check-stop"><div class="gcs go"><b>GO</b><p>Core coordinator functions.</p><ul><li>Resource coordination</li><li>Family/community engagement</li><li>Community partnerships</li><li>Attendance team participation</li><li>Programs and opportunities</li></ul></div><div class="gcs check"><b>CHECK</b><p>Coordinate with the appropriate lead before acting.</p><ul><li>Behavior interventions</li><li>School counseling functions</li><li>Supervision/lunchroom coverage</li><li>School-specific operational duties</li></ul></div><div class="gcs stop"><b>STOP</b><p>Work that should remain with the appropriately assigned professional.</p><ul><li>Substitute teaching</li><li>Ongoing therapy</li><li>Secretarial work</li><li>Serving as disciplinarian</li><li>Running detention</li></ul></div></div></div></div>
 </section>
 
@@ -286,7 +306,7 @@ footer{background:var(--navy);color:#fff;margin-top:40px}.footer{padding:30px 0;
 </section>
 
 <section class="page" id="model">
- <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">HOW WE WORK</div><h1 style="font-size:44px">A shared way to make attendance decisions.</h1><p class="lede">Use the same decision logic across FSS, KSSN and school teams so families receive one coordinated response.</p></div></div>
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">HOW WE WORK</div><h1 style="font-size:44px">A shared way to work through scholar and family needs.</h1><p class="lede">Use the same decision logic across FSS, KSSN and school teams so scholars and caregivers experience one coordinated response. Attendance is one important use case—not the only one.</p></div></div>
  <div class="section"><div class="wrap"><h2>Need → Understand → Who Acts → Response → Impact</h2><div class="framework" id="framework2">
   <button class="step" onclick="showFramework('pattern')"><b>Need</b><span>Confirm what is happening.</span></button><button class="step" onclick="showFramework('barrier')"><b>Barrier</b><span>Understand why.</span></button><button class="step" onclick="showFramework('ownership')"><b>Who Acts</b><span>Clarify who needs to do what.</span></button><button class="step" onclick="showFramework('support')"><b>Response</b><span>Match what will reduce the barrier.</span></button><button class="step" onclick="showFramework('impact')"><b>Impact</b><span>Review and decide.</span></button>
  </div><div class="framework-detail" id="frameworkDetail2"><b>Use the framework:</b> Select a step to see the decision that belongs there.</div></div></div>
