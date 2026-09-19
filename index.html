@@ -419,6 +419,59 @@ html,body{max-width:100%;overflow-x:hidden}
   overflow-wrap:normal!important;
 }
 
+
+/* V8.21 — collaboration modal layout repair
+   Important: global .school uses grid-area:school for the operating model.
+   Reset it inside this modal so it cannot create implicit grid columns. */
+#collabModal .collabRoles{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  grid-template-areas:
+    "fss kssn"
+    "together together"
+    "school school"!important;
+  gap:14px!important;
+  padding:22px 32px 10px!important;
+  align-items:stretch!important;
+}
+#collabModal .collabRole{
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:auto!important;
+  min-height:0!important;
+  grid-area:auto;
+  overflow:visible!important;
+}
+#collabModal .collabRole:nth-child(1){grid-area:fss!important}
+#collabModal .collabRole:nth-child(2){grid-area:kssn!important}
+#collabModal .collabRole.together{grid-area:together!important}
+#collabModal .collabRole.school{grid-area:school!important}
+#collabModal .collabRole p{
+  max-width:none!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+#collabModal .collabBox{
+  width:min(1040px,calc(100vw - 48px))!important;
+  max-height:min(88vh,820px)!important;
+}
+#collabModal .collabNext{margin:12px 32px 28px!important}
+@media(max-width:760px){
+  #collabModal{padding:12px!important}
+  #collabModal .collabBox{width:100%!important;max-height:calc(100vh - 24px)!important}
+  #collabModal .collabRoles{
+    grid-template-columns:1fr!important;
+    grid-template-areas:"fss" "kssn" "together" "school"!important;
+    padding:18px!important;
+  }
+  #collabModal .collabHead{padding:20px 18px 16px!important}
+  #collabModal .collabHeadTop{align-items:flex-start!important}
+  #collabModal .collabHead h2{font-size:28px!important}
+  #collabModal .collabNext{margin:10px 18px 22px!important}
+}
+
 </style>
 </head>
 <body>
@@ -961,50 +1014,7 @@ if(location.hash && document.getElementById(location.hash.slice(1))) go(location
  </div>
 </div>
 
-<script>
-(function(){
-  function textOf(el){return el ? el.textContent.trim() : '';}
-  function auditCollabModal(){
-    const modal=[...document.querySelectorAll('[role="dialog"],.modal,.overlay')].find(x=>{
-      const t=x.textContent||'';
-      return /FSS\s*\+\s*KSSN IN PRACTICE/i.test(t) && getComputedStyle(x).display!=='none';
-    });
-    if(!modal) return;
-    const boxes=[...modal.querySelectorAll('article,.role,.collab-role,.practice-role,.roleCard')].filter(x=>{
-      const h=x.querySelector('h2,h3,h4,b,strong');
-      return h && /^(FSS|KSSN|Together|School.?s Part)$/i.test(textOf(h));
-    });
-    if(boxes.length<3) return;
-    const get=(name)=>boxes.find(x=>{
-      const h=x.querySelector('h2,h3,h4,b,strong'); return h && new RegExp('^'+name,'i').test(textOf(h));
-    });
-    const f=get('FSS'), k=get('KSSN'), together=get('Together'), school=get('School');
-    if(!f||!k||!together) return;
-    const clean=(box)=> {
-      const clone=box.cloneNode(true);
-      const h=clone.querySelector('h2,h3,h4,b,strong'); if(h) h.remove();
-      return textOf(clone);
-    };
-    const parent=boxes[0].parentElement;
-    if(!parent || parent.dataset.v814==='1') return;
-    parent.dataset.v814='1';
-    parent.className='collabMap';
-    parent.innerHTML=
-      '<div class="collabRole"><h3>FSS</h3><p>'+clean(f)+'</p><span class="collabCue">LISTEN • UNDERSTAND • PLAN • FOLLOW THROUGH</span></div>'+
-      '<div class="collabTogether"><h3>Together</h3><p>'+clean(together)+'</p><span class="collabCue">ONE NEED • CLEAR RESPONSIBILITIES • NO REPEATED STORY</span></div>'+
-      '<div class="collabRole"><h3>KSSN</h3><p>'+clean(k)+'</p><span class="collabCue">CONNECT • COORDINATE • MOBILIZE • STRENGTHEN</span></div>';
-    if(school){
-      const band=document.createElement('div');
-      band.className='collabSchool';
-      band.innerHTML='<strong>School’s Part</strong><span>'+clean(school)+'</span>';
-      parent.insertAdjacentElement('afterend',band);
-      school.remove();
-    }
-  }
-  document.addEventListener('click',()=>setTimeout(auditCollabModal,30),true);
-  new MutationObserver(()=>setTimeout(auditCollabModal,0)).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class','style']});
-})();
-</script>
+
 
 
 <script>
