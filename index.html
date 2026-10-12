@@ -499,6 +499,29 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
 #tools .toolRec p{font-size:17px!important;line-height:1.5!important}
 #tools .toolRecBtns button{font-size:16px!important;padding:12px 15px!important}
 #roles .role li{overflow-wrap:break-word}
+
+/* V8.24 Pilot feedback */
+#tools .toolChoiceLayout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+#tools .toolRec{margin:0!important;position:sticky;top:90px;min-height:220px}
+#tools .toolRec:not(.active){display:flex!important;align-items:center;justify-content:center;border:2px dashed #b9d5e6!important;background:#f4f9fc!important}
+#tools .toolRec:not(.active)::after{content:"Select a need to see your recommended next step here.";font-size:18px;color:#365c77;line-height:1.5;padding:15px}
+#tools .toolStartChoices{min-width:0}
+#tools .toolStartChoice{width:100%;min-width:0}
+.planWrap{padding-top:34px;padding-bottom:65px;max-width:1000px!important}
+.planProgress{font-weight:800;color:#006ca9;margin:24px 0 15px}
+.planStepContent{background:white;border:1px solid #c8dce9;border-radius:18px;padding:26px}
+.planLabel{display:block;font-size:18px;font-weight:750;margin:17px 0}
+.planLabel textarea,.planLabel input,.planLabel select{display:block;width:100%;font-size:18px;line-height:1.5;padding:13px;margin-top:8px;border:1px solid #a9c4d5;border-radius:10px;color:#163f60;background:#fff}
+.planButtons{display:flex;gap:12px;justify-content:space-between;margin:20px 0}
+.planButtons button,.planExport button{padding:13px 20px;border:1px solid #b7d0e0;border-radius:12px;background:#fff;font-size:18px;font-weight:800;color:#164269;cursor:pointer}
+.planButtons .primary,.planExport button{background:#006eae;color:white;border-color:#006eae}
+.planPrivacy{color:#526f81;font-size:15px}
+.planReviewSection{padding:16px 0;border-bottom:1px solid #d8e5ed}
+.planReviewSection p{white-space:pre-wrap;overflow-wrap:anywhere}
+.planReviewSection button{border:1px solid #b7d0e0;border-radius:10px;padding:9px 13px;background:white}
+.planExport{margin-top:20px}
+@media(max-width:850px){#tools .toolChoiceLayout{grid-template-columns:1fr}#tools .toolRec{position:static;min-height:0}#tools .toolRec:not(.active){min-height:100px}}
+@media print{body *{visibility:hidden!important}#printPlan,#printPlan *{visibility:visible!important}#printPlan{position:absolute;top:0;left:0;width:100%;padding:0!important;color:#000!important}#printPlan .noPrint{display:none!important}.planReviewSection{break-inside:avoid} @page{size:letter;margin:.65in}}
 </style>
 </head>
 <body>
@@ -607,6 +630,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
  <div class="section soft"><div class="wrap"><div class="section-head"><div><div class="eyebrow">CASE → SYSTEM</div><h2>Do not solve the same barrier one family at a time forever.</h2></div></div><div class="pulse"><div><b>ONE FAMILY</b><span>Barrier is identified.</span></div><div><b>REPEATED BARRIER</b><span>Pattern becomes visible.</span></div><div><b>BUILDING RESPONSE</b><span>School/Community School adjusts.</span></div><div><b>DISTRICT RESPONSE</b><span>Scale when the pattern requires it.</span></div></div></div></div>
 </section>
 
+<section class="page" id="planbuilder">
+<div class="wrap planWrap">
+<div class="page-actions"><button class="back" onclick="go('tools')">← Tools & Resources</button><button class="back" onclick="go('home')">⌂ Home</button></div>
+<div class="eyebrow">WORKING TOOL · SUPPORT / INTERVENTION PLAN</div>
+<h1>Build a coordinated support plan</h1>
+<p class="lede">Work through the sections, then use Print / Save as PDF. This tool does not store scholar or family information.</p>
+<div id="planProgress" class="planProgress"></div>
+<div id="planStepContent" class="planStepContent"></div>
+<div class="planButtons"><button onclick="planBack()" id="planPrev">← Previous</button><button class="primary" onclick="planNext()" id="planNext">Next →</button></div>
+<div class="planPrivacy">Use non-identifying information for testing. Follow GRPS-approved systems and confidentiality procedures for actual records.</div>
+</div></section>
 <section class="page" id="tools">
  <div class="toolGuide"><div class="wrap">
   <div class="page-actions"><button class="back" onclick="back()">← Back</button><button class="back" onclick="go('home')">⌂ Home</button></div>
@@ -619,14 +653,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
    <div class="toolStart">
     <h2>What are you trying to do?</h2>
     <p>Choose the closest need. We’ll point you to the right working tool.</p>
-    <div class="toolStartChoices">
+    <div class="toolChoiceLayout"><div class="toolStartChoices">
      <button class="toolStartChoice" onclick="recommendTools('understand')"><b>Understand what is going on</b><span>Scholar/family voice, need, barrier, pattern or concern</span></button>
      <button class="toolStartChoice" onclick="recommendTools('clarify')"><b>Clarify who should do what</b><span>FSS, KSSN, school—or coordinated work</span></button>
      <button class="toolStartChoice" onclick="recommendTools('plan')"><b>Build the response</b><span>Intervention, responsibilities, connection or support</span></button>
      <button class="toolStartChoice" onclick="recommendTools('stuck')"><b>Something is stuck</b><span>Support did not happen, access failed, or progress is limited</span></button>
      <button class="toolStartChoice" onclick="recommendTools('system')"><b>We keep seeing the same need</b><span>Move from one situation to a school or Community School response</span></button>
     </div>
-    <div class="toolRec" id="toolRec" role="status" aria-live="polite"></div>
+    </div><div class="toolRec" id="toolRec" role="status" aria-live="polite"></div></div>
    </div>
   </div>
  </div></div>
@@ -775,7 +809,7 @@ function recommendTools(kind){
  }[kind];
  box.classList.add('active');
  box.innerHTML=`<div class="recEyebrow">YOUR RECOMMENDED NEXT STEP</div><h3>${data[0]}</h3><p>${data[1]}</p><div class="toolRecBtns">${data[2].map(x=>`<button onclick="${x[1]}">${x[0]} →</button>`).join('')}</div>`;
- box.scrollIntoView({behavior:'smooth',block:'nearest'});
+ if(innerWidth<850)box.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function showSystemPath(){
  const box=document.getElementById('toolRec');
@@ -785,7 +819,7 @@ function showSystemPath(){
  box.scrollIntoView({behavior:'smooth',block:'center'});
 }
 
-function openTool(k){let d=tools[k];if(!d){go('tools');return;}document.getElementById('toolKicker').textContent=d.k;document.getElementById('toolTitle').textContent=d.t;document.getElementById('toolPurpose').textContent=d.p;document.getElementById('toolPrompts').innerHTML=d.q.map(x=>`<p><b>${x}</b></p>`).join('');document.getElementById('notes').value='';go('tool')}
+function openTool(k){if(k==="plan"){openPlanBuilder();return;}let d=tools[k];if(!d){go('tools');return;}document.getElementById('toolKicker').textContent=d.k;document.getElementById('toolTitle').textContent=d.t;document.getElementById('toolPurpose').textContent=d.p;document.getElementById('toolPrompts').innerHTML=d.q.map(x=>`<p><b>${x}</b></p>`).join('');document.getElementById('notes').value='';go('tool')}
 function copyNotes(){navigator.clipboard?.writeText(document.getElementById('notes').value)}
 function expandModel(){let src=document.getElementById('operatingModel').cloneNode(true);let goal=document.querySelector('#roles .goal').cloneNode(true);let cadence=document.querySelector('#roles .cadence').cloneNode(true);let c=document.getElementById('modalContent');c.innerHTML='<div class="eyebrow">EXPANDED OPERATING MODEL</div><h2>Different functions. Shared responsibility. One goal.</h2>';c.append(src,goal,cadence);document.getElementById('modelModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeModel(){document.getElementById('modelModal').classList.remove('open');document.body.style.overflow=''}
@@ -987,7 +1021,7 @@ function puStart(mode){
  const start=document.getElementById('puStart'),flow=document.getElementById('puFlow'); if(!start||!flow)return;
  start.style.display='none';flow.classList.add('active');
  if(mode==='concern'){
-   flow.innerHTML=`<button class="puBack" onclick="puReset()">← Back</button><h3>What is the scholar or family experiencing?</h3><p>Choose the closest need or barrier. The site will help clarify who should do what.</p><div class="puBarrierList">${roleSituations.map(x=>`<button class="puBarrier" onclick="puShowSituation('${x.id}')">${x.title}</button>`).join('')}</div>`;
+   flow.innerHTML=`<button class="puBack" onclick="puReset()">← Back</button><h3>What is the primary concern?</h3><p>For attendance concerns, begin with the four reasons for absence. Other scholar/family concerns can be explored separately.</p><div class="puBarrierList"><button class="puBarrier" onclick="puAttendance()">Attendance / absence →</button><button class="puBarrier" onclick="puOtherNeeds()">Another scholar or family concern →</button></div>`;
  }
  if(mode==='roles'){
    flow.innerHTML=`<button class="puBack" onclick="puReset()">← Back</button><h3>What are you trying to clarify?</h3><p>Choose the question closest to what you need.</p><div class="puRoleMenu">
@@ -1032,6 +1066,63 @@ renderSituations();
 renderBarriers();
 guideStep('pattern');
 if(location.hash && document.getElementById(location.hash.slice(1))) go(location.hash.slice(1));
+
+const attendanceCategories={
+ myths:{label:"Myths",description:"Beliefs or misunderstandings about when attendance matters.",examples:["Absences are not important in early grades","Missing a few days does not affect learning","Being absent only matters if work is missed"]},
+ barriers:{label:"Barriers",description:"Something prevents the scholar from getting to or participating in school.",examples:["Housing / basic needs","Transportation","Physical health","Morning / family routines"]},
+ aversions:{label:"Aversions",description:"An experience at school makes attending difficult or distressing.",examples:["Safety / bullying","School climate or belonging","Academic frustration","Mental health / school refusal"]},
+ disengagement:{label:"Disengagement",description:"The scholar is disconnected from relationships, learning, or school opportunities.",examples:["Engagement / motivation","Peer or adult connection","Learning relevance","Expanded learning opportunities"]}
+};
+function puAttendance(){
+ const flow=document.getElementById('puFlow');
+ flow.innerHTML=`<button class="puBack" onclick="puStart('concern')">← Back</button><h3>What may be contributing to the scholar's absence?</h3><p>Select the closest category. Confirm the reason through caring inquiry and data; these are starting hypotheses, not labels.</p><div class="puBarrierList">${Object.entries(attendanceCategories).map(([k,v])=>`<button class="puBarrier" onclick="puAttendanceDetail('${k}')"><b>${v.label}</b><small style="display:block;font-weight:400;margin-top:5px">${v.description}</small></button>`).join('')}</div>`;
+}
+function puAttendanceDetail(k){
+ const v=attendanceCategories[k],flow=document.getElementById('puFlow');
+ flow.innerHTML=`<button class="puBack" onclick="puAttendance()">← Four reasons</button><h3>${v.label}</h3><p>${v.description}</p><p>Select a possible contributing factor to see FSS, KSSN, and school working alongside each other.</p><div class="puBarrierList">${v.examples.map(x=>`<button class="puBarrier" onclick="puAttendanceMatch('${k}',${JSON.stringify(x).replace(/"/g,'&quot;')})">${x}</button>`).join('')}</div>`;
+}
+function puAttendanceMatch(k,factor){
+ const candidates=roleSituations.filter(x=>x.title.toLowerCase()===factor.toLowerCase()||x.title.toLowerCase().includes(factor.toLowerCase()));
+ if(candidates.length){puShowSituation(candidates[0].id);return;}
+ const flow=document.getElementById('puFlow'),v=attendanceCategories[k];
+ flow.innerHTML=`<button class="puBack" onclick="puAttendanceDetail('${k}')">← Back</button><h3>${factor}</h3><p><b>Working category:</b> ${v.label}. Confirm the actual need with scholar/family voice and school data.</p><div class="puRoleRows"><div class="puRoleRow"><b>FSS</b><span>Use caring inquiry and sustained scholar/family intervention where appropriate.</span></div><div class="puRoleRow"><b>KSSN</b><span>Coordinate Community School partners, integrated supports, and opportunities when these functions address the need.</span></div><div class="puRoleRow"><b>Together</b><span>Agree on distinct actions, a warm connection when needed, and a review point.</span></div><div class="puRoleRow"><b>School's part</b><span>Address school-controlled conditions, learning access, belonging, and implementation.</span></div></div><div class="puToolRow"><button class="puTool" onclick="openPlanBuilder()">Build support plan →</button><button class="puTool" onclick="go('barriers')">Explore needs →</button></div>`;
+}
+function puOtherNeeds(){
+ const flow=document.getElementById('puFlow');
+ flow.innerHTML=`<button class="puBack" onclick="puStart('concern')">← Back</button><h3>Other scholar and family needs</h3><p>Choose a concern to see the coordinated response.</p><div class="puBarrierList">${roleSituations.map(x=>`<button class="puBarrier" onclick="puShowSituation('${x.id}')">${x.title}</button>`).join('')}</div>`;
+}
+const planSections=[
+ {title:"Need and strengths",fields:[["concern","What is happening?","textarea"],["strengths","What strengths, assets and scholar/family perspectives should guide the response?","textarea"]]},
+ {title:"Barrier and evidence",fields:[["category","Primary concern / attendance category","select"],["barrier","What is the confirmed or working barrier?","textarea"],["evidence","What evidence or caring inquiry supports this understanding?","textarea"]]},
+ {title:"One coordinated response",fields:[["goal","What specific change are we trying to achieve?","textarea"],["intervention","What intervention or support will address the barrier?","textarea"]]},
+ {title:"Responsibilities and connections",fields:[["fss","FSS contribution","textarea"],["kssn","KSSN contribution","textarea"],["school","School's contribution","textarea"],["handoff","Warm connection: who introduces whom, how will access be confirmed?","textarea"]]},
+ {title:"Review and decision",fields:[["date","Review date","date"],["measure","How will we know whether the response worked?","textarea"],["decision","At review: continue, adjust, intensify, step down, or escalate?","textarea"]]}
+];
+let planIndex=0;const planValues={};
+function openPlanBuilder(){planIndex=0;go('planbuilder');renderPlan()}
+function planField([id,label,type]){
+ const val=planValues[id]||"";
+ if(type==="select")return `<label class="planLabel">${label}<select data-plan="${id}"><option value="">Select one</option>${["Attendance — Myths","Attendance — Barriers","Attendance — Aversions","Attendance — Disengagement","Academics","Behavior","Family circumstances","Health / wellbeing","Other"].map(x=>`<option ${val===x?"selected":""}>${x}</option>`).join("")}</select></label>`;
+ if(type==="date")return `<label class="planLabel">${label}<input type="date" data-plan="${id}" value="${val}"></label>`;
+ return `<label class="planLabel">${label}<textarea rows="3" data-plan="${id}" placeholder="Enter working notes here…">${val.replace(/&/g,"&amp;").replace(/</g,"&lt;")}</textarea></label>`;
+}
+function planSave(){document.querySelectorAll('[data-plan]').forEach(el=>planValues[el.dataset.plan]=el.value)}
+function renderPlan(){document.getElementById("planNext").style.display="";
+ document.getElementById("planProgress").textContent=`Section ${planIndex+1} of ${planSections.length}: ${planSections[planIndex].title}`;
+ document.getElementById("planStepContent").innerHTML=`<h2>${planSections[planIndex].title}</h2>${planSections[planIndex].fields.map(planField).join("")}`;
+ document.getElementById("planPrev").disabled=planIndex===0;
+ document.getElementById("planNext").textContent=planIndex===planSections.length-1?"Review plan →":"Next →";
+}
+function planBack(){planSave();if(planIndex>0){planIndex--;renderPlan()}else go('tools')}
+function planNext(){planSave();if(planIndex<planSections.length-1){planIndex++;renderPlan()}else renderPlanReview()}
+function planEdit(i){planIndex=i;renderPlan()}
+function renderPlanReview(){
+ document.getElementById("planProgress").textContent="Review and export";
+ document.getElementById("planStepContent").innerHTML=`<div id="printPlan"><h2>Coordinated Scholar & Family Support Plan</h2><p>Working draft — review before saving in an approved GRPS system.</p>${planSections.map((section,i)=>`<section class="planReviewSection"><h3>${i+1}. ${section.title}</h3>${section.fields.map(([id,label])=>`<div><b>${label}</b><p>${(planValues[id]||"Not yet completed").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\n/g,"<br>")}</p></div>`).join("")}<button class="noPrint" onclick="planEdit(${i})">Edit section</button></section>`).join("")}</div><div class="planExport noPrint"><button onclick="window.print()">Print / Save as PDF ↓</button><p>In the print dialog, choose “Save as PDF.” No information is sent to this site.</p></div>`;
+ document.getElementById("planNext").style.display="none";
+ document.getElementById("planPrev").disabled=false;
+}
+
 </script>
 
 <div class="libModal" id="libModal" role="dialog" aria-modal="true" aria-labelledby="libModalTitle">
