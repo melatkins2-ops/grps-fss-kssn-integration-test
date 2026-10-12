@@ -472,6 +472,33 @@ html,body{max-width:100%;overflow-x:hidden}
   #collabModal .collabNext{margin:10px 18px 22px!important}
 }
 
+
+/* V8.22 — pilot stabilization */
+button,a,input,textarea{font-family:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:3px solid #f47a20!important;outline-offset:3px!important
+}
+#collabModal .collabRole{padding:18px 20px!important}
+#collabModal .collabRole h3{font-size:21px!important;line-height:1.25!important}
+#collabModal .collabRole p{font-size:17px!important;line-height:1.55!important}
+#collabModal .collabNext{font-size:16px!important}
+@media(max-width:760px){
+  #collabModal .collabHeadTop{gap:12px!important}
+  #collabModal .collabClose{flex:0 0 auto!important}
+  #collabModal .collabRole{padding:16px!important}
+  .searchRow{flex-direction:column!important;overflow:visible!important;border:0!important;background:transparent!important}
+  .searchRow input{border:2px solid #c6dbe9!important;border-radius:14px!important;min-height:52px!important}
+  .searchRow button{border-radius:14px!important;min-height:48px!important;margin-top:8px!important}
+}
+
+
+/* Pilot feedback: make the recommended action unmistakable */
+#tools .toolRec.active{display:block!important;background:#eaf5fb!important;border:2px solid #1473ae!important;border-left:7px solid #1473ae!important;box-shadow:0 8px 22px rgba(15,64,98,.10)!important;padding:22px!important;margin-top:22px!important}
+#tools .toolRec .recEyebrow{color:#075b8f;font-size:14px;letter-spacing:.08em;font-weight:900;margin-bottom:8px}
+#tools .toolRec h3{font-size:25px!important;line-height:1.25!important}
+#tools .toolRec p{font-size:17px!important;line-height:1.5!important}
+#tools .toolRecBtns button{font-size:16px!important;padding:12px 15px!important}
+#roles .role li{overflow-wrap:break-word}
 </style>
 </head>
 <body>
@@ -534,20 +561,20 @@ html,body{max-width:100%;overflow-x:hidden}
  <div class="section"><div class="wrap"><div class="model-shell"><div class="model-top"><div><div class="eyebrow">OUR OPERATING MODEL</div><h2>Connecting scholar, family and community support.</h2></div><button class="expand" onclick="expandModel()">↗ Expand model</button></div><div id="operatingModel" class="model">
    <article class="role fss"><h3>FSS</h3><b>Scholar & Family Intervention</b><ul><li>Understand the scholar, caregiver and situation</li><li>Build trust and engage</li><li>Develop and guide the scholar/family intervention</li><li>Follow up and monitor impact</li><li>Bring stalled work back to the team</li></ul></article>
    <div class="center"><div class="circle">SCHOLAR<br>+ FAMILY<small>Our focus.<br>Our why.</small></div></div>
-   <article class="role kssn"><h3>KSSN</h3><b>Community School / Resource Coordination</b><ul><li>Connect partners and resources</li><li>Coordinate needs and services</li><li>Build programs and opportunities</li><li>Mobilize community assets</li><li>Confirm access and surface resource gaps</li></ul></article>
-   <article class="role shared"><h3>Shared Work</h3><b>Coordinate the Response</b><ul><li>One barrier hypothesis</li><li>One intervention lead</li><li>Distinct responsibilities</li><li>Coordinated family contact</li><li>One review point</li></ul></article>
-   <article class="role school"><h3>School</h3><b>School-Based Support</b><ul><li>Remove school-controlled barriers</li><li>Provide academic/instructional access</li><li>Strengthen belonging and relationships</li><li>Assure implementation</li><li>Monitor progress with the team</li></ul></article>
+   <article class="role kssn"><h3>KSSN</h3><b>Community School Coordination & Integration</b><ul><li>Align school goals, needs/assets data and community partnerships</li><li>Coordinate integrated health, social and learning supports</li><li>Work with the principal, school teams and Community School Leadership Team</li><li>Expand learning opportunities and authentic family/community engagement</li><li>Monitor partner effectiveness, access and recurring gaps</li></ul></article>
+   <article class="role shared"><h3>Shared Work</h3><b>Coordinate the Response</b><ul><li>Shared understanding of the need, strengths and context</li><li>Clear intervention lead and distinct responsibilities</li><li>Warm connection without duplicating family outreach</li><li>Scholar/family voice in planning</li><li>Agreed review date, outcomes and adjustments</li></ul></article>
+   <article class="role school"><h3>School</h3><b>School-Based Support</b><ul><li>Remove school-controlled barriers</li><li>Provide instructional access and strengthen relationships</li><li>Align responses with school improvement priorities</li><li>Participate in interdisciplinary support planning</li><li>Monitor implementation and outcomes with partners</li></ul></article>
  </div><div class="goal">ONE GOAL — A coordinated response that improves the scholar and family experience.</div>
  <div class="cadence"><div>HOW WE<br>WORK<br>TOGETHER</div><div><b>DAILY</b><span>Do the work. Support scholars and families.</span></div><div><b>WEEKLY</b><span>Unstick the work. Collaborate and problem-solve.</span></div><div><b>MONTHLY</b><span>Find patterns. Use data and stories to improve.</span></div><div><b>QUARTERLY</b><span>Change the system. Strengthen partnerships.</span></div></div></div></div></div>
  <div class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">THE EXPERIENCE WE WANT</div><h2>Coordination should be visible in the experience—not in more meetings.</h2></div><p>The goal is not to make every role do everything. It is to make the work feel connected to the scholar and caregiver.</p></div>
  <div class="pulse"><div><b>ONE UNDERSTANDING</b><span>The team is working from the same need, strengths and context.</span></div><div><b>CLEAR RESPONSIBILITIES</b><span>Each person knows what they own and what they do not.</span></div><div><b>CONNECTED SUPPORT</b><span>Handoffs preserve continuity instead of restarting the story.</span></div><div><b>FOLLOW-THROUGH</b><span>The team checks access, implementation and impact.</span></div></div></div></div>
- <div class="section sectionTintMint"><div class="wrap"><div class="section-head"><div><div class="eyebrow">KSSN ROLE CLARITY</div><h2>Go. Check. Stop.</h2></div><p>A quick decision aid for distinguishing core Community School Coordinator work from work that needs consultation or should remain with another role.</p></div><div class="go-check-stop"><div class="gcs go"><b>GO</b><p>Core coordinator functions.</p><ul><li>Resource coordination</li><li>Family/community engagement</li><li>Community partnerships</li><li>Attendance team participation</li><li>Programs and opportunities</li></ul></div><div class="gcs check"><b>CHECK</b><p>Coordinate with the appropriate lead before acting.</p><ul><li>Behavior interventions</li><li>School counseling functions</li><li>Supervision/lunchroom coverage</li><li>School-specific operational duties</li></ul></div><div class="gcs stop"><b>STOP</b><p>Work that should remain with the appropriately assigned professional.</p><ul><li>Substitute teaching</li><li>Ongoing therapy</li><li>Secretarial work</li><li>Serving as disciplinarian</li><li>Running detention</li></ul></div></div></div></div>
+ <div class="section sectionTintMint"><div class="wrap"><div class="section-head"><div><div class="eyebrow">KSSN ROLE CLARITY</div><h2>Go. Check. Stop.</h2></div><p>A quick decision aid for distinguishing core Community School Coordinator work from work that needs consultation or should remain with another role.</p></div><div class="go-check-stop"><div class="gcs go"><b>GO</b><p>Core coordinator functions.</p><ul><li>Needs and assets assessment with scholar/family voice</li><li>Partner alignment with school improvement goals</li><li>Integrated supports and interdisciplinary team participation</li><li>Extended learning and community opportunities</li><li>Family/community engagement and partner effectiveness</li></ul></div><div class="gcs check"><b>CHECK</b><p>Coordinate with the appropriate lead before acting.</p><ul><li>Behavior interventions</li><li>School counseling functions</li><li>Supervision/lunchroom coverage</li><li>School-specific operational duties</li></ul></div><div class="gcs stop"><b>STOP</b><p>Work that should remain with the appropriately assigned professional.</p><ul><li>Substitute teaching</li><li>Ongoing therapy</li><li>Secretarial work</li><li>Serving as disciplinarian</li><li>Running detention</li></ul></div></div></div></div>
 </section>
 
 <section class="page" id="concern">
- <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">GUIDED ATTENDANCE CONCERN</div><h1 style="font-size:44px">Work the concern. Do not jump to the role.</h1><p class="lede">Move from the pattern or concern to the barrier, clarify ownership, match an intervention and decide how impact will be reviewed.</p></div></div>
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="back()">← Back</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">GUIDED SCHOLAR / FAMILY CONCERN</div><h1 style="font-size:44px">Work the concern. Do not jump to the role.</h1><p class="lede">Move from the pattern or concern to the barrier, clarify ownership, match an intervention and decide how impact will be reviewed.</p></div></div>
  <div class="section"><div class="wrap guideShell">
-   <aside class="guideRail"><div class="guideRailHead"><b>Attendance Concern</b><span>Your working path</span></div><div class="guideNav">
+   <aside class="guideRail"><div class="guideRailHead"><b>Scholar / Family Concern</b><span>Your working path</span></div><div class="guideNav">
      <button id="gn-pattern" class="active" onclick="guideStep('pattern')">1. Need<small>What do we see?</small></button>
      <button id="gn-barrier" onclick="guideStep('barrier')">2. Barrier<small>What is the scholar or family experiencing?</small></button>
      <button id="gn-ownership" onclick="guideStep('ownership')">3. Who Acts<small>Who needs to act?</small></button>
@@ -563,7 +590,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 
 <section class="page" id="barriers">
- <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="go('concern')">← Attendance Concern</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">BARRIER EXPLORER</div><h1 style="font-size:44px">Understand the barrier before matching the support.</h1><p class="lede">Use scholar and family voice with attendance and school data. The categories below are prompts for inquiry—not labels for families.</p></div></div>
+ <div class="pagehead"><div class="wrap"><div class="crumbs"><button onclick="go('concern')">← Work a Situation</button><button onclick="go('home')">⌂ Home</button></div><div class="eyebrow">BARRIER EXPLORER</div><h1 style="font-size:44px">Understand the barrier before matching the support.</h1><p class="lede">Use scholar and family voice with the relevant school and support data. The categories below are prompts for inquiry—not labels for families.</p></div></div>
  <div class="section"><div class="wrap">
    <div class="section-head"><div><div class="eyebrow">WHAT MAY BE GETTING IN THE WAY?</div><h2>Explore the working barrier.</h2></div><p>Choose the closest category. More than one barrier may be present; identify the barrier most directly connected to the current pattern or concern.</p></div>
    <div class="barrierHub" id="barrierHub"></div>
@@ -599,7 +626,7 @@ html,body{max-width:100%;overflow-x:hidden}
      <button class="toolStartChoice" onclick="recommendTools('stuck')"><b>Something is stuck</b><span>Support did not happen, access failed, or progress is limited</span></button>
      <button class="toolStartChoice" onclick="recommendTools('system')"><b>We keep seeing the same need</b><span>Move from one situation to a school or Community School response</span></button>
     </div>
-    <div class="toolRec" id="toolRec"></div>
+    <div class="toolRec" id="toolRec" role="status" aria-live="polite"></div>
    </div>
   </div>
  </div></div>
@@ -637,9 +664,9 @@ html,body{max-width:100%;overflow-x:hidden}
 </section>
 </main>
 <button class="homeFloat" onclick="go('home')" aria-label="Home">⌂ Home</button>
-<footer><div class="wrap footer"><div style="display:flex;gap:18px;align-items:center"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice" style="height:64px;width:auto;background:#fff;border-radius:8px;padding:6px"><div><b>Scholar, Family & Community School Support</b><br><small>GRPS attendance collaboration resource</small></div></div><small>Start with the need—not the role.</small></div></footer>
+<footer><div class="wrap footer"><div style="display:flex;gap:18px;align-items:center"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice" style="height:64px;width:auto;background:#fff;border-radius:8px;padding:6px"><div><b>Scholar, Family & Community School Support</b><br><small>GRPS scholar, family & Community School collaboration resource</small></div></div><small>Start with the need—not the role.</small></div></footer>
 
-<div class="collabModal" id="collabModal" role="dialog" aria-modal="true" aria-labelledby="collabTitle"><div class="collabBox"><div class="collabHead"><div class="collabHeadTop"><div><div class="eyebrow">FSS + KSSN IN PRACTICE</div><h2 id="collabTitle"></h2><p id="collabIntro"></p></div><button class="collabClose" onclick="closeCollab()">Close ×</button></div></div><div class="collabRoles"><div class="collabRole"><h3>FSS</h3><p id="collabFss"></p></div><div class="collabRole"><h3>KSSN</h3><p id="collabKssn"></p></div><div class="collabRole together"><h3>Together</h3><p id="collabTogether"></p></div><div class="collabRole school"><h3>School’s Part</h3><p id="collabSchool"></p></div></div><div class="collabNext"><b>Use the next tool when it helps move the work forward.</b><div id="collabActions"></div></div></div></div>
+<div class="collabModal" id="collabModal" role="dialog" aria-modal="true" aria-labelledby="collabTitle"><div class="collabBox"><div class="collabHead"><div class="collabHeadTop"><div><div class="eyebrow">FSS + KSSN IN PRACTICE</div><h2 id="collabTitle"></h2><p id="collabIntro"></p></div><button class="collabClose" onclick="closeCollab()" aria-label="Close collaboration details">Close ×</button></div></div><div class="collabRoles"><div class="collabRole"><h3>FSS</h3><p id="collabFss"></p></div><div class="collabRole"><h3>KSSN</h3><p id="collabKssn"></p></div><div class="collabRole together"><h3>Together</h3><p id="collabTogether"></p></div><div class="collabRole school"><h3>School’s Part</h3><p id="collabSchool"></p></div></div><div class="collabNext"><b>Use the next tool when it helps move the work forward.</b><div id="collabActions"></div></div></div></div>
 <div class="modal" id="modelModal" role="dialog" aria-modal="true" aria-label="Expanded operating model"><div class="modalbox"><button class="modalclose" onclick="closeModel()">Close ×</button><div id="modalContent"></div></div></div>
 <script>
 const collabData={
@@ -747,14 +774,14 @@ function recommendTools(kind){
   system:["Look beyond the individual situation","If the same need keeps appearing, examine the pattern and determine what the school or Community School strategy should change.",[["Case → System","showSystemPath()"],["Role Clarity","go('roles')"]]]
  }[kind];
  box.classList.add('active');
- box.innerHTML=`<h3>${data[0]}</h3><p>${data[1]}</p><div class="toolRecBtns">${data[2].map(x=>`<button onclick="${x[1]}">${x[0]} →</button>`).join('')}</div>`;
+ box.innerHTML=`<div class="recEyebrow">YOUR RECOMMENDED NEXT STEP</div><h3>${data[0]}</h3><p>${data[1]}</p><div class="toolRecBtns">${data[2].map(x=>`<button onclick="${x[1]}">${x[0]} →</button>`).join('')}</div>`;
  box.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function showSystemPath(){
  const box=document.getElementById('toolRec');
  if(!box){go('tools');setTimeout(showSystemPath,50);return;}
  box.classList.add('active');
- box.innerHTML=`<h3>Case → System</h3><p>Use this when the same need is surfacing across scholars or families. Move through: <b>individual situation → repeated need → pattern → school/Community School response → district response when needed.</b></p><div class="toolRecBtns"><button onclick="go('roles')">Check roles →</button><button onclick="openTool('huddle')">Use a Case Huddle →</button></div>`;
+ box.innerHTML=`<div class="recEyebrow">YOUR RECOMMENDED NEXT STEP</div><h3>Case → System</h3><p>Use this when the same need is surfacing across scholars or families. Move through: <b>individual situation → repeated need → pattern → school/Community School response → district response when needed.</b></p><div class="toolRecBtns"><button onclick="go('roles')">Check roles →</button><button onclick="openTool('huddle')">Use a Case Huddle →</button></div>`;
  box.scrollIntoView({behavior:'smooth',block:'center'});
 }
 
@@ -825,7 +852,7 @@ function guideStep(k){
  document.getElementById('guideEyebrow').textContent=`STEP ${i+1} OF 5`;document.getElementById('guideTitle').textContent=titles[k][0];document.getElementById('guideIntro').textContent=titles[k][1];
  let html=caseStrip();
  if(k==="pattern") html+=`
-  <div class="question"><h3>What is the relevant data?</h3><p>Use the current attendance data available to your team. This field is optional; it provides context for the pattern.</p><div class="dataRow"><input class="dataInput" value="${esc(guideState.attendanceLevel)}" oninput="guideState.attendanceLevel=this.value" placeholder="Example: 12% absent / 8 days missed"><div class="outputBox" style="margin:0"><b>Remember</b><p>Relevant data indicates concern; root-cause analysis determines the intervention.</p></div></div></div>
+  <div class="question"><h3>What is the relevant data?</h3><p>Use the relevant data available to your team. This field is optional; it provides context for the concern and pattern.</p><div class="dataRow"><input class="dataInput" value="${esc(guideState.attendanceLevel)}" oninput="guideState.attendanceLevel=this.value" placeholder="Example: 12% absent / 8 days missed"><div class="outputBox" style="margin:0"><b>Remember</b><p>Relevant data indicates concern; root-cause analysis determines the intervention.</p></div></div></div>
   <div class="question"><h3>What does the pattern look like?</h3><p>Select the closest description.</p><div class="optionGrid">
    ${["Frequent single-day absences","Repeated day-of-week pattern","Consecutive absences","Tardiness / partial-day pattern","Absence is increasing over time","Other / mixed pattern"].map(v=>`<button class="opt ${guideState.pattern===v?'selected':''}" onclick="pickGuide('pattern','${v}',this)">${v}</button>`).join('')}
   </div></div>
@@ -858,7 +885,7 @@ function guideStep(k){
    <div class="reviewCell"><b>Who Acts</b><span>${esc(guideState.ownership)||'Not confirmed'}</span></div>
    <div class="reviewCell"><b>Response</b><span>${esc(guideState.support)||'Not selected'}</span></div>
   </div>
-  <div class="question"><h3>Review four things.</h3><div class="optionGrid"><button class="opt" onclick="this.classList.toggle('selected')">Implementation<small>Did it happen as intended?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Access<small>Could the scholar/family use it?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Need / barrier change<small>Did the barrier change?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Scholar/family progress<small>Did attendance change?</small></button></div></div>
+  <div class="question"><h3>Review four things.</h3><div class="optionGrid"><button class="opt" onclick="this.classList.toggle('selected')">Implementation<small>Did it happen as intended?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Access<small>Could the scholar/family use it?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Need / barrier change<small>Did the barrier change?</small></button><button class="opt" onclick="this.classList.toggle('selected')">Scholar/family progress<small>Did the scholar/family outcome change?</small></button></div></div>
   <div class="question"><h3>What happens next?</h3><div class="optionGrid">${["Continue","Adjust","Intensify","Step down","Escalate / return to team"].map(v=>`<button class="opt ${guideState.impact===v?'selected':''}" onclick="pickGuide('impact','${v}',this)">${v}</button>`).join('')}</div></div>`;
  const prev=i>0?`<button onclick="guideStep('${guideOrder[i-1]}')">← Previous</button>`:`<button class="startOver" onclick="resetGuide()">Clear this situation</button>`;
  const next=i<4?`<button class="next" onclick="guideStep('${guideOrder[i+1]}')">Next: ${guideOrder[i+1][0].toUpperCase()+guideOrder[i+1].slice(1)} →</button>`:`<button class="next" onclick="showGuideSummary()">Review working summary →</button>`;
@@ -964,7 +991,7 @@ function puStart(mode){
  }
  if(mode==='roles'){
    flow.innerHTML=`<button class="puBack" onclick="puReset()">← Back</button><h3>What are you trying to clarify?</h3><p>Choose the question closest to what you need.</p><div class="puRoleMenu">
-    <button onclick="puRoleAnswer('fss')"><b>When does FSS work independently?</b><span>Attendance-focused family intervention and follow-through.</span></button>
+    <button onclick="puRoleAnswer('fss')"><b>When does FSS work independently?</b><span>Scholar/family intervention and sustained follow-through when the need fits the FSS function.</span></button>
     <button onclick="puRoleAnswer('kssn')"><b>When does KSSN work independently?</b><span>Community School resources, partners and opportunities.</span></button>
     <button onclick="puRoleAnswer('together')"><b>When do FSS + KSSN work together?</b><span>Family scholar/family intervention plus resource/partner coordination.</span></button>
     <button onclick="puRoleAnswer('school')"><b>When does the school lead?</b><span>School-controlled barriers and conditions.</span></button>
