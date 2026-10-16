@@ -552,11 +552,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
  #tools .toolStart{padding:18px}
 }
 
+
+/* V8.26: navigation consistency and duplicate-control removal */
+.utility-links{display:flex;align-items:center;gap:24px;white-space:nowrap}
+.utility-links a{display:inline-block;padding:8px 0;font-size:14px;line-height:1.35}
+.utility-links a:hover,.utility-links a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+.homeFloat{display:none!important}
+.crumbs{justify-content:flex-start;gap:10px;flex-wrap:wrap}
+.crumbs button{font-family:Arial,Helvetica,sans-serif!important;font-size:15px!important;line-height:1.25!important;min-height:40px!important;padding:9px 14px!important}
+.page-actions .back{font-size:15px!important}
+.brandbar .nav{gap:6px}
+.brandbar .nav button{font-size:16px;line-height:1.25;white-space:nowrap;padding:10px 11px}
+.brand-title small{display:block;font-size:12px;line-height:1.35;color:var(--muted)}
+@media(max-width:760px){.utility .wrap{gap:8px;justify-content:center}.utility-links{gap:18px}.utility-links a{font-size:13px}.crumbs{position:static;background:transparent}.brandbar .nav button{white-space:normal}}
+@media(max-width:390px){.utility-links{gap:12px}.utility-links a{font-size:12px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="utility"><div class="wrap"><span>GRPS Community & Student Affairs</span><div><a href="#" onclick="go('home');return false">Start Here</a><a href="#" onclick="go('tools');return false">Tools & Resources</a></div></div></div>
+<div class="utility"><div class="wrap"><span>GRPS Community & Student Affairs</span><nav class="utility-links" aria-label="Quick links"><a href="#home" onclick="go('home');return false">Start Here</a><a href="#tools" onclick="go('tools');return false">Tools & Resources</a></nav></div></div>
 <header class="brandbar"><div class="wrap brandrow">
   <button class="brand" onclick="go('home')" aria-label="Go to home">
     <img class="grps-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice">
@@ -726,7 +740,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
  <div class="section"><div class="wrap tool-view"><div class="tool-flow"><div>1. Understand</div><div>2. Decide</div><div>3. Act</div><div>4. Review</div></div><div class="workbox"><div id="toolPrompts"></div><textarea id="notes" aria-label="Working notes" placeholder="Working notes… Nothing is saved."></textarea><div class="actions"><button class="primary" onclick="copyNotes()">Copy notes</button><button onclick="document.getElementById('notes').value=''">Clear</button></div></div></div></div>
 </section>
 </main>
-<button class="homeFloat" onclick="go('home')" aria-label="Home">⌂ Home</button>
 <footer><div class="wrap footer"><div style="display:flex;gap:18px;align-items:center"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice" style="height:64px;width:auto;background:#fff;border-radius:8px;padding:6px"><div><b>Scholar, Family & Community School Support</b><br><small>GRPS scholar, family & Community School collaboration resource</small></div></div><small>Start with the need—not the role.</small></div></footer>
 
 <div class="collabModal" id="collabModal" role="dialog" aria-modal="true" aria-labelledby="collabTitle"><div class="collabBox"><div class="collabHead"><div class="collabHeadTop"><div><div class="eyebrow">FSS + KSSN IN PRACTICE</div><h2 id="collabTitle"></h2><p id="collabIntro"></p></div><button class="collabClose" onclick="closeCollab()" aria-label="Close collaboration details">Close ×</button></div></div><div class="collabRoles"><div class="collabRole"><h3>FSS</h3><p id="collabFss"></p></div><div class="collabRole"><h3>KSSN</h3><p id="collabKssn"></p></div><div class="collabRole together"><h3>Together</h3><p id="collabTogether"></p></div><div class="collabRole school"><h3>School’s Part</h3><p id="collabSchool"></p></div></div><div class="collabNext"><b>Use the next tool when it helps move the work forward.</b><div id="collabActions"></div></div></div></div>
