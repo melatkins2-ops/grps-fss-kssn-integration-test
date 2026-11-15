@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FSS + KSSN Support Workspace · GRPS</title>
+<base target="_top">
+<style>
+:root{--navy:#0d3b66;--navy2:#174a7c;--orange:#d8621e;--ink:#17283d;--muted:#5b6b7f;--line:#dbe3ea;--soft:#f4f7fa;--warm:#fff6ef;--green:#2f7d4f;--greenbg:#e8f4ec;--amber:#a15c07;--amberbg:#fdf1de;--red:#b3261e;--redbg:#fbe9e7;--r:10px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.55 "Segoe UI",Inter,Arial,sans-serif;color:var(--ink);background:#fff}
+a{color:var(--navy)}
+button,select,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid rgba(216,98,30,.45);outline-offset:2px}
+main:focus,main:focus-visible{outline:none}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:8px;background:#fff;padding:8px 12px;z-index:99}
+header.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:20}
+.bar{max-width:1240px;margin:auto;padding:10px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{height:46px;width:auto}
+.ttl{display:flex;flex-direction:column;line-height:1.2}
+.ttl b{color:var(--navy);font-size:18px}.ttl span{color:var(--muted);font-size:13px}
+.bar .right{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mode{font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:999px;background:var(--amberbg);color:var(--amber);border:0}
+.mode.live{background:var(--greenbg);color:var(--green)}
+.schoolpick{display:flex;align-items:center;gap:8px}
+.schoolpick label{font-size:13px;color:var(--muted);font-weight:700}
+select,input[type=text],input[type=date],input[type=search],textarea{border:1.5px solid #c4d0db;border-radius:8px;padding:9px 11px;background:#fff;min-width:0}
+textarea{width:100%;min-height:76px;resize:vertical}
+nav.steps{max-width:1240px;margin:auto;padding:0 22px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.steps::-webkit-scrollbar{display:none}
+nav.steps a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-weight:700;font-size:15px;padding:11px 12px 10px;border-bottom:3px solid transparent;white-space:nowrap}
+nav.steps a .n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--soft);color:var(--navy);font-size:12px;margin-right:6px}
+nav.steps a[aria-current=page]{color:var(--navy);border-bottom-color:var(--orange)}
+nav.steps a[aria-current=page] .n{background:var(--orange);color:#fff}
+main{max-width:1240px;margin:auto;padding:26px 22px 70px}
+h1{font-size:30px;line-height:1.15;margin:0 0 6px;color:var(--navy)}
+h2{font-size:21px;margin:0 0 10px;color:var(--navy)}
+h3{font-size:17px;margin:0 0 6px;color:var(--navy)}
+.lead{color:var(--muted);margin:0 0 20px;max-width:760px}
+.kick{color:var(--orange);font-weight:800;letter-spacing:.1em;font-size:12px;text-transform:uppercase;margin:0 0 6px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:26px}
+.panel{border-top:1px solid var(--line);padding-top:16px;margin-top:22px}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.people div{padding:14px 16px;border-right:1px solid var(--line)}
+.people div:last-child{border-right:0}
+.people small{display:block;color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.people b{display:block;font-size:16px}
+.people a,.people span.missing{font-size:14px}
+.missing{color:var(--muted);font-style:italic}
+.rows{border-top:1px solid var(--line)}
+.row{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;padding:12px 2px;border-bottom:1px solid var(--line)}
+.row .main{min-width:0;flex:1}
+.row .main b{display:block}
+.row .meta{color:var(--muted);font-size:14px}
+.pill{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--navy);white-space:nowrap}
+.pill.over{background:var(--redbg);color:var(--red)}.pill.soon{background:var(--amberbg);color:var(--amber)}.pill.done{background:var(--greenbg);color:var(--green)}.pill.stuck{background:var(--redbg);color:var(--red)}
+.btn{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:8px;padding:9px 14px;font-weight:800;font-size:15px}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.orange{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn.small{padding:6px 10px;font-size:13.5px}
+.btn.link{border:0;padding:4px 0;background:none;text-decoration:underline}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.callout{background:var(--warm);border-left:4px solid var(--orange);padding:14px 16px;margin:14px 0}
+.callout b{color:var(--navy)}
+.big{font-size:34px;font-weight:800;color:var(--navy);line-height:1}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:6px 0 20px}
+.stats div{padding:14px 16px;border-right:1px solid var(--line)}.stats div:last-child{border-right:0}
+.stats small{display:block;color:var(--muted);font-size:13px;font-weight:700}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 16px}
+.chip{border:1.5px solid #bfccd8;background:#fff;border-radius:999px;padding:7px 13px;font-weight:700;font-size:14.5px;color:var(--navy)}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.res{padding:16px 2px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px}
+.res h3{margin:0}
+.res p{margin:2px 0;color:#2c3e52;font-size:15px}
+.res .contact{grid-column:2;grid-row:1/4;display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right}
+.res .tel{font-weight:800;color:var(--navy);text-decoration:none}
+.res .tags{font-size:13px;color:var(--muted)}
+.barriers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:18px}
+.barriers button{text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:var(--r);padding:12px 14px;font-weight:800;color:var(--navy)}
+.barriers button small{display:block;font-weight:500;color:var(--muted);font-size:13.5px;margin-top:2px}
+.barriers button[aria-pressed=true]{border-color:var(--orange);background:var(--warm)}
+.plan{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.who{display:inline-block;background:var(--navy);color:#fff;font-weight:800;border-radius:6px;padding:4px 10px;font-size:14px;margin:4px 0 12px}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px;margin:12px 0}
+.roles div b{display:block;color:var(--orange);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+ul.tight{margin:6px 0 0;padding-left:20px}ul.tight li{margin:3px 0}
+form.fu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px}
+form.fu .full{grid-column:1/-1}
+form.fu label{display:flex;flex-direction:column;gap:5px;font-weight:700;font-size:14px;color:var(--navy)}
+form.fu label small{font-weight:500;color:var(--muted)}
+.err{color:var(--red);font-size:13px;font-weight:700;min-height:0}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:4px 0 12px}
+.bars .b{display:grid;grid-template-columns:200px minmax(0,1fr) 40px;gap:10px;align-items:center;padding:5px 0}
+.bars .track{height:14px;background:var(--soft);border-radius:4px;overflow:hidden}
+.bars .fill{height:100%;background:var(--navy)}
+.bars .fill.o{background:var(--orange)}
+.note{font-size:13.5px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;z-index:50;display:none}
+.edit{display:none;background:var(--soft);padding:12px;border-radius:8px;margin-top:8px}
+.edit.on{display:block}
+.edit .line{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+footer .bar{justify-content:space-between}
+#print{display:none}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}.barriers{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:640px){header.top{position:static}nav.steps{position:sticky;top:0;background:#fff;z-index:20;border-bottom:1px solid var(--line)}.bar{padding:8px 14px;gap:10px}.logo{height:36px}.ttl b{font-size:16px}.bar .right{margin-left:0;width:100%}.schoolpick{width:100%}.schoolpick select{flex:1}
+nav.steps{padding:0 10px}main{padding:20px 14px 60px}h1{font-size:25px}
+.people{grid-template-columns:1fr}.people div{border-right:0;border-bottom:1px solid var(--line)}.people div:last-child{border-bottom:0}
+.barriers{grid-template-columns:1fr}.roles{grid-template-columns:1fr}form.fu{grid-template-columns:1fr}
+.res{grid-template-columns:1fr}.res .contact{grid-column:1;grid-row:auto;align-items:flex-start;text-align:left;flex-direction:row;flex-wrap:wrap;gap:10px}
+.bars .b{grid-template-columns:120px minmax(0,1fr) 32px;font-size:14px}.row{flex-wrap:wrap}}
+@media print{body.printing>*:not(#print){display:none!important}body.printing #print{display:block!important;font:11pt/1.45 Arial,sans-serif;color:#000}
+#print h1{font-size:18pt;margin:0 0 4pt}#print h2{font-size:12pt;margin:12pt 0 4pt;border-bottom:1pt solid #999}#print table{width:100%;border-collapse:collapse}#print td,#print th{border:1pt solid #bbb;padding:4pt 6pt;text-align:left;vertical-align:top}#print .sm{font-size:9pt;color:#444}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="bar">
+    <a href="#today" aria-label="Workspace home"><img class="logo" src="__LOGO__" alt="Grand Rapids Public Schools"></a>
+    <div class="ttl"><b>FSS + KSSN Support Workspace</b><span>Scholar, Family &amp; Community School Support</span></div>
+    <div class="right">
+      <div class="schoolpick"><label for="school">School</label><select id="school"></select></div>
+      <button class="mode" id="modeBtn" type="button"></button>
+    </div>
+  </div>
+  <nav class="steps" aria-label="Workspace steps">
+    <a href="#today">Today</a>
+    <a href="#find"><span class="n">1</span>Find help</a>
+    <a href="#plan"><span class="n">2</span>Plan the response</a>
+    <a href="#follow"><span class="n">3</span>Hand off &amp; follow up</a>
+    <a href="#huddle"><span class="n">4</span>Monthly huddle</a>
+    <a href="#impact"><span class="n">5</span>Show impact</a>
+  </nav>
+</header>
+<main id="main" tabindex="-1"></main>
+<footer><div class="bar"><span>GRPS Community &amp; Student Affairs · FSS + KSSN collaboration</span><span><a href="__SITE__">FSS + KSSN guide</a> · Use family codes only, never names.</span></div></footer>
+<div id="print"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const DATA=/*DATA*/null;
+const BAR=/*BARRIERS*/null;
+const NEEDS=[["all","Not sure / many needs"],["food","Food"],["housing","Housing"],["utilities","Utilities"],["benefits","Benefits (SNAP, Medicaid)"],["health","Health and dental"],["mental","Mental health"],["crisis","Crisis"],["safety","Safety / violence"],["legal","Legal"],["immigration","Immigration"],["childcare","Child care"],["transport","Transportation"]];
+const BARRIER_NEEDS={"Transportation":["transport","all"],"Housing / basic needs":["housing","food","utilities","benefits"],"Physical health":["health","benefits"],"Mental health / school refusal":["mental","crisis"],"Academic access / challenge":[],"Belonging / relationships":[],"Morning / family routines":["childcare","all"],"Engagement / motivation":[],"Safety / bullying / discipline":["safety","crisis","legal"]};
+const STATUSES=["Open","In progress","Done","Stuck"];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const today=()=>new Date(new Date().toDateString());
+const iso=d=>{const x=new Date(d);return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0")};
+const addDays=(n)=>{const d=today();d.setDate(d.getDate()+n);return iso(d)};
+const daysUntil=s=>s?Math.round((new Date(s+"T00:00:00")-today())/864e5):null;
+const fmt=s=>{if(!s)return"No date";const d=new Date(s+"T00:00:00");return d.toLocaleDateString(undefined,{month:"short",day:"numeric"})};
+function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2200)}
+function safeGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function safeSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+
+/* ---------- storage: Apps Script when hosted there, otherwise this device ---------- */
+const LIVE=typeof google!=="undefined"&&google.script&&google.script.run;
+const DKEY="fss-kssn-workspace-demo-v1";
+const S={schools:DATA.schools,resources:DATA.resources,followups:[],user:""};
+function gs(fn,...args){return new Promise((ok,no)=>google.script.run.withSuccessHandler(ok).withFailureHandler(no)[fn](...args))}
+function sample(){const sc=["Harrison Park","Harrison Park","Harrison Park","Harrison Park","Harrison Park","Harrison Park","Burton Middle School","Burton Middle School","Campus Elementary","Campus Elementary","Union High School","Union High School"];
+const b=["Transportation","Transportation","Transportation","Housing / basic needs","Morning / family routines","Physical health","Transportation","Mental health / school refusal","Housing / basic needs","Transportation","Engagement / motivation","Transportation"];
+const st=["Open","In progress","Done","Open","Done","Stuck","Open","In progress","Done","Open","In progress","Done"];
+const due=[-3,2,-20,5,-12,-1,8,3,-30,12,6,-15];const lr=["KSSN","FSS","KSSN","Shared","FSS","School","KSSN","Shared","Shared","FSS","School","KSSN"];
+const act=["Connect family to bus-route planning and confirm first ride","Check-in after first week of new morning ride plan","Arranged carpool with neighbor family; confirm attendance","Warm handoff to Housing Assessment Program; confirm intake call","Family-defined morning routine; 2-week check","Nurse plan for asthma days; confirm with family","Explore transportation options with family","Coordinated re-entry plan with counselor","Utility shut-off help through Community Action","Ride plan for after-school pickup","Interest-based goal and mentor connection","Bus pass and route plan"];
+return sc.map((s,i)=>({id:"S"+(i+1),created:addDays(-40+i*2),school:s,code:"A-"+(10+i),barrier:b[i],leadRole:lr[i],leadPerson:"",action:act[i],resource:"",due:addDays(due[i]),status:st[i],outcome:st[i]==="Done"?"Attendance improved over the next 3 weeks":"",updated:addDays(-2),updatedBy:"Sample data",sample:true}))}
+async function load(){
+  if(LIVE){try{const d=await gs("getData");if(d.schools&&d.schools.length)S.schools=d.schools;if(d.resources&&d.resources.length)S.resources=d.resources;S.followups=d.followups||[];S.user=d.user||""}catch(e){toast("Couldn't reach the shared sheet")}}
+  else{const raw=safeGet(DKEY);S.followups=raw?JSON.parse(raw):sample();if(!raw)persist()}
+}
+function persist(){if(!LIVE)safeSet(DKEY,JSON.stringify(S.followups))}
+async function saveFU(fu){
+  fu.updated=iso(new Date());
+  if(LIVE){const saved=await gs("saveFollowUp",fu);const i=S.followups.findIndex(x=>x.id===saved.id);i>=0?S.followups[i]=saved:S.followups.push(saved);return saved}
+  if(!fu.id)fu.id="L"+Date.now().toString(36);fu.updatedBy="This device";
+  const i=S.followups.findIndex(x=>x.id===fu.id);i>=0?S.followups[i]=fu:S.followups.push(fu);persist();return fu}
+
+/* ---------- school ---------- */
+const SKEY="fss-kssn-workspace-school";
+function school(){return $("#school").value}
+function schoolRec(){return S.schools.find(s=>s.school===school())}
+function fuFor(sc){return S.followups.filter(f=>sc==="All schools"||f.school===sc)}
+function initSchools(){const sel=$("#school");const qs={};S.schools.forEach(s=>(qs[s.quad]=qs[s.quad]||[]).push(s));
+  sel.innerHTML='<option>All schools</option>'+Object.keys(qs).map(q=>`<optgroup label="${esc(q)}">${qs[q].map(s=>`<option>${esc(s.school)}</option>`).join("")}</optgroup>`).join("");
+  const saved=safeGet(SKEY);sel.value=saved&&[...sel.options].some(o=>o.value===saved)?saved:"All schools";
+  sel.onchange=()=>{safeSet(SKEY,sel.value);render()}}
+
+/* ---------- views ---------- */
+function stateOf(f){if(f.status==="Done")return["done","Done"];if(f.status==="Stuck")return["stuck","Stuck"];const d=daysUntil(f.due);if(d===null)return["",f.status];if(d<0)return["over",`${-d} day${d===-1?"":"s"} overdue`];if(d<=7)return["soon",d===0?"Due today":`Due in ${d} day${d===1?"":"s"}`];return["",`Due ${fmt(f.due)}`]}
+function fuRow(f,withSchool){const[c,t]=stateOf(f);return `<div class="row"><div class="main"><b>${esc(f.code)} · ${esc(f.barrier)}</b><span class="meta">${esc(f.action||"No action recorded")}${withSchool?` · ${esc(f.school)}`:""} · ${esc(f.leadRole||"")}${f.leadPerson?" ("+esc(f.leadPerson)+")":""}</span></div><span class="pill ${c}">${esc(t)}</span></div>`}
+function patterns(list,days=60){const cut=addDays(-days);const m={};list.filter(f=>f.created>=cut).forEach(f=>{m[f.barrier]=(m[f.barrier]||0)+1});return Object.entries(m).filter(([,n])=>n>=3).sort((a,b)=>b[1]-a[1])}
+function people(s){if(!s)return"";const p=(lbl,name,mail,extra)=>`<div><small>${lbl}</small>${name?`<b>${esc(name)}</b>`:`<span class="missing">Not yet listed</span>`}${mail?`<a href="mailto:${esc(mail)}">${esc(mail)}</a>`:""}${extra?`<span class="meta"> ${esc(extra)}</span>`:""}</div>`;
+  return `<div class="people">${p("KSSN coordinator",s.kssn,s.kssnEmail)}${p("Family Support Specialist (FSS)",s.fss,s.fssEmail)}${p("KSSN team lead",s.lead,s.leadEmail,s.leadPhone)}</div>${s.fss?"":`<p class="note">Add this school's FSS in the shared sheet (Schools tab) and it will show here.</p>`}`}
+
+function vToday(){const sc=school(),s=schoolRec(),list=fuFor(sc),open=list.filter(f=>f.status!=="Done");
+  const week=open.filter(f=>{const d=daysUntil(f.due);return d!==null&&d<=7}).sort((a,b)=>(a.due||"").localeCompare(b.due||""));
+  const pat=patterns(list);
+  return `<p class="kick">${sc==="All schools"?"All 20 KSSN partner schools":esc(s.quad)+" quadrant"}</p><h1>${sc==="All schools"?"Support across schools":esc(sc)}</h1>
+  <p class="lead">Start with the family's need, not a department. Find help, agree who acts, and follow through until something changes for the scholar.</p>
+  ${s?people(s):`<div class="callout"><b>Choose your school</b> at the top to see your KSSN coordinator, FSS and team lead.</div>`}
+  <div class="grid2" style="margin-top:26px">
+    <section><h2>Follow-ups due this week</h2>${week.length?`<div class="rows">${week.map(f=>fuRow(f,sc==="All schools")).join("")}</div>`:`<p class="note">Nothing due in the next 7 days.</p>`}
+      <div class="actions"><a class="btn primary" href="#follow?new=1">Start a follow-up</a><a class="btn" href="#follow">See all follow-ups</a></div></section>
+    <section><h2>Patterns to bring to the huddle</h2>${pat.length?pat.map(([b,n])=>`<div class="callout"><span class="big">${n}</span> families named <b>${esc(b.toLowerCase())}</b> in the last 60 days. Plan one school-wide fix instead of ${n} separate ones.</div>`).join(""):`<p class="note">No barrier has come up 3 or more times in the last 60 days.</p>`}
+      <div class="actions"><a class="btn" href="#find">Find help</a><a class="btn" href="#plan">Plan a response</a></div></section>
+  </div>`}
+
+let needSel="all",findQ="";
+function vFind(){const list=S.resources.filter(r=>(needSel==="all"?true:r.needs.includes(needSel))&&(!findQ||(r.name+" "+r.how+" "+r.needs.join(" ")).toLowerCase().includes(findQ.toLowerCase())));
+  return `<p class="kick">Step 1</p><h1>Find help</h1><p class="lead">Kent County resources by need. Call ahead when you can, then use a warm handoff: connect the family and confirm the connection happened.</p>
+  <label for="findq" class="note">Search resources</label><div style="display:flex;gap:10px;margin:4px 0 6px;max-width:560px"><input type="search" id="findq" placeholder="Try: rent, shut-off, dentist" value="${esc(findQ)}" style="flex:1"></div>
+  <div class="chips" role="group" aria-label="Filter by need">${NEEDS.map(([k,l])=>`<button class="chip" type="button" data-need="${k}" aria-pressed="${needSel===k}">${esc(l)}</button>`).join("")}</div>
+  <p class="note">${list.length} resource${list.length===1?"":"s"} · details checked Nov 2026. Confirm hours and eligibility before referring.</p>
+  <div>${list.map((r,i)=>{const idx=S.resources.indexOf(r);return `<article class="res"><h3>${esc(r.name)}</h3>
+    <div class="contact">${r.phone?`<span class="tel">${esc(r.phone)}</span>`:""}${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">Website ↗</a>`:""}</div>
+    <p>${esc(r.how)}</p><p class="tags">${esc(r.needs.filter(n=>n!=="all").map(n=>(NEEDS.find(x=>x[0]===n)||[0,n])[1]).join(" · "))}${r.lang?" · "+esc(r.lang):""}</p>
+    <div class="actions" style="margin-top:4px"><button class="btn small" type="button" data-copy="${idx}" data-lang="en">Copy text for family</button><button class="btn small" type="button" data-copy="${idx}" data-lang="es">Copiar en español</button><a class="btn small" href="#follow?new=1&res=${idx}">Use in a follow-up</a></div></article>`}).join("")||`<p>No resources match. Try "Not sure / many needs" or call 2-1-1.</p>`}</div>`}
+function familyText(r,lang){return lang==="es"?`Hola. Este recurso puede ayudar: ${r.name}. ${r.phone&&r.phone!=="See website"?"Llame al "+r.phone+". ":""}${r.url?r.url+" ":""}Si tiene preguntas o necesita ayuda para llamar, avísenos.`:`Hi. This resource may help: ${r.name}. ${r.phone&&r.phone!=="See website"?"Call "+r.phone+". ":""}${r.url?r.url+" ":""}If you have questions or want help making the call, let us know.`}
+
+let barrierSel="";
+function vPlan(){const b=BAR.bd.find(x=>x.title===barrierSel);
+  return `<p class="kick">Step 2</p><h1>Plan the response</h1><p class="lead">Name the working barrier first. The plan shows who leads, what to ask, and the first responses to try.</p>
+  <div class="barriers" role="group" aria-label="Choose the barrier">${BAR.bd.map(x=>`<button type="button" data-barrier="${esc(x.title)}" aria-pressed="${x.title===barrierSel}">${esc(x.title)}<small>${esc(x.desc)}</small></button>`).join("")}</div>
+  ${b?`<section class="plan"><h2>${esc(b.title)}</h2><span class="who">Who leads: ${esc(BAR.bo[b.title]||"")}</span>
+   <div class="roles"><div><b>FSS</b>${esc(b.f)}</div><div><b>KSSN</b>${esc(b.k)}</div><div><b>School</b>${esc(b.s)}</div><div><b>Together</b>${esc(b.sh)}</div></div>
+   <div class="grid2"><div><h3>Ask the family</h3><ul class="tight">${b.ask.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><h3 style="margin-top:12px">Look at</h3><ul class="tight">${b.look.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+   <div><h3>First responses</h3><ul class="tight">${(BAR.sm[b.title]||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>${(BARRIER_NEEDS[b.title]||[]).length?`<h3 style="margin-top:12px">Community resources</h3><ul class="tight">${S.resources.filter(r=>r.needs.some(n=>(BARRIER_NEEDS[b.title]||[]).includes(n))).slice(0,4).map(r=>`<li>${esc(r.name)} · ${esc(r.phone)}</li>`).join("")}</ul>`:`<p class="note" style="margin-top:12px">This barrier is mainly a school response. Bring it to the school team.</p>`}</div></div>
+   <div class="actions"><a class="btn primary" href="#follow?new=1&barrier=${encodeURIComponent(b.title)}">Start a follow-up with this plan</a>${(BARRIER_NEEDS[b.title]||[]).length?`<a class="btn" href="#find" data-needjump="${BARRIER_NEEDS[b.title][0]}">See all matching resources</a>`:""}</div></section>`:`<p class="note">Choose a barrier above to see the plan.</p>`}`}
+
+let fuFilter="Open items",editing="";
+function vFollow(params){const sc=school(),s=schoolRec();const isNew=params.get("new")==="1";
+  const r=params.get("res")!==null?S.resources[+params.get("res")]:null;const bar=params.get("barrier")||"";
+  let list=fuFor(sc);if(fuFilter==="Open items")list=list.filter(f=>f.status!=="Done");else if(fuFilter!=="All")list=list.filter(f=>f.status===fuFilter);
+  list.sort((a,b)=>(a.status==="Done")-(b.status==="Done")||(a.due||"9").localeCompare(b.due||"9"));
+  const form=`<form class="fu" id="fuForm" novalidate>
+   <label>School<select name="school" required>${S.schools.map(x=>`<option ${x.school===(sc==="All schools"?"":sc)?"selected":""}>${esc(x.school)}</option>`).join("")}</select></label>
+   <label>Family code <small>Letters and numbers only, like A-14. Never a name.</small><input type="text" name="code" maxlength="10" autocomplete="off" placeholder="A-14"><span class="err" id="codeErr"></span></label>
+   <label>Barrier<select name="barrier">${BAR.bd.map(x=>`<option ${x.title===bar?"selected":""}>${esc(x.title)}</option>`).join("")}</select></label>
+   <label>Who leads<select name="leadRole">${["FSS","KSSN","School","Shared"].map(x=>`<option>${x}</option>`).join("")}</select></label>
+   <label>Lead person <small>Optional</small><input type="text" name="leadPerson" maxlength="60" placeholder="Name or role"></label>
+   <label>Follow up by<input type="date" name="due" value="${addDays(14)}"></label>
+   <label class="full">Agreed action <small>What will happen, and how you'll know the connection worked</small><textarea name="action" maxlength="400" required>${r?esc("Warm handoff to "+r.name+"; confirm the family connected"):""}</textarea><span class="err" id="actErr"></span></label>
+   <label class="full">Resource used <small>Optional</small><input type="text" name="resource" maxlength="120" value="${r?esc(r.name):""}"></label>
+   <p class="note full">Don't enter names, birthdates, student IDs or health details. The code links to your own records.</p>
+   <div class="actions full" style="margin-top:0"><button class="btn primary" type="submit">Save follow-up</button><a class="btn" href="#follow">Cancel</a></div></form>`;
+  return `<p class="kick">Step 3</p><h1>Hand off &amp; follow up</h1><p class="lead">A referral is not the end of support. Record who acts and when you'll check back, then close the loop.</p>
+  ${isNew?`<section class="plan" style="margin-bottom:24px"><h2>New follow-up</h2>${form}</section>`:`<div class="actions" style="margin:0 0 16px"><a class="btn primary" href="#follow?new=1">Start a follow-up</a></div>`}
+  <div class="filters"><label for="fuf" class="note">Show</label><select id="fuf">${["Open items","All","Open","In progress","Stuck","Done"].map(x=>`<option ${x===fuFilter?"selected":""}>${x}</option>`).join("")}</select><span class="note">${list.length} follow-up${list.length===1?"":"s"}${sc==="All schools"?" across all schools":" at "+esc(sc)}</span></div>
+  <div class="rows">${list.map(f=>{const[c,t]=stateOf(f);return `<div class="row" style="display:block"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="main"><b>${esc(f.code)} · ${esc(f.barrier)}${f.sample?' <span class="pill">Sample</span>':""}</b><span class="meta">${esc(f.action)}${sc==="All schools"?" · "+esc(f.school):""} · ${esc(f.leadRole)}${f.leadPerson?" ("+esc(f.leadPerson)+")":""}${f.resource?" · "+esc(f.resource):""}</span>${f.outcome?`<span class="meta" style="display:block">Outcome: ${esc(f.outcome)}</span>`:""}</div>
+    <div style="display:flex;gap:8px;align-items:center"><span class="pill ${c}">${esc(t)}</span><button class="btn small" type="button" data-edit="${esc(f.id)}">Update</button><button class="btn small" type="button" data-handoff="${esc(f.id)}">Print handoff</button></div></div>
+    <div class="edit ${editing===f.id?"on":""}" id="ed-${esc(f.id)}"><div class="line"><label class="note">Status <select data-st="${esc(f.id)}">${STATUSES.map(x=>`<option ${x===f.status?"selected":""}>${x}</option>`).join("")}</select></label><label class="note">Follow up by <input type="date" data-due="${esc(f.id)}" value="${esc(f.due)}"></label></div>
+    <label class="note" style="display:block;margin-top:8px">What changed for the scholar?<textarea data-out="${esc(f.id)}" maxlength="300" placeholder="Example: attended 9 of 10 days since the ride plan started">${esc(f.outcome||"")}</textarea></label><div class="actions" style="margin-top:8px"><button class="btn small primary" type="button" data-saveedit="${esc(f.id)}">Save update</button></div></div></div>`}).join("")||`<p class="note" style="padding:12px 0">No follow-ups here yet.</p>`}</div>`}
+
+function vHuddle(){const sc=school(),list=fuFor(sc),open=list.filter(f=>f.status!=="Done");
+  const over=open.filter(f=>daysUntil(f.due)<0),stuck=open.filter(f=>f.status==="Stuck"),soon=open.filter(f=>{const d=daysUntil(f.due);return d>=0&&d<=14});
+  const done=list.filter(f=>f.status==="Done"&&f.updated>=addDays(-30));const pat=patterns(list);
+  return `<p class="kick">Step 4</p><h1>Monthly huddle</h1><p class="lead">A 30-minute FSS, KSSN and school agenda built from your follow-ups. Start with what's stuck, end with one system fix.</p>
+  <div class="actions" style="margin:0 0 18px"><button class="btn primary" type="button" id="printHuddle">Print agenda</button></div>
+  <ol style="padding-left:20px">
+  <li><h3>Stuck or overdue (10 min)</h3>${[...stuck,...over.filter(f=>!stuck.includes(f))].map(f=>fuRow(f,sc==="All schools")).join("")||'<p class="note">Nothing stuck or overdue.</p>'}</li>
+  <li style="margin-top:14px"><h3>Patterns: one system fix (10 min)</h3>${pat.map(([b,n])=>`<p><b>${esc(b)}</b>: ${n} families in 60 days. Who owns a school-wide fix, and by when?</p>`).join("")||'<p class="note">No repeating barrier this month.</p>'}</li>
+  <li style="margin-top:14px"><h3>Coming due in the next two weeks (5 min)</h3>${soon.map(f=>fuRow(f,sc==="All schools")).join("")||'<p class="note">Nothing due soon.</p>'}</li>
+  <li style="margin-top:14px"><h3>What worked (5 min)</h3>${done.map(f=>`<p><b>${esc(f.code)} · ${esc(f.barrier)}</b>: ${esc(f.outcome||"Closed")}</p>`).join("")||'<p class="note">No follow-ups closed in the last 30 days.</p>'}</li></ol>`}
+
+let impRange="90";
+function vImpact(){const sc=school();let list=fuFor(sc);if(impRange!=="all")list=list.filter(f=>f.created>=addDays(-+impRange));
+  const n=list.length,done=list.filter(f=>f.status==="Done"),open=n-done.length,withOut=done.filter(f=>(f.outcome||"").trim()).length;
+  const cnt=k=>{const m={};list.forEach(f=>m[f[k]]=(m[f[k]]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1])};
+  const bars=(rows,o)=>{const max=Math.max(1,...rows.map(r=>r[1]));return `<div class="bars">${rows.map(([k,v])=>`<div class="b"><span>${esc(k)}</span><div class="track"><div class="fill ${o?"o":""}" style="width:${Math.round(v/max*100)}%"></div></div><b>${v}</b></div>`).join("")||'<p class="note">No data yet.</p>'}</div>`};
+  return `<p class="kick">Step 5</p><h1>Show impact</h1><p class="lead">Counts only, no family details. Use these for leadership updates and 31a reporting.</p>
+  <div class="filters"><label class="note" for="imp">Period</label><select id="imp">${[["30","Last 30 days"],["90","Last 90 days"],["365","Last 12 months"],["all","All time"]].map(([v,l])=>`<option value="${v}" ${v===impRange?"selected":""}>${l}</option>`).join("")}</select><button class="btn small" type="button" id="csv">Download counts (CSV)</button></div>
+  <div class="stats"><div><small>Families supported</small><span class="big">${new Set(list.map(f=>f.school+f.code)).size}</span></div><div><small>Follow-ups closed</small><span class="big">${done.length}</span></div><div><small>Still open</small><span class="big">${open}</span></div><div><small>Closed with an outcome noted</small><span class="big">${done.length?Math.round(withOut/done.length*100):0}%</span></div></div>
+  <div class="grid2"><section><h2>By barrier</h2>${bars(cnt("barrier"))}</section><section><h2>Who led</h2>${bars(cnt("leadRole"),1)}${sc==="All schools"?`<h2 style="margin-top:20px">By school</h2>${bars(cnt("school"))}`:""}</section></div>`}
+
+/* ---------- printing ---------- */
+function printHTML(h){$("#print").innerHTML=h;document.body.classList.add("printing");const off=()=>{document.body.classList.remove("printing");removeEventListener("afterprint",off)};addEventListener("afterprint",off);window.print();setTimeout(()=>{if(!matchMedia("print").matches)off()},1500)}
+function handoff(f){const s=S.schools.find(x=>x.school===f.school)||{};printHTML(`<h1>Support handoff · ${esc(f.code)}</h1><p class="sm">${esc(f.school)} · printed ${new Date().toLocaleDateString()} · family code only</p>
+ <h2>Need</h2><table><tr><th>Barrier</th><td>${esc(f.barrier)}</td></tr><tr><th>Who leads</th><td>${esc(f.leadRole)} ${esc(f.leadPerson||"")}</td></tr><tr><th>Agreed action</th><td>${esc(f.action)}</td></tr><tr><th>Resource</th><td>${esc(f.resource||"—")}</td></tr><tr><th>Follow up by</th><td>${esc(fmt(f.due))}</td></tr><tr><th>Status</th><td>${esc(f.status)}</td></tr></table>
+ <h2>Team</h2><table><tr><th>KSSN coordinator</th><td>${esc(s.kssn||"")} ${esc(s.kssnEmail||"")}</td></tr><tr><th>FSS</th><td>${esc(s.fss||"Not listed")}</td></tr><tr><th>KSSN team lead</th><td>${esc(s.lead||"")} ${esc(s.leadPhone||"")}</td></tr></table>
+ <h2>Close the loop</h2><table><tr><th>Did the family connect?</th><td style="height:36pt"></td></tr><tr><th>What changed for the scholar?</th><td style="height:48pt"></td></tr></table>`)}
+
+/* ---------- router ---------- */
+const VIEWS={today:vToday,find:vFind,plan:vPlan,follow:vFollow,huddle:vHuddle,impact:vImpact};
+function route(){const h=location.hash.slice(1)||"today";const[name,q]=h.split("?");return[VIEWS[name]?name:"today",new URLSearchParams(q||"")]}
+function render(){const[name,params]=route();$("#main").innerHTML=VIEWS[name](params);
+  $$("nav.steps a").forEach(a=>a.getAttribute("href")==="#"+name?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+  wire(name)}
+function wire(name){
+  $$("[data-need]").forEach(b=>b.onclick=()=>{needSel=b.dataset.need;render()});
+  $$("[data-needjump]").forEach(a=>a.onclick=()=>{needSel=a.dataset.needjump});
+  const fq=$("#findq");if(fq)fq.oninput=()=>{findQ=fq.value;const p=fq.selectionStart;render();const n=$("#findq");n.focus();n.setSelectionRange(p,p)};
+  $$("[data-copy]").forEach(b=>b.onclick=async()=>{const t=familyText(S.resources[+b.dataset.copy],b.dataset.lang);try{await navigator.clipboard.writeText(t);toast(b.dataset.lang==="es"?"Copiado":"Copied")}catch(e){window.prompt("Copy this text:",t)}});
+  $$("[data-barrier]").forEach(b=>b.onclick=()=>{barrierSel=b.dataset.barrier;render();$(".plan")&&$(".plan").scrollIntoView({block:"start"})});
+  const fuf=$("#fuf");if(fuf)fuf.onchange=()=>{fuFilter=fuf.value;render()};
+  $$("[data-edit]").forEach(b=>b.onclick=()=>{editing=editing===b.dataset.edit?"":b.dataset.edit;$$(".edit").forEach(e=>e.classList.toggle("on",e.id==="ed-"+editing))});
+  $$("[data-saveedit]").forEach(b=>b.onclick=async()=>{const id=b.dataset.saveedit,f={...S.followups.find(x=>x.id===id)};f.status=$(`[data-st="${id}"]`).value;f.due=$(`[data-due="${id}"]`).value;f.outcome=$(`[data-out="${id}"]`).value.trim();b.disabled=true;try{await saveFU(f);editing="";toast("Update saved");render()}catch(e){b.disabled=false;toast("Couldn't save. Try again.")}});
+  $$("[data-handoff]").forEach(b=>b.onclick=()=>handoff(S.followups.find(x=>x.id===b.dataset.handoff)));
+  const form=$("#fuForm");if(form){const code=form.code;code.oninput=()=>{$("#codeErr").textContent=""};form.action.oninput=()=>{$("#actErr").textContent=""};
+    form.onsubmit=async e=>{e.preventDefault();const v=code.value.trim().toUpperCase();let ok=true;
+      if(!/^[A-Z]{0,3}-?\d{1,5}$/.test(v)){$("#codeErr").textContent="Use a code like A-14 (letters and numbers only).";ok=false}
+      if(!form.action.value.trim()){$("#actErr").textContent="Describe the agreed action.";ok=false}
+      if(!ok)return;const fu={id:"",created:iso(new Date()),school:form.school.value,code:v,barrier:form.barrier.value,leadRole:form.leadRole.value,leadPerson:form.leadPerson.value.trim(),action:form.action.value.trim(),resource:form.resource.value.trim(),due:form.due.value,status:"Open",outcome:""};
+      const btn=form.querySelector("[type=submit]");btn.disabled=true;try{await saveFU(fu);toast("Follow-up saved");location.hash="#follow"}catch(err){btn.disabled=false;toast("Couldn't save. Try again.")}}}
+  const ph=$("#printHuddle");if(ph)ph.onclick=()=>printHTML(`<h1>Monthly huddle · ${esc(school())}</h1><p class="sm">${new Date().toLocaleDateString()} · family codes only</p>`+$("#main ol").outerHTML);
+  const imp=$("#imp");if(imp)imp.onchange=()=>{impRange=imp.value;render()};
+  const csv=$("#csv");if(csv)csv.onclick=()=>{let list=fuFor(school());if(impRange!=="all")list=list.filter(f=>f.created>=addDays(-+impRange));const rows=[["School","Barrier","Lead role","Status","Count"]];const m={};list.forEach(f=>{const k=[f.school,f.barrier,f.leadRole,f.status].join("\u0001");m[k]=(m[k]||0)+1});Object.entries(m).forEach(([k,v])=>rows.push([...k.split("\u0001"),v]));
+    const text=rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(",")).join("\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type:"text/csv"}));a.download="fss-kssn-impact-counts.csv";document.body.appendChild(a);a.click();a.remove()};
+  if(name!=="today"||location.hash)$("#main").focus({preventScroll:true});
+}
+function modeBtn(){const b=$("#modeBtn");if(LIVE){b.textContent="Shared sheet";b.classList.add("live");b.title="Saving to the FSS + KSSN Support Tracker sheet"+(S.user?" as "+S.user:"");b.onclick=()=>toast("Connected to the shared sheet")}
+  else{b.textContent="Demo · this device";b.title="Sample data saved in this browser only";b.onclick=()=>{if(confirm("Reset the demo to its sample data? Anything you added here will be cleared.")){S.followups=sample();persist();render();toast("Demo reset")}}}}
+addEventListener("hashchange",()=>{render();scrollTo(0,0)});
+(async()=>{initSchools();modeBtn();await load();render()})();
+</script>
+</body>
+</html>
