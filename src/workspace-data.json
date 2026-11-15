@@ -1,0 +1,517 @@
+{
+"schools": [
+{
+"quad": "Northwest",
+"school": "Harrison Park",
+"kssn": "Alicia Heintz",
+"kssnEmail": "aliciaheintz@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Northwest",
+"school": "Shawmut Hills",
+"kssn": "Jana Kuiper",
+"kssnEmail": "janakuiper@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Northwest",
+"school": "Sibley Elementary",
+"kssn": "Sara Scott",
+"kssnEmail": "sarascott@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Northwest",
+"school": "Union High School",
+"kssn": "Neni Andrade",
+"kssnEmail": "neniandrade@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Northwest",
+"school": "Westwood Middle School",
+"kssn": "Damion Gregory",
+"kssnEmail": "damiongregory@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Northeast",
+"school": "Coit Creative Arts Academy",
+"kssn": "Cyle Blistein",
+"kssnEmail": "cyleblistein@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Northeast",
+"school": "Innovation Central",
+"kssn": "Mark Wright",
+"kssnEmail": "markwright@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Northeast",
+"school": "Kent Hills Elementary",
+"kssn": "Ashley Phillips",
+"kssnEmail": "ashleyphillips@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southwest",
+"school": "Buchanan Elementary",
+"kssn": "Vanessa Cervantes",
+"kssnEmail": "vanessacervantes@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southwest",
+"school": "Burton Elementary",
+"kssn": "Aliyah Rivera",
+"kssnEmail": "aliyahrivera@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southwest",
+"school": "Burton Middle School",
+"kssn": "Naxhiely Orozco",
+"kssnEmail": "naxheilyorozco@kentssn.org",
+"lead": "Caroline Geist",
+"leadEmail": "carolinegeist@kentssn.org",
+"leadPhone": "810-252-1648",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southwest",
+"school": "César E. Chávez Elementary",
+"kssn": "Kayla Lorenz",
+"kssnEmail": "kaylalorenz@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southwest",
+"school": "Southwest Elementary Academia Bilingüe",
+"kssn": "Teresa Cruz-Vega",
+"kssnEmail": "teresacruzvega@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southwest",
+"school": "Southwest Middle/High Academia Bilingüe",
+"kssn": "Doris Penn",
+"kssnEmail": "dorispenn@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southeast",
+"school": "Ottawa Middle School",
+"kssn": "Talibah Sawyer",
+"kssnEmail": "talibahsawyer@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southeast",
+"school": "Campus Elementary",
+"kssn": "Earnestine Mays",
+"kssnEmail": "earnestinemays@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southeast",
+"school": "Dickinson Academy",
+"kssn": "Stephanie Suero",
+"kssnEmail": "stephaniesuero@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southeast",
+"school": "Gerald R. Ford Academic Center",
+"kssn": "Lynnae Edmond",
+"kssnEmail": "lynnaeedmond@kentssn.org",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southeast",
+"school": "MLK Jr. Leadership Academy",
+"kssn": "Ahmari Jobe",
+"kssnEmail": "",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+},
+{
+"quad": "Southeast",
+"school": "Ottawa High School",
+"kssn": "Gregory Mason",
+"kssnEmail": "",
+"lead": "Amanda Witte",
+"leadEmail": "amandawitte@kentssn.org",
+"leadPhone": "810-334-7662",
+"fss": "",
+"fssEmail": "",
+"notes": ""
+}
+],
+"resources": [
+{
+"name": "211 Heart of West Michigan United Way",
+"needs": [
+"all",
+"food",
+"housing",
+"utilities",
+"transport",
+"childcare"
+],
+"phone": "Dial 2-1-1 or 800-887-1107",
+"url": "https://www.hwmuw.org/211",
+"how": "Call, text or chat 24/7. Start here when you are not sure where to go; covers food, shelter, utility shut-offs, transportation and more.",
+"lang": "Interpretation available",
+"source": "https://michiganlegalhelp.org/node/2688",
+"checked": "Nov 2026"
+},
+{
+"name": "Salvation Army Housing Assessment Program (HAP)",
+"needs": [
+"housing"
+],
+"phone": "Call 2-1-1 · HAP intake 616-454-5840",
+"url": "https://centralusa.salvationarmy.org/kentcounty/",
+"how": "Kent County central intake for families who are homeless or about to be. Weekdays 8:30–noon and 1–4:30. Much of the screening is by phone.",
+"lang": "",
+"source": "https://michiganlegalhelp.org/salvation-army-social-services-housing-assessment-program-kent-county",
+"checked": "Nov 2026"
+},
+{
+"name": "Kent County Community Action",
+"needs": [
+"utilities",
+"housing",
+"food"
+],
+"phone": "616-632-7950",
+"url": "https://www.kentcountymi.gov/1420/Community-Action",
+"how": "Help with gas, electric and Grand Rapids water bills, rent or mortgage arrears, and food. 121 Martin Luther King Jr. St. SE, Suite 110.",
+"lang": "",
+"source": "https://content.govdelivery.com/attachments/KENTCOMI/2026/04/20/file_attachments/3623496/KCCA_2025%20Annual%20Report_sm.pdf",
+"checked": "Nov 2026"
+},
+{
+"name": "MDHHS Kent County / MI Bridges",
+"needs": [
+"benefits",
+"utilities",
+"food",
+"childcare"
+],
+"phone": "616-248-1000",
+"url": "https://newmibridges.michigan.gov",
+"how": "Apply for food assistance, State Emergency Relief (utilities, housing), Medicaid and child care help online through MI Bridges.",
+"lang": "",
+"source": "https://www.grandrapidsmi.gov/media/1sthnozh/agency-assistance-door-hanger.pdf",
+"checked": "Nov 2026"
+},
+{
+"name": "Feeding America West Michigan – Find Food map",
+"needs": [
+"food"
+],
+"phone": "616-784-3250",
+"url": "https://www.feedwm.org/findfood",
+"how": "Map of pantries, meal programs and upcoming Mobile Food Pantries, including some held at GRPS schools.",
+"lang": "",
+"source": "https://kdl.org/community-resources/food-assistance/",
+"checked": "Nov 2026"
+},
+{
+"name": "Network180 Access Center",
+"needs": [
+"mental",
+"crisis"
+],
+"phone": "616-336-3909 or 800-749-7720 (24/7)",
+"url": "https://www.network180.org",
+"how": "Kent County community mental health. Front door for mental health and substance use services; mobile crisis team can come to schools and homes. 790 Fuller Ave NE.",
+"lang": "Interpretation available",
+"source": "https://content.govdelivery.com/attachments/KENTCOMI/2023/09/07/file_attachments/2607489/KCHD_MentalHealthBrochure_ENGv4.pdf",
+"checked": "Nov 2026"
+},
+{
+"name": "988 Suicide & Crisis Lifeline",
+"needs": [
+"crisis",
+"mental"
+],
+"phone": "Call or text 988",
+"url": "https://988lifeline.org",
+"how": "24/7 crisis support. Spanish available. Call 911 for immediate danger.",
+"lang": "Spanish available",
+"source": "https://content.govdelivery.com/attachments/KENTCOMI/2023/09/07/file_attachments/2607489/KCHD_MentalHealthBrochure_ENGv4.pdf",
+"checked": "Nov 2026"
+},
+{
+"name": "Pine Rest",
+"needs": [
+"mental"
+],
+"phone": "616-455-9200",
+"url": "https://www.pinerest.org",
+"how": "Behavioral health care for children and adults, including urgent assessment.",
+"lang": "",
+"source": "https://kentcityschools-cdn.fxbrt.com/downloads/district/mental_health_crisis_brochure_2022.pdf",
+"checked": "Nov 2026"
+},
+{
+"name": "Cherry Health",
+"needs": [
+"health",
+"mental"
+],
+"phone": "616-965-8200",
+"url": "https://www.cherryhealth.org",
+"how": "Primary care, pediatrics, dental, vision and behavioral health. Medicaid accepted; sliding fee for uninsured. School-based health centers at Union, Innovation Central and Ottawa Hills high schools.",
+"lang": "Interpretation available",
+"source": "https://grps.org/pub/stories/print/2044",
+"checked": "Nov 2026"
+},
+{
+"name": "YWCA West Central Michigan",
+"needs": [
+"safety",
+"crisis"
+],
+"phone": "24-hour helpline 616-454-9922",
+"url": "https://www.ywcawcmi.org",
+"how": "Support for domestic and dating violence, sexual assault and child sexual abuse; emergency shelter. 25 Sheldon Blvd SE.",
+"lang": "",
+"source": "https://michiganlegalhelp.org/node/1047",
+"checked": "Nov 2026"
+},
+{
+"name": "Safe Haven Ministries",
+"needs": [
+"safety",
+"housing"
+],
+"phone": "24-hour hotline 616-452-6664",
+"url": "https://www.safehavenministries.org",
+"how": "Domestic violence hotline, support services and emergency shelter.",
+"lang": "",
+"source": "https://michiganlegalhelp.org/node/622",
+"checked": "Nov 2026"
+},
+{
+"name": "Legal Aid of Western Michigan",
+"needs": [
+"legal",
+"housing"
+],
+"phone": "616-774-0672",
+"url": "https://lawestmi.org/i-need-help/",
+"how": "Free civil legal help for eligible families: evictions and housing, family law, public benefits, education. Does not handle criminal cases.",
+"lang": "",
+"source": "https://www.kentwoodps.org/downloads/district/legal_aid_of_western_michigan_1-pager.pdf",
+"checked": "Nov 2026"
+},
+{
+"name": "Legal Assistance Center",
+"needs": [
+"legal"
+],
+"phone": "616-632-6000",
+"url": "https://legalassistancecenter.org",
+"how": "Legal information and help with court forms. Kent County Courthouse, 180 Ottawa Ave NW, Suite 5100.",
+"lang": "",
+"source": "https://www.womenslaw.org/find-help/mi/finding-lawyer/legal-assistance/all",
+"checked": "Nov 2026"
+},
+{
+"name": "Hispanic Center of Western Michigan",
+"needs": [
+"immigration",
+"food",
+"legal",
+"all"
+],
+"phone": "616-742-0200",
+"url": "https://hispanic-center.org",
+"how": "Bilingual family support, basic needs, immigration services, language services and youth programs. 1204 César E. Chávez Ave SW.",
+"lang": "Spanish",
+"source": "https://kdl.org/community-resources/naturalization",
+"checked": "Nov 2026"
+},
+{
+"name": "Migrant Legal Aid",
+"needs": [
+"immigration",
+"legal"
+],
+"phone": "616-454-5055",
+"url": "",
+"how": "Legal help for migrant and seasonal farmworker families. 1104 Fuller Ave NE.",
+"lang": "Spanish",
+"source": "https://kdl.org/community-resources/naturalization",
+"checked": "Nov 2026"
+},
+{
+"name": "Bethany Christian Services (refugee and immigrant services)",
+"needs": [
+"immigration"
+],
+"phone": "616-224-7540",
+"url": "https://bethany.org",
+"how": "Refugee and immigrant family services. 901 Eastern Ave NE.",
+"lang": "",
+"source": "https://kdl.org/community-resources/naturalization",
+"checked": "Nov 2026"
+},
+{
+"name": "Great Start to Quality – Kent Resource Center",
+"needs": [
+"childcare"
+],
+"phone": "616-447-5678",
+"url": "https://greatstarttoquality.org/kent-resource-center/",
+"how": "Child care navigators find licensed openings that fit the family; referrals to free preschool (GSRP, Head Start) and help paying for care. Weekdays 7:30–4:30.",
+"lang": "",
+"source": "https://greatstarttoquality.org/kent-resource-center/",
+"checked": "Nov 2026"
+},
+{
+"name": "Fair Housing Center of West Michigan",
+"needs": [
+"housing",
+"legal"
+],
+"phone": "616-451-2980",
+"url": "https://www.fhcwm.org",
+"how": "Help when a family may be facing housing discrimination.",
+"lang": "",
+"source": "https://kdl.org/cr2/housing-shelter",
+"checked": "Nov 2026"
+},
+{
+"name": "Community Rebuilders",
+"needs": [
+"housing"
+],
+"phone": "616-458-5102",
+"url": "",
+"how": "Short-term rental help to move families from homelessness into housing. Requires a HAP referral (start with 2-1-1).",
+"lang": "",
+"source": "https://grcc.edu/studentlifeandconduct/gethelp/emergencyhousing",
+"checked": "Nov 2026"
+},
+{
+"name": "The Rapid",
+"needs": [
+"transport"
+],
+"phone": "See website",
+"url": "https://www.ridetherapid.org",
+"how": "Grand Rapids public bus routes and trip planning. Check with the school about bus-pass options before referring a family.",
+"lang": "",
+"source": "https://www.ridetherapid.org",
+"checked": "Nov 2026"
+}
+],
+"teamLeads": {
+"Amanda Witte": [
+"amandawitte@kentssn.org",
+"810-334-7662"
+],
+"Caroline Geist": [
+"carolinegeist@kentssn.org",
+"810-252-1648"
+]
+}
+}
