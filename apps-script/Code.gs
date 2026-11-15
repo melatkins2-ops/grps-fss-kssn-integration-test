@@ -33,8 +33,8 @@ function rows_(name) {
 
 function getData() {
   var schools = rows_('Schools').filter(function (r) { return r[1]; }).map(function (r) {
-    return {quad: cell_(r[0]), school: cell_(r[1]), kssn: cell_(r[2]), kssnEmail: cell_(r[3]), lead: cell_(r[4]),
-            leadEmail: cell_(r[5]), leadPhone: cell_(r[6]), fss: cell_(r[7]), fssEmail: cell_(r[8]), notes: cell_(r[9])};
+    return {quad: cell_(r[0]), school: cell_(r[1]), kssn: cell_(r[2]), kssnEmail: cell_(r[3]), kssnPhone: cell_(r[4]), lead: cell_(r[5]),
+            leadEmail: cell_(r[6]), leadPhone: cell_(r[7]), fss: cell_(r[8]), fssEmail: cell_(r[9]), fssPhone: cell_(r[10]), fssRole: cell_(r[11]), notes: cell_(r[12])};
   });
   var resources = rows_('Resources').filter(function (r) { return r[0]; }).map(function (r) {
     return {name: cell_(r[0]), needs: cell_(r[1]).split(/\s*,\s*/).filter(String), phone: cell_(r[2]), url: cell_(r[3]),
