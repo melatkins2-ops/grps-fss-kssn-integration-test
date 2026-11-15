@@ -158,6 +158,10 @@ function safeSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 
 /* ---------- storage: Apps Script when hosted there, otherwise this device ---------- */
 const LIVE=typeof google!=="undefined"&&google.script&&google.script.run;
+const SHEETMODE=!LIVE;
+const SHEET="https://docs.google.com/spreadsheets/d/1NokZxVmaxSzI3j2HZeABCXwt7LAmAx6ui51wT-dLs2Q/edit#gid=";
+const TAB={follow:"0",huddle:"4",impact:"5",schools:"1",resources:"2"};
+const sheetBtn=(tab,label,primary)=>`<a class="btn ${primary?"primary":""}" href="${SHEET}${TAB[tab]}" target="_blank" rel="noopener">${label} ↗</a>`;
 const DKEY="fss-kssn-workspace-demo-v1";
 const S={schools:DATA.schools,resources:DATA.resources,followups:[],user:""};
 function gs(fn,...args){return new Promise((ok,no)=>google.script.run.withSuccessHandler(ok).withFailureHandler(no)[fn](...args))}
@@ -169,7 +173,7 @@ const act=["Connect family to bus-route planning and confirm first ride","Check-
 return sc.map((s,i)=>({id:"S"+(i+1),created:addDays(-40+i*2),school:s,code:"A-"+(10+i),barrier:b[i],leadRole:lr[i],leadPerson:"",action:act[i],resource:"",due:addDays(due[i]),status:st[i],outcome:st[i]==="Done"?"Attendance improved over the next 3 weeks":"",updated:addDays(-2),updatedBy:"Sample data",sample:true}))}
 async function load(){
   if(LIVE){try{const d=await gs("getData");if(d.schools&&d.schools.length)S.schools=d.schools;if(d.resources&&d.resources.length)S.resources=d.resources;S.followups=d.followups||[];S.user=d.user||""}catch(e){toast("Couldn't reach the shared sheet")}}
-  else{const raw=safeGet(DKEY);S.followups=raw?JSON.parse(raw):sample();if(!raw)persist()}
+  else{S.followups=[]}
 }
 function persist(){if(!LIVE)safeSet(DKEY,JSON.stringify(S.followups))}
 async function saveFU(fu){
@@ -196,18 +200,26 @@ function people(s){if(!s)return"";const p=(lbl,name,mail,phone,none)=>`<div><sma
   const fl=s.fssRole&&s.fssRole!=="Family Support Specialist"?s.fssRole:"Family Support Specialist (FSS)";
   return `<div class="people">${p(fl,s.fss,s.fssEmail,s.fssPhone)}${p("KSSN coordinator",s.kssn,s.kssnEmail,s.kssnPhone,"No KSSN coordinator at this school")}${s.kssn?p("KSSN team lead",s.lead,s.leadEmail,s.leadPhone):`<div><small>Community resources</small><b><a href="#find">Find help →</a></b><span class="meta" style="display:block">Kent County resources by need</span></div>`}</div>`}
 function district(){const d=DATA.district||[];return d.length?`<h2 style="margin-top:4px">District contacts</h2><div class="people">${d.map(x=>`<div><small>${esc(x.role)}</small><b>${esc(x.name)}</b><span class="meta" style="display:block">${esc(x.phone)}</span><a href="mailto:${esc(x.email)}">${esc(x.email)}</a></div>`).join("")}</div>`:""}
+
+function todaySheet(){return `<section style="margin-top:26px"><h2>Your team's shared tracker</h2><p class="lead" style="margin-bottom:8px">Follow-ups, the monthly huddle agenda and impact counts live in one Google Sheet that FSS, KSSN and school staff share. Use family codes only, never names.</p>
+ <div class="rows">
+  <div class="row"><div class="main"><b>Add or update a follow-up</b><span class="meta">One row per family need: who leads, the agreed action and when you'll check back.</span></div>${sheetBtn("follow","Open follow-ups")}</div>
+  <div class="row"><div class="main"><b>Run the monthly huddle</b><span class="meta">Pick your school; the agenda builds itself from stuck, overdue and repeating barriers.</span></div>${sheetBtn("huddle","Open huddle")}</div>
+  <div class="row"><div class="main"><b>Show impact</b><span class="meta">Counts by school, barrier and who led. No family details.</span></div>${sheetBtn("impact","Open impact")}</div>
+ </div><div class="actions"><a class="btn" href="#find">Find help</a><a class="btn" href="#plan">Plan a response</a></div></section>`}
+function sheetStep(n,title,lead,tab,btn,steps){return `<p class="kick">Step ${n}</p><h1>${title}</h1><p class="lead">${lead}</p><div class="actions" style="margin:0 0 22px">${sheetBtn(tab,btn,true)}</div><h2>How it works</h2><ol class="tight" style="max-width:760px">${steps.map(x=>`<li style="margin:8px 0">${x}</li>`).join("")}</ol><p class="note" style="margin-top:18px">The tracker opens in Google Sheets with your GRPS account. If you can't open it, ask your team lead for access.</p>`}
 function vToday(){const sc=school(),s=schoolRec(),list=fuFor(sc),open=list.filter(f=>f.status!=="Done");
   const week=open.filter(f=>{const d=daysUntil(f.due);return d!==null&&d<=7}).sort((a,b)=>(a.due||"").localeCompare(b.due||""));
   const pat=patterns(list);
   return `<p class="kick">${sc==="All schools"?"All GRPS schools with an FSS":esc(s.quad.startsWith("Other")?"FSS school":s.quad+" quadrant")}</p><h1>${sc==="All schools"?"Support across schools":esc(sc)}</h1>
   <p class="lead">Start with the family's need, not a department. Find help, agree who acts, and follow through until something changes for the scholar.</p>
   ${s?people(s):`<div class="callout"><b>Choose your school</b> at the top to see its FSS, KSSN coordinator and team lead.</div>`+district()}
-  <div class="grid2" style="margin-top:26px">
+  ${SHEETMODE?todaySheet():`<div class="grid2" style="margin-top:26px">
     <section><h2>Follow-ups due this week</h2>${week.length?`<div class="rows">${week.map(f=>fuRow(f,sc==="All schools")).join("")}</div>`:`<p class="note">Nothing due in the next 7 days.</p>`}
       <div class="actions"><a class="btn primary" href="#follow?new=1">Start a follow-up</a><a class="btn" href="#follow">See all follow-ups</a></div></section>
     <section><h2>Patterns to bring to the huddle</h2>${pat.length?pat.map(([b,n])=>`<div class="callout"><span class="big">${n}</span> families named <b>${esc(b.toLowerCase())}</b> in the last 60 days. Plan one school-wide fix instead of ${n} separate ones.</div>`).join(""):`<p class="note">No barrier has come up 3 or more times in the last 60 days.</p>`}
       <div class="actions"><a class="btn" href="#find">Find help</a><a class="btn" href="#plan">Plan a response</a></div></section>
-  </div>`}
+  </div>`}`}
 
 let needSel="all",findQ="";
 function vFind(){const list=S.resources.filter(r=>(needSel==="all"?true:r.needs.includes(needSel))&&(!findQ||(r.name+" "+r.how+" "+r.needs.join(" ")).toLowerCase().includes(findQ.toLowerCase())));
@@ -218,7 +230,7 @@ function vFind(){const list=S.resources.filter(r=>(needSel==="all"?true:r.needs.
   <div>${list.map((r,i)=>{const idx=S.resources.indexOf(r);return `<article class="res"><h3>${esc(r.name)}</h3>
     <div class="contact">${r.phone?`<span class="tel">${esc(r.phone)}</span>`:""}${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">Website ↗</a>`:""}</div>
     <p>${esc(r.how)}</p><p class="tags">${esc(r.needs.filter(n=>n!=="all").map(n=>(NEEDS.find(x=>x[0]===n)||[0,n])[1]).join(" · "))}${r.lang?" · "+esc(r.lang):""}</p>
-    <div class="actions" style="margin-top:4px"><button class="btn small" type="button" data-copy="${idx}" data-lang="en">Copy text for family</button><button class="btn small" type="button" data-copy="${idx}" data-lang="es">Copiar en español</button><a class="btn small" href="#follow?new=1&res=${idx}">Use in a follow-up</a></div></article>`}).join("")||`<p>No resources match. Try "Not sure / many needs" or call 2-1-1.</p>`}</div>`}
+    <div class="actions" style="margin-top:4px"><button class="btn small" type="button" data-copy="${idx}" data-lang="en">Copy text for family</button><button class="btn small" type="button" data-copy="${idx}" data-lang="es">Copiar en español</button>${SHEETMODE?"":`<a class="btn small" href="#follow?new=1&res=${idx}">Use in a follow-up</a>`}</div></article>`}).join("")||`<p>No resources match. Try "Not sure / many needs" or call 2-1-1.</p>`}</div>`}
 function familyText(r,lang){return lang==="es"?`Hola. Este recurso puede ayudar: ${r.name}. ${r.phone&&r.phone!=="See website"?"Llame al "+r.phone+". ":""}${r.url?r.url+" ":""}Si tiene preguntas o necesita ayuda para llamar, avísenos.`:`Hi. This resource may help: ${r.name}. ${r.phone&&r.phone!=="See website"?"Call "+r.phone+". ":""}${r.url?r.url+" ":""}If you have questions or want help making the call, let us know.`}
 
 let barrierSel="";
@@ -229,10 +241,15 @@ function vPlan(){const b=BAR.bd.find(x=>x.title===barrierSel);
    <div class="roles"><div><b>FSS</b>${esc(b.f)}</div><div><b>KSSN</b>${esc(b.k)}</div><div><b>School</b>${esc(b.s)}</div><div><b>Together</b>${esc(b.sh)}</div></div>
    <div class="grid2"><div><h3>Ask the family</h3><ul class="tight">${b.ask.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><h3 style="margin-top:12px">Look at</h3><ul class="tight">${b.look.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
    <div><h3>First responses</h3><ul class="tight">${(BAR.sm[b.title]||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>${(BARRIER_NEEDS[b.title]||[]).length?`<h3 style="margin-top:12px">Community resources</h3><ul class="tight">${S.resources.filter(r=>r.needs.some(n=>(BARRIER_NEEDS[b.title]||[]).includes(n))).slice(0,4).map(r=>`<li>${esc(r.name)} · ${esc(r.phone)}</li>`).join("")}</ul>`:`<p class="note" style="margin-top:12px">This barrier is mainly a school response. Bring it to the school team.</p>`}</div></div>
-   <div class="actions"><a class="btn primary" href="#follow?new=1&barrier=${encodeURIComponent(b.title)}">Start a follow-up with this plan</a>${(BARRIER_NEEDS[b.title]||[]).length?`<a class="btn" href="#find" data-needjump="${BARRIER_NEEDS[b.title][0]}">See all matching resources</a>`:""}</div></section>`:`<p class="note">Choose a barrier above to see the plan.</p>`}`}
+   <div class="actions"><a class="btn primary" href="#follow?new=1&barrier=${encodeURIComponent(b.title)}">${SHEETMODE?"Record a follow-up for this plan":"Start a follow-up with this plan"}</a>${(BARRIER_NEEDS[b.title]||[]).length?`<a class="btn" href="#find" data-needjump="${BARRIER_NEEDS[b.title][0]}">See all matching resources</a>`:""}</div></section>`:`<p class="note">Choose a barrier above to see the plan.</p>`}`}
 
 let fuFilter="Open items",editing="";
-function vFollow(params){const sc=school(),s=schoolRec();const isNew=params.get("new")==="1";
+function vFollow(params){if(SHEETMODE){const bar=params.get("barrier");return sheetStep(3,"Hand off &amp; follow up","A referral is not the end of support. Record who acts and when you'll check back, then close the loop.","follow","Open the follow-up tracker",[
+ "Go to the first empty row in the <b>FollowUps</b> tab. Enter today's date (Ctrl + ;) and pick the school.",
+ "Enter a <b>family code</b> like A-14 that links to your own records. The sheet won't accept names.",
+ `Pick the <b>barrier</b>${bar?` (<b>${esc(bar)}</b>)`:""} and <b>who leads</b>: FSS, KSSN, School or Shared.`,
+ "Write the <b>agreed action</b> and the <b>resource</b> you connected the family to, then set a <b>follow up by</b> date.",
+ "When you check back, change the <b>status</b> and note <b>what changed for the scholar</b> in Outcome."])}const sc=school(),s=schoolRec();const isNew=params.get("new")==="1";
   const r=params.get("res")!==null?S.resources[+params.get("res")]:null;const bar=params.get("barrier")||"";
   let list=fuFor(sc);if(fuFilter==="Open items")list=list.filter(f=>f.status!=="Done");else if(fuFilter!=="All")list=list.filter(f=>f.status===fuFilter);
   list.sort((a,b)=>(a.status==="Done")-(b.status==="Done")||(a.due||"9").localeCompare(b.due||"9"));
@@ -255,7 +272,12 @@ function vFollow(params){const sc=school(),s=schoolRec();const isNew=params.get(
     <div class="edit ${editing===f.id?"on":""}" id="ed-${esc(f.id)}"><div class="line"><label class="note">Status <select data-st="${esc(f.id)}">${STATUSES.map(x=>`<option ${x===f.status?"selected":""}>${x}</option>`).join("")}</select></label><label class="note">Follow up by <input type="date" data-due="${esc(f.id)}" value="${esc(f.due)}"></label></div>
     <label class="note" style="display:block;margin-top:8px">What changed for the scholar?<textarea data-out="${esc(f.id)}" maxlength="300" placeholder="Example: attended 9 of 10 days since the ride plan started">${esc(f.outcome||"")}</textarea></label><div class="actions" style="margin-top:8px"><button class="btn small primary" type="button" data-saveedit="${esc(f.id)}">Save update</button></div></div></div>`}).join("")||`<p class="note" style="padding:12px 0">No follow-ups here yet.</p>`}</div>`}
 
-function vHuddle(){const sc=school(),list=fuFor(sc),open=list.filter(f=>f.status!=="Done");
+function vHuddle(){if(SHEETMODE)return sheetStep(4,"Monthly huddle","A 30-minute FSS, KSSN and school agenda that builds itself from your follow-ups. Start with what's stuck; end with one system fix.","huddle","Open the huddle agenda",[
+ "Open the <b>Huddle</b> tab and pick your school in the orange cell, or leave it blank for all schools.",
+ "<b>Stuck or overdue (10 min):</b> decide the next step and who owns it for each one.",
+ "<b>Patterns (10 min):</b> any barrier named by 3 or more families in 60 days. Agree on one school-wide fix instead of separate ones.",
+ "<b>Coming due (5 min)</b> and <b>what worked (5 min)</b>: confirm check-ins and share what changed for scholars.",
+ "To print, use File > Print in Google Sheets."]);const sc=school(),list=fuFor(sc),open=list.filter(f=>f.status!=="Done");
   const over=open.filter(f=>daysUntil(f.due)<0),stuck=open.filter(f=>f.status==="Stuck"),soon=open.filter(f=>{const d=daysUntil(f.due);return d>=0&&d<=14});
   const done=list.filter(f=>f.status==="Done"&&f.updated>=addDays(-30));const pat=patterns(list);
   return `<p class="kick">Step 4</p><h1>Monthly huddle</h1><p class="lead">A 30-minute FSS, KSSN and school agenda built from your follow-ups. Start with what's stuck, end with one system fix.</p>
@@ -267,7 +289,10 @@ function vHuddle(){const sc=school(),list=fuFor(sc),open=list.filter(f=>f.status
   <li style="margin-top:14px"><h3>What worked (5 min)</h3>${done.map(f=>`<p><b>${esc(f.code)} · ${esc(f.barrier)}</b>: ${esc(f.outcome||"Closed")}</p>`).join("")||'<p class="note">No follow-ups closed in the last 30 days.</p>'}</li></ol>`}
 
 let impRange="90";
-function vImpact(){const sc=school();let list=fuFor(sc);if(impRange!=="all")list=list.filter(f=>f.created>=addDays(-+impRange));
+function vImpact(){if(SHEETMODE)return sheetStep(5,"Show impact","Counts only, no family details. Use them for leadership updates and 31a reporting.","impact","Open impact counts",[
+ "The <b>Impact</b> tab updates automatically: families supported, follow-ups closed and still open, and the share closed with an outcome noted.",
+ "Breakdowns show <b>by school</b>, <b>by barrier</b>, <b>who led</b> and <b>status</b>.",
+ "To share, copy the counts or use File > Download in Google Sheets."]);const sc=school();let list=fuFor(sc);if(impRange!=="all")list=list.filter(f=>f.created>=addDays(-+impRange));
   const n=list.length,done=list.filter(f=>f.status==="Done"),open=n-done.length,withOut=done.filter(f=>(f.outcome||"").trim()).length;
   const cnt=k=>{const m={};list.forEach(f=>m[f[k]]=(m[f[k]]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1])};
   const bars=(rows,o)=>{const max=Math.max(1,...rows.map(r=>r[1]));return `<div class="bars">${rows.map(([k,v])=>`<div class="b"><span>${esc(k)}</span><div class="track"><div class="fill ${o?"o":""}" style="width:${Math.round(v/max*100)}%"></div></div><b>${v}</b></div>`).join("")||'<p class="note">No data yet.</p>'}</div>`};
@@ -312,7 +337,7 @@ function wire(name){
   if(name!=="today"||location.hash)$("#main").focus({preventScroll:true});
 }
 function modeBtn(){const b=$("#modeBtn");if(LIVE){b.textContent="Shared sheet";b.classList.add("live");b.title="Saving to the FSS + KSSN Support Tracker sheet"+(S.user?" as "+S.user:"");b.onclick=()=>toast("Connected to the shared sheet")}
-  else{b.textContent="Demo · this device";b.title="Sample data saved in this browser only";b.onclick=()=>{if(confirm("Reset the demo to its sample data? Anything you added here will be cleared.")){S.followups=sample();persist();render();toast("Demo reset")}}}}
+  else{b.textContent="Team sheet ↗";b.classList.add("live");b.title="Open the shared FSS + KSSN Support Tracker";b.onclick=()=>window.open(SHEET+TAB.follow,"_blank","noopener")}}
 addEventListener("hashchange",()=>{render();scrollTo(0,0)});
 (async()=>{initSchools();modeBtn();await load();render()})();
 </script>
