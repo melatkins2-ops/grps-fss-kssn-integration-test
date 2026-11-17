@@ -154,7 +154,7 @@
 "quad": "Southwest",
 "school": "Burton Middle",
 "kssn": "Naxhiely Orozco",
-"kssnEmail": "naxheilyorozco@kentssn.org",
+"kssnEmail": "OrozcoN@grps.org",
 "kssnPhone": "(616) 819-2269",
 "lead": "Caroline Geist",
 "leadEmail": "carolinegeist@kentssn.org",
@@ -976,6 +976,18 @@
 "email": "McCollumJ@grps.org",
 "phone": "(616) 819-7012",
 "role": "Attendance Outreach Specialist"
+},
+{
+"name": "Bryant Martin",
+"email": "martinb@grps.org",
+"phone": "",
+"role": "McKinney-Vento (homeless education) contact"
+},
+{
+"name": "Mosuray McSwain",
+"email": "McSwainM@grps.org",
+"phone": "",
+"role": "McKinney-Vento (homeless education) contact"
 }
 ]
 }
