@@ -573,13 +573,13 @@ button,input,textarea,select{font-family:Arial,Helvetica,sans-serif}
 /* V8.31 scenario selector */
 .collabPicker{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:20px 0}.collabPicker label{display:block;width:100%;font-weight:700;color:#173f5c}.collabPicker select{flex:1 1 340px;max-width:650px;padding:13px 14px;border:2px solid #a9c7d9;border-radius:10px;font:700 17px Arial,Helvetica,sans-serif;background:white;color:#173f5c}.collabPicker button{font:700 16px Arial,Helvetica,sans-serif;border:1px solid #12436b;background:white;color:#12436b;border-radius:10px;padding:13px 16px;cursor:pointer}.collabChoices[hidden]{display:none}.collabScenario strong{font-size:20px}.collabFeedback strong{font-size:19px}.collabFeedback p{font-size:17px}.collabPicker :focus-visible{outline:3px solid #e36b32;outline-offset:2px}
 </style>
-</head>
+<link rel="icon" type="image/png" href="favicon.png"></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="utility"><div class="wrap"><span>GRPS Community & Student Affairs</span><nav class="utility-links" aria-label="Quick links"><a href="#home" onclick="go('home');return false">Start Here</a><a href="#tools" onclick="go('tools');return false">Tools & Resources</a><a href="workspace.html">Support Workspace</a></nav></div></div>
 <header class="brandbar"><div class="wrap brandrow">
   <button class="brand" onclick="go('home')" aria-label="Go to home">
-    <img class="grps-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice">
+    <img class="grps-logo" src="images/grps-logo.png" alt="Grand Rapids Public Schools — My Choice">
     <span class="brand-title"><b>FSS + KSSN Collaboration</b><small>Scholar, Family & Community School Support</small></span>
   </button>
   <button class="menuBtn" id="menuBtn" onclick="toggleMenu()" aria-expanded="false" aria-controls="mainNav">Menu</button>
@@ -747,7 +747,7 @@ button,input,textarea,select{font-family:Arial,Helvetica,sans-serif}
  <div class="section"><div class="wrap tool-view"><div class="tool-flow"><div>1. Understand</div><div>2. Decide</div><div>3. Act</div><div>4. Review</div></div><div class="workbox"><div id="toolPrompts"></div><textarea id="notes" aria-label="Working notes" placeholder="Working notes… Nothing is saved."></textarea><div class="actions"><button class="primary" onclick="copyNotes()">Copy notes</button><button onclick="document.getElementById('notes').value=''">Clear</button></div></div></div></div>
 </section>
 </main>
-<footer><div class="wrap footer"><div style="display:flex;gap:18px;align-items:center"><img src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — My Choice" style="height:64px;width:auto;background:#fff;border-radius:8px;padding:6px"><div><b>Scholar, Family & Community School Support</b><br><small>GRPS scholar, family & Community School collaboration resource</small></div></div><small>Start with the need—not the role.</small></div></footer>
+<footer><div class="wrap footer"><div style="display:flex;gap:18px;align-items:center"><img src="images/grps-logo.png" alt="Grand Rapids Public Schools — My Choice" style="height:64px;width:auto;background:#fff;border-radius:8px;padding:6px"><div><b>Scholar, Family & Community School Support</b><br><small>GRPS scholar, family & Community School collaboration resource</small></div></div><small>Start with the need—not the role.</small></div></footer>
 
 <div class="collabModal" id="collabModal" role="dialog" aria-modal="true" aria-labelledby="collabTitle"><div class="collabBox"><div class="collabHead"><div class="collabHeadTop"><div><div class="eyebrow">FSS + KSSN IN PRACTICE</div><h2 id="collabTitle"></h2><p id="collabIntro"></p></div><button class="collabClose" onclick="closeCollab()" aria-label="Close collaboration details">Close ×</button></div></div><div class="collabRoles"><div class="collabRole"><h3>FSS</h3><p id="collabFss"></p></div><div class="collabRole"><h3>KSSN</h3><p id="collabKssn"></p></div><div class="collabRole together"><h3>Together</h3><p id="collabTogether"></p></div><div class="collabRole school"><h3>School’s Part</h3><p id="collabSchool"></p></div></div><div class="collabNext"><b>Use the next tool when it helps move the work forward.</b><div id="collabActions"></div></div></div></div>
 <div class="modal" id="modelModal" role="dialog" aria-modal="true" aria-label="Expanded operating model"><div class="modalbox"><button class="modalclose" onclick="closeModel()">Close ×</button><div id="modalContent"></div></div></div>
@@ -936,11 +936,11 @@ function guideStep(k){
  document.getElementById('guideEyebrow').textContent=`STEP ${i+1} OF 5`;document.getElementById('guideTitle').textContent=titles[k][0];document.getElementById('guideIntro').textContent=titles[k][1];
  let html=caseStrip();
  if(k==="pattern") html+=`
-  <div class="question"><h3>What is the relevant data?</h3><p>Use the relevant data available to your team. This field is optional; it provides context for the concern and pattern.</p><div class="dataRow"><input class="dataInput" value="${esc(guideState.attendanceLevel)}" oninput="guideState.attendanceLevel=this.value" placeholder="Example: 12% absent / 8 days missed"><div class="outputBox" style="margin:0"><b>Remember</b><p>Relevant data indicates concern; root-cause analysis determines the intervention.</p></div></div></div>
+  <div class="question"><h3>What is the relevant data?</h3><p>Use the relevant data available to your team. This field is optional; it provides context for the concern and pattern.</p><div class="dataRow"><input aria-label="Attendance level" class="dataInput" value="${esc(guideState.attendanceLevel)}" oninput="guideState.attendanceLevel=this.value" placeholder="Example: 12% absent / 8 days missed"><div class="outputBox" style="margin:0"><b>Remember</b><p>Relevant data indicates concern; root-cause analysis determines the intervention.</p></div></div></div>
   <div class="question"><h3>What does the pattern look like?</h3><p>Select the closest description.</p><div class="optionGrid">
    ${["Frequent single-day absences","Repeated day-of-week pattern","Consecutive absences","Tardiness / partial-day pattern","Absence is increasing over time","Other / mixed pattern"].map(v=>`<button class="opt ${guideState.pattern===v?'selected':''}" onclick="pickGuide('pattern','${v}',this)">${v}</button>`).join('')}
   </div></div>
-  <div class="question"><h3>What changed or surfaced?</h3><p>Note timing, recent changes, classes/periods, transportation, health, relationships, routines or other information that may help explain the pattern.</p><textarea class="guideText" oninput="guideState.patternNote=this.value" placeholder="Working note…">${esc(guideState.patternNote)}</textarea></div>
+  <div class="question"><h3>What changed or surfaced?</h3><p>Note timing, recent changes, classes/periods, transportation, health, relationships, routines or other information that may help explain the pattern.</p><textarea aria-label="Pattern note" class="guideText" oninput="guideState.patternNote=this.value" placeholder="Working note…">${esc(guideState.patternNote)}</textarea></div>
   <div class="outputBox"><b>Output from this step</b><p>A confirmed relevant data/pattern and questions to explore with the scholar/family.</p></div>`;
  if(k==="barrier") html+=`
   <div class="question"><h3>What do we know from the scholar, family and school?</h3><div class="optionGrid">${["Scholar voice","Family/caregiver voice","School data/observations","Multiple perspectives"].map(v=>`<button class="opt ${guideState.voice===v?'selected':''}" onclick="pickGuide('voice','${v}',this)">${v}</button>`).join('')}</div></div>
@@ -960,7 +960,7 @@ function guideStep(k){
   html+=`${guideState.barrier?`<div class="recommend"><b>Barrier being addressed</b><p><strong>${esc(guideState.barrier)}</strong> · Ownership: ${esc(guideState.ownership)||'not yet confirmed'}</p></div>`:''}
   <div class="question"><h3>Which response is most likely to reduce this barrier?</h3><div class="supportChoices">${opts.map(v=>`<button class="supportChoice ${guideState.support===v?'selected':''}" onclick="pickSupport('${v.replace(/'/g,"&#39;")}',this)"><b>${v}</b><span>Choose only if it directly addresses the identified barrier and is realistically accessible.</span></button>`).join('')}</div></div>
   <div class="question"><h3>Add the specific plan.</h3><textarea class="guideText" oninput="guideState.supportNote=this.value" placeholder="Who will do what, how often, and by when?">${esc(guideState.supportNote)}</textarea></div>
-  <div class="question"><h3>When will the team review?</h3><input class="dataInput" type="date" value="${esc(guideState.reviewDate)}" onchange="guideState.reviewDate=this.value"></div>`;
+  <div class="question"><h3>When will the team review?</h3><input aria-label="Attendance level" class="dataInput" type="date" value="${esc(guideState.reviewDate)}" onchange="guideState.reviewDate=this.value"></div>`;
  }
  if(k==="impact") html+=`
   <div class="reviewGrid">
